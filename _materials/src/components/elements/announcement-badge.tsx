@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
 import { ChevronIcon } from '../icons/chevron-icon'
@@ -18,7 +16,7 @@ export function AnnouncementBadge({
   variant?: 'normal' | 'overlay'
 } & Omit<ComponentProps<'a'>, 'href' | 'children'>) {
   return (
-    <Link
+    <a
       href={href}
       {...props}
       data-variant={variant}
@@ -47,6 +45,6 @@ export function AnnouncementBadge({
       >
         {cta} <ChevronIcon className="shrink-0" />
       </span>
-    </Link>
+    </a>
   )
 }

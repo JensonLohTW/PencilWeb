@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { ElDialog, ElDialogPanel } from '@tailwindplus/elements/react'
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
@@ -9,7 +11,7 @@ export function NavbarLink({
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <a
+    <Link
       href={href}
       className={clsx(
         'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-mist-950 lg:text-sm/7 dark:text-white',
@@ -23,12 +25,12 @@ export function NavbarLink({
           <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
       </span>
-    </a>
+    </Link>
   )
 }
 
 export function NavbarLogo({ className, href, ...props }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
-  return <a href={href} {...props} className={clsx('inline-flex items-stretch', className)} />
+  return <Link href={href} {...props} className={clsx('inline-flex items-stretch', className)} />
 }
 
 export function NavbarWithLinksActionsAndCenteredLogo({

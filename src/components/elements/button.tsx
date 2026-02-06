@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { clsx } from 'clsx/lite'
 import type { ComponentProps } from 'react'
 
@@ -44,7 +46,7 @@ export function ButtonLink({
   color?: 'dark/light' | 'light'
 } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <a
+    <Link
       href={href}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium',
@@ -90,7 +92,7 @@ export function SoftButtonLink({
   size?: keyof typeof sizes
 } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <a
+    <Link
       href={href}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded-full bg-mist-950/10 text-sm/7 font-medium text-mist-950 hover:bg-mist-950/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
@@ -139,7 +141,7 @@ export function PlainButtonLink({
   color?: 'dark/light' | 'light'
 } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <a
+    <Link
       href={href}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-2 rounded-full text-sm/7 font-medium',

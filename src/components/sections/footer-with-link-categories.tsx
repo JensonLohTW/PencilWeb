@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
 import { Container } from '../elements/container'
@@ -16,7 +18,7 @@ export function FooterCategory({ title, children, ...props }: { title: ReactNode
 export function FooterLink({ href, className, ...props }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
     <li className={clsx('text-mist-700 dark:text-mist-400', className)}>
-      <a href={href} {...props} />
+      <Link href={href} {...props} />
     </li>
   )
 }

@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { ElDialog, ElDialogPanel } from '@tailwindplus/elements/react'
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
@@ -11,7 +9,7 @@ export function NavbarLink({
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <Link
+    <a
       href={href}
       className={clsx(
         'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-mist-950 lg:text-sm/7 dark:text-white',
@@ -25,15 +23,15 @@ export function NavbarLink({
           <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
       </span>
-    </Link>
+    </a>
   )
 }
 
 export function NavbarLogo({ className, href, ...props }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
-  return <Link href={href} {...props} className={clsx('inline-flex items-stretch', className)} />
+  return <a href={href} {...props} className={clsx('inline-flex items-stretch', className)} />
 }
 
-export function NavbarWithLogoActionsAndCenteredLinks({
+export function NavbarWithLinksActionsAndCenteredLogo({
   links,
   logo,
   actions,
@@ -49,8 +47,8 @@ export function NavbarWithLogoActionsAndCenteredLinks({
       <style>{`:root { --scroll-padding-top: 5.25rem }`}</style>
       <nav>
         <div className="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
-          <div className="flex flex-1 items-center">{logo}</div>
-          <div className="flex gap-8 max-lg:hidden">{links}</div>
+          <div className="flex flex-1 gap-8 max-lg:hidden">{links}</div>
+          <div className="flex items-center">{logo}</div>
           <div className="flex flex-1 items-center justify-end gap-4">
             <div className="flex shrink-0 items-center gap-5">{actions}</div>
 

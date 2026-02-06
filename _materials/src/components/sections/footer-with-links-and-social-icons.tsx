@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
 import { Container } from '../elements/container'
@@ -7,7 +5,7 @@ import { Container } from '../elements/container'
 export function FooterLink({ href, className, ...props }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
     <li className={clsx('text-mist-700 dark:text-mist-400', className)}>
-      <Link href={href} {...props} />
+      <a href={href} {...props} />
     </li>
   )
 }
@@ -22,7 +20,7 @@ export function SocialLink({
   name: string
 } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
-    <Link
+    <a
       href={href}
       target="_blank"
       aria-label={name}
