@@ -29,7 +29,7 @@ export function SwissHeroEnhanced({
     headlineSuffix = '', // Optional suffix after the highlight
     cycleWords = [],
     subheadline,
-    ctaText = '了解更多',
+    ctaText,
     ctaHref = '#',
     centered = false,
 }: SwissHeroEnhancedProps) {
@@ -91,25 +91,27 @@ export function SwissHeroEnhanced({
 
 
                 {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
-                    className="mt-10"
-                >
-                    <Link
-                        href={ctaHref}
-                        className="group relative inline-flex items-center gap-3 overflow-hidden bg-pencil-950 px-8 py-4 text-white transition-all hover:bg-cta"
+                {ctaText && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                        className="mt-10"
                     >
-                        <span className="relative z-10 text-sm font-medium uppercase tracking-wider">
-                            {ctaText}
-                        </span>
-                        <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        <Link
+                            href={ctaHref}
+                            className="group relative inline-flex items-center gap-3 overflow-hidden bg-pencil-950 px-8 py-4 text-white transition-all hover:bg-cta"
+                        >
+                            <span className="relative z-10 text-sm font-medium uppercase tracking-wider">
+                                {ctaText}
+                            </span>
+                            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
 
-                        {/* Hover Effect */}
-                        <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
-                    </Link>
-                </motion.div>
+                            {/* Hover Effect */}
+                            <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
+                        </Link>
+                    </motion.div>
+                )}
             </div>
 
             {/* Scroll Indicator */}
