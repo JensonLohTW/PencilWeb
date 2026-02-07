@@ -31,20 +31,20 @@ function SolutionCard({
     return (
         <div
             id={id}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-800 bg-pencil-900/50 p-8 transition-all hover:border-neon-500/50"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-200 bg-white p-8 transition-all hover:border-neon-500/50 dark:border-pencil-800 dark:bg-pencil-900/50"
         >
-            <div className="mb-4 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-400">
+            <div className="mb-4 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-600 dark:text-neon-400">
                 {icon}
             </div>
-            <h3 className="text-xl font-bold text-pencil-100">{title}</h3>
-            <p className="mt-3 text-pencil-400">{description}</p>
+            <h3 className="text-xl font-bold text-pencil-900 dark:text-pencil-100">{title}</h3>
+            <p className="mt-3 text-pencil-600 dark:text-pencil-400">{description}</p>
 
             <div className="mt-6">
-                <h4 className="text-sm font-semibold text-pencil-200">主要功能</h4>
+                <h4 className="text-sm font-semibold text-pencil-700 dark:text-pencil-200">主要功能</h4>
                 <ul className="mt-2 space-y-1">
                     {features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-pencil-400">
-                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-400" />
+                        <li key={index} className="flex items-start gap-2 text-sm text-pencil-600 dark:text-pencil-400">
+                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-500" />
                             {feature}
                         </li>
                     ))}
@@ -52,10 +52,10 @@ function SolutionCard({
             </div>
 
             <div className="mt-6">
-                <h4 className="text-sm font-semibold text-pencil-200">適用場景</h4>
+                <h4 className="text-sm font-semibold text-pencil-700 dark:text-pencil-200">適用場景</h4>
                 <div className="mt-2 flex flex-wrap gap-2">
                     {useCases.map((useCase, index) => (
-                        <span key={index} className="rounded-full bg-pencil-800 px-3 py-1 text-xs text-pencil-300">
+                        <span key={index} className="rounded-full bg-pencil-100 px-3 py-1 text-xs text-pencil-600 dark:bg-pencil-800 dark:text-pencil-300">
                             {useCase}
                         </span>
                     ))}
@@ -132,7 +132,7 @@ export default function SolutionsPage() {
                 id="hero"
                 headline="解決方案"
                 subheadline={
-                    <p className="text-pencil-300">
+                    <p className="text-pencil-600 dark:text-pencil-300">
                         從 VR/MR 沉浸式訓練到企業 AI 導入，四大方案快速選型，找到最適合您的解決方案。
                     </p>
                 }
@@ -212,11 +212,11 @@ export default function SolutionsPage() {
             </section>
 
             {/* Process Timeline */}
-            <section className="bg-pencil-900/30 py-16 sm:py-24">
+            <section className="bg-pencil-50 py-16 sm:py-24 dark:bg-pencil-900/30">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">導入流程</h2>
-                        <p className="mt-4 text-pencil-400">從需求到交付，我們提供完整的專案服務。</p>
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">導入流程</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">從需求到交付，我們提供完整的專案服務。</p>
                     </div>
 
                     <div className="mx-auto mt-16 max-w-3xl">
@@ -233,12 +233,12 @@ export default function SolutionsPage() {
                                 { step: '5', title: '維運優化', desc: '持續維運與效能優化' },
                             ].map((item, index) => (
                                 <div key={index} className="relative mb-8 flex items-start gap-6 lg:mb-12">
-                                    <div className="flex size-16 shrink-0 items-center justify-center rounded-full border-4 border-pencil-950 bg-neon-500/20 text-xl font-bold text-neon-400">
+                                    <div className="flex size-16 shrink-0 items-center justify-center rounded-full border-4 border-white bg-neon-500/20 text-xl font-bold text-neon-600 dark:border-pencil-950 dark:text-neon-400">
                                         {item.step}
                                     </div>
                                     <div className="pt-3">
-                                        <h3 className="text-lg font-semibold text-pencil-100">{item.title}</h3>
-                                        <p className="mt-1 text-pencil-400">{item.desc}</p>
+                                        <h3 className="text-lg font-semibold text-pencil-900 dark:text-pencil-100">{item.title}</h3>
+                                        <p className="mt-1 text-pencil-600 dark:text-pencil-400">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}

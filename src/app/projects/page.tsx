@@ -28,20 +28,20 @@ function ProjectCard({
     return (
         <div
             id={id}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-800 bg-pencil-900/50 p-8 transition-all hover:border-neon-500/50 hover:shadow-lg hover:shadow-neon-500/10"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-200 bg-white p-8 transition-all hover:border-neon-500/50 hover:shadow-lg hover:shadow-neon-500/10 dark:border-pencil-800 dark:bg-pencil-900/50"
         >
-            <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-neon-500/10 text-neon-400">
+            <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-neon-500/10 text-neon-600 dark:text-neon-400">
                 {icon}
             </div>
-            <h3 className="text-lg font-semibold text-pencil-100">{title}</h3>
-            <p className="mt-2 flex-1 text-sm text-pencil-400">{description}</p>
+            <h3 className="text-lg font-semibold text-pencil-900 dark:text-pencil-100">{title}</h3>
+            <p className="mt-2 flex-1 text-sm text-pencil-600 dark:text-pencil-400">{description}</p>
 
             <div className="mt-4">
                 <h4 className="text-xs font-semibold uppercase tracking-wide text-pencil-500">交付項目</h4>
                 <ul className="mt-2 space-y-1">
                     {deliverables.map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-pencil-300">
-                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-400" />
+                        <li key={index} className="flex items-start gap-2 text-sm text-pencil-600 dark:text-pencil-300">
+                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-500" />
                             {item}
                         </li>
                     ))}
@@ -50,13 +50,14 @@ function ProjectCard({
 
             <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((tag, index) => (
-                    <span key={index} className="rounded-full bg-pencil-800 px-3 py-1 text-xs text-pencil-300">
+                    <span key={index} className="rounded-full bg-pencil-100 px-3 py-1 text-xs text-pencil-600 dark:bg-pencil-800 dark:text-pencil-300">
                         {tag}
                     </span>
                 ))}
             </div>
         </div>
     )
+
 }
 
 // Icons
@@ -128,7 +129,7 @@ export default function ProjectsPage() {
                 id="hero"
                 headline="專案與能力"
                 subheadline={
-                    <p className="text-pencil-300">
+                    <p className="text-pencil-600 dark:text-pencil-300">
                         用「做過什麼、怎麼做、交付什麼」建立信任。
                         <br />
                         從飛行模擬到 AI 系統，我們已成功交付多種類型的專案。
@@ -150,8 +151,8 @@ export default function ProjectsPage() {
             <section id="projects" className="py-16 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">已完成專案</h2>
-                        <p className="mt-4 text-pencil-400">以下是我們已成功交付的專案類型。</p>
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">已完成專案</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">以下是我們已成功交付的專案類型。</p>
                     </div>
 
                     <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
@@ -204,11 +205,11 @@ export default function ProjectsPage() {
             </section>
 
             {/* Capability Matrix */}
-            <section className="bg-pencil-900/30 py-16 sm:py-24">
+            <section className="bg-pencil-50 py-16 sm:py-24 dark:bg-pencil-900/30">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">能力矩陣</h2>
-                        <p className="mt-4 text-pencil-400">我們的核心能力涵蓋以下領域，可依需求組合。</p>
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">能力矩陣</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">我們的核心能力涵蓋以下領域，可依需求組合。</p>
                     </div>
 
                     <div className="mx-auto mt-16 max-w-4xl">
@@ -221,12 +222,12 @@ export default function ProjectsPage() {
                             ].map((group, index) => (
                                 <div
                                     key={index}
-                                    className="rounded-xl border border-pencil-800 bg-pencil-950/50 p-6"
+                                    className="rounded-xl border border-pencil-200 bg-white p-6 dark:border-pencil-800 dark:bg-pencil-950/50"
                                 >
-                                    <h3 className="text-lg font-bold text-neon-400">{group.category}</h3>
+                                    <h3 className="text-lg font-bold text-neon-600 dark:text-neon-400">{group.category}</h3>
                                     <ul className="mt-4 space-y-2">
                                         {group.items.map((item, idx) => (
-                                            <li key={idx} className="text-sm text-pencil-300">
+                                            <li key={idx} className="text-sm text-pencil-600 dark:text-pencil-300">
                                                 {item}
                                             </li>
                                         ))}
@@ -242,8 +243,8 @@ export default function ProjectsPage() {
             <section className="py-16 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">合作方式</h2>
-                        <p className="mt-4 text-pencil-400">我們提供多種合作模式，滿足不同階段的需求。</p>
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">合作方式</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">我們提供多種合作模式，滿足不同階段的需求。</p>
                     </div>
 
                     <div className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
@@ -271,11 +272,11 @@ export default function ProjectsPage() {
                         ].map((mode, index) => (
                             <div
                                 key={index}
-                                className="rounded-xl border border-pencil-800 bg-pencil-900/50 p-6 text-center transition-all hover:border-neon-500/50"
+                                className="rounded-xl border border-pencil-200 bg-white p-6 text-center transition-all hover:border-neon-500/50 dark:border-pencil-800 dark:bg-pencil-900/50"
                             >
                                 <div className="mb-4 text-4xl">{mode.icon}</div>
-                                <h3 className="text-lg font-semibold text-pencil-100">{mode.title}</h3>
-                                <p className="mt-2 text-sm text-pencil-400">{mode.desc}</p>
+                                <h3 className="text-lg font-semibold text-pencil-900 dark:text-pencil-100">{mode.title}</h3>
+                                <p className="mt-2 text-sm text-pencil-600 dark:text-pencil-400">{mode.desc}</p>
                             </div>
                         ))}
                     </div>

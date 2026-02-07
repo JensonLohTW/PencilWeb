@@ -59,153 +59,107 @@ function AIIcon() {
 
 export default function Page() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-pencil-50 text-pencil-950 dark:bg-black dark:text-white">
       {/* Hero Section */}
-      <div className="relative isolate pt-14">
-        {/* Background Effects */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-neon-500 to-accent-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          />
-        </div>
-
-        <HeroSimpleCentered
-          id="hero"
-          headline={
-            <span className="text-glow">
-              一切空間的動態
-              <br className="max-sm:hidden" />
-              都來自於 <span className="text-gradient-neon">Pencil</span>
+      <HeroSimpleCentered
+        id="hero"
+        eyebrow={
+          <div className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-pencil-600 border border-black/10 dark:text-pencil-300 dark:border-white/10">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-500"></span>
             </span>
-          }
-          subheadline={
-            <div className="flex flex-col gap-6">
-              <p className="text-lg leading-8 text-pencil-300 sm:text-xl">
-                把 AI 與 XR 融入真實場域，打造可落地的沉浸式互動與智慧空間體驗。
-              </p>
-              <div className="glass-panel mx-auto flex max-w-fit items-center gap-4 rounded-full px-6 py-2 text-sm text-pencil-200">
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-neon-500 shadow-[0_0_10px_var(--color-neon-500)]" /> XR
-                </span>
-                <span className="h-4 w-px bg-pencil-700" />
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-accent-500 shadow-[0_0_10px_var(--color-accent-500)]" /> AI
-                </span>
-                <span className="h-4 w-px bg-pencil-700" />
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_10px_white]" /> Smart Space
-                </span>
-              </div>
-            </div>
-          }
-          cta={
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <ButtonLink href="/contact" size="lg" className="glow-neon border-neon-500/50 bg-neon-500/10 text-neon-400 hover:bg-neon-500/20">
-                預約 Demo
-              </ButtonLink>
-              <PlainButtonLink href="/solutions" size="lg" className="text-pencil-300 hover:text-pencil-100">
-                探索解決方案 <ArrowNarrowRightIcon />
-              </PlainButtonLink>
-            </div>
-          }
-        />
+            Pencil XR Solutions
+          </div>
+        }
+        headline={
+          <span className="text-glow-strong">
+            一切空間的動態
+            <br className="max-sm:hidden" />
+            都來自於 <span className="text-gradient-neon">Pencil</span>
+          </span>
+        }
+        subheadline={
+          <div className="flex flex-col gap-8">
+            <p className="text-lg leading-relaxed text-pencil-600 sm:text-xl font-light tracking-wide dark:text-pencil-300">
+              我們將 AI 與 XR 技術注入真實場域，<br className="hidden sm:inline" />打造可落地的沉浸式互動與智慧空間體驗。
+            </p>
 
-        {/* Bottom Background Effect */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-neon-500 to-accent-500 opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          />
-        </div>
-      </div>
+            {/* Tech Badges */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="hud-border-sm rounded px-3 py-1 text-xs font-mono text-neon-600 dark:text-neon-400">XR_IMMERSIVE</span>
+              <span className="hud-border-sm rounded px-3 py-1 text-xs font-mono text-accent-600 dark:text-accent-400">AI_AGENT</span>
+              <span className="hud-border-sm rounded px-3 py-1 text-xs font-mono text-pencil-900 dark:text-white">IOT_SENSORS</span>
+            </div>
+          </div>
+        }
+        cta={
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <ButtonLink href="/contact" size="lg" className="bg-neon-600 hover:bg-neon-500 text-white border-0 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all">
+              預約 Demo
+            </ButtonLink>
+            <PlainButtonLink href="/solutions" size="lg" className="text-pencil-900 hover:text-neon-600 font-mono tracking-wide dark:text-white dark:hover:text-neon-400">
+              探索解決方案 &gt;
+            </PlainButtonLink>
+          </div>
+        }
+      />
 
       {/* Pain → Solution Section (Features) */}
-      <div className="relative py-24 sm:py-32">
+      <div className="relative py-24 sm:py-32 bg-white dark:bg-pencil-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pencil-100/50 via-white to-white opacity-50 dark:from-pencil-900/50 dark:via-black dark:to-black" />
+
         <FeaturesThreeColumn
-          id="pain-solution"
-          eyebrow={<span className="text-accent-400 text-glow">Solutions</span>}
-          headline={
-            <span className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-glow">
-              從教育訓練到智慧空間<br className="hidden sm:inline" /> 全方位 XR × AI 解決方案
-            </span>
-          }
-          subheadline={
-            <p className="text-lg leading-8 text-pencil-300">
-              無論是提升訓練效率、強化現場資訊呈現、還是讓空間更智能，我們都能為您提供可落地的解決方案。
-            </p>
-          }
+          id="solutions"
+          headline={null} // FeaturesThreeColumn might expect headline, but we handle layout manually or pass content
           features={
             <>
+              <div className="md:col-span-2 lg:col-span-3 text-center mb-16">
+                <h2 className="text-3xl font-bold tracking-tight text-pencil-900 sm:text-4xl text-glow mb-4 dark:text-white">
+                  從教育訓練到智慧空間<br className="hidden sm:inline" /> 全方位 XR × AI 解決方案
+                </h2>
+                <p className="text-lg leading-8 text-pencil-600 max-w-2xl mx-auto dark:text-pencil-400">
+                  無論是提升訓練效率、強化現場資訊呈現、還是讓空間更智能，我們都能為您提供可落地的解決方案。
+                </p>
+              </div>
+
               <Feature
-                className="glass-card card-hover rounded-2xl p-8"
-                icon={<div className="mb-4 inline-flex rounded-lg bg-neon-500/10 p-3 text-neon-400 shadow-[0_0_15px_var(--color-neon-500)_inset]"><VRIcon /></div>}
-                headline={<span className="text-xl font-semibold text-white">沉浸式教育訓練</span>}
-                subheadline={
-                  <p className="mt-4 leading-7 text-pencil-400">
-                    透過 <span className="text-neon-400">VR/MR</span> 模擬真實場景，讓學員在零風險環境下反覆練習，提升操作安全性與記憶留存率。
-                  </p>
-                }
+                icon={<VRIcon />}
+                headline="沉浸式教育訓練"
+                subheadline="透過 VR/MR 模擬真實場景，讓學員在零風險環境下反覆練習，提升操作安全性與記憶留存率。"
                 cta={
-                  <Link href="/solutions#xr-training" className="mt-6 flex items-center text-sm font-semibold leading-6 text-neon-400 hover:text-neon-300">
-                    了解更多 <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
+                  <Link href="/solutions#xr-training" className="flex items-center text-sm font-bold text-neon-400 hover:text-white uppercase tracking-wider font-mono">
+                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
                   </Link>
                 }
               />
               <Feature
-                className="glass-card card-hover rounded-2xl p-8"
-                icon={<div className="mb-4 inline-flex rounded-lg bg-accent-500/10 p-3 text-accent-400 shadow-[0_0_15px_var(--color-accent-500)_inset]"><ARIcon /></div>}
-                headline={<span className="text-xl font-semibold text-white">AR 現場視覺化</span>}
-                subheadline={
-                  <p className="mt-4 leading-7 text-pencil-400">
-                    將數位資訊疊加於真實世界，讓設備數據、導覽指引或維修步驟直觀呈現，實現<span className="text-accent-400">數位孿生</span>落地應用。
-                  </p>
-                }
+                icon={<ARIcon />}
+                headline="AR 現場視覺化"
+                subheadline="將數位資訊疊加於真實世界，讓設備數據、導覽指引或維修步驟直觀呈現，實現數位孿生應用。"
                 cta={
-                  <Link href="/solutions#ar-visualization" className="mt-6 flex items-center text-sm font-semibold leading-6 text-accent-400 hover:text-accent-300">
-                    了解更多 <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
+                  <Link href="/solutions#ar-visualization" className="flex items-center text-sm font-bold text-accent-400 hover:text-white uppercase tracking-wider font-mono">
+                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
                   </Link>
                 }
               />
               <Feature
-                className="glass-card card-hover rounded-2xl p-8"
-                icon={<div className="mb-4 inline-flex rounded-lg bg-neon-500/10 p-3 text-neon-400 shadow-[0_0_15px_var(--color-neon-500)_inset]"><SmartSpaceIcon /></div>}
-                headline={<span className="text-xl font-semibold text-white">空間智慧化</span>}
-                subheadline={
-                  <p className="mt-4 leading-7 text-pencil-400">
-                    整合 IoT 感測器與互動裝置，賦予空間感知能力。打造會呼吸、能互動的<span className="text-neon-400">未來建築</span>與展演場域。
-                  </p>
-                }
+                icon={<SmartSpaceIcon />}
+                headline="空間智慧化"
+                subheadline="整合 IoT 感測器與互動裝置，賦予空間感知能力。打造會呼吸、能互動的未來建築與展演場域。"
                 cta={
-                  <Link href="/solutions#smart-space" className="mt-6 flex items-center text-sm font-semibold leading-6 text-neon-400 hover:text-neon-300">
-                    了解更多 <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
+                  <Link href="/solutions#smart-space" className="flex items-center text-sm font-bold text-neon-400 hover:text-white uppercase tracking-wider font-mono">
+                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
                   </Link>
                 }
               />
               <Feature
-                className="glass-card card-hover rounded-2xl p-8"
-                icon={<div className="mb-4 inline-flex rounded-lg bg-white/10 p-3 text-white shadow-[0_0_15px_white_inset]"><AIIcon /></div>}
-                headline={<span className="text-xl font-semibold text-white">企業 AI 應用</span>}
-                subheadline={
-                  <p className="mt-4 leading-7 text-pencil-400">
-                    專為企業打造的私有化 AI Agent 與 Knowledge Base。從自動化客服到文檔分析，讓 AI 成為您的<span className="text-white">最強大腦</span>。
-                  </p>
-                }
+                icon={<AIIcon />}
+                headline="企業 AI 應用"
+                subheadline="專為企業打造的私有化 AI Agent 與 Knowledge Base。從自動化客服到文檔分析，讓 AI 成為您的最強大腦。"
                 cta={
-                  <Link href="/solutions#ai-for-sme" className="mt-6 flex items-center text-sm font-semibold leading-6 text-white hover:text-pencil-300">
-                    了解更多 <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
+                  <Link href="/solutions#ai-for-sme" className="flex items-center text-sm font-bold text-pencil-900 hover:text-pencil-600 uppercase tracking-wider font-mono dark:text-white dark:hover:text-pencil-300">
+                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
                   </Link>
                 }
               />
@@ -215,167 +169,103 @@ export default function Page() {
       </div>
 
       {/* Projects Section */}
-      <section id="projects" className="relative py-16 sm:py-24 overflow-hidden">
-        {/* Background Glow */}
-        <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-500/20 blur-[100px]" />
+      <section id="projects" className="relative py-24 overflow-hidden border-t border-black/5 dark:border-white/5">
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 h-[500px] w-[500px] rounded-full bg-neon-500/5 blur-[100px]" />
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold text-neon-400 text-glow">Projects</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <p className="text-xs font-mono font-bold text-neon-600 uppercase tracking-widest mb-2 dark:text-neon-500">Projects</p>
+            <h2 className="text-3xl font-bold tracking-tight text-pencil-900 sm:text-4xl dark:text-white">
               專案實績 Showcase
             </h2>
-            <p className="mt-4 text-pencil-300 text-lg">
-              從飛行模擬到 AI 系統，我們致力於將前瞻技術轉化為實際價值。
-            </p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Project Card 1 */}
-            <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-800 bg-pencil-900/40 p-8 transition-all duration-300 hover:scale-105 hover:border-neon-500/50 hover:bg-pencil-900/60 hover:shadow-2xl hover:shadow-neon-500/20">
-              <div className="mb-6 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-400 shadow-[0_0_15px_var(--color-neon-500)_inset]">
-                <VRIcon />
-              </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-neon-400 transition-colors">飛行模擬系統</h3>
-              <p className="mt-3 flex-1 text-base text-pencil-400 group-hover:text-pencil-300">
+            <div className="glass-panel p-8 rounded-2xl border-black/5 hover:border-neon-500/50 transition-all duration-300 group dark:border-white/5">
+              <div className="mb-6 text-neon-600 dark:text-neon-500"><VRIcon /></div>
+              <h3 className="text-xl font-bold text-pencil-900 mb-3 group-hover:text-neon-600 dark:text-white dark:group-hover:text-neon-400">飛行模擬系統</h3>
+              <p className="text-pencil-600 mb-6 text-sm leading-relaxed dark:text-pencil-400">
                 高擬真度飛行模擬器開發，整合六軸動態平台與 VR 視覺，提供軍規級的沉浸式飛行訓練體驗。
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">VR</span>
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">Unity</span>
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">硬體整合</span>
+              <div className="flex gap-2">
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">UNITY</span>
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">VR</span>
               </div>
             </div>
 
             {/* Project Card 2 */}
-            <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-800 bg-pencil-900/40 p-8 transition-all duration-300 hover:scale-105 hover:border-neon-500/50 hover:bg-pencil-900/60 hover:shadow-2xl hover:shadow-neon-500/20">
-              <div className="mb-6 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-400 shadow-[0_0_15px_var(--color-neon-500)_inset]">
-                <VRIcon />
-              </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-neon-400 transition-colors">飛行教育訓練課程</h3>
-              <p className="mt-3 flex-1 text-base text-pencil-400 group-hover:text-pencil-300">
+            <div className="glass-panel p-8 rounded-2xl border-black/5 hover:border-neon-500/50 transition-all duration-300 group dark:border-white/5">
+              <div className="mb-6 text-neon-600 dark:text-neon-500"><VRIcon /></div>
+              <h3 className="text-xl font-bold text-pencil-900 mb-3 group-hover:text-neon-600 dark:text-white dark:group-hover:text-neon-400">飛行教育訓練</h3>
+              <p className="text-pencil-600 mb-6 text-sm leading-relaxed dark:text-pencil-400">
                 結合 LMS 系統與 VR 技術，建立完整的飛行員培訓考核機制，實現訓練數據化與視覺化。
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">LMS</span>
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">VR</span>
+              <div className="flex gap-2">
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">LMS</span>
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">DATA</span>
               </div>
             </div>
 
             {/* Project Card 3 */}
-            <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-pencil-800 bg-pencil-900/40 p-8 transition-all duration-300 hover:scale-105 hover:border-accent-500/50 hover:bg-pencil-900/60 hover:shadow-2xl hover:shadow-accent-500/20">
-              <div className="mb-6 flex size-14 items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 shadow-[0_0_15px_var(--color-accent-500)_inset]">
-                <AIIcon />
-              </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">AI Agent 企業查詢系統</h3>
-              <p className="mt-3 flex-1 text-base text-pencil-400 group-hover:text-pencil-300">
+            <div className="glass-panel p-8 rounded-2xl border-black/5 hover:border-accent-500/50 transition-all duration-300 group dark:border-white/5">
+              <div className="mb-6 text-accent-600 dark:text-accent-500"><AIIcon /></div>
+              <h3 className="text-xl font-bold text-pencil-900 mb-3 group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-400">AI 企業查詢</h3>
+              <p className="text-pencil-600 mb-6 text-sm leading-relaxed dark:text-pencil-400">
                 基於 RAG 技術的企業級 AI 知識庫，讓員工用自然語言即可查詢複雜的內部規章與技術文件。
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">LLM</span>
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">RAG</span>
-                <span className="rounded-full border border-pencil-700 bg-pencil-950/50 px-3 py-1 text-xs font-medium text-pencil-300 backdrop-blur-sm">Python</span>
+              <div className="flex gap-2">
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">LLM</span>
+                <span className="text-[10px] font-mono border border-black/10 px-2 py-1 rounded text-pencil-600 dark:border-white/10 dark:text-pencil-500">RAG</span>
               </div>
             </div>
           </div>
 
           <div className="mt-12 text-center">
-            <PlainButtonLink href="/projects" className="text-pencil-300 hover:text-white">
-              查看更多專案 <ChevronIcon />
+            <PlainButtonLink href="/projects" className="text-pencil-600 hover:text-pencil-900 font-mono text-sm tracking-widest uppercase dark:text-pencil-500 dark:hover:text-white">
+              // View All Projects
             </PlainButtonLink>
           </div>
         </div>
       </section>
 
       {/* Technology Section */}
-      <section id="technology" className="relative py-16 sm:py-24">
-        <div className="absolute inset-0 bg-pencil-900/20 backdrop-blur-sm -z-10" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold text-accent-400 text-glow">Core Technology</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              OASIS 願景：打造元宇宙互動體驗
-            </h2>
-            <p className="mt-4 text-pencil-400">
-              整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造完整的沉浸式體驗堆疊。
-            </p>
+      <section id="technology" className="relative py-24 bg-pencil-900 overflow-hidden dark:bg-black">
+        {/* Animated Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none opacity-50" />
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">OASIS 願景</h2>
+            <p className="text-pencil-400">整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術</p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:mt-20 lg:max-w-4xl lg:grid-cols-3">
-            {[
-              { name: 'XR (VR/MR/XR)', desc: '沉浸式視覺體驗', color: 'neon' },
-              { name: 'Omni-Treadmill', desc: '全向移動裝置整合', color: 'pencil' },
-              { name: 'Haptics', desc: '觸覺回饋技術', color: 'pencil' },
-              { name: 'AI & Big Data', desc: 'NPC、個人化、查詢', color: 'accent' },
-              { name: '5G / 6G', desc: '低延遲高速傳輸', color: 'pencil' },
-              { name: 'Multi-Sensory', desc: '五感互動體驗', color: 'pencil' },
-            ].map((tech, index) => (
-              <div
-                key={index}
-                className={`glass-card group flex flex-col items-center justify-center rounded-xl p-8 text-center transition-all hover:scale-105 hover:bg-pencil-900/80 ${tech.color === 'neon' ? 'hover:border-neon-500/50 hover:shadow-neon-500/20' :
-                    tech.color === 'accent' ? 'hover:border-accent-500/50 hover:shadow-accent-500/20' :
-                      'hover:border-pencil-500/50'
-                  }`}
-              >
-                <h3 className={`text-lg font-bold text-white ${tech.color === 'neon' ? 'group-hover:text-neon-400' :
-                    tech.color === 'accent' ? 'group-hover:text-accent-400' : ''
-                  }`}>{tech.name}</h3>
-                <p className="mt-2 text-sm text-pencil-400">{tech.desc}</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Tech Stats / Cards */}
+            {['XR Core', 'Omni-Move', 'Haptics', 'AI Brain', '5G Link', 'Sensory'].map((item, i) => (
+              <div key={i} className="hud-border bg-black/50 p-6 rounded flex flex-col items-center justify-center text-center aspect-square hover:bg-neon-500/10 transition-colors cursor-default">
+                <span className="text-xs font-mono text-pencil-500 mb-2">SYSTEM_0{i + 1}</span>
+                <span className="font-bold text-white">{item}</span>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <PlainButtonLink href="/technology" className="text-pencil-300 hover:text-white">
-              了解技術核心 <ChevronIcon />
-            </PlainButtonLink>
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <div className="border-t border-pencil-800/50 bg-pencil-950/30">
-        <FAQsTwoColumnAccordion id="faqs" headline="常見問題">
-          <Faq
-            id="faq-1"
-            question="你們提供哪些類型的解決方案？"
-            answer="我們提供四大類解決方案：VR/MR 沉浸式訓練、AR 視覺化、智慧空間 IoT 整合，以及中小企業 AI 應用導入。每個方案都可依據您的需求客製化。"
-          />
-          <Faq
-            id="faq-2"
-            question="導入 XR 或 AI 解決方案需要多長時間？"
-            answer="視專案規模而定，一般 PoC 驗證約 1-3 個月，完整專案開發約 3-6 個月。我們會在需求訪談後提供詳細的時程規劃。"
-          />
-          <Faq
-            id="faq-3"
-            question="你們服務的產業範圍？"
-            answer="我們服務範圍涵蓋教育訓練、航空、製造業、展演館、零售、以及各類需要智慧空間或 AI 應用的中小企業。"
-          />
-          <Faq
-            id="faq-4"
-            question="如何開始合作？"
-            answer="您可以透過本站預約 Demo 或填寫需求表單，我們會在 2 個工作天內與您聯繫，安排需求訪談與方案建議。"
-          />
-        </FAQsTwoColumnAccordion>
-      </div>
-
       {/* Call To Action */}
       <CallToActionSimple
         id="call-to-action"
-        headline={<span className="text-glow">準備好讓空間動起來了嗎？</span>}
+        headline={<span className="text-glow-strong text-4xl sm:text-5xl">Ready to Launch?</span>}
         subheadline={
-          <p className="text-pencil-300">
+          <p className="text-pencil-600 text-lg max-w-xl mx-auto mt-6 dark:text-pencil-300">
             無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。
           </p>
         }
         cta={
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <ButtonLink href="/contact" size="lg" className="glow-neon border-neon-500/50 bg-neon-500/10 text-neon-400 hover:bg-neon-500/20">
-              預約 Demo
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
+            <ButtonLink href="/contact" size="lg" className="bg-pencil-900 text-white hover:bg-pencil-800 font-bold px-8 dark:bg-white dark:text-black dark:hover:bg-pencil-200">
+              立即諮詢
             </ButtonLink>
-            <PlainButtonLink href="/contact" size="lg" className="text-pencil-300 hover:text-white">
-              填寫需求表單 <ChevronIcon />
-            </PlainButtonLink>
           </div>
         }
       />

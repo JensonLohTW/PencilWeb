@@ -17,7 +17,7 @@ export default function ContactPage() {
                 id="hero"
                 headline="聯絡我們"
                 subheadline={
-                    <p className="text-pencil-300">
+                    <p className="text-pencil-600 dark:text-pencil-300">
                         無論是預約 Demo、詢問報價或討論合作，我們都期待與您交流。
                     </p>
                 }
@@ -29,8 +29,8 @@ export default function ContactPage() {
                     <div className="grid gap-16 lg:grid-cols-2">
                         {/* Form */}
                         <div>
-                            <h2 className="text-2xl font-bold text-pencil-100">填寫需求表單</h2>
-                            <p className="mt-2 text-pencil-400">
+                            <h2 className="text-2xl font-bold text-pencil-900 dark:text-pencil-100">填寫需求表單</h2>
+                            <p className="mt-2 text-pencil-600 dark:text-pencil-400">
                                 填寫以下資訊，我們會在 2 個工作天內與您聯繫。
                             </p>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
                                 {/* Contact Info */}
                                 <div className="grid gap-6 sm:grid-cols-2">
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-pencil-200">
+                                        <label htmlFor="name" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                             姓名 *
                                         </label>
                                         <input
@@ -46,12 +46,12 @@ export default function ContactPage() {
                                             id="name"
                                             name="name"
                                             required
-                                            className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 placeholder:text-pencil-500 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                            className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                                             placeholder="您的姓名"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="company" className="block text-sm font-medium text-pencil-200">
+                                        <label htmlFor="company" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                             公司名稱 *
                                         </label>
                                         <input
@@ -59,7 +59,7 @@ export default function ContactPage() {
                                             id="company"
                                             name="company"
                                             required
-                                            className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 placeholder:text-pencil-500 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                            className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                                             placeholder="公司名稱"
                                         />
                                     </div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
 
                                 <div className="grid gap-6 sm:grid-cols-2">
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-pencil-200">
+                                        <label htmlFor="email" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                             Email *
                                         </label>
                                         <input
@@ -75,19 +75,19 @@ export default function ContactPage() {
                                             id="email"
                                             name="email"
                                             required
-                                            className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 placeholder:text-pencil-500 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                            className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                                             placeholder="email@example.com"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-pencil-200">
+                                        <label htmlFor="phone" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                             電話
                                         </label>
                                         <input
                                             type="tel"
                                             id="phone"
                                             name="phone"
-                                            className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 placeholder:text-pencil-500 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                            className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                                             placeholder="聯絡電話"
                                         />
                                     </div>
@@ -95,22 +95,22 @@ export default function ContactPage() {
 
                                 {/* Solution Type */}
                                 <div>
-                                    <label className="block text-sm font-medium text-pencil-200">
+                                    <label className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                         想了解的方案類型 *
                                     </label>
                                     <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
                                         {['VR/MR 訓練', 'AR 視覺化', '智慧空間', 'AI 導入', '其他'].map((type) => (
                                             <label
                                                 key={type}
-                                                className="flex cursor-pointer items-center gap-2 rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 transition-all hover:border-neon-500/50"
+                                                className="flex cursor-pointer items-center gap-2 rounded-lg border border-pencil-200 bg-white px-4 py-3 transition-all hover:border-neon-500/50 dark:border-pencil-700 dark:bg-pencil-900"
                                             >
                                                 <input
                                                     type="checkbox"
                                                     name="solutionType"
                                                     value={type}
-                                                    className="size-4 rounded border-pencil-600 bg-pencil-800 text-neon-500 focus:ring-neon-500"
+                                                    className="size-4 rounded border-pencil-300 bg-pencil-50 text-neon-600 focus:ring-neon-500 dark:border-pencil-600 dark:bg-pencil-800 dark:text-neon-500"
                                                 />
-                                                <span className="text-sm text-pencil-200">{type}</span>
+                                                <span className="text-sm text-pencil-700 dark:text-pencil-200">{type}</span>
                                             </label>
                                         ))}
                                     </div>
@@ -118,22 +118,22 @@ export default function ContactPage() {
 
                                 {/* Target Scene */}
                                 <div>
-                                    <label className="block text-sm font-medium text-pencil-200">
+                                    <label className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                         目標場景
                                     </label>
                                     <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
                                         {['教育訓練', '展演', '商業', '工業', '生活應用', '其他'].map((scene) => (
                                             <label
                                                 key={scene}
-                                                className="flex cursor-pointer items-center gap-2 rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 transition-all hover:border-neon-500/50"
+                                                className="flex cursor-pointer items-center gap-2 rounded-lg border border-pencil-200 bg-white px-4 py-3 transition-all hover:border-neon-500/50 dark:border-pencil-700 dark:bg-pencil-900"
                                             >
                                                 <input
                                                     type="checkbox"
                                                     name="targetScene"
                                                     value={scene}
-                                                    className="size-4 rounded border-pencil-600 bg-pencil-800 text-neon-500 focus:ring-neon-500"
+                                                    className="size-4 rounded border-pencil-300 bg-pencil-50 text-neon-600 focus:ring-neon-500 dark:border-pencil-600 dark:bg-pencil-800 dark:text-neon-500"
                                                 />
-                                                <span className="text-sm text-pencil-200">{scene}</span>
+                                                <span className="text-sm text-pencil-700 dark:text-pencil-200">{scene}</span>
                                             </label>
                                         ))}
                                     </div>
@@ -141,13 +141,13 @@ export default function ContactPage() {
 
                                 {/* Timeline */}
                                 <div>
-                                    <label htmlFor="timeline" className="block text-sm font-medium text-pencil-200">
+                                    <label htmlFor="timeline" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                         預計時程
                                     </label>
                                     <select
                                         id="timeline"
                                         name="timeline"
-                                        className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                        className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100"
                                     >
                                         <option value="">請選擇</option>
                                         <option value="1-3">1-3 個月</option>
@@ -159,14 +159,14 @@ export default function ContactPage() {
 
                                 {/* Message */}
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-pencil-200">
+                                    <label htmlFor="message" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                                         補充說明
                                     </label>
                                     <textarea
                                         id="message"
                                         name="message"
                                         rows={4}
-                                        className="mt-2 w-full rounded-lg border border-pencil-700 bg-pencil-900 px-4 py-3 text-pencil-100 placeholder:text-pencil-500 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500"
+                                        className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-neon-500 focus:outline-none focus:ring-1 focus:ring-neon-500 dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                                         placeholder="請描述您的需求或問題..."
                                     />
                                 </div>
@@ -179,8 +179,8 @@ export default function ContactPage() {
 
                         {/* Info */}
                         <div>
-                            <div className="rounded-2xl border border-pencil-800 bg-pencil-900/50 p-8">
-                                <h3 className="text-xl font-bold text-pencil-100">送出後您會得到</h3>
+                            <div className="rounded-2xl border border-pencil-200 bg-white p-8 dark:border-pencil-800 dark:bg-pencil-900/50">
+                                <h3 className="text-xl font-bold text-pencil-900 dark:text-pencil-100">送出後您會得到</h3>
                                 <ul className="mt-6 space-y-4">
                                     {[
                                         '2 個工作天內專人回覆',
@@ -188,8 +188,8 @@ export default function ContactPage() {
                                         '預約線上或現場 Demo',
                                         '詳細報價與時程規劃',
                                     ].map((item, index) => (
-                                        <li key={index} className="flex items-start gap-3 text-pencil-300">
-                                            <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-neon-500/20 text-xs font-bold text-neon-400">
+                                        <li key={index} className="flex items-start gap-3 text-pencil-600 dark:text-pencil-300">
+                                            <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-neon-500/20 text-xs font-bold text-neon-600 dark:text-neon-400">
                                                 {index + 1}
                                             </span>
                                             {item}
@@ -198,15 +198,15 @@ export default function ContactPage() {
                                 </ul>
                             </div>
 
-                            <div className="mt-8 rounded-2xl border border-pencil-800 bg-pencil-900/50 p-8">
-                                <h3 className="text-xl font-bold text-pencil-100">聯絡資訊</h3>
-                                <div className="mt-6 space-y-4 text-pencil-300">
+                            <div className="mt-8 rounded-2xl border border-pencil-200 bg-white p-8 dark:border-pencil-800 dark:bg-pencil-900/50">
+                                <h3 className="text-xl font-bold text-pencil-900 dark:text-pencil-100">聯絡資訊</h3>
+                                <div className="mt-6 space-y-4 text-pencil-600 dark:text-pencil-300">
                                     <p>
                                         <span className="text-pencil-500">地點：</span>高雄市
                                     </p>
                                     <p>
                                         <span className="text-pencil-500">Email：</span>
-                                        <a href="mailto:contact@pencil.space" className="text-neon-400 hover:underline">
+                                        <a href="mailto:contact@pencil.space" className="text-neon-600 hover:underline dark:text-neon-400">
                                             contact@pencil.space
                                         </a>
                                     </p>

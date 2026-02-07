@@ -23,22 +23,23 @@ function TechModule({
     features: string[]
 }) {
     return (
-        <div className="rounded-2xl border border-pencil-800 bg-pencil-900/50 p-8 transition-all hover:border-neon-500/50">
-            <div className="mb-4 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-400">
+        <div className="rounded-2xl border border-pencil-200 bg-white p-8 transition-all hover:border-neon-500/50 dark:border-pencil-800 dark:bg-pencil-900/50">
+            <div className="mb-4 flex size-14 items-center justify-center rounded-xl bg-neon-500/10 text-neon-600 dark:text-neon-400">
                 {icon}
             </div>
-            <h3 className="text-xl font-bold text-pencil-100">{title}</h3>
-            <p className="mt-3 text-pencil-400">{description}</p>
+            <h3 className="text-xl font-bold text-pencil-900 dark:text-pencil-100">{title}</h3>
+            <p className="mt-3 text-pencil-600 dark:text-pencil-400">{description}</p>
             <ul className="mt-4 space-y-2">
                 {features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm text-pencil-300">
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-400" />
+                    <li key={index} className="flex items-start gap-2 text-sm text-pencil-600 dark:text-pencil-300">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-neon-500" />
                         {feature}
                     </li>
                 ))}
             </ul>
         </div>
     )
+
 }
 
 // Icons
@@ -128,7 +129,7 @@ export default function TechnologyPage() {
                 id="hero"
                 headline="技術核心"
                 subheadline={
-                    <p className="text-pencil-300">
+                    <p className="text-pencil-600 dark:text-pencil-300">
                         以 OASIS 為願景，整合 XR 裝置、AI 大數據、高速網路與五感技術，
                         <br />
                         打造真正可落地的沉浸式互動體驗。
@@ -150,9 +151,9 @@ export default function TechnologyPage() {
             <section className="py-16 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <p className="text-sm font-semibold text-neon-400">六大技術模組</p>
-                        <h2 className="mt-2 text-3xl font-bold tracking-tight text-pencil-100">核心技術堆疊</h2>
-                        <p className="mt-4 text-pencil-400">
+                        <p className="text-sm font-semibold text-neon-600 dark:text-neon-400">六大技術模組</p>
+                        <h2 className="mt-2 text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">核心技術堆疊</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">
                             我們整合多種技術，打造完整的沉浸式體驗生態系統。
                         </p>
                     </div>
@@ -204,11 +205,11 @@ export default function TechnologyPage() {
             </section>
 
             {/* System Integration */}
-            <section className="bg-pencil-900/30 py-16 sm:py-24">
+            <section className="bg-pencil-50 py-16 sm:py-24 dark:bg-pencil-900/30">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">系統整合流程</h2>
-                        <p className="mt-4 text-pencil-400">
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">系統整合流程</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">
                             從硬體到平台，我們提供完整的系統整合能力。
                         </p>
                     </div>
@@ -217,14 +218,14 @@ export default function TechnologyPage() {
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
                             {['資料來源', 'API 整合', '後端處理', '前端呈現', '裝置輸出'].map((step, index) => (
                                 <div key={index} className="relative">
-                                    <div className="rounded-xl border border-pencil-800 bg-pencil-950/50 p-4 text-center">
-                                        <div className="mx-auto mb-2 flex size-10 items-center justify-center rounded-full bg-neon-500/20 text-sm font-bold text-neon-400">
+                                    <div className="rounded-xl border border-pencil-200 bg-white p-4 text-center dark:border-pencil-800 dark:bg-pencil-950/50">
+                                        <div className="mx-auto mb-2 flex size-10 items-center justify-center rounded-full bg-neon-500/20 text-sm font-bold text-neon-600 dark:text-neon-400">
                                             {index + 1}
                                         </div>
-                                        <p className="text-sm font-medium text-pencil-200">{step}</p>
+                                        <p className="text-sm font-medium text-pencil-700 dark:text-pencil-200">{step}</p>
                                     </div>
                                     {index < 4 && (
-                                        <div className="absolute right-0 top-1/2 hidden h-0.5 w-4 -translate-y-1/2 translate-x-full bg-pencil-700 sm:block" />
+                                        <div className="absolute right-0 top-1/2 hidden h-0.5 w-4 -translate-y-1/2 translate-x-full bg-pencil-300 dark:bg-pencil-700 sm:block" />
                                     )}
                                 </div>
                             ))}
@@ -237,8 +238,8 @@ export default function TechnologyPage() {
             <section className="py-16 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-pencil-100">可靠性與交付</h2>
-                        <p className="mt-4 text-pencil-400">
+                        <h2 className="text-3xl font-bold tracking-tight text-pencil-900 dark:text-pencil-100">可靠性與交付</h2>
+                        <p className="mt-4 text-pencil-600 dark:text-pencil-400">
                             我們確保每個專案都能穩定落地、持續運作。
                         </p>
                     </div>
@@ -263,11 +264,11 @@ export default function TechnologyPage() {
                         ].map((item, index) => (
                             <div
                                 key={index}
-                                className="rounded-xl border border-pencil-800 bg-pencil-900/50 p-6 text-center"
+                                className="rounded-xl border border-pencil-200 bg-white p-6 text-center dark:border-pencil-800 dark:bg-pencil-900/50"
                             >
                                 <div className="mb-4 text-3xl">{item.icon}</div>
-                                <h3 className="text-lg font-semibold text-pencil-100">{item.title}</h3>
-                                <p className="mt-2 text-sm text-pencil-400">{item.desc}</p>
+                                <h3 className="text-lg font-semibold text-pencil-900 dark:text-pencil-100">{item.title}</h3>
+                                <p className="mt-2 text-sm text-pencil-600 dark:text-pencil-400">{item.desc}</p>
                             </div>
                         ))}
                     </div>
