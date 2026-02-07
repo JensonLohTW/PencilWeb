@@ -1,7 +1,7 @@
 import { ButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
-import { PricingHeroMultiTier } from '@/components/sections/pricing-hero-multi-tier'
-import { LogoGrid } from '@/components/sections/logo-grid'
+import { PricingHeroMultiTier } from '@/components/sections/pricing/pricing-hero-multi-tier'
+import { LogoGrid } from '@/components/sections/social-proof/logo-grid'
 
 // Helper for Pricing Plans
 const plans = (period: string) => [

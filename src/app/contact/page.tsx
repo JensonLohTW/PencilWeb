@@ -1,6 +1,6 @@
 import { ButtonLink } from '@/components/elements/button'
-import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
-import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
+import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faq/faqs-two-column-accordion'
+import { HeroSimpleCentered } from '@/components/sections/hero/hero-simple-centered'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

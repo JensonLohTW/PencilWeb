@@ -7,12 +7,14 @@ import {
   FooterLink,
   FooterWithNewsletterFormCategoriesAndSocialIcons,
   SocialLink,
-} from '@/components/sections/footer-with-newsletter-form-categories-and-social-icons'
+} from '@/components/sections/layout/footer-with-newsletter-form-categories-and-social-icons'
 import {
   NavbarLink,
   NavbarLogo,
   NavbarWithLinksActionsAndCenteredLogo,
-} from '@/components/sections/navbar-with-links-actions-and-centered-logo'
+} from '@/components/sections/layout/navbar-with-links-actions-and-centered-logo'
+import { CustomCursor } from '@/components/ui/custom-cursor'
+import { NoiseOverlay } from '@/components/ui/noise-overlay'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -40,6 +42,8 @@ export default function RootLayout({
       </head>
       <body>
         <>
+          <NoiseOverlay />
+          <CustomCursor />
           <NavbarWithLinksActionsAndCenteredLogo
             id="navbar"
             links={

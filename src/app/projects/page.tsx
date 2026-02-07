@@ -1,7 +1,7 @@
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
-import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
+import { CallToActionSimple } from '@/components/sections/cta/call-to-action-simple'
+import { HeroSimpleCentered } from '@/components/sections/hero/hero-simple-centered'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

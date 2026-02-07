@@ -1,9 +1,9 @@
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
-import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
-import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
+import { CallToActionSimple } from '@/components/sections/cta/call-to-action-simple'
+import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faq/faqs-two-column-accordion'
+import { HeroSimpleCentered } from '@/components/sections/hero/hero-simple-centered'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

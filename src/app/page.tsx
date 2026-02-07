@@ -1,21 +1,13 @@
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
-import { Link } from '@/components/elements/link'
-import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
-import { ChevronIcon } from '@/components/icons/chevron-icon'
-import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
-import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
-import { Feature, FeaturesThreeColumn } from '@/components/sections/features-three-column'
-import { HeroSimpleCentered } from '@/components/sections/hero-simple-centered'
+import { CallToActionSimple } from '@/components/sections/cta/call-to-action-simple'
+import { SolutionsGrid } from '@/components/sections/features/solutions-grid'
+import { HeroSimpleCentered } from '@/components/sections/hero/hero-simple-centered'
 
-import { VRIcon } from '@/components/icons/vr-icon'
-import { ARIcon } from '@/components/icons/ar-icon'
-import { SmartSpaceIcon } from '@/components/icons/smart-space-icon'
-import { AIIcon } from '@/components/icons/ai-icon'
-import { ProjectsGrid } from '@/components/sections/projects-grid'
-import { TechnologyHudGrid } from '@/components/sections/technology-hud-grid'
-import { TrustClients } from '@/components/sections/trust-clients'
-import { TestimonialsMarquee } from '@/components/sections/testimonials-marquee'
-import { FaqSimple } from '@/components/sections/faq-simple'
+import { ProjectsGrid } from '@/components/sections/features/projects-grid'
+import { TechnologyHudGrid } from '@/components/sections/features/technology-hud-grid'
+import { TrustClients } from '@/components/sections/social-proof/trust-clients'
+import { TestimonialsMarquee } from '@/components/sections/social-proof/testimonials-marquee'
+import { FaqSimple } from '@/components/sections/faq/faq-simple'
 
 
 export default function Page() {
@@ -66,68 +58,8 @@ export default function Page() {
         }
       />
 
-      {/* Pain → Solution Section (Features) */}
-      <div className="relative py-24 sm:py-32 bg-white dark:bg-pencil-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pencil-100/50 via-white to-white opacity-50 dark:from-pencil-900/50 dark:via-black dark:to-black" />
-
-        <FeaturesThreeColumn
-          id="solutions"
-          headline={null} // FeaturesThreeColumn might expect headline, but we handle layout manually or pass content
-          features={
-            <>
-              <div className="md:col-span-2 lg:col-span-3 text-center mb-16">
-                <h2 className="text-3xl font-bold tracking-tight text-pencil-900 sm:text-4xl text-glow mb-4 dark:text-white">
-                  從教育訓練到智慧空間<br className="hidden sm:inline" /> 全方位 XR × AI 解決方案
-                </h2>
-                <p className="text-lg leading-8 text-pencil-600 max-w-2xl mx-auto dark:text-pencil-400">
-                  無論是提升訓練效率、強化現場資訊呈現、還是讓空間更智能，我們都能為您提供可落地的解決方案。
-                </p>
-              </div>
-
-              <Feature
-                icon={<VRIcon />}
-                headline="沉浸式教育訓練"
-                subheadline="透過 VR/MR 模擬真實場景，讓學員在零風險環境下反覆練習，提升操作安全性與記憶留存率。"
-                cta={
-                  <Link href="/solutions#xr-training" className="flex items-center text-sm font-bold text-cta hover:text-white uppercase tracking-wider font-mono">
-                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
-                  </Link>
-                }
-              />
-              <Feature
-                icon={<ARIcon />}
-                headline="AR 現場視覺化"
-                subheadline="將數位資訊疊加於真實世界，讓設備數據、導覽指引或維修步驟直觀呈現，實現數位孿生應用。"
-                cta={
-                  <Link href="/solutions#ar-visualization" className="flex items-center text-sm font-bold text-cta hover:text-white uppercase tracking-wider font-mono">
-                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
-                  </Link>
-                }
-              />
-              <Feature
-                icon={<SmartSpaceIcon />}
-                headline="空間智慧化"
-                subheadline="整合 IoT 感測器與互動裝置，賦予空間感知能力。打造會呼吸、能互動的未來建築與展演場域。"
-                cta={
-                  <Link href="/solutions#smart-space" className="flex items-center text-sm font-bold text-cta hover:text-white uppercase tracking-wider font-mono">
-                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
-                  </Link>
-                }
-              />
-              <Feature
-                icon={<AIIcon />}
-                headline="企業 AI 應用"
-                subheadline="專為企業打造的私有化 AI Agent 與 Knowledge Base。從自動化客服到文檔分析，讓 AI 成為您的最強大腦。"
-                cta={
-                  <Link href="/solutions#ai-for-sme" className="flex items-center text-sm font-bold text-pencil-900 hover:text-pencil-600 uppercase tracking-wider font-mono dark:text-white dark:hover:text-pencil-300">
-                    Details <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
-                  </Link>
-                }
-              />
-            </>
-          }
-        />
-      </div>
+      {/* Pro Max Solutions Section */}
+      <SolutionsGrid className="bg-white dark:bg-pencil-950" />
 
       <TrustClients />
 
