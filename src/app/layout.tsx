@@ -63,7 +63,7 @@ export default function RootLayout({
                 <PlainButtonLink href="/contact" className="max-sm:hidden">
                   聯絡我們
                 </PlainButtonLink>
-                <ButtonLink href="/contact">預約 Demo</ButtonLink>
+                <ButtonLink href="/contact" className="bg-cta text-white hover:bg-cta/90 border-0">預約 Demo</ButtonLink>
               </>
             }
           />

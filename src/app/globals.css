@@ -17,33 +17,54 @@
   --color-pencil-950: #020617;
   /* Deepest Black */
 
-  --color-neon-50: #f0fdf4;
-  --color-neon-100: #dcfce7;
-  --color-neon-200: #bbf7d0;
-  --color-neon-300: #86efac;
-  --color-neon-400: #4ade80;
-  --color-neon-500: #22c55e;
-  --color-neon-600: #16a34a;
-  --color-neon-700: #15803d;
-  --color-neon-800: #166534;
-  --color-neon-900: #14532d;
-  --color-neon-950: #052e16;
+  /* New Brand Orange: #C4682F (Close to 600 weight) */
+  --color-neon-50: #fff8f1;
+  --color-neon-100: #ffecd9;
+  --color-neon-200: #ffd5b0;
+  --color-neon-300: #ffb680;
+  --color-neon-400: #ff8e4d;
+  --color-neon-500: #e07a3e;
+  --color-neon-600: #c4682f;
+  /* Brand Color */
+  --color-neon-700: #9e4f20;
+  --color-neon-800: #7d3e1d;
+  --color-neon-900: #66341b;
+  --color-neon-950: #38190b;
 
-  --color-accent-50: #ecfeff;
-  --color-accent-100: #cffafe;
-  --color-accent-200: #a5f3fc;
-  --color-accent-300: #67e8f9;
-  --color-accent-400: #22d3ee;
-  --color-accent-500: #06b6d4;
-  --color-accent-600: #0891b2;
-  --color-accent-700: #0e7490;
-  --color-accent-800: #155e75;
-  --color-accent-900: #164e63;
-  --color-accent-950: #083344;
+  /* Accent mapped to Brand Orange for consistency */
+  --color-accent-50: #fff8f1;
+  --color-accent-100: #ffecd9;
+  --color-accent-200: #ffd5b0;
+  --color-accent-300: #ffb680;
+  --color-accent-400: #ff8e4d;
+  --color-accent-500: #e07a3e;
+  --color-accent-600: #c4682f;
+  --color-accent-700: #9e4f20;
+  --color-accent-800: #7d3e1d;
+  --color-accent-900: #66341b;
+  --color-accent-950: #38190b;
+
+  --color-cta: #C4682F;
+  --color-background: #F8FAFC;
+  --color-text: #020617;
+
+  /* Spacing Variables */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 
   --color-primary: #0F172A;
   --color-secondary: #334155;
-  --color-cta: #0369A1;
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -91,6 +112,50 @@
       transform: translate(0)
     }
   }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      backgroundPosition: 0 0;
+    }
+
+    to {
+      backgroundPosition: -200% 0;
+    }
+  }
+
+
 }
 
 /* Base Styles */
@@ -157,25 +222,31 @@
 /* Utilities */
 @layer utilities {
   .glass-pro {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px) saturate(160%);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   }
 
   :is(.dark) .glass-pro {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
   }
 
-  /* @media (prefers-color-scheme: dark) {
-    .glass-pro {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-  } */
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.04), 0 4px 8px -2px rgba(0, 0, 0, 0.02);
+  }
+
+  :is(.dark) .glass-nav {
+    background: rgba(2, 6, 23, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
 
   .hud-border {
     position: relative;
@@ -245,15 +316,23 @@
 
   .text-glow-strong {
     text-shadow:
-      0 0 10px rgba(6, 182, 212, 0.5),
-      0 0 20px rgba(6, 182, 212, 0.3),
-      0 0 40px rgba(6, 182, 212, 0.1);
+      0 0 10px rgba(196, 104, 47, 0.5),
+      0 0 20px rgba(196, 104, 47, 0.3),
+      0 0 40px rgba(196, 104, 47, 0.1);
   }
 
   .text-glow-neon {
     text-shadow:
-      0 0 5px rgba(34, 197, 94, 0.5),
-      0 0 15px rgba(34, 197, 94, 0.3);
+      0 0 5px rgba(196, 104, 47, 0.5),
+      0 0 15px rgba(196, 104, 47, 0.3);
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(to right, var(--color-neon-400), var(--color-neon-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
 
   .glitch-text-effect {
@@ -262,6 +341,14 @@
 
   .glitch-text-effect:hover {
     animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-    color: var(--color-accent-400);
+    color: var(--color-neon-500);
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
   }
 }

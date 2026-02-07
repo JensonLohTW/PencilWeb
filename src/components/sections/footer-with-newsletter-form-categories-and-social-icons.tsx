@@ -7,7 +7,7 @@ import { ArrowNarrowRightIcon } from '../icons/arrow-narrow-right-icon'
 export function FooterCategory({ title, children, ...props }: { title: ReactNode } & ComponentProps<'div'>) {
   return (
     <div {...props}>
-      <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-neon-500 mb-4 border-b border-neon-500/20 pb-2 inline-block">
+      <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-cta mb-4 border-b border-cta/20 pb-2 inline-block">
         &gt; {title}
       </h3>
       <ul role="list" className="flex flex-col gap-3 font-mono text-sm">
@@ -24,7 +24,7 @@ export function FooterLink({ href, className, ...props }: { href: string } & Omi
         href={href}
         {...props}
         className={clsx(
-          'text-pencil-600 hover:text-neon-600 hover:translate-x-1 transition-all duration-200 inline-block dark:text-pencil-400 dark:hover:text-neon-400',
+          'text-pencil-600 hover:text-cta hover:translate-x-1 transition-all duration-200 inline-block dark:text-pencil-400 dark:hover:text-cta',
           className
         )}
       />
@@ -46,7 +46,7 @@ export function SocialLink({
       href={href}
       target="_blank"
       aria-label={name}
-      className={clsx('text-pencil-400 hover:text-neon-600 transition-colors *:size-5 dark:hover:text-neon-400', className)}
+      className={clsx('text-pencil-400 hover:text-cta transition-colors *:size-5 dark:hover:text-cta', className)}
       {...props}
     />
   )
@@ -63,11 +63,11 @@ export function NewsletterForm({
 } & ComponentProps<'form'>) {
   return (
     <form className={clsx('flex max-w-sm flex-col gap-4', className)} {...props}>
-      <div className="font-mono text-neon-600 text-sm dark:text-neon-400">root@pencil:~/subscribe $</div>
+      <div className="font-mono text-cta text-sm dark:text-cta">root@pencil:~/subscribe $</div>
       <div className="text-pencil-900 font-bold text-lg dark:text-white">{headline}</div>
       <div className="text-pencil-600 text-sm font-mono dark:text-pencil-400">{subheadline}</div>
-      <div className="flex items-center border border-pencil-200 bg-white p-1 rounded group focus-within:border-neon-500 transition-colors dark:border-pencil-700 dark:bg-pencil-900/50">
-        <span className="pl-3 text-neon-600 font-mono text-sm dark:text-neon-500">&gt;</span>
+      <div className="flex items-center border border-pencil-200 bg-white p-1 rounded group focus-within:border-cta transition-colors dark:border-pencil-700 dark:bg-pencil-900/50">
+        <span className="pl-3 text-cta font-mono text-sm dark:text-cta">&gt;</span>
         <input
           type="email"
           placeholder="input_email"
@@ -77,7 +77,7 @@ export function NewsletterForm({
         <button
           type="submit"
           aria-label="Subscribe"
-          className="bg-pencil-200 text-pencil-900 p-2 rounded hover:bg-neon-600 hover:text-white transition-colors dark:bg-pencil-800 dark:text-white"
+          className="bg-pencil-200 text-pencil-900 p-2 rounded hover:bg-cta hover:text-white transition-colors dark:bg-pencil-800 dark:text-white"
         >
           <ArrowNarrowRightIcon className="size-4" />
         </button>
@@ -135,7 +135,7 @@ export function FooterWithNewsletterFormCategoriesAndSocialIcons({
             {fineprint}
           </div>
           <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-neon-500 animate-pulse" />
+            <span className="size-2 rounded-full bg-cta animate-pulse" />
             <span>SYSTEM ONLINE</span>
           </div>
         </div>

@@ -20,7 +20,7 @@
 |------|-----|--------------|
 | Primary | `#0F172A` | `--color-primary` |
 | Secondary | `#334155` | `--color-secondary` |
-| CTA/Accent | `#0369A1` | `--color-cta` |
+| CTA/Accent | `#C4682F` | `--color-cta` |
 | Background | `#F8FAFC` | `--color-background` |
 | Text | `#020617` | `--color-text` |
 

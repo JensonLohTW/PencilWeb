@@ -54,12 +54,12 @@ export default function Page() {
             <div
               key={plan.name}
               className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${plan.featured
-                ? 'bg-white border-neon-500/50 shadow-[0_0_30px_rgba(34,197,94,0.1)] scale-105 z-10 dark:bg-white/5'
+                ? 'bg-white border-cta/50 shadow-[0_0_30px_rgba(196,104,47,0.15)] scale-105 z-10 dark:bg-white/5'
                 : 'bg-white border-black/10 hover:border-black/20 dark:bg-black/40 dark:border-white/10 dark:hover:border-white/20'
                 }`}
             >
               {plan.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cta text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   Recommended
                 </div>
               )}
@@ -71,7 +71,7 @@ export default function Page() {
               <ul className="space-y-4 mb-8 flex-1">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center text-sm text-pencil-600 dark:text-pencil-300">
-                    <span className={`mr-3 size-1.5 rounded-full ${plan.featured ? 'bg-neon-500' : 'bg-pencil-500'}`} />
+                    <span className={`mr-3 size-1.5 rounded-full ${plan.featured ? 'bg-cta' : 'bg-pencil-500'}`} />
                     {feature}
                   </li>
                 ))}
@@ -80,7 +80,7 @@ export default function Page() {
               <ButtonLink
                 href={plan.href}
                 className={`w-full justify-center ${plan.featured
-                  ? 'bg-neon-600 hover:bg-neon-500 text-white border-0'
+                  ? 'bg-cta hover:bg-cta/90 text-white border-0'
                   : 'bg-black/5 hover:bg-black/10 text-pencil-900 border-0 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white'
                   }`}
               >
