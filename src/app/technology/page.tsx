@@ -130,7 +130,7 @@ export default function TechnologyPage() {
                 headline="技術核心"
                 subheadline={
                     <p className="text-pencil-600 dark:text-pencil-300">
-                        以 OASIS 為願景，整合 XR 裝置、AI 大數據、高速網路與五感技術，
+                        以 OASIS 為願景，整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，
                         <br />
                         打造真正可落地的沉浸式互動體驗。
                     </p>

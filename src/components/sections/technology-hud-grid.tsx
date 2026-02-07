@@ -6,8 +6,15 @@ export function TechnologyHudGrid() {
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-white mb-4">OASIS 願景</h2>
-                    <p className="text-pencil-400">整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術</p>
+                    <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">
+                        <span className="text-neon-500">OASIS</span> 願景
+                    </h2>
+                    <p className="text-pencil-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                        整合 <span className="text-white font-medium">XR 裝置</span>、
+                        <span className="text-white font-medium">AI 大數據</span>、
+                        <span className="text-white font-medium">5G/6G 網路</span>與
+                        <span className="text-white font-medium">五感技術</span>
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

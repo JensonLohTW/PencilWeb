@@ -16,7 +16,7 @@ export default function AboutPage() {
           We Build The <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-600 to-accent-600 dark:from-neon-400 dark:to-accent-400">OASIS</span>
         </h1>
         <p className="max-w-2xl mx-auto text-pencil-600 text-lg dark:text-pencil-400">
-          空間動態科技致力於整合虛實邊界，創造下一個世代的沉浸式互動體驗。
+          空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。
         </p>
       </div>
 
