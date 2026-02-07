@@ -5,9 +5,9 @@ import { clsx } from 'clsx/lite'
 
 export function TechnologyHudGrid() {
     return (
-        <section id="technology" className="relative py-24 bg-pencil-900 overflow-hidden dark:bg-black">
+        <section id="technology" className="relative py-24 bg-white overflow-hidden dark:bg-black">
             {/* Animated Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none opacity-50" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none opacity-50 dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]" />
 
             {/* Radial Gradient Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-900/10 rounded-full blur-3xl pointer-events-none" />
@@ -36,9 +36,9 @@ export function TechnologyHudGrid() {
                     {/* Center Core OASIS */}
                     <div className="relative group shrink-0">
                         <div className="absolute inset-0 bg-neon-500/20 blur-[60px] rounded-full animate-pulse-glow" />
-                        <div className="relative w-64 h-64 rounded-full border border-neon-500/30 bg-black/40 backdrop-blur-md flex flex-col items-center justify-center shadow-[0_0_30px_rgba(196,104,47,0.3)] border-t-neon-500/80 border-b-neon-500/80">
+                        <div className="relative w-64 h-64 rounded-full border border-neon-500/30 bg-white/40 backdrop-blur-md flex flex-col items-center justify-center shadow-[0_0_30px_rgba(196,104,47,0.3)] border-t-neon-500/80 border-b-neon-500/80 dark:bg-black/40">
                             <div className="absolute inset-2 rounded-full border border-dashed border-neon-500/20 animate-slow-spin" />
-                            <span className="text-4xl font-bold text-white tracking-widest text-glow-strong">OASIS</span>
+                            <span className="text-4xl font-bold text-pencil-950 tracking-widest text-glow-strong dark:text-white">OASIS</span>
                             <span className="text-xs font-mono text-neon-400 mt-2 tracking-[0.2em] animate-pulse">VISION_CORE</span>
                         </div>
 
@@ -68,7 +68,7 @@ export function TechnologyHudGrid() {
                 </div>
 
                 <div className="text-center mt-16 max-w-2xl mx-auto">
-                    <p className="text-pencil-300">
+                    <p className="text-pencil-600 dark:text-pencil-300">
                         整合 <span className="text-neon-400 font-medium">虛擬與現實</span> 的最終疆界，打造全感知沉浸生態系。
                     </p>
                 </div>
@@ -80,7 +80,7 @@ export function TechnologyHudGrid() {
 function TechCard({ title, subtitle, code, icon, align = 'left' }: { title: string, subtitle: string, code: string, icon?: React.ReactNode, align?: 'left' | 'right' }) {
     return (
         <div className={clsx(
-            "group relative p-6 rounded-xl border border-pencil-800 bg-black/40 backdrop-blur-sm transition-all hover:border-neon-500/50 hover:bg-neon-900/10",
+            "group relative p-6 rounded-xl border border-pencil-200 bg-white/40 backdrop-blur-sm transition-all hover:border-neon-500/50 hover:bg-neon-900/10 dark:border-pencil-800 dark:bg-black/40",
             align === 'right' ? "lg:pr-8" : "lg:pl-8"
         )}>
             <div className={clsx(
@@ -89,8 +89,8 @@ function TechCard({ title, subtitle, code, icon, align = 'left' }: { title: stri
             )} />
 
             <div className="text-xs font-mono text-pencil-500 mb-1">{code}</div>
-            <h3 className="text-xl font-bold text-white group-hover:text-neon-400 transition-colors">{title}</h3>
-            <p className="text-sm text-pencil-400 mt-1">{subtitle}</p>
+            <h3 className="text-xl font-bold text-pencil-950 group-hover:text-neon-400 transition-colors dark:text-white">{title}</h3>
+            <p className="text-sm text-pencil-600 mt-1 dark:text-pencil-400">{subtitle}</p>
         </div>
     )
 }
