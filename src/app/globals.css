@@ -1,32 +1,152 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Familjen Grotesk', sans-serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* 字體系統 */
+  --font-display: 'Inter', 'Noto Sans TC', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans TC', system-ui, sans-serif;
 
-  --color-mist-50: oklch(98.7% 0.002 197.1);
-  --color-mist-100: oklch(96.3% 0.002 197.1);
-  --color-mist-200: oklch(92.5% 0.005 214.3);
-  --color-mist-300: oklch(87.2% 0.007 219.6);
-  --color-mist-400: oklch(72.3% 0.014 214.4);
-  --color-mist-500: oklch(56% 0.021 213.5);
-  --color-mist-600: oklch(45% 0.017 213.2);
-  --color-mist-700: oklch(37.8% 0.015 216);
-  --color-mist-800: oklch(27.5% 0.011 216.9);
-  --color-mist-900: oklch(21.8% 0.008 223.9);
-  --color-mist-950: oklch(14.8% 0.004 228.8);
+  /* Pencil 品牌色彩 - 深色科技感 (Refined) */
+  /* 主色調：深藍黑漸層 - 更深邃 */
+  --color-pencil-50: oklch(98% 0.01 250);
+  --color-pencil-100: oklch(95% 0.02 250);
+  --color-pencil-200: oklch(88% 0.03 250);
+  --color-pencil-300: oklch(78% 0.04 250);
+  --color-pencil-400: oklch(65% 0.06 250);
+  --color-pencil-500: oklch(52% 0.08 250);
+  --color-pencil-600: oklch(42% 0.08 250);
+  --color-pencil-700: oklch(32% 0.07 250);
+  --color-pencil-800: oklch(22% 0.05 250);
+  --color-pencil-900: oklch(14% 0.03 250);
+  --color-pencil-950: oklch(6% 0.02 250);
+  /* Deepest black-blue */
+
+  /* 霓虹強調色：電光藍 (Cyan/Blue) - 更亮眼 */
+  --color-neon-50: oklch(99% 0.02 200);
+  --color-neon-100: oklch(95% 0.05 200);
+  --color-neon-200: oklch(90% 0.10 200);
+  --color-neon-300: oklch(82% 0.15 200);
+  --color-neon-400: oklch(72% 0.20 200);
+  --color-neon-500: oklch(62% 0.22 200);
+  /* Primary Action */
+  --color-neon-600: oklch(52% 0.20 200);
+  --color-neon-700: oklch(42% 0.16 200);
+  --color-neon-800: oklch(32% 0.10 200);
+  --color-neon-900: oklch(22% 0.06 200);
+  --color-neon-950: oklch(14% 0.04 200);
+
+  /* 輔助強調色：霓虹紫 (Purple/Pink) - 用於漸層與點綴 */
+  --color-accent-50: oklch(99% 0.02 300);
+  --color-accent-100: oklch(96% 0.05 300);
+  --color-accent-200: oklch(90% 0.10 300);
+  --color-accent-300: oklch(82% 0.15 300);
+  --color-accent-400: oklch(72% 0.22 300);
+  --color-accent-500: oklch(62% 0.25 300);
+  /* Secondary Action */
+  --color-accent-600: oklch(52% 0.22 300);
+  --color-accent-700: oklch(42% 0.16 300);
+  --color-accent-800: oklch(32% 0.10 300);
+  --color-accent-900: oklch(22% 0.06 300);
+  --color-accent-950: oklch(14% 0.04 300);
+
+  /* 相容性別名 */
+  --color-mist-50: var(--color-pencil-50);
+  --color-mist-100: var(--color-pencil-100);
+  --color-mist-200: var(--color-pencil-200);
+  --color-mist-300: var(--color-pencil-300);
+  --color-mist-400: var(--color-pencil-400);
+  --color-mist-500: var(--color-pencil-500);
+  --color-mist-600: var(--color-pencil-600);
+  --color-mist-700: var(--color-pencil-700);
+  --color-mist-800: var(--color-pencil-800);
+  --color-mist-900: var(--color-pencil-900);
+  --color-mist-950: var(--color-pencil-950);
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-mist-100);
-    --scroll-padding-top: 0;
+    background-color: var(--color-pencil-950);
+    color: var(--color-pencil-100);
+    --scroll-padding-top: 4rem;
+    /* For fixed navbar */
     scroll-padding-top: var(--scroll-padding-top);
 
     @variant dark {
-      background-color: var(--color-mist-950);
+      background-color: var(--color-pencil-950);
     }
+  }
+
+  /* 科技感背景紋理 */
+  body {
+    background-image:
+      radial-gradient(circle at 50% 0%, var(--color-neon-500) / 0.05, transparent 60%),
+      radial-gradient(circle at 80% 40%, var(--color-accent-500) / 0.03, transparent 40%),
+      radial-gradient(circle at 10% 80%, var(--color-neon-500) / 0.03, transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+/* 高級質感 Utilities */
+@layer utilities {
+
+  /* 霓虹光暈 */
+  .glow-neon {
+    box-shadow:
+      0 0 15px var(--color-neon-500) / 0.3,
+      0 0 30px var(--color-neon-500) / 0.1;
+  }
+
+  .glow-accent {
+    box-shadow:
+      0 0 15px var(--color-accent-500) / 0.3,
+      0 0 30px var(--color-accent-500) / 0.1;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px var(--color-neon-500) / 0.5;
+  }
+
+  /* 漸層文字 */
+  .text-gradient-neon {
+    background: linear-gradient(135deg, var(--color-neon-400), var(--color-accent-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-suble {
+    background: linear-gradient(to right, var(--color-pencil-100), var(--color-pencil-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 玻璃擬態面板 */
+  .glass-panel {
+    background: var(--color-pencil-900) / 0.4;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-pencil-800);
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, var(--color-pencil-900) / 0.6, var(--color-pencil-950) / 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--color-pencil-800);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  }
+
+  /* 互動效果 */
+  .card-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .card-hover:hover {
+    border-color: var(--color-neon-500) / 0.5;
+    box-shadow: 0 0 20px var(--color-neon-500) / 0.15;
+    transform: translateY(-2px);
   }
 }

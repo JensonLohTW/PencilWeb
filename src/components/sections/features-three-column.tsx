@@ -6,12 +6,14 @@ export function Feature({
   icon,
   headline,
   subheadline,
+  cta, // Add cta here
   className,
   ...props
 }: {
   icon?: ReactNode
   headline: ReactNode
   subheadline: ReactNode
+  cta?: ReactNode // Add cta type here
 } & ComponentProps<'div'>) {
   return (
     <div className={clsx('flex flex-col gap-2 text-sm/7', className)} {...props}>
@@ -20,6 +22,7 @@ export function Feature({
         <h3 className="font-semibold">{headline}</h3>
       </div>
       <div className="flex flex-col gap-4 text-mist-700 dark:text-mist-400">{subheadline}</div>
+      {cta && <div className="mt-2">{cta}</div>}
     </div>
   )
 }
