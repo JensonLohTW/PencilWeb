@@ -18,6 +18,7 @@ export default function Page() {
       <SwissHomeHero
         headline={t('pages.home.hero.headline')}
         subheadline={t('pages.home.hero.subheadline')}
+        eyebrow={t('pages.home.hero.eyebrow')}
       />
 
       {/* Solutions */}

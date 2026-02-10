@@ -22,8 +22,10 @@ export function SwissHomeTech() {
             {/* Section Header */}
             <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">{t('nav.technology')}</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">Tech Stack</h2>
+                    <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{t('nav.technology')}</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+                        {t('pages.home.technology.title')}
+                    </h2>
                 </div>
                 <Link
                     href="/technology"
@@ -45,7 +47,7 @@ export function SwissHomeTech() {
                         className="group"
                     >
                         {/* Number */}
-                        <span className="swiss-mono text-pencil-600">{tech.number}</span>
+                        <span className="swiss-mono text-pencil-600 dark:text-pencil-500">{tech.number}</span>
 
                         {/* Title */}
                         <h3 className="mt-2 text-2xl font-bold text-pencil-950 transition-colors group-hover:text-cta lg:text-3xl dark:text-white">
@@ -53,7 +55,7 @@ export function SwissHomeTech() {
                         </h3>
 
                         {/* Subtitle */}
-                        <p className="swiss-mono mt-1 text-pencil-500">{tech.subtitle}</p>
+                        <p className="swiss-mono mt-1 text-pencil-500 dark:text-pencil-400">{tech.subtitle}</p>
                     </motion.div>
                 ))}
             </div>

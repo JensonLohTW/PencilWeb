@@ -30,12 +30,12 @@ export function Footer() {
                     >
                         {t('footer.cta.title')}
                     </h3>
-                    <p className="max-w-md text-pencil-500">
+                    <p className="max-w-md text-pencil-500 dark:text-pencil-400">
                         {t('footer.cta.description')}
                     </p>
                     <ButtonLink
                         href="/contact"
-                        className="inline-flex border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta"
+                        className="inline-flex border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
                     >
                         {t('nav.demo')} →
                     </ButtonLink>

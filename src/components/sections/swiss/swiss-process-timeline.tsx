@@ -20,7 +20,7 @@ export function SwissProcessTimeline() {
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">{t('pages.solutions.process.eyebrow')}</p>
+                <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{t('pages.solutions.process.eyebrow')}</p>
                 <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
                     {t('pages.solutions.process.title')}
                 </h2>
@@ -51,11 +51,11 @@ export function SwissProcessTimeline() {
 
                             {/* Content */}
                             <h3 className="text-lg font-semibold text-pencil-950 dark:text-white">{step.title}</h3>
-                            <p className="mt-2 text-sm leading-relaxed text-pencil-400">{step.description}</p>
+                            <p className="mt-2 text-sm leading-relaxed text-pencil-400 dark:text-pencil-500">{step.description}</p>
 
                             {/* Connector Arrow (Desktop) */}
                             {index < steps.length - 1 && (
-                                <div className="absolute right-0 top-8 hidden -translate-y-1/2 translate-x-1/2 text-pencil-300 lg:block dark:text-white/30">
+                                <div className="absolute right-0 top-8 hidden -translate-y-1/2 translate-x-1/2 text-pencil-300 lg:block dark:text-white/20">
                                     →
                                 </div>
                             )}

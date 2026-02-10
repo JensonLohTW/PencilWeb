@@ -39,19 +39,37 @@ const itemsEn = [
     },
 ]
 
+const itemsJa = [
+    {
+        number: '01',
+        title: '品質テスト',
+        description: '包括的な機能テスト、パフォーマンステスト、負荷テスト',
+    },
+    {
+        number: '02',
+        title: 'デバイス互換性',
+        description: 'クロスプラットフォーム、クロスデバイス互換性検証',
+    },
+    {
+        number: '03',
+        title: '継続的なメンテナンス',
+        description: 'システム監視、トラブルシューティング、バージョン更新',
+    },
+]
+
 export function SwissQualityAssurance() {
     const { language } = useLanguage()
-    const items = language === 'zh-TW' ? itemsZhTw : itemsEn
+    const items = language === 'zh-TW' ? itemsZhTw : language === 'ja' ? itemsJa : itemsEn
 
-    const eyebrow = language === 'zh-TW' ? '可靠性保證' : 'Reliability'
-    const title = language === 'zh-TW' ? '可靠性與交付' : 'Quality Assurance'
+    const eyebrow = language === 'zh-TW' ? '可靠性保證' : language === 'ja' ? '信頼性' : 'Reliability'
+    const title = language === 'zh-TW' ? '可靠性與交付' : language === 'ja' ? '品質保証' : 'Quality Assurance'
 
     return (
-        <section className="border-t border-pencil-200 px-6 py-24 lg:px-16">
+        <section className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
+                <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
             </div>
 
             {/* Grid */}
@@ -66,14 +84,14 @@ export function SwissQualityAssurance() {
                         className="group"
                     >
                         {/* Number */}
-                        <span className="block text-6xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-7xl">
+                        <span className="block text-6xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-7xl dark:text-white/20">
                             {item.number}
                         </span>
 
                         {/* Content */}
-                        <div className="mt-4 border-t border-pencil-200 pt-4">
-                            <h3 className="text-xl font-semibold text-pencil-950">{item.title}</h3>
-                            <p className="mt-2 text-sm leading-relaxed text-pencil-600">{item.description}</p>
+                        <div className="mt-4 border-t border-pencil-200 pt-4 dark:border-white/10">
+                            <h3 className="text-xl font-semibold text-pencil-950 dark:text-white">{item.title}</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-pencil-600 dark:text-pencil-400">{item.description}</p>
                         </div>
                     </motion.div>
                 ))}

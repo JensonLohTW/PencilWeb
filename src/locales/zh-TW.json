@@ -56,8 +56,15 @@
     "pages": {
         "home": {
             "hero": {
+                "eyebrow": "XR • AI • IoT",
                 "headline": "一切空間的動態都來自於 Pencil",
                 "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+            },
+            "technology": {
+                "title": "技術架構"
+            },
+            "clients": {
+                "title": "合作夥伴"
             },
             "solutions": {
                 "eyebrow": "我們的解決方案",

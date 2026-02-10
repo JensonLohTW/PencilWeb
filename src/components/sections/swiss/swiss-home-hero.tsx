@@ -7,11 +7,12 @@ import { TypewriterText } from '@/components/ui/typewriter-text'
 interface SwissHomeHeroProps {
     headline: string
     subheadline: string
+    eyebrow: string
 }
 
-export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
+export function SwissHomeHero({ headline, subheadline, eyebrow }: SwissHomeHeroProps) {
     return (
-        <section className="relative flex min-h-screen flex-col justify-between px-6 pb-12 pt-32 lg:px-16">
+        <section className="relative flex min-h-screen flex-col justify-between px-6 pb-12 pt-32 lg:px-16 dark:bg-pencil-950">
             {/* Main Content */}
             <div className="flex flex-1 flex-col justify-center">
                 {/* Eyebrow */}
@@ -19,9 +20,9 @@ export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                    className="swiss-mono mb-8 text-pencil-500"
+                    className="swiss-mono mb-8 text-pencil-500 dark:text-pencil-400"
                 >
-                    XR / AI / IoT Solutions
+                    {eyebrow}
                 </motion.p>
 
                 {/* Headline */}
@@ -29,7 +30,7 @@ export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
                     initial={{ opacity: 0, y: 60 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
-                    className="max-w-5xl text-pencil-950"
+                    className="max-w-5xl text-pencil-950 dark:text-white"
                     style={{
                         fontSize: 'clamp(3rem, 12vw, 10rem)',
                         fontWeight: 700,
@@ -62,7 +63,7 @@ export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
-                    className="mt-8 max-w-xl text-lg text-pencil-600 lg:text-xl"
+                    className="mt-8 max-w-xl text-lg text-pencil-600 lg:text-xl dark:text-pencil-300"
                 >
                     {subheadline}
                 </motion.p>
@@ -76,13 +77,13 @@ export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
                 >
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 bg-pencil-950 px-8 py-4 text-sm font-medium text-white transition-colors hover:bg-cta"
+                        className="inline-flex items-center gap-2 bg-pencil-950 px-8 py-4 text-sm font-medium text-white transition-colors hover:bg-cta dark:bg-white dark:text-pencil-950 dark:hover:bg-white/90"
                     >
                         預約 Demo <span>→</span>
                     </Link>
                     <Link
                         href="/solutions"
-                        className="inline-flex items-center gap-2 border border-pencil-950 px-8 py-4 text-sm font-medium text-pencil-950 transition-colors hover:border-cta hover:text-cta"
+                        className="inline-flex items-center gap-2 border border-pencil-950 px-8 py-4 text-sm font-medium text-pencil-950 transition-colors hover:border-cta hover:text-cta dark:border-white dark:text-white dark:hover:border-white dark:hover:bg-white/10"
                     >
                         探索解決方案
                     </Link>
@@ -96,15 +97,15 @@ export function SwissHomeHero({ headline, subheadline }: SwissHomeHeroProps) {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="flex items-center gap-4"
             >
-                <div className="h-px flex-1 bg-pencil-200" />
+                <div className="h-px flex-1 bg-pencil-200 dark:bg-white/20" />
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-                    className="swiss-mono text-pencil-400"
+                    className="swiss-mono text-pencil-400 dark:text-pencil-500"
                 >
                     SCROLL
                 </motion.div>
-                <div className="h-px w-16 bg-pencil-200" />
+                <div className="h-px w-16 bg-pencil-200 dark:bg-white/20" />
             </motion.div>
         </section>
     )

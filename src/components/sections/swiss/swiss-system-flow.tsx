@@ -19,18 +19,26 @@ const stepsEn = [
     { number: '05', title: 'Device Output' },
 ]
 
+const stepsJa = [
+    { number: '01', title: 'データソース' },
+    { number: '02', title: 'API統合' },
+    { number: '03', title: 'バックエンド処理' },
+    { number: '04', title: 'フロントエンド描画' },
+    { number: '05', title: 'デバイス出力' },
+]
+
 export function SwissSystemFlow() {
     const { language } = useLanguage()
-    const steps = language === 'zh-TW' ? stepsZhTw : stepsEn
+    const steps = language === 'zh-TW' ? stepsZhTw : language === 'ja' ? stepsJa : stepsEn
 
-    const eyebrow = language === 'zh-TW' ? '從硬體到平台' : 'Hardware to Platform'
-    const title = language === 'zh-TW' ? '系統整合流程' : 'System Integration Flow'
+    const eyebrow = language === 'zh-TW' ? '從硬體到平台' : language === 'ja' ? 'ハードウェアからプラットフォームへ' : 'Hardware to Platform'
+    const title = language === 'zh-TW' ? '系統整合流程' : language === 'ja' ? 'システム統合フロー' : 'System Integration Flow'
 
     return (
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
                 <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
             </div>
 

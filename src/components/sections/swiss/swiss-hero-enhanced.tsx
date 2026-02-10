@@ -51,7 +51,7 @@ export function SwissHeroEnhanced({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                        className="swiss-mono mb-6 text-pencil-500 bg-pencil-100/50 px-3 py-1 w-fit rounded-full backdrop-blur-sm border border-pencil-200"
+                        className="swiss-mono mb-6 text-pencil-500 bg-pencil-100/50 px-3 py-1 w-fit rounded-full backdrop-blur-sm border border-pencil-200 dark:text-pencil-300 dark:bg-white/10 dark:border-white/10"
                     >
                         {eyebrow}
                     </motion.p>
@@ -62,7 +62,7 @@ export function SwissHeroEnhanced({
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
-                    className="swiss-heading text-pencil-950 mb-8"
+                    className="swiss-heading text-pencil-950 mb-8 dark:text-white"
                 >
                     <TypewriterText
                         text={headline}
@@ -82,7 +82,7 @@ export function SwissHeroEnhanced({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
                     className={clsx(
-                        "max-w-xl text-lg leading-relaxed text-pencil-600 font-sans",
+                        "max-w-xl text-lg leading-relaxed text-pencil-600 font-sans dark:text-pencil-300",
                         centered && "mx-auto"
                     )}
                 >
@@ -100,7 +100,7 @@ export function SwissHeroEnhanced({
                     >
                         <Link
                             href={ctaHref}
-                            className="group relative inline-flex items-center gap-3 overflow-hidden bg-pencil-950 px-8 py-4 text-white transition-all hover:bg-cta"
+                            className="group relative inline-flex items-center gap-3 overflow-hidden bg-pencil-950 px-8 py-4 text-white transition-all hover:bg-cta dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:text-white"
                         >
                             <span className="relative z-10 text-sm font-medium uppercase tracking-wider">
                                 {ctaText}
@@ -121,8 +121,8 @@ export function SwissHeroEnhanced({
                 transition={{ delay: 1, duration: 0.8 }}
                 className="absolute bottom-12 left-6 lg:left-16 flex items-center gap-4"
             >
-                <div className="h-px w-12 bg-pencil-300" />
-                <span className="swiss-mono text-[10px] text-pencil-400">SCROLL</span>
+                <div className="h-px w-12 bg-pencil-300 dark:bg-white/30" />
+                <span className="swiss-mono text-[10px] text-pencil-400 dark:text-white/50">SCROLL</span>
             </motion.div>
         </section>
     )

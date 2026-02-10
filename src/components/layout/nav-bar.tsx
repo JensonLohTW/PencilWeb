@@ -42,13 +42,13 @@ export function NavBar() {
                     <ThemeToggle className="max-sm:hidden" />
                     <PlainButtonLink
                         href="/contact"
-                        className="max-sm:hidden text-pencil-600 hover:text-pencil-950"
+                        className="max-sm:hidden text-pencil-600 hover:text-pencil-950 dark:text-pencil-400 dark:hover:text-white"
                     >
                         {t('nav.contact')}
                     </PlainButtonLink>
                     <ButtonLink
                         href="/contact"
-                        className="border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta"
+                        className="border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
                     >
                         {t('nav.demo')}
                     </ButtonLink>

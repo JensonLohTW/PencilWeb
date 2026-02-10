@@ -8,6 +8,7 @@ import { useLanguage, type Language } from '../providers/language-provider'
 const languageLabels: Record<Language, { short: string; full: string }> = {
     'zh-TW': { short: '中', full: '中文' },
     en: { short: 'EN', full: 'English' },
+    ja: { short: 'JP', full: '日本語' },
 }
 
 export function LanguageToggle({ className, ...props }: ComponentProps<'button'>) {
@@ -15,7 +16,7 @@ export function LanguageToggle({ className, ...props }: ComponentProps<'button'>
 
     // Toggle language
     const handleToggle = () => {
-        const nextLang = language === 'zh-TW' ? 'en' : 'zh-TW'
+        const nextLang = language === 'zh-TW' ? 'en' : language === 'en' ? 'ja' : 'zh-TW'
         setLanguage(nextLang)
     }
 
@@ -25,7 +26,7 @@ export function LanguageToggle({ className, ...props }: ComponentProps<'button'>
         <button
             type="button"
             onClick={handleToggle}
-            aria-label={`切換語言至 ${language === 'zh-TW' ? 'English' : '中文'}`}
+            aria-label={`切換語言`}
             className={clsx(
                 'swiss-mono inline-flex items-center justify-center px-2 py-1.5 rounded transition-colors',
                 'text-pencil-500 hover:text-pencil-950 hover:bg-pencil-100',

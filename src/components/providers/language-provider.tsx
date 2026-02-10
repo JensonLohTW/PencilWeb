@@ -3,14 +3,15 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import zhTw from '../../locales/zh-TW.json'
 import en from '../../locales/en.json'
+import ja from '../../locales/ja.json'
 
 // Types
-export type Language = 'zh-TW' | 'en'
+export type Language = 'zh-TW' | 'en' | 'ja'
 
 interface LanguageContextValue {
     language: Language
     setLanguage: (lang: Language) => void
-    t: (key: string) => string
+    t: (key: string) => any
 }
 
 // Storage key
@@ -20,6 +21,7 @@ const STORAGE_KEY = 'language-preference'
 const translations: Record<Language, any> = {
     'zh-TW': zhTw,
     en: en,
+    ja: ja,
 }
 
 // Context with defaults
@@ -34,7 +36,7 @@ function getInitialLanguage(): Language {
     if (typeof window === 'undefined') return 'zh-TW'
     try {
         const stored = localStorage.getItem(STORAGE_KEY)
-        if (stored === 'zh-TW' || stored === 'en') {
+        if (stored === 'zh-TW' || stored === 'en' || stored === 'ja') {
             return stored
         }
     } catch {
@@ -72,7 +74,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     // Translation function
-    const t = (key: string): string => {
+    const t = (key: string): any => {
         const keys = key.split('.')
         let value: any = translations[language]
 
@@ -80,7 +82,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
             value = value?.[k]
         }
 
-        return typeof value === 'string' ? value : key
+        return value !== undefined ? value : key
     }
 
     // Always provide context

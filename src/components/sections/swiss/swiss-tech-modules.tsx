@@ -93,27 +93,72 @@ const modulesEn = [
     },
 ]
 
+const modulesJa = [
+    {
+        number: '01',
+        title: 'XR (VR/MR/AR)',
+        subtitle: 'Extended Reality',
+        description: '仮想現実、複合現実、拡張現実技術を統合し、没入型の視覚体験を提供',
+        features: ['VRヘッドセット統合', 'MRパススルーモード', 'AR空間トラッキング', 'クロスプラットフォーム'],
+    },
+    {
+        number: '02',
+        title: '全方向トレッドミル',
+        subtitle: 'Omnidirectional Treadmill',
+        description: '移動デバイスを統合し、仮想空間内での自由な歩行を実現',
+        features: ['全方向トラッキング', '歩行分析', '安全保護', '複数人連携'],
+    },
+    {
+        number: '03',
+        title: 'ハプティクス',
+        subtitle: 'Haptic Feedback',
+        description: 'ハプティクスデバイスを統合し、触覚フィードバックで没入感を強化',
+        features: ['ハプティクスベスト', 'グローブフィードバック', '力覚提示装置', '温度シミュレーション'],
+    },
+    {
+        number: '04',
+        title: 'AI & ビッグデータ',
+        subtitle: 'Artificial Intelligence',
+        description: '人工知能とデータ分析により、インテリジェントなインタラクティブ体験を提供',
+        features: ['AI NPCの自律行動', 'パーソナライズ推奨', '音声認識', 'データ分析'],
+    },
+    {
+        number: '05',
+        title: '5G/6G',
+        subtitle: 'Next-Gen Network',
+        description: '低遅延・広帯域ネットワークで、リアルタイムなインタラクションを保証',
+        features: ['低遅延伝送', '広帯域ストリーミング', 'エッジコンピューティング', '多人数同期'],
+    },
+    {
+        number: '06',
+        title: '五感インタラクション',
+        subtitle: 'Multi-Sensory',
+        description: '嗅覚、味覚などの感覚技術を研究し、完全な没入体験へ',
+        features: ['嗅覚デバイス', '環境シミュレーション', '多感覚統合', '先端研究'],
+    },
+]
+
 export function SwissTechModules() {
     const { language } = useLanguage()
-    const modules = language === 'zh-TW' ? modulesZhTw : modulesEn
+    const modules = language === 'zh-TW' ? modulesZhTw : language === 'ja' ? modulesJa : modulesEn
 
-    const eyebrow = language === 'zh-TW' ? '核心技術堆疊' : 'Core Tech Stack'
-    const title = language === 'zh-TW' ? '六大技術模組' : 'Six Tech Modules'
-    const subtitle = language === 'zh-TW' ? '技術堆疊' : 'Tech Stack'
+    const eyebrow = language === 'zh-TW' ? '核心技術堆疊' : language === 'ja' ? 'コア技術スタック' : 'Core Tech Stack'
+    const title = language === 'zh-TW' ? '六大技術模組' : language === 'ja' ? '6つの技術モジュール' : 'Six Tech Modules'
+    const subtitle = language === 'zh-TW' ? '技術堆疊' : language === 'ja' ? '技術スタック' : 'Tech Stack'
 
     return (
-        <section id="tech-modules" className="border-t border-pencil-200 px-6 py-24 lg:px-16">
+        <section id="tech-modules" className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
             {/* Section Header */}
-            <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6">
+            <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
+                    <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
                 </div>
-                <p className="swiss-mono hidden text-pencil-400 md:block">{subtitle}</p>
+                <p className="swiss-mono hidden text-pencil-400 md:block dark:text-pencil-500">{subtitle}</p>
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 gap-px bg-pencil-200 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-px bg-pencil-200 md:grid-cols-2 lg:grid-cols-3 dark:bg-white/10">
                 {modules.map((module, index) => (
                     <motion.div
                         key={module.number}
@@ -121,27 +166,27 @@ export function SwissTechModules() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-pencil-50 p-8 transition-colors hover:bg-white"
+                        className="group bg-pencil-50 p-8 transition-colors hover:bg-white dark:bg-pencil-900 dark:hover:bg-pencil-800"
                     >
                         {/* Number */}
-                        <span className="swiss-mono text-4xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-5xl">
+                        <span className="swiss-mono text-4xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-5xl dark:text-white/20">
                             {module.number}
                         </span>
 
                         {/* Header */}
-                        <div className="mt-4 border-t border-pencil-200 pt-4">
-                            <h3 className="text-xl font-semibold text-pencil-950">{module.title}</h3>
-                            <p className="swiss-mono mt-1 text-pencil-400">{module.subtitle}</p>
+                        <div className="mt-4 border-t border-pencil-200 pt-4 dark:border-white/10">
+                            <h3 className="text-xl font-semibold text-pencil-950 dark:text-white">{module.title}</h3>
+                            <p className="swiss-mono mt-1 text-pencil-400 dark:text-pencil-500">{module.subtitle}</p>
                         </div>
 
                         {/* Description */}
-                        <p className="mt-4 text-sm leading-relaxed text-pencil-600">{module.description}</p>
+                        <p className="mt-4 text-sm leading-relaxed text-pencil-600 dark:text-pencil-300">{module.description}</p>
 
                         {/* Features */}
                         <ul className="mt-6 space-y-2">
                             {module.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-center gap-2 text-sm text-pencil-700">
-                                    <span className="swiss-mono text-pencil-400">{String(idx + 1).padStart(2, '0')}</span>
+                                <li key={idx} className="flex items-center gap-2 text-sm text-pencil-700 dark:text-pencil-400">
+                                    <span className="swiss-mono text-pencil-400 dark:text-pencil-500">{String(idx + 1).padStart(2, '0')}</span>
                                     {feature}
                                 </li>
                             ))}

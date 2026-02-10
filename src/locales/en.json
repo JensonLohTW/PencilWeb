@@ -56,8 +56,15 @@
     "pages": {
         "home": {
             "hero": {
+                "eyebrow": "XR • AI • IoT",
                 "headline": "All Spatial Dynamics Start with Pencil",
                 "subheadline": "We integrate AI and XR technologies into real-world scenarios to create deployable immersive interactions and intelligent spatial experiences."
+            },
+            "technology": {
+                "title": "Tech Stack"
+            },
+            "clients": {
+                "title": "Trusted By"
             },
             "solutions": {
                 "eyebrow": "Our Solutions",

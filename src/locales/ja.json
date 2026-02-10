@@ -1,0 +1,518 @@
+{
+    "nav": {
+        "solutions": "ソリューション",
+        "projects": "プロジェクト",
+        "technology": "技術コア",
+        "about": "私たちについて",
+        "contact": "お問い合わせ",
+        "demo": "デモ予約"
+    },
+    "theme": {
+        "light": "ライトモード",
+        "dark": "ダークモード",
+        "system": "システム準拠"
+    },
+    "language": {
+        "label": "言語"
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "XR • AI • IoT",
+            "headline": "空間ダイナミクスを再定義する",
+            "subheadline": "XR、AI、IoT技術を統合し、没入型でインテリジェント、かつインタラクティブな空間体験を創造します。",
+            "cta": "ソリューションを見る",
+            "scroll": "SCROLL"
+        }
+    },
+    "footer": {
+        "company": "Pencil",
+        "companyCategory": "会社",
+        "location": "高雄市",
+        "rights": "© 2024 Pencil. All rights reserved.",
+        "cta": {
+            "title": "準備はできましたか？",
+            "description": "AIとXRを現実のシーンに統合し、実用的な没入型インタラクションとスマート空間体験を構築します。"
+        },
+        "solutions": {
+            "title": "ソリューション",
+            "xr": "VR/MR 没入型トレーニング",
+            "ar": "AR ビジュアライゼーション",
+            "iot": "スマート空間 IoT",
+            "ai": "中小企業向け AI 活用"
+        },
+        "projects": {
+            "title": "プロジェクトと実績",
+            "simulator": "フライトシミュレーター",
+            "training": "飛行教育トレーニング",
+            "integration": "データ連携計画",
+            "agent": "AI エージェントシステム"
+        },
+        "legal": "法的情報",
+        "links": {
+            "privacy": "プライバシーポリシー",
+            "terms": "利用規約"
+        }
+    },
+    "pages": {
+        "home": {
+            "hero": {
+                "eyebrow": "XR • AI • IoT",
+                "headline": "すべての空間ダイナミクスはPencilから始まる",
+                "subheadline": "AIとXR技術を現実のシーンに注入し、実用的な没入型インタラクションとスマート空間体験を構築します。"
+            },
+            "technology": {
+                "title": "技術スタック"
+            },
+            "clients": {
+                "title": "導入実績"
+            },
+            "solutions": {
+                "eyebrow": "当社のソリューション",
+                "title": "ソリューション",
+                "viewAll": "すべて見る",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "VR/MR 没入型トレーニング",
+                        "subtitle": "Immersive Training",
+                        "description": "高精細な仮想環境で、安全かつ繰り返し可能なトレーニング体験を提供"
+                    },
+                    {
+                        "number": "02",
+                        "title": "AR ビジュアライゼーション",
+                        "subtitle": "Augmented Reality",
+                        "description": "拡張現実でデジタル情報を現実世界に重ね合わせる"
+                    },
+                    {
+                        "number": "03",
+                        "title": "スマート空間 IoT",
+                        "subtitle": "Smart Space",
+                        "description": "IoTセンサーと可視化プラットフォームを統合"
+                    },
+                    {
+                        "number": "04",
+                        "title": "中小企業向け AI",
+                        "subtitle": "AI for SME",
+                        "description": "AIエージェントとチャットシステムで業務効率を向上"
+                    }
+                ]
+            },
+            "projects": {
+                "eyebrow": "注目のプロジェクト",
+                "title": "プロジェクト",
+                "viewAll": "すべて見る",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "フライトシミュレーター",
+                        "category": "XR Training"
+                    },
+                    {
+                        "number": "02",
+                        "title": "飛行教育トレーニング",
+                        "category": "Education"
+                    },
+                    {
+                        "number": "03",
+                        "title": "データ連携計画",
+                        "category": "Data Integration"
+                    },
+                    {
+                        "number": "04",
+                        "title": "AI エージェントシステム",
+                        "category": "AI Solution"
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "よくある質問",
+                "title": "FAQ",
+                "description": "その他ご質問があれば、お気軽にお問い合わせください。",
+                "items": [
+                    {
+                        "question": "最適なプランの選び方は？",
+                        "answer": "まずはデモをご予約ください。お客様のニーズと利用シーンをヒアリングした上で、最適なプランをご提案します。各プランは要件に応じてカスタマイズ可能です。"
+                    },
+                    {
+                        "question": "必要なハードウェアは？",
+                        "answer": "プランによります。VR/MRプランはVRヘッドセットなどが必要、ARプランはスマホやタブレットでも可、スマート空間はIoTセンサーが必要、AIプランは主にソフトウェアサービスです。"
+                    },
+                    {
+                        "question": "導入コストはどのくらい？",
+                        "answer": "プロジェクトの規模と複雑さによります。PoC検証段階は通常低コストで、完全な開発は要件次第です。詳細なお見積もりはデモをご予約ください。"
+                    },
+                    {
+                        "question": "保守サービスはありますか？",
+                        "answer": "はい、システム監視、トラブルシューティング、バージョン更新、パフォーマンス最適化を含む完全な保守サービスを提供しています。ニーズに合わせて選択可能です。"
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "Ready to Launch? VRトレーニング、ARガイド、スマート空間、AI活用など、実用的なソリューションを構築します。",
+                "ctaText": "今すぐ相談",
+                "secondaryText": "ソリューションを見る"
+            }
+        },
+        "solutions": {
+            "metadata": {
+                "title": "ソリューション｜VR/MR 没入型トレーニング、AR ビジュアライゼーション、スマート空間、AI 導入",
+                "description": "4つの主要ソリューション：XRトレーニング、AR可視化、IoTスマート空間、中小企業向けAIエージェント/チャット。"
+            },
+            "hero": {
+                "eyebrow": "ソリューション",
+                "headline": "あなたに最適なソリューションを見つける",
+                "headlineHighlight": "ソリューション",
+                "cycleWords": [
+                    {
+                        "text": "VR トレーニング"
+                    },
+                    {
+                        "text": "AR 可視化"
+                    },
+                    {
+                        "text": "AI 導入"
+                    },
+                    {
+                        "text": "スマート空間"
+                    }
+                ],
+                "subheadline": "VR/MR没入型トレーニングから企業AI導入まで、4つの主要ソリューションでビジネスに実質的な価値をもたらします。",
+                "ctaText": "ソリューション一覧"
+            },
+            "list": {
+                "eyebrow": "当社のソリューション",
+                "title": "4つの主要ソリューション",
+                "subtitle": "クイック選択",
+                "bookDemo": "デモ予約",
+                "mainFeatures": "主な機能",
+                "useCases": "適用シーン",
+                "items": [
+                    {
+                        "id": "xr-training",
+                        "number": "01",
+                        "title": "VR/MR 没入型トレーニング",
+                        "subtitle": "Immersive Training",
+                        "description": "仮想現実と複合現実技術を活用し、高精細なトレーニング環境を構築",
+                        "features": [
+                            "高精細なシーンシミュレーション",
+                            "インタラクティブ操作トレーニング",
+                            "リアルタイムフィードバックと評価",
+                            "繰り返し練習可能"
+                        ],
+                        "useCases": [
+                            "飛行訓練",
+                            "産業操作",
+                            "医療トレーニング",
+                            "緊急対応"
+                        ]
+                    },
+                    {
+                        "id": "ar-visualization",
+                        "number": "02",
+                        "title": "AR ビジュアライゼーション",
+                        "subtitle": "Augmented Reality",
+                        "description": "拡張現実でデジタル情報を現実環境に重ね合わせ、ガイド、メンテナンス、展示をより直感的に",
+                        "features": [
+                            "現場情報のリアルタイム表示",
+                            "3Dモデル可視化",
+                            "インタラクティブ操作ガイド",
+                            "多言語対応"
+                        ],
+                        "useCases": [
+                            "展示ガイド",
+                            "設備メンテナンス",
+                            "セールスデモ",
+                            "教育ガイド"
+                        ]
+                    },
+                    {
+                        "id": "smart-space",
+                        "number": "03",
+                        "title": "スマート空間 IoT",
+                        "subtitle": "Smart Space",
+                        "description": "IoTセンサー、インタラクティブデバイス、可視化プラットフォームを統合し、空間をスマート化",
+                        "features": [
+                            "IoTセンサー統合",
+                            "リアルタイムデータ監視",
+                            "自動制御",
+                            "データ分析とレポート"
+                        ],
+                        "useCases": [
+                            "スマートビルディング",
+                            "展示館",
+                            "商業空間",
+                            "工場監視"
+                        ]
+                    },
+                    {
+                        "id": "ai-for-sme",
+                        "number": "04",
+                        "title": "中小企業向け AI 活用",
+                        "subtitle": "AI for SME",
+                        "description": "中小企業向けにカスタマイズされたAIソリューションで業務効率を向上",
+                        "features": [
+                            "AIエージェントアシスタント",
+                            "AIチャットカスタマーサービス",
+                            "ナレッジベース検索システム",
+                            "プロセス自動化"
+                        ],
+                        "useCases": [
+                            "カスタマーサービス",
+                            "ナレッジ管理",
+                            "データ分析",
+                            "プロセス自動化"
+                        ]
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "最適なプランは見つかりましたか？デモをご予約いただければ、詳細なご説明とご提案をいたします。",
+                "ctaText": "デモ予約",
+                "secondaryText": "要件フォームに記入"
+            }
+        },
+        "projects": {
+            "metadata": {
+                "title": "プロジェクトと実力｜XR/AI/IoT システム統合事例",
+                "description": "飛行シミュレーション、教育トレーニング、データ連携/プッシュ、AIエージェント/チャットシステムなどの提供能力。"
+            },
+            "hero": {
+                "headline": "実績あるプロジェクトで信頼を築く",
+                "headlineHighlight": "プロジェクト",
+                "headlineSuffix": "信頼構築",
+                "cycleWords": [
+                    {
+                        "text": "事例"
+                    },
+                    {
+                        "text": "成果"
+                    },
+                    {
+                        "text": "実績"
+                    }
+                ],
+                "subheadline": "飛行シミュレーションからAIシステムまで、多様なプロジェクトを成功させてきました。すべての事例が私たちの実力の証明です。",
+                "ctaText": "プロジェクトを見る"
+            },
+            "cta": {
+                "headline": "さらに詳しく知りたいですか？相談を予約して、より多くの事例と成果をご覧ください。",
+                "ctaText": "相談予約",
+                "secondaryText": "見積もり取得"
+            }
+        },
+        "technology": {
+            "metadata": {
+                "title": "技術コア｜XR (VR/AR/MR) 統合 × AI × 5G/6G × 五感インタラクション",
+                "description": "XRをベースに、ハプティクス、全方向トレッドミル、AI、高速ネットワークを統合し、実用可能な没入型インタラクティブシステムを構築。"
+            },
+            "hero": {
+                "eyebrow": "技術コア",
+                "headline": "実用可能な没入型インタラクティブ体験を創造",
+                "headlineHighlight": "没入型",
+                "cycleWords": [
+                    {
+                        "text": "リアリズム"
+                    },
+                    {
+                        "text": "インタラクティブ"
+                    },
+                    {
+                        "text": "インテリジェント"
+                    }
+                ],
+                "subheadline": "OASISをビジョンに、XRデバイス、AIビッグデータ、5G/6Gネットワーク、五感技術を統合し、ビジネスに真の価値を創造します。",
+                "ctaText": "技術モジュールを見る"
+            },
+            "cta": {
+                "headline": "技術的な詳細をもっと知りたいですか？当社の技術チームがより深いコンサルティングと提案を行います。",
+                "ctaText": "技術協力を相談",
+                "secondaryText": "適用シーンを見る"
+            }
+        },
+        "about": {
+            "metadata": {
+                "title": "私たちについて｜Pencil 空間ダイナミクス",
+                "description": "空間ダイナミクス技術（Pencil）は、XRデバイス、AIビッグデータ、5G/6Gネットワーク、五感技術を統合し、次世代の没入型インタラクティブ体験を創造します。"
+            },
+            "hero": {
+                "eyebrow": "私たちについて",
+                "headline": "We Build The OASIS",
+                "headlineHighlight": "OASIS",
+                "cycleWords": [
+                    {
+                        "text": "FUTURE"
+                    },
+                    {
+                        "text": "DREAM"
+                    },
+                    {
+                        "text": "REALITY"
+                    }
+                ],
+                "subheadline": "空間ダイナミクス技術（Pencil）は、XRデバイス、AIビッグデータ、5G/6Gネットワーク、五感技術を統合し、次世代の没入型インタラクティブ体験を創造します。",
+                "ctaText": "詳しく見る"
+            },
+            "cta": {
+                "headline": "チームに参加、または協力しませんか？",
+                "ctaText": "お問い合わせ",
+                "secondaryText": "プロジェクトを見る"
+            }
+        },
+        "contact": {
+            "metadata": {
+                "title": "お問い合わせ｜XR/AIデモ予約｜Pencil 空間ダイナミクス",
+                "description": "VR/AR/MR、スマート空間、AIエージェント/チャットの導入をご検討ですか？ご要望をお寄せください。最適なプランとデモをご提案します。"
+            },
+            "hero": {
+                "eyebrow": "お問い合わせ",
+                "headline": "Let's Build The Future",
+                "subheadline": "デモ予約、見積もり依頼、協業のご相談など、お気軽にご連絡ください。"
+            },
+            "form": {
+                "title": "要件フォームに入力",
+                "description": "以下の情報を入力してください。2営業日以内にご連絡いたします。",
+                "fields": {
+                    "name": {
+                        "label": "お名前",
+                        "placeholder": "お名前",
+                        "required": true
+                    },
+                    "company": {
+                        "label": "会社名",
+                        "placeholder": "会社名",
+                        "required": true
+                    },
+                    "email": {
+                        "label": "メールアドレス",
+                        "placeholder": "email@example.com",
+                        "required": true
+                    },
+                    "phone": {
+                        "label": "電話番号",
+                        "placeholder": "連絡先電話番号"
+                    },
+                    "solutionType": {
+                        "label": "興味のあるソリューション",
+                        "options": [
+                            "VR/MR トレーニング",
+                            "AR ビジュアライゼーション",
+                            "スマート空間",
+                            "AI 導入",
+                            "その他"
+                        ],
+                        "required": true
+                    },
+                    "targetScene": {
+                        "label": "利用シーン",
+                        "options": [
+                            "教育・トレーニング",
+                            "展示・イベント",
+                            "商業",
+                            "工業",
+                            "生活応用",
+                            "その他"
+                        ]
+                    },
+                    "timeline": {
+                        "label": "導入時期",
+                        "placeholder": "選択してください",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "選択してください"
+                            },
+                            {
+                                "value": "1-3",
+                                "label": "1-3ヶ月以内"
+                            },
+                            {
+                                "value": "3-6",
+                                "label": "3-6ヶ月以内"
+                            },
+                            {
+                                "value": "6+",
+                                "label": "6ヶ月以上"
+                            },
+                            {
+                                "value": "undefined",
+                                "label": "未定"
+                            }
+                        ]
+                    },
+                    "message": {
+                        "label": "補足事項",
+                        "placeholder": "ご要望やご質問があれば詳しくご記入ください..."
+                    }
+                },
+                "submit": "送信する"
+            },
+            "info": {
+                "benefits": {
+                    "title": "送信後の流れ",
+                    "items": [
+                        "2営業日以内に担当者より返信",
+                        "要件確認とプラン提案",
+                        "オンラインまたは対面デモの予約",
+                        "詳細見積もりとスケジュール計画"
+                    ]
+                },
+                "contact": {
+                    "title": "連絡先情報",
+                    "location": "所在地：",
+                    "locationValue": "高雄市",
+                    "email": "Email："
+                }
+            }
+        },
+        "privacy": {
+            "metadata": {
+                "title": "プライバシーポリシー｜Pencil 空間ダイナミクス",
+                "description": "Pencil 空間ダイナミクスのプライバシーポリシー。"
+            },
+            "title": "プライバシーポリシー",
+            "lastUpdated": "最終更新",
+            "status": "ステータス",
+            "statusActive": "有効",
+            "lead": "お客様のプライバシーは私たちにとって非常に重要です。以下にデータの取り扱いに関するポリシーを記載します。",
+            "sections": {
+                "dataCollection": {
+                    "title": "データ収集",
+                    "content": "より良いサービスを提供するために必要な情報のみを収集します。これには、お名前、メールアドレス、要件フォームで提供されたプロジェクト情報などが含まれる場合があります。"
+                },
+                "dataUsage": {
+                    "title": "データ利用",
+                    "content": "収集したデータは、プロジェクトの連絡、要件評価、サービス提供にのみ使用されます。お客様の個人情報を第三者に販売することはありません。"
+                },
+                "security": {
+                    "title": "セキュリティ",
+                    "content": "業界標準のセキュリティ対策を講じ、不正アクセス、改ざん、漏洩からデータを保護します。すべての通信は暗号化されます。"
+                }
+            },
+            "contact": "ご質問がある場合は、以下までお問い合わせください："
+        },
+        "notFound": {
+            "title": "404",
+            "alert": "⚠ システムエラー：ページが見つかりません PAGE_NOT_FOUND",
+            "message": "アクセスしようとした座標は、このメタバースセクターに存在しません。",
+            "button": "return_to_base()",
+            "errorCode": "エラーコード：0x404_MISSING",
+            "status": "システム状態：クリティカル"
+        }
+    },
+    "common": {
+        "required": "必須",
+        "optional": "任意",
+        "submit": "送信",
+        "cancel": "キャンセル",
+        "close": "閉じる",
+        "back": "戻る",
+        "next": "次へ",
+        "previous": "前へ",
+        "loading": "読み込み中",
+        "error": "エラー",
+        "success": "成功",
+        "learnMore": "詳しく見る",
+        "viewAll": "すべて見る",
+        "contactUs": "お問い合わせ"
+    }
+}

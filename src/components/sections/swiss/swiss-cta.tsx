@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '@/components/providers/language-provider'
 
 interface SwissCTAProps {
     headline: string
@@ -18,6 +19,8 @@ export function SwissCTA({
     secondaryText,
     secondaryHref,
 }: SwissCTAProps) {
+    const { t } = useLanguage()
+
     return (
         <section className="bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950">
             <motion.div
@@ -54,9 +57,9 @@ export function SwissCTA({
 
             {/* Bottom Info */}
             <div className="mt-16 flex items-center gap-8 border-t border-pencil-200 pt-8 dark:border-white/10">
-                <p className="swiss-mono text-pencil-500 dark:text-white/50">聯繫我們</p>
+                <p className="swiss-mono text-pencil-500 dark:text-pencil-400">{t('nav.contact')}</p>
                 <div className="h-px flex-1 bg-pencil-200 dark:bg-white/10" />
-                <p className="swiss-mono text-pencil-500 dark:text-white/50">hello@pencil.com.tw</p>
+                <p className="swiss-mono text-pencil-500 dark:text-pencil-400">hello@pencil.com.tw</p>
             </div>
         </section>
     )

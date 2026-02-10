@@ -132,7 +132,7 @@ export function SwissFooter({
                 <div className="mx-auto max-w-7xl px-6 lg:px-16">
                     <div className="flex flex-col items-start justify-between gap-6 py-8 lg:flex-row lg:items-center">
                         {/* Fineprint */}
-                        <div className="flex flex-col gap-2 text-sm text-pencil-500 lg:flex-row lg:gap-8">
+                        <div className="flex flex-col gap-2 text-sm text-pencil-500 lg:flex-row lg:gap-8 dark:text-pencil-400">
                             {fineprint}
                         </div>
 
@@ -141,7 +141,7 @@ export function SwissFooter({
                             <div className="flex h-8 w-8 items-center justify-center border-2 border-pencil-950 dark:border-white">
                                 <span className="text-xs font-black text-pencil-950 dark:text-white">P</span>
                             </div>
-                            <span className="swiss-mono text-pencil-400">
+                            <span className="swiss-mono text-pencil-400 dark:text-pencil-500">
                                 SYSTEM.ONLINE
                             </span>
                         </div>
