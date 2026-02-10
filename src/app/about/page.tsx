@@ -1,11 +1,13 @@
 'use client'
 
 import { useLanguage } from '@/components/providers/language-provider'
-import { SwissHeroEnhanced } from '@/components/sections/swiss/swiss-hero-enhanced'
-import { SwissStatsGrid } from '@/components/sections/swiss/swiss-stats-grid'
-import { SwissTimeline } from '@/components/sections/swiss/swiss-timeline'
+import { SwissAboutValues } from '@/components/sections/swiss/swiss-about-values'
 import { SwissCompanyInfo } from '@/components/sections/swiss/swiss-company-info'
 import { SwissCTA } from '@/components/sections/swiss/swiss-cta'
+import { SwissHeroEnhanced } from '@/components/sections/swiss/swiss-hero-enhanced'
+import { SwissStatsGrid } from '@/components/sections/swiss/swiss-stats-grid'
+import { SwissTeamPartners } from '@/components/sections/swiss/swiss-team-partners'
+import { SwissTimeline } from '@/components/sections/swiss/swiss-timeline'
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -33,11 +35,17 @@ export default function AboutPage() {
         <SwissStatsGrid />
       </div>
 
+      {/* Values */}
+      <SwissAboutValues />
+
       {/* Timeline */}
       <SwissTimeline />
 
       {/* Company Info */}
       <SwissCompanyInfo />
+
+      {/* Team & Partners */}
+      <SwissTeamPartners />
 
       {/* CTA */}
       <SwissCTA
