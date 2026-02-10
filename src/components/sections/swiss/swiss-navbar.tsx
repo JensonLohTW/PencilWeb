@@ -70,12 +70,14 @@ export function SwissNavbarLogo({ href, ...props }: { href: string } & Omit<Comp
 export function SwissNavbar({
     links,
     logo,
+    utilities,
     actions,
     className,
     ...props
 }: {
     links: ReactNode
     logo: ReactNode
+    utilities: ReactNode
     actions: ReactNode
 } & ComponentProps<'header'>) {
     return (
@@ -99,10 +101,22 @@ export function SwissNavbar({
                     {links}
                 </div>
 
-                {/* Actions Block */}
-                <div className="flex items-center gap-4 shrink-0">
-                    <div className="hidden items-center gap-4 sm:flex">
-                        {actions}
+                {/* Right Side Group */}
+                <div className="flex items-center gap-6 shrink-0">
+                    {/* Desktop Utilities & Actions */}
+                    <div className="hidden items-center gap-6 lg:flex">
+                        {/* Utilities (Theme/Lang) */}
+                        <div className="flex items-center gap-2">
+                            {utilities}
+                        </div>
+
+                        {/* Vertical Separator */}
+                        <div className="h-6 w-px bg-pencil-200 dark:bg-white/20" />
+
+                        {/* Primary Actions */}
+                        <div className="flex items-center gap-4">
+                            {actions}
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button - Bold geometric */}
@@ -150,21 +164,29 @@ export function SwissNavbar({
                         </div>
 
                         {/* Footer Actions */}
-                        <div className="border-t-2 border-pencil-950 px-6 py-6 dark:border-white">
-                            <div className="flex flex-col gap-4">
-                                {actions}
+                        <div className="border-t-2 border-pencil-950 px-6 py-8 dark:border-white">
+                            <div className="flex flex-col gap-6">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        {utilities}
+                                    </div>
+                                    <span className="swiss-mono text-xs text-pencil-400">SETTINGS</span>
+                                </div>
+                                <div className="flex flex-col gap-3">
+                                    {actions}
+                                </div>
                             </div>
                         </div>
 
                         {/* Swiss Grid Accent */}
-                        <div className="absolute bottom-6 right-6">
+                        <div className="absolute bottom-6 right-6 pointer-events-none opacity-20">
                             <div className="grid grid-cols-3 gap-1">
                                 {[...Array(9)].map((_, i) => (
                                     <div
                                         key={i}
                                         className={clsx(
                                             'h-2 w-2',
-                                            i % 3 === 0 ? 'bg-cta' : 'bg-pencil-200 dark:bg-white/20'
+                                            i % 3 === 0 ? 'bg-cta' : 'bg-pencil-950 dark:bg-white'
                                         )}
                                     />
                                 ))}

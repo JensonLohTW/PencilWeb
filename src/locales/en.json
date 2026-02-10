@@ -269,6 +269,37 @@
                 "headline": "Found the right solution? Book a demo for more detailed solution descriptions and recommendations.",
                 "ctaText": "Book Demo",
                 "secondaryText": "Fill Out Requirements Form"
+            },
+            "process": {
+                "eyebrow": "Process",
+                "title": "End-to-End Service from Concept to Launch",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "Consultation",
+                        "description": "Understanding your business goals and scenario requirements, assessing technical feasibility."
+                    },
+                    {
+                        "number": "02",
+                        "title": "Planning",
+                        "description": "Providing customized technical architecture, hardware specifications, and execution plans."
+                    },
+                    {
+                        "number": "03",
+                        "title": "Development",
+                        "description": "Software/Hardware integration, interactive content development, and interface design."
+                    },
+                    {
+                        "number": "04",
+                        "title": "Deployment",
+                        "description": "On-site installation, debugging, stress testing, and personnel training."
+                    },
+                    {
+                        "number": "05",
+                        "title": "Maintenance",
+                        "description": "Ongoing technical support, system maintenance, and performance optimization."
+                    }
+                ]
             }
         },
         "projects": {

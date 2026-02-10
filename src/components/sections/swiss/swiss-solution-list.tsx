@@ -1,9 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/components/providers/language-provider'
+import { ArrowUpRight, Plus, Minus, ArrowRight } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface Solution {
     id: string
@@ -24,114 +26,161 @@ export function SwissSolutionList() {
     const solutions = Array.isArray(solutionsData) ? (solutionsData as Solution[]) : []
 
     return (
-        <section id="solutions" className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
-            {/* Section Header */}
-            <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
-                <div>
-                    <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{t('pages.solutions.list.eyebrow')}</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
-                        {t('pages.solutions.list.title')}
-                    </h2>
+        <section id="solutions" className="relative min-h-screen bg-pencil-50 px-6 py-32 lg:px-16 dark:bg-pencil-950">
+            {/* Background Texture/Grid (Subtle) */}
+            <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
+                style={{
+                    backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+                    backgroundSize: '40px 40px'
+                }}
+            />
+
+            <div className="mx-auto max-w-[1800px]">
+                {/* Section Header: Classical Typography */}
+                <div className="mb-24 flex flex-col items-start justify-between gap-8 border-t border-pencil-950/10 pt-8 lg:flex-row lg:items-end dark:border-white/10">
+                    <div className="max-w-2xl">
+                        <span className="swiss-mono mb-6 block text-sm tracking-widest text-pencil-500 dark:text-pencil-400">
+                            {t('pages.solutions.list.eyebrow')} — ARCHIVE
+                        </span>
+                        <h2 className="font-serif text-6xl font-medium tracking-tight text-pencil-950 lg:text-8xl dark:text-white">
+                            {t('pages.solutions.list.title')}
+                        </h2>
+                    </div>
+                    <div className="swiss-mono hidden max-w-xs text-right text-xs leading-relaxed text-pencil-500 lg:block dark:text-pencil-400">
+                        {t('pages.solutions.list.subtitle')}
+                        <br />
+                        EST. 2024 / CATALOGUE NO. 01
+                    </div>
                 </div>
-                <p className="swiss-mono hidden text-pencil-400 md:block dark:text-pencil-500">{t('pages.solutions.list.subtitle')}</p>
-            </div>
 
-            {/* Solution List */}
-            <div className="space-y-0">
-                {solutions.map((solution, index) => (
-                    <motion.div
-                        key={solution.id}
-                        id={solution.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group border-b border-pencil-200 dark:border-white/10"
-                    >
-                        {/* Main Row */}
-                        <div
-                            className="flex cursor-pointer items-center gap-8 py-8 transition-colors hover:bg-pencil-50 lg:gap-16 dark:hover:bg-white/5"
-                            onClick={() => setExpandedId(expandedId === solution.id ? null : solution.id)}
-                        >
-                            {/* Number */}
-                            <span className="swiss-mono w-12 text-pencil-400 transition-colors group-hover:text-cta dark:text-pencil-500">
-                                {solution.number}
-                            </span>
+                {/* The Archive List */}
+                <div className="flex flex-col">
+                    {solutions.map((solution, index) => {
+                        const isExpanded = expandedId === solution.id
 
-                            {/* Title */}
-                            <div className="flex-1">
-                                <h3 className="text-2xl font-semibold text-pencil-900 transition-colors group-hover:text-cta lg:text-3xl dark:text-white">
-                                    {solution.title}
-                                </h3>
-                                <p className="swiss-mono mt-1 text-pencil-400 dark:text-pencil-500">{solution.subtitle}</p>
-                            </div>
-
-                            {/* Expand Icon */}
-                            <span
-                                className={`text-2xl text-pencil-300 transition-transform group-hover:text-cta dark:text-pencil-600 ${expandedId === solution.id ? 'rotate-45' : ''
-                                    }`}
-                            >
-                                +
-                            </span>
-                        </div>
-
-                        {/* Expanded Content */}
-                        {expandedId === solution.id && (
+                        return (
                             <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden border-t border-pencil-100 bg-pencil-50 px-6 py-8 lg:px-16 dark:border-white/10 dark:bg-pencil-900"
+                                key={solution.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className={cn(
+                                    "group relative border-t border-pencil-950/10 transition-all duration-500 last:border-b dark:border-white/10",
+                                    isExpanded ? "bg-white dark:bg-pencil-900" : "hover:bg-white/50 dark:hover:bg-white/5"
+                                )}
                             >
-                                {/* Description */}
-                                <p className="mb-8 text-lg text-pencil-600 dark:text-pencil-400">{solution.description}</p>
+                                {/* Summary Row */}
+                                <div
+                                    onClick={() => setExpandedId(isExpanded ? null : solution.id)}
+                                    className="flex cursor-pointer flex-col gap-8 py-12 lg:flex-row lg:items-baseline lg:gap-16 lg:py-16"
+                                >
+                                    {/* Serif Number */}
+                                    <span className="font-serif text-4xl text-pencil-300 transition-colors group-hover:text-cta lg:text-5xl dark:text-pencil-600">
+                                        {solution.number}
+                                    </span>
 
-                                <div className="grid gap-8 md:grid-cols-2">
-                                    {/* Features */}
-                                    <div>
-                                        <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-pencil-400 dark:text-pencil-500">
-                                            {t('pages.solutions.list.mainFeatures')}
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {solution.features?.map((feature, idx) => (
-                                                <li key={idx} className="flex items-start gap-3">
-                                                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cta" />
-                                                    <span className="text-pencil-600 dark:text-pencil-400">{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    {/* Title & Subtitle */}
+                                    <div className="flex flex-1 flex-col gap-2 lg:flex-row lg:items-baseline lg:gap-8">
+                                        <h3 className={cn(
+                                            "font-serif text-3xl font-medium transition-colors duration-300 lg:text-5xl",
+                                            isExpanded ? "text-cta" : "text-pencil-950 group-hover:text-pencil-800 dark:text-white"
+                                        )}>
+                                            {solution.title}
+                                        </h3>
+                                        <span className="swiss-mono text-sm text-pencil-400 dark:text-pencil-500">
+                                            {solution.subtitle}
+                                        </span>
                                     </div>
 
-                                    {/* Use Cases */}
-                                    <div>
-                                        <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-pencil-400 dark:text-pencil-500">
-                                            {t('pages.solutions.list.useCases')}
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {solution.useCases?.map((useCase, idx) => (
-                                                <li key={idx} className="flex items-start gap-3">
-                                                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-500" />
-                                                    <span className="text-pencil-600 dark:text-pencil-400">{useCase}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    {/* Indicator */}
+                                    <div className="flex items-center justify-end pr-4">
+                                        <div className={cn(
+                                            "flex h-12 w-12 items-center justify-center rounded-full border border-pencil-200 transition-all duration-300 dark:border-white/10",
+                                            isExpanded ? "bg-cta border-cta rotate-90" : "group-hover:border-cta group-hover:text-cta"
+                                        )}>
+                                            {isExpanded ?
+                                                <Minus className="h-5 w-5 text-white" /> :
+                                                <Plus className="h-5 w-5" />
+                                            }
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* CTA */}
-                                <div className="mt-8">
-                                    <Link
-                                        href="/contact"
-                                        className="inline-flex items-center gap-2 border-b-2 border-pencil-950 pb-1 font-medium text-pencil-950 transition-colors hover:border-cta hover:text-cta dark:border-white dark:text-white"
-                                    >
-                                        {t('pages.solutions.list.bookDemo')} <span>→</span>
-                                    </Link>
-                                </div>
+                                {/* Expanded Content: The Blueprint */}
+                                <AnimatePresence>
+                                    {isExpanded && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="grid grid-cols-1 gap-12 pb-16 pt-4 lg:grid-cols-12 lg:gap-24 lg:pl-[120px]">
+                                                {/* Description Column */}
+                                                <div className="lg:col-span-5">
+                                                    <p className="font-serif text-xl leading-relaxed text-pencil-600 dark:text-pencil-300">
+                                                        {solution.description}
+                                                    </p>
+
+                                                    <div className="mt-12">
+                                                        <Link
+                                                            href="/contact"
+                                                            className="group/btn inline-flex items-center gap-4 text-lg font-medium text-pencil-950 transition-colors hover:text-cta dark:text-white"
+                                                        >
+                                                            <span className="border-b border-pencil-950 pb-1 transition-colors group-hover/btn:border-cta dark:border-white">
+                                                                {t('pages.solutions.list.bookDemo')}
+                                                            </span>
+                                                            <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
+                                                        </Link>
+                                                    </div>
+                                                </div>
+
+                                                {/* Details Column (Grid Lines) */}
+                                                <div className="lg:col-span-7">
+                                                    <div className="grid gap-x-12 gap-y-12 sm:grid-cols-2">
+                                                        {/* Features */}
+                                                        <div className="relative">
+                                                            <div className="swiss-mono mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-pencil-400 dark:text-pencil-500">
+                                                                <span className="h-px w-4 bg-cta" />
+                                                                {t('pages.solutions.list.mainFeatures')}
+                                                            </div>
+                                                            <ul className="space-y-4">
+                                                                {solution.features?.map((feature, idx) => (
+                                                                    <li key={idx} className="flex items-baseline gap-4 text-pencil-600 dark:text-pencil-300">
+                                                                        <span className="swiss-mono text-xs text-pencil-300 dark:text-pencil-600">0{idx + 1}</span>
+                                                                        <span>{feature}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+
+                                                        {/* Use Cases */}
+                                                        <div className="relative">
+                                                            <div className="swiss-mono mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-pencil-400 dark:text-pencil-500">
+                                                                <span className="h-px w-4 bg-pencil-300 dark:bg-pencil-600" />
+                                                                {t('pages.solutions.list.useCases')}
+                                                            </div>
+                                                            <ul className="space-y-4">
+                                                                {solution.useCases?.map((useCase, idx) => (
+                                                                    <li key={idx} className="flex items-baseline gap-4 text-pencil-600 dark:text-pencil-300">
+                                                                        <span className="swiss-mono text-xs text-pencil-300 dark:text-pencil-600">A{idx + 1}</span>
+                                                                        <span>{useCase}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </motion.div>
-                        )}
-                    </motion.div>
-                ))}
+                        )
+                    })}
+                </div>
             </div>
         </section>
     )

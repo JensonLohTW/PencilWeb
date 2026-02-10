@@ -1,6 +1,7 @@
 'use client'
 
-import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
+import Link from 'next/link'
+import { ButtonLink } from '@/components/elements/button'
 import { LanguageToggle } from '@/components/elements/language-toggle'
 import { ThemeToggle } from '@/components/elements/theme-toggle'
 import { useLanguage } from '@/components/providers/language-provider'
@@ -36,19 +37,23 @@ export function NavBar() {
                 </>
             }
             logo={<SwissNavbarLogo href="/" />}
+            utilities={
+                <>
+                    <LanguageToggle />
+                    <ThemeToggle />
+                </>
+            }
             actions={
                 <>
-                    <LanguageToggle className="max-sm:hidden" />
-                    <ThemeToggle className="max-sm:hidden" />
-                    <PlainButtonLink
+                    <Link
                         href="/contact"
-                        className="max-sm:hidden text-pencil-600 hover:text-pencil-950 dark:text-pencil-400 dark:hover:text-white"
+                        className="hidden text-sm font-medium text-pencil-600 transition-colors hover:text-pencil-950 lg:block dark:text-pencil-400 dark:hover:text-white"
                     >
                         {t('nav.contact')}
-                    </PlainButtonLink>
+                    </Link>
                     <ButtonLink
                         href="/contact"
-                        className="border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
+                        className="w-full justify-center border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
                     >
                         {t('nav.demo')}
                     </ButtonLink>

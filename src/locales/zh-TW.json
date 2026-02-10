@@ -269,6 +269,37 @@
                 "headline": "找到適合的方案了嗎？預約 Demo 讓我們為您提供更詳細的方案說明與建議。",
                 "ctaText": "預約 Demo",
                 "secondaryText": "填寫需求表單"
+            },
+            "process": {
+                "eyebrow": "合作流程",
+                "title": "從需求到落地的完整服務",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "需求諮詢",
+                        "description": "深入了解您的業務目標與場景需求，評估技術可行性。"
+                    },
+                    {
+                        "number": "02",
+                        "title": "方案規劃",
+                        "description": "提供客製化的技術架構、硬體規格建議與執行計畫。"
+                    },
+                    {
+                        "number": "03",
+                        "title": "開發製作",
+                        "description": "進行軟硬體整合、互動內容開發與介面設計。"
+                    },
+                    {
+                        "number": "04",
+                        "title": "測試部署",
+                        "description": "現場安裝調試、壓力測試與人員教育訓練。"
+                    },
+                    {
+                        "number": "05",
+                        "title": "維護優化",
+                        "description": "提供持續的技術支援、系統維護與效能優化服務。"
+                    }
+                ]
             }
         },
         "projects": {
