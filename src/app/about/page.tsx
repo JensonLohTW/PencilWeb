@@ -1,31 +1,29 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useLanguage } from '@/components/providers/language-provider'
 import { SwissHeroEnhanced } from '@/components/sections/swiss/swiss-hero-enhanced'
 import { SwissStatsGrid } from '@/components/sections/swiss/swiss-stats-grid'
 import { SwissTimeline } from '@/components/sections/swiss/swiss-timeline'
 import { SwissCompanyInfo } from '@/components/sections/swiss/swiss-company-info'
 import { SwissCTA } from '@/components/sections/swiss/swiss-cta'
 
-export const metadata: Metadata = {
-  title: '關於我們｜空間動態科技 Pencil',
-  description:
-    '空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。',
-}
-
 export default function AboutPage() {
+  const { t } = useLanguage()
+
   return (
     <>
       {/* Hero */}
       <SwissHeroEnhanced
-        eyebrow="關於我們"
-        headline="We Build The OASIS"
-        headlineHighlight="OASIS"
+        eyebrow={t('pages.about.hero.eyebrow')}
+        headline={t('pages.about.hero.headline')}
+        headlineHighlight={t('pages.about.hero.headlineHighlight')}
         cycleWords={[
-          { text: 'FUTURE', className: 'text-cta font-mono tracking-widest' },
-          { text: 'DREAM', className: 'text-purple-600 font-serif italic' },
-          { text: 'REALITY', className: 'text-emerald-600 font-bold' },
+          { text: t('pages.about.hero.cycleWords.0.text'), className: 'text-cta font-mono tracking-widest' },
+          { text: t('pages.about.hero.cycleWords.1.text'), className: 'text-purple-600 font-serif italic' },
+          { text: t('pages.about.hero.cycleWords.2.text'), className: 'text-emerald-600 font-bold' },
         ]}
-        subheadline="空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。"
-        ctaText="了解更多"
+        subheadline={t('pages.about.hero.subheadline')}
+        ctaText={t('pages.about.hero.ctaText')}
         ctaHref="#stats"
         centered
       />
@@ -43,10 +41,10 @@ export default function AboutPage() {
 
       {/* CTA */}
       <SwissCTA
-        headline="想加入我們的團隊，或與我們合作？"
-        ctaText="聯繫我們"
+        headline={t('pages.about.cta.headline')}
+        ctaText={t('pages.about.cta.ctaText')}
         ctaHref="/contact"
-        secondaryText="查看專案"
+        secondaryText={t('pages.about.cta.secondaryText')}
         secondaryHref="/projects"
       />
     </>

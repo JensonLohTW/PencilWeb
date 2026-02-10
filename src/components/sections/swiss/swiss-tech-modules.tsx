@@ -1,16 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface TechModule {
-    number: string
-    title: string
-    subtitle: string
-    description: string
-    features: string[]
-}
-
-const modules: TechModule[] = [
+const modulesZhTw = [
     {
         number: '01',
         title: 'XR（VR/MR/XR）',
@@ -55,16 +48,68 @@ const modules: TechModule[] = [
     },
 ]
 
+const modulesEn = [
+    {
+        number: '01',
+        title: 'XR (VR/MR/AR)',
+        subtitle: 'Extended Reality',
+        description: 'Integration of Virtual Reality, Mixed Reality, and Augmented Reality technologies for immersive visual experiences',
+        features: ['VR Headset Integration', 'MR Passthrough Mode', 'AR Spatial Tracking', 'Cross-Platform Support'],
+    },
+    {
+        number: '02',
+        title: 'Omnidirectional Treadmill',
+        subtitle: 'Movement Platform',
+        description: 'Movement device integration allowing users to walk freely in virtual worlds',
+        features: ['Omnidirectional Tracking', 'Gait Analysis', 'Safety Protection', 'Multi-User Coordination'],
+    },
+    {
+        number: '03',
+        title: 'Haptic Feedback',
+        subtitle: 'Touch Sensation',
+        description: 'Haptic device integration providing tactile feedback to enhance immersion',
+        features: ['Haptic Vest', 'Glove Feedback', 'Force Feedback Devices', 'Temperature Simulation'],
+    },
+    {
+        number: '04',
+        title: 'AI & Big Data',
+        subtitle: 'Artificial Intelligence',
+        description: 'Artificial intelligence and data analysis providing intelligent interactive experiences',
+        features: ['AI NPC Behavior', 'Personalized Recommendations', 'Voice Recognition', 'Data Analytics'],
+    },
+    {
+        number: '05',
+        title: '5G/6G',
+        subtitle: 'Next-Gen Network',
+        description: 'Low-latency, high-bandwidth networks ensuring real-time interactive experiences',
+        features: ['Low-Latency Transmission', 'High-Bandwidth Streaming', 'Edge Computing', 'Multi-User Sync'],
+    },
+    {
+        number: '06',
+        title: 'Multi-Sensory Interaction',
+        subtitle: 'Five Senses',
+        description: 'Research on olfactory, gustatory, and other sensory technologies towards complete immersive experiences',
+        features: ['Olfactory Devices', 'Environmental Simulation', 'Multi-Sensory Integration', 'Research Frontier'],
+    },
+]
+
 export function SwissTechModules() {
+    const { language } = useLanguage()
+    const modules = language === 'zh-TW' ? modulesZhTw : modulesEn
+
+    const eyebrow = language === 'zh-TW' ? '核心技術堆疊' : 'Core Tech Stack'
+    const title = language === 'zh-TW' ? '六大技術模組' : 'Six Tech Modules'
+    const subtitle = language === 'zh-TW' ? '技術堆疊' : 'Tech Stack'
+
     return (
         <section id="tech-modules" className="border-t border-pencil-200 px-6 py-24 lg:px-16">
             {/* Section Header */}
             <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6">
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">核心技術堆疊</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">六大技術模組</h2>
+                    <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
                 </div>
-                <p className="swiss-mono hidden text-pencil-400 md:block">Tech Stack</p>
+                <p className="swiss-mono hidden text-pencil-400 md:block">{subtitle}</p>
             </div>
 
             {/* Grid */}

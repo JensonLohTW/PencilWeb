@@ -1,13 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface FlowStep {
-    number: string
-    title: string
-}
-
-const steps: FlowStep[] = [
+const stepsZhTw = [
     { number: '01', title: '資料來源' },
     { number: '02', title: 'API 整合' },
     { number: '03', title: '後端處理' },
@@ -15,13 +11,27 @@ const steps: FlowStep[] = [
     { number: '05', title: '裝置輸出' },
 ]
 
+const stepsEn = [
+    { number: '01', title: 'Data Source' },
+    { number: '02', title: 'API Integration' },
+    { number: '03', title: 'Backend Processing' },
+    { number: '04', title: 'Frontend Rendering' },
+    { number: '05', title: 'Device Output' },
+]
+
 export function SwissSystemFlow() {
+    const { language } = useLanguage()
+    const steps = language === 'zh-TW' ? stepsZhTw : stepsEn
+
+    const eyebrow = language === 'zh-TW' ? '從硬體到平台' : 'Hardware to Platform'
+    const title = language === 'zh-TW' ? '系統整合流程' : 'System Integration Flow'
+
     return (
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">從硬體到平台</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">系統整合流程</h2>
+                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
             </div>
 
             {/* Flow */}
@@ -42,7 +52,9 @@ export function SwissSystemFlow() {
                         >
                             {/* Number */}
                             <div className="relative z-10 mb-6 flex size-16 items-center justify-center border-2 border-pencil-200 bg-white transition-colors group-hover:border-cta dark:bg-pencil-950 dark:border-white/30">
-                                <span className="swiss-mono text-lg text-pencil-950 group-hover:text-cta dark:text-white">{step.number}</span>
+                                <span className="swiss-mono text-lg text-pencil-950 group-hover:text-cta dark:text-white">
+                                    {step.number}
+                                </span>
                             </div>
 
                             {/* Title */}

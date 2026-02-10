@@ -1,0 +1,511 @@
+{
+    "nav": {
+        "solutions": "解決方案",
+        "projects": "專案與能力",
+        "technology": "技術核心",
+        "about": "關於我們",
+        "contact": "聯絡我們",
+        "demo": "預約 Demo"
+    },
+    "theme": {
+        "light": "明亮模式",
+        "dark": "暗色模式",
+        "system": "跟隨系統"
+    },
+    "language": {
+        "label": "語言"
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "XR • AI • IoT",
+            "headline": "重新定義空間動態",
+            "subheadline": "我們整合 XR、AI 與 IoT 技術，為企業打造沉浸、智能且互動的空間體驗。",
+            "cta": "探索解決方案",
+            "scroll": "SCROLL"
+        }
+    },
+    "footer": {
+        "company": "空間動態科技",
+        "companyCategory": "公司",
+        "location": "高雄市",
+        "rights": "© 2024 空間動態科技. All rights reserved.",
+        "cta": {
+            "title": "準備好了嗎？",
+            "description": "把 AI 與 XR 融入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+        },
+        "solutions": {
+            "title": "解決方案",
+            "xr": "VR/MR 沉浸式訓練",
+            "ar": "AR 視覺化",
+            "iot": "智慧空間 IoT",
+            "ai": "中小企業 AI 應用"
+        },
+        "projects": {
+            "title": "專案與能力",
+            "simulator": "飛行模擬系統",
+            "training": "飛行教育訓練",
+            "integration": "資料介接規劃",
+            "agent": "AI Agent 系統"
+        },
+        "legal": "法律",
+        "links": {
+            "privacy": "隱私權政策",
+            "terms": "服務條款"
+        }
+    },
+    "pages": {
+        "home": {
+            "hero": {
+                "headline": "一切空間的動態都來自於 Pencil",
+                "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+            },
+            "solutions": {
+                "eyebrow": "我們的解決方案",
+                "title": "Solutions",
+                "viewAll": "查看全部",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "VR/MR 沉浸式訓練",
+                        "subtitle": "Immersive Training",
+                        "description": "高擬真度虛擬環境，打造安全、可重複的訓練體驗"
+                    },
+                    {
+                        "number": "02",
+                        "title": "AR 視覺化",
+                        "subtitle": "Augmented Reality",
+                        "description": "擴增實境將數位資訊疊加到真實環境"
+                    },
+                    {
+                        "number": "03",
+                        "title": "智慧空間 IoT",
+                        "subtitle": "Smart Space",
+                        "description": "整合 IoT 感測器與可視化平台"
+                    },
+                    {
+                        "number": "04",
+                        "title": "中小企業 AI",
+                        "subtitle": "AI for SME",
+                        "description": "AI Agent 與 Chat 系統，提升營運效率"
+                    }
+                ]
+            },
+            "projects": {
+                "eyebrow": "精選專案",
+                "title": "Projects",
+                "viewAll": "查看全部",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "飛行模擬系統",
+                        "category": "XR Training"
+                    },
+                    {
+                        "number": "02",
+                        "title": "飛行教育訓練",
+                        "category": "Education"
+                    },
+                    {
+                        "number": "03",
+                        "title": "資料介接規劃",
+                        "category": "Data Integration"
+                    },
+                    {
+                        "number": "04",
+                        "title": "AI Agent 系統",
+                        "category": "AI Solution"
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "常見問題",
+                "title": "FAQ",
+                "description": "如果您有其他問題，歡迎直接聯繫我們，我們很樂意為您解答。",
+                "items": [
+                    {
+                        "question": "如何選擇適合的方案？",
+                        "answer": "我們建議先預約 Demo，讓我們了解您的需求與目標場景後，會提供最適合的方案建議。每個方案都可依據您的需求客製化。"
+                    },
+                    {
+                        "question": "需要準備哪些硬體設備？",
+                        "answer": "視方案而定。VR/MR 方案需要 VR 頭盔與相關硬體；AR 方案可使用手機或平板；智慧空間需要 IoT 感測器；AI 方案主要是軟體服務。"
+                    },
+                    {
+                        "question": "導入成本大約是多少？",
+                        "answer": "成本依專案規模與複雜度而定。PoC 驗證階段通常較低，完整專案開發則視需求而定。請預約 Demo，我們會提供詳細報價。"
+                    },
+                    {
+                        "question": "你們提供維運服務嗎？",
+                        "answer": "是的，我們提供完整的維運服務，包含系統監控、問題排除、版本更新與效能優化。維運方案可依需求選擇。"
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "Ready to Launch? 無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。",
+                "ctaText": "立即諮詢",
+                "secondaryText": "探索解決方案"
+            }
+        },
+        "solutions": {
+            "metadata": {
+                "title": "解決方案｜VR/MR 沉浸式訓練、AR 視覺化、智慧空間、AI 導入",
+                "description": "四大方案快速選型：XR 訓練、AR 可視化、IoT 智慧空間與中小企業 AI Agent/Chat。"
+            },
+            "hero": {
+                "eyebrow": "解決方案",
+                "headline": "找到最適合您的解決方案",
+                "headlineHighlight": "解決方案",
+                "cycleWords": [
+                    {
+                        "text": "VR 訓練"
+                    },
+                    {
+                        "text": "AR 視覺化"
+                    },
+                    {
+                        "text": "AI 導入"
+                    },
+                    {
+                        "text": "智慧空間"
+                    }
+                ],
+                "subheadline": "從 VR/MR 沉浸式訓練到企業 AI 導入，四大方案快速選型，讓技術為您的業務帶來實質效益。",
+                "ctaText": "瀏覽方案"
+            },
+            "list": {
+                "eyebrow": "我們的解決方案",
+                "title": "四大方案",
+                "subtitle": "快速選型",
+                "bookDemo": "預約 Demo",
+                "mainFeatures": "主要功能",
+                "useCases": "適用場景",
+                "items": [
+                    {
+                        "id": "xr-training",
+                        "number": "01",
+                        "title": "VR/MR 沉浸式訓練",
+                        "subtitle": "Immersive Training",
+                        "description": "透過虛擬實境與混合實境技術，打造高擬真度的訓練環境",
+                        "features": [
+                            "高擬真度場景模擬",
+                            "互動式操作訓練",
+                            "即時回饋與評估",
+                            "可重複練習"
+                        ],
+                        "useCases": [
+                            "飛行訓練",
+                            "工業操作",
+                            "醫療訓練",
+                            "緊急應變"
+                        ]
+                    },
+                    {
+                        "id": "ar-visualization",
+                        "number": "02",
+                        "title": "AR 視覺化",
+                        "subtitle": "Augmented Reality",
+                        "description": "擴增實境將數位資訊疊加到真實環境，讓導覽、維修、展示更直觀",
+                        "features": [
+                            "現場資訊即時呈現",
+                            "3D 模型視覺化",
+                            "互動式操作指引",
+                            "多語言支援"
+                        ],
+                        "useCases": [
+                            "展演導覽",
+                            "設備維護",
+                            "銷售展示",
+                            "教育導覽"
+                        ]
+                    },
+                    {
+                        "id": "smart-space",
+                        "number": "03",
+                        "title": "智慧空間 IoT",
+                        "subtitle": "Smart Space",
+                        "description": "整合 IoT 感測器、互動裝置與可視化平台，讓空間更智能",
+                        "features": [
+                            "IoT 感測器整合",
+                            "即時數據監控",
+                            "自動化控制",
+                            "數據分析與報表"
+                        ],
+                        "useCases": [
+                            "智慧建築",
+                            "展覽館",
+                            "商業空間",
+                            "工廠監控"
+                        ]
+                    },
+                    {
+                        "id": "ai-for-sme",
+                        "number": "04",
+                        "title": "中小企業 AI 應用",
+                        "subtitle": "AI for SME",
+                        "description": "為中小企業量身打造的 AI 解決方案，提升營運效率",
+                        "features": [
+                            "AI Agent 智能助手",
+                            "AI Chat 客服系統",
+                            "知識庫查詢系統",
+                            "流程自動化"
+                        ],
+                        "useCases": [
+                            "客服系統",
+                            "知識管理",
+                            "資料分析",
+                            "流程自動化"
+                        ]
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "找到適合的方案了嗎？預約 Demo 讓我們為您提供更詳細的方案說明與建議。",
+                "ctaText": "預約 Demo",
+                "secondaryText": "填寫需求表單"
+            }
+        },
+        "projects": {
+            "metadata": {
+                "title": "專案與能力｜XR/AI/IoT 系統整合與落地案例",
+                "description": "飛行模擬、教育訓練、資料介接/推播、AI agent 與 chat 系統等交付能力。"
+            },
+            "hero": {
+                "headline": "用做過的專案建立信任",
+                "headlineHighlight": "專案",
+                "headlineSuffix": "建立信任",
+                "cycleWords": [
+                    {
+                        "text": "案例"
+                    },
+                    {
+                        "text": "成果"
+                    },
+                    {
+                        "text": "實績"
+                    }
+                ],
+                "subheadline": "從飛行模擬到 AI 系統，我們已成功交付多種類型的專案。每一個案例都是我們能力的證明。",
+                "ctaText": "查看專案"
+            },
+            "cta": {
+                "headline": "想了解更多專案細節？預約洽談，讓我們為您介紹更多案例與交付成果。",
+                "ctaText": "預約洽談",
+                "secondaryText": "取得報價"
+            }
+        },
+        "technology": {
+            "metadata": {
+                "title": "技術核心｜XR（VR/AR/MR）裝置整合 × AI × 5G/6G × 五感互動",
+                "description": "以 XR 為基礎，整合 haptic、全向跑步機、AI 與高速網路，打造可落地的沉浸式互動系統。"
+            },
+            "hero": {
+                "eyebrow": "技術核心",
+                "headline": "打造可落地的沉浸式互動體驗",
+                "headlineHighlight": "沉浸式",
+                "cycleWords": [
+                    {
+                        "text": "真實感"
+                    },
+                    {
+                        "text": "互動性"
+                    },
+                    {
+                        "text": "智能化"
+                    }
+                ],
+                "subheadline": "以 OASIS 為願景，整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，讓技術為您的業務創造實質價值。",
+                "ctaText": "查看技術模組"
+            },
+            "cta": {
+                "headline": "想了解更多技術細節？我們的技術團隊可以為您提供更深入的技術諮詢與方案建議。",
+                "ctaText": "洽談技術合作",
+                "secondaryText": "查看應用場景"
+            }
+        },
+        "about": {
+            "metadata": {
+                "title": "關於我們｜空間動態科技 Pencil",
+                "description": "空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。"
+            },
+            "hero": {
+                "eyebrow": "關於我們",
+                "headline": "We Build The OASIS",
+                "headlineHighlight": "OASIS",
+                "cycleWords": [
+                    {
+                        "text": "FUTURE"
+                    },
+                    {
+                        "text": "DREAM"
+                    },
+                    {
+                        "text": "REALITY"
+                    }
+                ],
+                "subheadline": "空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。",
+                "ctaText": "了解更多"
+            },
+            "cta": {
+                "headline": "想加入我們的團隊，或與我們合作？",
+                "ctaText": "聯繫我們",
+                "secondaryText": "查看專案"
+            }
+        },
+        "contact": {
+            "metadata": {
+                "title": "聯絡我們｜預約 XR/AI Demo｜空間動態科技 Pencil",
+                "description": "想導入 VR/AR/MR、智慧空間或 AI Agent/Chat？留下需求，我們提供方案建議與 Demo。"
+            },
+            "hero": {
+                "eyebrow": "聯絡我們",
+                "headline": "Let's Build The Future",
+                "subheadline": "無論是預約 Demo、詢問報價或討論合作，我們都期待與您交流。"
+            },
+            "form": {
+                "title": "填寫需求表單",
+                "description": "填寫以下資訊，我們會在 2 個工作天內與您聯繫。",
+                "fields": {
+                    "name": {
+                        "label": "姓名",
+                        "placeholder": "您的姓名",
+                        "required": true
+                    },
+                    "company": {
+                        "label": "公司名稱",
+                        "placeholder": "公司名稱",
+                        "required": true
+                    },
+                    "email": {
+                        "label": "Email",
+                        "placeholder": "email@example.com",
+                        "required": true
+                    },
+                    "phone": {
+                        "label": "電話",
+                        "placeholder": "聯絡電話"
+                    },
+                    "solutionType": {
+                        "label": "想了解的方案類型",
+                        "options": [
+                            "VR/MR 訓練",
+                            "AR 視覺化",
+                            "智慧空間",
+                            "AI 導入",
+                            "其他"
+                        ],
+                        "required": true
+                    },
+                    "targetScene": {
+                        "label": "目標場景",
+                        "options": [
+                            "教育訓練",
+                            "展演",
+                            "商業",
+                            "工業",
+                            "生活應用",
+                            "其他"
+                        ]
+                    },
+                    "timeline": {
+                        "label": "預計時程",
+                        "placeholder": "請選擇",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "請選擇"
+                            },
+                            {
+                                "value": "1-3",
+                                "label": "1-3 個月"
+                            },
+                            {
+                                "value": "3-6",
+                                "label": "3-6 個月"
+                            },
+                            {
+                                "value": "6+",
+                                "label": "6 個月以上"
+                            },
+                            {
+                                "value": "undefined",
+                                "label": "尚未確定"
+                            }
+                        ]
+                    },
+                    "message": {
+                        "label": "補充說明",
+                        "placeholder": "請描述您的需求或問題..."
+                    }
+                },
+                "submit": "送出表單"
+            },
+            "info": {
+                "benefits": {
+                    "title": "送出後您會得到",
+                    "items": [
+                        "2 個工作天內專人回覆",
+                        "初步需求確認與方案建議",
+                        "預約線上或現場 Demo",
+                        "詳細報價與時程規劃"
+                    ]
+                },
+                "contact": {
+                    "title": "聯絡資訊",
+                    "location": "地點：",
+                    "locationValue": "高雄市",
+                    "email": "Email："
+                }
+            }
+        },
+        "privacy": {
+            "metadata": {
+                "title": "隱私權政策｜空間動態科技 Pencil",
+                "description": "空間動態科技隱私權政策說明。"
+            },
+            "title": "Privacy Policy",
+            "lastUpdated": "最後更新",
+            "status": "狀態",
+            "statusActive": "生效中",
+            "lead": "Your privacy is critically important to us. Included below are our policies for handling your data.",
+            "sections": {
+                "dataCollection": {
+                    "title": "資料收集",
+                    "content": "我們僅收集必要的資訊以提供更好的服務。這可能包含您的姓名、電子郵件地址以及您在填寫需求表單時提供的專案資訊。"
+                },
+                "dataUsage": {
+                    "title": "資料使用",
+                    "content": "收集的資料僅用於專案聯繫、需求評估與服務提供。我們絕不會將您的個人資訊出售給第三方。"
+                },
+                "security": {
+                    "title": "安全性",
+                    "content": "我們採取業界標準的安全措施來保護您的數據免受未經授權的訪問、更改或披露。所有的傳輸均經過加密處理。"
+                }
+            },
+            "contact": "如有任何問題，請透過以下方式聯繫我們："
+        },
+        "notFound": {
+            "title": "404",
+            "alert": "⚠ 系統錯誤：頁面未找到 PAGE_NOT_FOUND",
+            "message": "您嘗試訪問的座標在此元宇宙扇區中不存在。",
+            "button": "return_to_base()",
+            "errorCode": "錯誤代碼：0x404_MISSING",
+            "status": "系統狀態：嚴重"
+        }
+    },
+    "common": {
+        "required": "必填",
+        "optional": "選填",
+        "submit": "送出",
+        "cancel": "取消",
+        "close": "關閉",
+        "back": "返回",
+        "next": "下一步",
+        "previous": "上一步",
+        "loading": "載入中",
+        "error": "錯誤",
+        "success": "成功",
+        "learnMore": "了解更多",
+        "viewAll": "查看全部",
+        "contactUs": "聯繫我們"
+    }
+}

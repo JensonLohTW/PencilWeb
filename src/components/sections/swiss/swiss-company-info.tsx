@@ -2,38 +2,50 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface InfoItem {
-    label: string
-    value: string
-    isHighlight?: boolean
-}
+const infoZhTw = [
+    { label: '公司名稱', value: '空間動態科技 (Pencil)' },
+    { label: '總部', value: '台灣高雄' },
+    { label: '核心技術', value: 'XR, AI, IoT, Digital Twin' },
+    { label: '聯絡信箱', value: 'contact@pencil.com.tw', isHighlight: true },
+]
 
-const info: InfoItem[] = [
-    { label: 'Company Name', value: '空間動態科技 (Pencil)' },
+const infoEn = [
+    { label: 'Company Name', value: 'Pencil (Space Dynamics Tech)' },
     { label: 'Headquarters', value: 'Kaohsiung, Taiwan' },
     { label: 'Core Tech', value: 'XR, AI, IoT, Digital Twin' },
     { label: 'Contact', value: 'contact@pencil.com.tw', isHighlight: true },
 ]
 
 export function SwissCompanyInfo() {
+    const { language, t } = useLanguage()
+    const info = language === 'zh-TW' ? infoZhTw : infoEn
+
+    const eyebrow = language === 'zh-TW' ? '公司資訊' : 'Company'
+    const title = language === 'zh-TW' ? '關於我們' : 'About Us'
+    const description =
+        language === 'zh-TW'
+            ? '空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。'
+            : 'Pencil is dedicated to integrating XR devices, AI big data, 5G/6G networks, and sensory technologies to create next-generation immersive interactive experiences.'
+
     return (
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             <div className="grid gap-16 lg:grid-cols-2">
                 {/* Left: Header */}
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">公司資訊</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">Company Info</h2>
-                    <p className="mt-6 max-w-md text-pencil-400">
-                        空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。
-                    </p>
+                    <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+                        {title}
+                    </h2>
+                    <p className="mt-6 max-w-md text-pencil-400">{description}</p>
 
                     {/* CTA */}
                     <Link
                         href="/contact"
                         className="mt-8 inline-flex items-center gap-2 border-b border-pencil-950 pb-1 text-sm font-medium text-pencil-950 transition-colors hover:border-cta hover:text-cta dark:text-white dark:border-white"
                     >
-                        聯繫我們 <span>→</span>
+                        {t('common.contactUs')} <span>→</span>
                     </Link>
                 </div>
 

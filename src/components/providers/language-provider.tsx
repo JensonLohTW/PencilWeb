@@ -1,6 +1,8 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import zhTw from '../../locales/zh-TW.json'
+import en from '../../locales/en.json'
 
 // Types
 export type Language = 'zh-TW' | 'en'
@@ -15,41 +17,16 @@ interface LanguageContextValue {
 const STORAGE_KEY = 'language-preference'
 
 // Translations
-const translations: Record<Language, Record<string, string>> = {
-    'zh-TW': {
-        'nav.solutions': '解決方案',
-        'nav.projects': '專案與能力',
-        'nav.technology': '技術核心',
-        'nav.about': '關於我們',
-        'nav.contact': '聯絡我們',
-        'nav.demo': '預約 Demo',
-        'theme.light': '明亮模式',
-        'theme.dark': '暗色模式',
-        'theme.system': '跟隨系統',
-        'language.label': '語言',
-    },
-    en: {
-        'nav.solutions': 'Solutions',
-        'nav.projects': 'Projects',
-        'nav.technology': 'Technology',
-        'nav.about': 'About',
-        'nav.contact': 'Contact',
-        'nav.demo': 'Book Demo',
-        'theme.light': 'Light',
-        'theme.dark': 'Dark',
-        'theme.system': 'System',
-        'language.label': 'Language',
-    },
+const translations: Record<Language, any> = {
+    'zh-TW': zhTw,
+    en: en,
 }
-
-// Default translation function
-const defaultT = (key: string): string => translations['zh-TW'][key] ?? key
 
 // Context with defaults
 const LanguageContext = createContext<LanguageContextValue>({
     language: 'zh-TW',
     setLanguage: () => { },
-    t: defaultT,
+    t: (key: string) => key, // Default t function for context, will be overridden by provider
 })
 
 // Get initial language - safe for SSR
@@ -96,7 +73,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
     // Translation function
     const t = (key: string): string => {
-        return translations[language][key] ?? key
+        const keys = key.split('.')
+        let value: any = translations[language]
+
+        for (const k of keys) {
+            value = value?.[k]
+        }
+
+        return typeof value === 'string' ? value : key
     }
 
     // Always provide context

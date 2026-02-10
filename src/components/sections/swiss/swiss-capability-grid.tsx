@@ -1,26 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface CapabilityGroup {
-    category: string
-    items: string[]
-}
-
-const capabilities: CapabilityGroup[] = [
+const capabilitiesZhTw = [
     { category: 'XR', items: ['內容開發', '互動設計', '裝置整合'] },
     { category: 'AI', items: ['Agent 開發', 'Chat 系統', '查詢系統'] },
     { category: '資料', items: ['介接規劃', '推播系統', 'API 開發'] },
     { category: 'IoT', items: ['感測整合', '控制系統', '可視化'] },
 ]
 
+const capabilitiesEn = [
+    { category: 'XR', items: ['Content Development', 'Interaction Design', 'Device Integration'] },
+    { category: 'AI', items: ['Agent Development', 'Chat Systems', 'Query Systems'] },
+    { category: 'Data', items: ['Integration Planning', 'Push Systems', 'API Development'] },
+    { category: 'IoT', items: ['Sensor Integration', 'Control Systems', 'Visualization'] },
+]
+
 export function SwissCapabilityGrid() {
+    const { language } = useLanguage()
+    const capabilities = language === 'zh-TW' ? capabilitiesZhTw : capabilitiesEn
+
+    const title = language === 'zh-TW' ? '能力矩陣' : 'Capability Matrix'
+    const eyebrow = language === 'zh-TW' ? '我們的能力' : 'Our Capabilities'
+
     return (
         <section className="border-t border-pencil-200 px-6 py-24 lg:px-16">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">我們的能力</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">能力矩陣</h2>
+                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
             </div>
 
             {/* Grid */}

@@ -1,14 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface QualityItem {
-    number: string
-    title: string
-    description: string
-}
-
-const items: QualityItem[] = [
+const itemsZhTw = [
     {
         number: '01',
         title: '品質測試',
@@ -26,13 +21,37 @@ const items: QualityItem[] = [
     },
 ]
 
+const itemsEn = [
+    {
+        number: '01',
+        title: 'Quality Testing',
+        description: 'Comprehensive functional testing, performance testing, and stress testing',
+    },
+    {
+        number: '02',
+        title: 'Device Compatibility',
+        description: 'Cross-platform and cross-device compatibility verification',
+    },
+    {
+        number: '03',
+        title: 'Continuous Maintenance',
+        description: 'System monitoring, troubleshooting, and version updates',
+    },
+]
+
 export function SwissQualityAssurance() {
+    const { language } = useLanguage()
+    const items = language === 'zh-TW' ? itemsZhTw : itemsEn
+
+    const eyebrow = language === 'zh-TW' ? '可靠性保證' : 'Reliability'
+    const title = language === 'zh-TW' ? '可靠性與交付' : 'Quality Assurance'
+
     return (
         <section className="border-t border-pencil-200 px-6 py-24 lg:px-16">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">可靠性保證</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">可靠性與交付</h2>
+                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
             </div>
 
             {/* Grid */}

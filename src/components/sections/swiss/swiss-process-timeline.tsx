@@ -1,28 +1,29 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface TimelineStep {
+interface ProcessStep {
     number: string
     title: string
     description: string
 }
 
-const steps: TimelineStep[] = [
-    { number: '01', title: '需求訪談', description: '深入了解您的目標、場景與需求' },
-    { number: '02', title: 'PoC 驗證', description: '快速原型驗證可行性與效果' },
-    { number: '03', title: '開發整合', description: '完整開發與系統整合' },
-    { number: '04', title: '部署驗收', description: '現場部署與驗收測試' },
-    { number: '05', title: '維運優化', description: '持續維運與效能優化' },
-]
-
 export function SwissProcessTimeline() {
+    const { t } = useLanguage()
+
+    // Get process steps from translations
+    const stepsData = t('pages.solutions.process.steps')
+    const steps = Array.isArray(stepsData) ? (stepsData as ProcessStep[]) : []
+
     return (
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">從需求到交付</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">導入流程</h2>
+                <p className="swiss-mono mb-2 text-pencil-500">{t('pages.solutions.process.eyebrow')}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+                    {t('pages.solutions.process.title')}
+                </h2>
             </div>
 
             {/* Timeline */}
@@ -43,7 +44,9 @@ export function SwissProcessTimeline() {
                         >
                             {/* Number Circle */}
                             <div className="relative z-10 mb-6 flex size-16 items-center justify-center border-2 border-pencil-200 bg-white transition-colors group-hover:border-cta dark:bg-pencil-950 dark:border-white/30">
-                                <span className="swiss-mono text-lg text-pencil-950 group-hover:text-cta dark:text-white">{step.number}</span>
+                                <span className="swiss-mono text-lg text-pencil-950 group-hover:text-cta dark:text-white">
+                                    {step.number}
+                                </span>
                             </div>
 
                             {/* Content */}

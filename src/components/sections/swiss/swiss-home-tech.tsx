@@ -2,14 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface TechItem {
-    number: string
-    title: string
-    subtitle: string
-}
-
-const techStack: TechItem[] = [
+// Tech stack items - these are language-independent
+const techStack = [
     { number: '01', title: 'XR', subtitle: 'VR/MR/AR' },
     { number: '02', title: 'AI', subtitle: 'LLM/Agent' },
     { number: '03', title: 'IoT', subtitle: 'Sensors' },
@@ -19,19 +15,21 @@ const techStack: TechItem[] = [
 ]
 
 export function SwissHomeTech() {
+    const { t } = useLanguage()
+
     return (
         <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             {/* Section Header */}
             <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">核心技術</p>
+                    <p className="swiss-mono mb-2 text-pencil-500">{t('nav.technology')}</p>
                     <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">Tech Stack</h2>
                 </div>
                 <Link
                     href="/technology"
                     className="hidden items-center gap-2 border-b border-pencil-950 pb-1 text-sm font-medium text-pencil-950 transition-colors hover:border-cta hover:text-cta md:inline-flex dark:text-white dark:border-white"
                 >
-                    了解更多 <span>→</span>
+                    {t('common.learnMore')} <span>→</span>
                 </Link>
             </div>
 

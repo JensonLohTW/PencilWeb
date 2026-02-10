@@ -1,0 +1,511 @@
+{
+    "nav": {
+        "solutions": "Solutions",
+        "projects": "Projects",
+        "technology": "Technology",
+        "about": "About",
+        "contact": "Contact",
+        "demo": "Book Demo"
+    },
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "language": {
+        "label": "Language"
+    },
+    "home": {
+        "hero": {
+            "eyebrow": "XR • AI • IoT",
+            "headline": "Redefining Spatial Dynamics",
+            "subheadline": "We integrate XR, AI, and IoT technologies to create immersive, intelligent, and interactive spatial experiences for enterprises.",
+            "cta": "Explore Solutions",
+            "scroll": "SCROLL"
+        }
+    },
+    "footer": {
+        "company": "Pencil",
+        "companyCategory": "Company",
+        "location": "Kaohsiung City",
+        "rights": "© 2024 Pencil. All rights reserved.",
+        "cta": {
+            "title": "Ready to Start?",
+            "description": "Integrate AI and XR into real-world scenarios to create immersive, interactive, and intelligent spatial experiences."
+        },
+        "solutions": {
+            "title": "Solutions",
+            "xr": "VR/MR Immersive Training",
+            "ar": "AR Visualization",
+            "iot": "Smart Space IoT",
+            "ai": "AI Applications for SME"
+        },
+        "projects": {
+            "title": "Projects",
+            "simulator": "Flight Simulator System",
+            "training": "Flight Education Training",
+            "integration": "Data Integration Planning",
+            "agent": "AI Agent System"
+        },
+        "legal": "Legal",
+        "links": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
+    },
+    "pages": {
+        "home": {
+            "hero": {
+                "headline": "All Spatial Dynamics Start with Pencil",
+                "subheadline": "We integrate AI and XR technologies into real-world scenarios to create deployable immersive interactions and intelligent spatial experiences."
+            },
+            "solutions": {
+                "eyebrow": "Our Solutions",
+                "title": "Solutions",
+                "viewAll": "View All",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "VR/MR Immersive Training",
+                        "subtitle": "Immersive Training",
+                        "description": "High-fidelity virtual environments for safe, repeatable training experiences"
+                    },
+                    {
+                        "number": "02",
+                        "title": "AR Visualization",
+                        "subtitle": "Augmented Reality",
+                        "description": "Overlay digital information onto the real world"
+                    },
+                    {
+                        "number": "03",
+                        "title": "Smart Space IoT",
+                        "subtitle": "Smart Space",
+                        "description": "Integrate IoT sensors and visualization platforms"
+                    },
+                    {
+                        "number": "04",
+                        "title": "AI for SME",
+                        "subtitle": "AI for SME",
+                        "description": "AI Agent and Chat systems to improve operational efficiency"
+                    }
+                ]
+            },
+            "projects": {
+                "eyebrow": "Featured Projects",
+                "title": "Projects",
+                "viewAll": "View All",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "Flight Simulator System",
+                        "category": "XR Training"
+                    },
+                    {
+                        "number": "02",
+                        "title": "Flight Education Training",
+                        "category": "Education"
+                    },
+                    {
+                        "number": "03",
+                        "title": "Data Integration Planning",
+                        "category": "Data Integration"
+                    },
+                    {
+                        "number": "04",
+                        "title": "AI Agent System",
+                        "category": "AI Solution"
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "FAQ",
+                "title": "FAQ",
+                "description": "If you have any other questions, please feel free to contact us directly. We're happy to help.",
+                "items": [
+                    {
+                        "question": "How do I choose the right solution?",
+                        "answer": "We recommend booking a demo first. Once we understand your needs and target scenarios, we'll provide the most suitable solution recommendations. Each solution can be customized to your requirements."
+                    },
+                    {
+                        "question": "What hardware equipment is needed?",
+                        "answer": "It depends on the solution. VR/MR solutions require VR headsets and related hardware; AR solutions can use smartphones or tablets; smart spaces require IoT sensors; AI solutions are primarily software services."
+                    },
+                    {
+                        "question": "What is the approximate implementation cost?",
+                        "answer": "Costs depend on project scale and complexity. PoC validation stages are typically lower, while full project development depends on requirements. Please book a demo for detailed pricing."
+                    },
+                    {
+                        "question": "Do you provide maintenance services?",
+                        "answer": "Yes, we provide comprehensive maintenance services including system monitoring, troubleshooting, version updates, and performance optimization. Maintenance plans can be selected based on your needs."
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "Ready to Launch? Whether it's VR training, AR guidance, smart spaces, or AI applications, we can create deployable solutions for you.",
+                "ctaText": "Contact Now",
+                "secondaryText": "Explore Solutions"
+            }
+        },
+        "solutions": {
+            "metadata": {
+                "title": "Solutions | VR/MR Immersive Training, AR Visualization, Smart Space, AI Implementation",
+                "description": "Four quick-select solutions: XR training, AR visualization, IoT smart spaces, and AI Agent/Chat for SMEs."
+            },
+            "hero": {
+                "eyebrow": "Solutions",
+                "headline": "Find the Perfect Solution for You",
+                "headlineHighlight": "Solution",
+                "cycleWords": [
+                    {
+                        "text": "VR Training"
+                    },
+                    {
+                        "text": "AR Visualization"
+                    },
+                    {
+                        "text": "AI Implementation"
+                    },
+                    {
+                        "text": "Smart Space"
+                    }
+                ],
+                "subheadline": "From VR/MR immersive training to enterprise AI implementation, four quick-select solutions that bring real value to your business.",
+                "ctaText": "Browse Solutions"
+            },
+            "list": {
+                "eyebrow": "Our Solutions",
+                "title": "Four Solutions",
+                "subtitle": "Quick Selection",
+                "bookDemo": "Book Demo",
+                "mainFeatures": "Key Features",
+                "useCases": "Use Cases",
+                "items": [
+                    {
+                        "id": "xr-training",
+                        "number": "01",
+                        "title": "VR/MR Immersive Training",
+                        "subtitle": "Immersive Training",
+                        "description": "Create high-fidelity training environments through virtual and mixed reality technologies",
+                        "features": [
+                            "High-fidelity scene simulation",
+                            "Interactive operational training",
+                            "Real-time feedback and assessment",
+                            "Repeatable practice"
+                        ],
+                        "useCases": [
+                            "Flight training",
+                            "Industrial operations",
+                            "Medical training",
+                            "Emergency response"
+                        ]
+                    },
+                    {
+                        "id": "ar-visualization",
+                        "number": "02",
+                        "title": "AR Visualization",
+                        "subtitle": "Augmented Reality",
+                        "description": "Overlay digital information onto the real environment for more intuitive guidance, maintenance, and demonstrations",
+                        "features": [
+                            "Real-time on-site information",
+                            "3D model visualization",
+                            "Interactive operation guidance",
+                            "Multi-language support"
+                        ],
+                        "useCases": [
+                            "Exhibition tours",
+                            "Equipment maintenance",
+                            "Sales demonstrations",
+                            "Educational tours"
+                        ]
+                    },
+                    {
+                        "id": "smart-space",
+                        "number": "03",
+                        "title": "Smart Space IoT",
+                        "subtitle": "Smart Space",
+                        "description": "Integrate IoT sensors, interactive devices, and visualization platforms for smarter spaces",
+                        "features": [
+                            "IoT sensor integration",
+                            "Real-time data monitoring",
+                            "Automated control",
+                            "Data analysis and reporting"
+                        ],
+                        "useCases": [
+                            "Smart buildings",
+                            "Exhibition halls",
+                            "Commercial spaces",
+                            "Factory monitoring"
+                        ]
+                    },
+                    {
+                        "id": "ai-for-sme",
+                        "number": "04",
+                        "title": "AI Applications for SME",
+                        "subtitle": "AI for SME",
+                        "description": "Tailored AI solutions for small and medium enterprises to improve operational efficiency",
+                        "features": [
+                            "AI Agent assistants",
+                            "AI Chat customer service",
+                            "Knowledge base query system",
+                            "Process automation"
+                        ],
+                        "useCases": [
+                            "Customer service",
+                            "Knowledge management",
+                            "Data analysis",
+                            "Process automation"
+                        ]
+                    }
+                ]
+            },
+            "cta": {
+                "headline": "Found the right solution? Book a demo for more detailed solution descriptions and recommendations.",
+                "ctaText": "Book Demo",
+                "secondaryText": "Fill Out Requirements Form"
+            }
+        },
+        "projects": {
+            "metadata": {
+                "title": "Projects & Capabilities | XR/AI/IoT System Integration and Case Studies",
+                "description": "Delivery capabilities including flight simulation, educational training, data integration/push, AI agent and chat systems."
+            },
+            "hero": {
+                "headline": "Building Trust Through Proven Projects",
+                "headlineHighlight": "Projects",
+                "headlineSuffix": "Building Trust",
+                "cycleWords": [
+                    {
+                        "text": "Cases"
+                    },
+                    {
+                        "text": "Results"
+                    },
+                    {
+                        "text": "Track Record"
+                    }
+                ],
+                "subheadline": "From flight simulation to AI systems, we have successfully delivered various types of projects. Each case is proof of our capabilities.",
+                "ctaText": "View Projects"
+            },
+            "cta": {
+                "headline": "Want to learn more about project details? Book a consultation to learn about more cases and delivery results.",
+                "ctaText": "Book Consultation",
+                "secondaryText": "Get Quote"
+            }
+        },
+        "technology": {
+            "metadata": {
+                "title": "Technology Core | XR (VR/AR/MR) Device Integration × AI × 5G/6G × Multi-sensory Interaction",
+                "description": "Built on XR foundation, integrating haptics, omnidirectional treadmills, AI, and high-speed networks to create deployable immersive interactive systems."
+            },
+            "hero": {
+                "eyebrow": "Technology Core",
+                "headline": "Creating Deployable Immersive Interactive Experiences",
+                "headlineHighlight": "Immersive",
+                "cycleWords": [
+                    {
+                        "text": "Realism"
+                    },
+                    {
+                        "text": "Interactivity"
+                    },
+                    {
+                        "text": "Intelligence"
+                    }
+                ],
+                "subheadline": "With OASIS as our vision, integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create real value for your business.",
+                "ctaText": "View Tech Modules"
+            },
+            "cta": {
+                "headline": "Want to learn more technical details? Our technical team can provide more in-depth technical consultation and solution recommendations.",
+                "ctaText": "Discuss Technical Collaboration",
+                "secondaryText": "View Application Scenarios"
+            }
+        },
+        "about": {
+            "metadata": {
+                "title": "About Us | Pencil Spatial Dynamics",
+                "description": "Pencil Spatial Dynamics is dedicated to integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create the next generation of immersive interactive experiences."
+            },
+            "hero": {
+                "eyebrow": "About Us",
+                "headline": "We Build The OASIS",
+                "headlineHighlight": "OASIS",
+                "cycleWords": [
+                    {
+                        "text": "FUTURE"
+                    },
+                    {
+                        "text": "DREAM"
+                    },
+                    {
+                        "text": "REALITY"
+                    }
+                ],
+                "subheadline": "Pencil Spatial Dynamics is dedicated to integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create the next generation of immersive interactive experiences.",
+                "ctaText": "Learn More"
+            },
+            "cta": {
+                "headline": "Want to join our team or collaborate with us?",
+                "ctaText": "Contact Us",
+                "secondaryText": "View Projects"
+            }
+        },
+        "contact": {
+            "metadata": {
+                "title": "Contact Us | Book XR/AI Demo | Pencil Spatial Dynamics",
+                "description": "Want to implement VR/AR/MR, smart spaces, or AI Agent/Chat? Leave your requirements, and we'll provide solution recommendations and demos."
+            },
+            "hero": {
+                "eyebrow": "Contact Us",
+                "headline": "Let's Build The Future",
+                "subheadline": "Whether booking a demo, inquiring about pricing, or discussing collaboration, we look forward to connecting with you."
+            },
+            "form": {
+                "title": "Fill Out Requirements Form",
+                "description": "Fill out the information below, and we'll contact you within 2 business days.",
+                "fields": {
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Your name",
+                        "required": true
+                    },
+                    "company": {
+                        "label": "Company Name",
+                        "placeholder": "Company name",
+                        "required": true
+                    },
+                    "email": {
+                        "label": "Email",
+                        "placeholder": "email@example.com",
+                        "required": true
+                    },
+                    "phone": {
+                        "label": "Phone",
+                        "placeholder": "Contact phone"
+                    },
+                    "solutionType": {
+                        "label": "Solution Type of Interest",
+                        "options": [
+                            "VR/MR Training",
+                            "AR Visualization",
+                            "Smart Space",
+                            "AI Implementation",
+                            "Other"
+                        ],
+                        "required": true
+                    },
+                    "targetScene": {
+                        "label": "Target Scenario",
+                        "options": [
+                            "Education & Training",
+                            "Exhibition",
+                            "Commercial",
+                            "Industrial",
+                            "Daily Life",
+                            "Other"
+                        ]
+                    },
+                    "timeline": {
+                        "label": "Expected Timeline",
+                        "placeholder": "Please select",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "Please select"
+                            },
+                            {
+                                "value": "1-3",
+                                "label": "1-3 months"
+                            },
+                            {
+                                "value": "3-6",
+                                "label": "3-6 months"
+                            },
+                            {
+                                "value": "6+",
+                                "label": "6+ months"
+                            },
+                            {
+                                "value": "undefined",
+                                "label": "Not yet determined"
+                            }
+                        ]
+                    },
+                    "message": {
+                        "label": "Additional Notes",
+                        "placeholder": "Please describe your requirements or questions..."
+                    }
+                },
+                "submit": "Submit Form"
+            },
+            "info": {
+                "benefits": {
+                    "title": "What You'll Get After Submission",
+                    "items": [
+                        "Response from our team within 2 business days",
+                        "Preliminary requirement confirmation and solution recommendations",
+                        "Schedule online or on-site demo",
+                        "Detailed pricing and timeline planning"
+                    ]
+                },
+                "contact": {
+                    "title": "Contact Information",
+                    "location": "Location:",
+                    "locationValue": "Kaohsiung City",
+                    "email": "Email:"
+                }
+            }
+        },
+        "privacy": {
+            "metadata": {
+                "title": "Privacy Policy | Pencil Spatial Dynamics",
+                "description": "Privacy Policy for Pencil Spatial Dynamics."
+            },
+            "title": "Privacy Policy",
+            "lastUpdated": "Last Updated",
+            "status": "Status",
+            "statusActive": "Active",
+            "lead": "Your privacy is critically important to us. Included below are our policies for handling your data.",
+            "sections": {
+                "dataCollection": {
+                    "title": "Data Collection",
+                    "content": "We only collect necessary information to provide better services. This may include your name, email address, and project information you provide when filling out requirement forms."
+                },
+                "dataUsage": {
+                    "title": "Data Usage",
+                    "content": "Collected data is only used for project communication, requirement assessment, and service provision. We will never sell your personal information to third parties."
+                },
+                "security": {
+                    "title": "Security",
+                    "content": "We employ industry-standard security measures to protect your data from unauthorized access, alteration, or disclosure. All transmissions are encrypted."
+                }
+            },
+            "contact": "If you have any questions, please contact us at:"
+        },
+        "notFound": {
+            "title": "404",
+            "alert": "⚠ SYSTEM FAULT: PAGE_NOT_FOUND",
+            "message": "The coordinates you are trying to access do not exist in this sector of the metaverse.",
+            "button": "return_to_base()",
+            "errorCode": "ERR_CODE: 0x404_MISSING",
+            "status": "SYS_STATUS: CRITICAL"
+        }
+    },
+    "common": {
+        "required": "Required",
+        "optional": "Optional",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "loading": "Loading",
+        "error": "Error",
+        "success": "Success",
+        "learnMore": "Learn More",
+        "viewAll": "View All",
+        "contactUs": "Contact Us"
+    }
+}

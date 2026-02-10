@@ -2,17 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface Project {
-    id: string
-    number: string
-    title: string
-    category: string
-    tags: string[]
-    color: string
-}
-
-const projects: Project[] = [
+const projectsZhTw = [
     {
         id: 'flight-simulator',
         number: '01',
@@ -55,9 +47,58 @@ const projects: Project[] = [
     },
 ]
 
+const projectsEn = [
+    {
+        id: 'flight-simulator',
+        number: '01',
+        title: 'Flight Simulator System',
+        category: 'XR / Simulator',
+        tags: ['VR', 'Simulator', 'Flight'],
+        color: '#C4682F',
+    },
+    {
+        id: 'flight-training',
+        number: '02',
+        title: 'Flight Education Training',
+        category: 'XR / Education',
+        tags: ['Training', 'VR', 'Course'],
+        color: '#0F172A',
+    },
+    {
+        id: 'data-integration',
+        number: '03',
+        title: 'Data Integration Planning',
+        category: 'Data / Integration',
+        tags: ['Integration', 'API', 'Workflow'],
+        color: '#334155',
+    },
+    {
+        id: 'data-push',
+        number: '04',
+        title: 'Industry Data Push Planning',
+        category: 'Data / Push',
+        tags: ['Push', 'Data', 'Notification'],
+        color: '#475569',
+    },
+    {
+        id: 'ai-agent',
+        number: '05',
+        title: 'AI Agent Query System',
+        category: 'AI / Chat',
+        tags: ['AI', 'Chat', 'Agent'],
+        color: '#C4682F',
+    },
+]
+
 export function SwissProjectList() {
+    const { language } = useLanguage()
     const [hoveredId, setHoveredId] = useState<string | null>(null)
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+    const projects = language === 'zh-TW' ? projectsZhTw : projectsEn
+    const eyebrow = language === 'zh-TW' ? '已完成專案' : 'Completed Projects'
+    const title = language === 'zh-TW' ? '專案列表' : 'Projects'
+    const count = language === 'zh-TW' ? `共 ${projects.length} 個專案` : `${projects.length} Projects`
 
     const handleMouseMove = (e: React.MouseEvent) => {
         setMousePos({ x: e.clientX, y: e.clientY })
@@ -68,10 +109,10 @@ export function SwissProjectList() {
             {/* Section Header */}
             <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6">
                 <div>
-                    <p className="swiss-mono mb-2 text-pencil-500">已完成專案</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">專案列表</h2>
+                    <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
                 </div>
-                <p className="swiss-mono hidden text-pencil-400 md:block">共 {projects.length} 個專案</p>
+                <p className="swiss-mono hidden text-pencil-400 md:block">{count}</p>
             </div>
 
             {/* Project List */}
@@ -110,10 +151,7 @@ export function SwissProjectList() {
                         {/* Tags */}
                         <div className="ml-20 mt-4 flex gap-3 lg:ml-28">
                             {project.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="swiss-mono border border-pencil-200 px-3 py-1 text-pencil-500"
-                                >
+                                <span key={tag} className="swiss-mono border border-pencil-200 px-3 py-1 text-pencil-500">
                                     {tag}
                                 </span>
                             ))}

@@ -1,3 +1,6 @@
+'use client'
+
+import { useLanguage } from '@/components/providers/language-provider'
 import { SwissHomeHero } from '@/components/sections/swiss/swiss-home-hero'
 import { SwissHomeSolutions } from '@/components/sections/swiss/swiss-home-solutions'
 import { SwissTrustClients } from '@/components/sections/swiss/swiss-trust-clients'
@@ -7,12 +10,14 @@ import { SwissFAQ } from '@/components/sections/swiss/swiss-faq'
 import { SwissCTA } from '@/components/sections/swiss/swiss-cta'
 
 export default function Page() {
+  const { t } = useLanguage()
+
   return (
     <>
       {/* Hero */}
       <SwissHomeHero
-        headline="一切空間的動態都來自於 Pencil"
-        subheadline="我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+        headline={t('pages.home.hero.headline')}
+        subheadline={t('pages.home.hero.subheadline')}
       />
 
       {/* Solutions */}
@@ -32,10 +37,10 @@ export default function Page() {
 
       {/* CTA */}
       <SwissCTA
-        headline="Ready to Launch? 無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。"
-        ctaText="立即諮詢"
+        headline={t('pages.home.cta.headline')}
+        ctaText={t('pages.home.cta.ctaText')}
         ctaHref="/contact"
-        secondaryText="探索解決方案"
+        secondaryText={t('pages.home.cta.secondaryText')}
         secondaryHref="/solutions"
       />
     </>

@@ -1,15 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/components/providers/language-provider'
 
-interface TimelineItem {
-    number: string
-    year: string
-    title: string
-    description: string
-}
-
-const timeline: TimelineItem[] = [
+const timelineZhTw = [
     {
         number: '01',
         year: '2023 Q1',
@@ -36,13 +30,46 @@ const timeline: TimelineItem[] = [
     },
 ]
 
+const timelineEn = [
+    {
+        number: '01',
+        year: '2023 Q1',
+        title: 'System Initialization',
+        description: 'Company founded, focusing on XR hardware & software integration technology R&D',
+    },
+    {
+        number: '02',
+        year: '2023 Q3',
+        title: 'First Deployment',
+        description: 'Delivered first military-grade flight simulation training system',
+    },
+    {
+        number: '03',
+        year: '2024 Q1',
+        title: 'AI Integration',
+        description: 'Integrated LLM technology, developed enterprise-level AI Agent solutions',
+    },
+    {
+        number: '04',
+        year: '2024 Q4',
+        title: 'Smart Space',
+        description: 'Initiated IoT smart space integration project, realizing cyber-physical fusion vision',
+    },
+]
+
 export function SwissTimeline() {
+    const { language } = useLanguage()
+    const timeline = language === 'zh-TW' ? timelineZhTw : timelineEn
+
+    const eyebrow = language === 'zh-TW' ? '發展歷程' : 'Our Journey'
+    const title = language === 'zh-TW' ? '里程碑' : 'Mission Logs'
+
     return (
         <section className="border-t border-pencil-200 px-6 py-24 lg:px-16">
             {/* Section Header */}
             <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500">發展歷程</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">Mission Logs</h2>
+                <p className="swiss-mono mb-2 text-pencil-500">{eyebrow}</p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl">{title}</h2>
             </div>
 
             {/* Timeline */}
@@ -79,9 +106,7 @@ export function SwissTimeline() {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-pencil-600 lg:ml-auto lg:max-w-md lg:text-right">
-                                    {item.description}
-                                </p>
+                                <p className="text-pencil-600 lg:ml-auto lg:max-w-md lg:text-right">{item.description}</p>
                             </div>
                         </motion.div>
                     ))}

@@ -1,31 +1,29 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useLanguage } from '@/components/providers/language-provider'
 import { SwissHeroEnhanced } from '@/components/sections/swiss/swiss-hero-enhanced'
 import { SwissTechModules } from '@/components/sections/swiss/swiss-tech-modules'
 import { SwissSystemFlow } from '@/components/sections/swiss/swiss-system-flow'
 import { SwissQualityAssurance } from '@/components/sections/swiss/swiss-quality-assurance'
 import { SwissCTA } from '@/components/sections/swiss/swiss-cta'
 
-export const metadata: Metadata = {
-    title: '技術核心｜XR（VR/AR/MR）裝置整合 × AI × 5G/6G × 五感互動',
-    description:
-        '以 XR 為基礎，整合 haptic、全向跑步機、AI 與高速網路，打造可落地的沉浸式互動系統。',
-}
-
 export default function TechnologyPage() {
+    const { t } = useLanguage()
+
     return (
         <>
             {/* Hero */}
             <SwissHeroEnhanced
-                eyebrow="技術核心"
-                headline="打造可落地的沉浸式互動體驗"
-                headlineHighlight="沉浸式"
+                eyebrow={t('pages.technology.hero.eyebrow')}
+                headline={t('pages.technology.hero.headline')}
+                headlineHighlight={t('pages.technology.hero.headlineHighlight')}
                 cycleWords={[
-                    { text: '真實感', className: 'text-cta font-serif italic' },
-                    { text: '互動性', className: 'text-cyan-600 font-mono' },
-                    { text: '智能化', className: 'text-purple-600' },
+                    { text: t('pages.technology.hero.cycleWords.0.text'), className: 'text-cta font-serif italic' },
+                    { text: t('pages.technology.hero.cycleWords.1.text'), className: 'text-cyan-600 font-mono' },
+                    { text: t('pages.technology.hero.cycleWords.2.text'), className: 'text-purple-600' },
                 ]}
-                subheadline="以 OASIS 為願景，整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，讓技術為您的業務創造實質價值。"
-                ctaText="查看技術模組"
+                subheadline={t('pages.technology.hero.subheadline')}
+                ctaText={t('pages.technology.hero.ctaText')}
                 ctaHref="#tech-modules"
             />
 
@@ -40,10 +38,10 @@ export default function TechnologyPage() {
 
             {/* CTA */}
             <SwissCTA
-                headline="想了解更多技術細節？我們的技術團隊可以為您提供更深入的技術諮詢與方案建議。"
-                ctaText="洽談技術合作"
+                headline={t('pages.technology.cta.headline')}
+                ctaText={t('pages.technology.cta.ctaText')}
                 ctaHref="/contact"
-                secondaryText="查看應用場景"
+                secondaryText={t('pages.technology.cta.secondaryText')}
                 secondaryHref="/solutions"
             />
         </>
