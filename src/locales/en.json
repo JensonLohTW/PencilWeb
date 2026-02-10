@@ -477,18 +477,80 @@
             "sections": {
                 "dataCollection": {
                     "title": "Data Collection",
-                    "content": "We only collect necessary information to provide better services. This may include your name, email address, and project information you provide when filling out requirement forms."
+                    "content": "We only collect necessary information to provide better services. This may include:",
+                    "items": [
+                        "Contact information (name, email, phone number)",
+                        "Project requirements and usage scenario descriptions",
+                        "Technical data when browsing the website (IP address, browser type)"
+                    ]
                 },
                 "dataUsage": {
                     "title": "Data Usage",
-                    "content": "Collected data is only used for project communication, requirement assessment, and service provision. We will never sell your personal information to third parties."
+                    "content": "Collected data is only used for:",
+                    "items": [
+                        "Responding to your inquiries and providing quotes",
+                        "Providing, maintaining, and improving our services",
+                        "Sending service updates or technical notifications"
+                    ]
+                },
+                "cookies": {
+                    "title": "Cookie Policy",
+                    "content": "We use Cookies to improve your browsing experience. These Cookies are used to remember your preferences and analyze website traffic. You can refuse Cookies through your browser settings, but this may affect the use of some functions."
+                },
+                "thirdParty": {
+                    "title": "Third-Party Services",
+                    "content": "To provide complete solutions, we may use third-party services (such as Google Analytics for traffic analysis). These services have their own privacy policies, which we recommend you review."
                 },
                 "security": {
                     "title": "Security",
-                    "content": "We employ industry-standard security measures to protect your data from unauthorized access, alteration, or disclosure. All transmissions are encrypted."
+                    "content": "We employ industry-standard security measures (such as SSL encryption) to protect your data from unauthorized access, alteration, or disclosure. However, internet transmission is never 100% secure, and we cannot guarantee absolute security."
+                },
+                "rights": {
+                    "title": "User Rights",
+                    "content": "In accordance with the Personal Data Protection Act, you have the right to request access to, correction of, or deletion of your personal data. If you wish to exercise these rights, please contact us."
                 }
             },
             "contact": "If you have any questions, please contact us at:"
+        },
+        "terms": {
+            "metadata": {
+                "title": "Terms of Service | Pencil Spatial Dynamics",
+                "description": "Terms of Service for Pencil Spatial Dynamics."
+            },
+            "title": "Terms of Service",
+            "lead": "Welcome to Pencil Spatial Dynamics. by using our website and services, you agree to the following terms.",
+            "sections": {
+                "acceptance": {
+                    "title": "Acceptance of Terms",
+                    "content": "By visiting this website or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+                },
+                "services": {
+                    "title": "Scope of Services",
+                    "content": "Pencil Spatial Dynamics provides XR (VR/AR/MR), AI Artificial Intelligence, and Smart Space solutions. We reserve the right to modify, suspend, or terminate parts of the service at any time without prior notice."
+                },
+                "responsibilities": {
+                    "title": "User Responsibilities",
+                    "content": "When using this service, users shall comply with relevant laws and regulations of the Republic of China and shall not engage in the following behaviors:",
+                    "items": [
+                        "Using this service for any illegal or unauthorized activities",
+                        "Interfering with or disrupting the system security or integrity of this service",
+                        "Collecting or using other users' personal data without authorization"
+                    ]
+                },
+                "intellectualProperty": {
+                    "title": "Intellectual Property",
+                    "content": "This website and its content (including but not limited to text, images, software code, trademarks) are owned by Pencil Spatial Dynamics or its licensors and are protected by copyright laws and other intellectual property laws. Unauthorized reproduction, modification, or reprinting without written permission is prohibited."
+                },
+                "disclaimer": {
+                    "title": "Disclaimer",
+                    "content": "This service is provided on an \"as is\" basis without any express or implied warranties. We do not guarantee that the service will be uninterrupted or error-free. Pencil Spatial Dynamics shall not be liable for any direct or indirect damages arising from the use of this service."
+                },
+                "jurisdiction": {
+                    "title": "Governing Law and Jurisdiction",
+                    "content": "The interpretation and application of these terms, as well as disputes related to these terms, shall be handled in accordance with the laws of the Republic of China, and the Kaohsiung District Court in Taiwan shall be the court of first instance."
+                }
+            },
+            "contact": "If you have any questions regarding these terms, please contact:"
         },
         "notFound": {
             "title": "404",

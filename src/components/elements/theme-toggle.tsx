@@ -73,6 +73,29 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
         return () => document.removeEventListener('keydown', handleEscape)
     }, [])
 
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return (
+            <div className={clsx('relative', className)} {...props}>
+                <button
+                    type="button"
+                    disabled
+                    className={clsx(
+                        'inline-flex items-center justify-center rounded-full p-2 transition-colors',
+                        'text-pencil-500 hover:text-pencil-950 hover:bg-pencil-100',
+                        'dark:text-pencil-400 dark:hover:text-white dark:hover:bg-white/10'
+                    )}
+                >
+                    <SunIcon className="size-5 opacity-0" />
+                </button>
+            </div>
+        )
+    }
+
     // Get current icon
     const CurrentIcon = resolvedTheme === 'dark' ? MoonIcon : SunIcon
 
