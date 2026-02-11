@@ -79,7 +79,7 @@ function getWordMotion(variant: HeroVariant, reduceMotion: boolean) {
       initial: { opacity: 0, y: 20 },
       animate: { opacity: 1, y: 0 },
       exit: { opacity: 0, y: -20 },
-      transition: { duration: 0.45, ease: [0.33, 1, 0.68, 1] },
+      transition: { duration: 0.45, ease: [0.33, 1, 0.68, 1] as const },
     }
   }
 
@@ -88,7 +88,7 @@ function getWordMotion(variant: HeroVariant, reduceMotion: boolean) {
       initial: { opacity: 0, filter: 'blur(6px)' },
       animate: { opacity: 1, filter: 'blur(0px)' },
       exit: { opacity: 0, filter: 'blur(4px)' },
-      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1] },
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1] as const },
     }
   }
 
@@ -97,7 +97,7 @@ function getWordMotion(variant: HeroVariant, reduceMotion: boolean) {
       initial: { opacity: 0, y: 8, letterSpacing: '0.08em' },
       animate: { opacity: 1, y: 0, letterSpacing: '0em' },
       exit: { opacity: 0, y: -8, letterSpacing: '0.06em' },
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
     }
   }
 
@@ -105,7 +105,7 @@ function getWordMotion(variant: HeroVariant, reduceMotion: boolean) {
     initial: { opacity: 0.3, clipPath: 'inset(0 100% 0 0)' },
     animate: { opacity: 1, clipPath: 'inset(0 0% 0 0)' },
     exit: { opacity: 0, clipPath: 'inset(0 0 0 100%)' },
-    transition: { duration: 0.55, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.55, ease: [0.25, 1, 0.5, 1] as const },
   }
 }
 
@@ -124,22 +124,22 @@ function getHeroMotion(variant: HeroVariant, reduceMotion: boolean) {
       eyebrow: {
         initial: { opacity: 0, x: -20 },
         animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.55, ease: [0.33, 1, 0.68, 1] },
+        transition: { duration: 0.55, ease: [0.33, 1, 0.68, 1] as const },
       },
       headline: {
         initial: { opacity: 0, x: 24 },
         animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.75, delay: 0.08, ease: [0.2, 1, 0.3, 1] },
+        transition: { duration: 0.75, delay: 0.08, ease: [0.2, 1, 0.3, 1] as const },
       },
       subheadline: {
         initial: { opacity: 0, y: 18 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, delay: 0.22, ease: [0.33, 1, 0.68, 1] },
+        transition: { duration: 0.55, delay: 0.22, ease: [0.33, 1, 0.68, 1] as const },
       },
       cta: {
         initial: { opacity: 0, y: 14 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, delay: 0.3, ease: [0.33, 1, 0.68, 1] },
+        transition: { duration: 0.55, delay: 0.3, ease: [0.33, 1, 0.68, 1] as const },
       },
     }
   }
@@ -149,22 +149,22 @@ function getHeroMotion(variant: HeroVariant, reduceMotion: boolean) {
       eyebrow: {
         initial: { opacity: 0, y: 12, filter: 'blur(6px)' },
         animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-        transition: { duration: 0.55, ease: [0.25, 1, 0.5, 1] },
+        transition: { duration: 0.55, ease: [0.25, 1, 0.5, 1] as const },
       },
       headline: {
         initial: { opacity: 0, y: 26, filter: 'blur(8px)' },
         animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-        transition: { duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] },
+        transition: { duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] as const },
       },
       subheadline: {
         initial: { opacity: 0, y: 16 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, delay: 0.24, ease: [0.33, 1, 0.68, 1] },
+        transition: { duration: 0.55, delay: 0.24, ease: [0.33, 1, 0.68, 1] as const },
       },
       cta: {
         initial: { opacity: 0, y: 12 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, delay: 0.32, ease: [0.33, 1, 0.68, 1] },
+        transition: { duration: 0.55, delay: 0.32, ease: [0.33, 1, 0.68, 1] as const },
       },
     }
   }
@@ -174,22 +174,22 @@ function getHeroMotion(variant: HeroVariant, reduceMotion: boolean) {
       eyebrow: {
         initial: { opacity: 0, y: 16 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
       },
       headline: {
         initial: { opacity: 0, y: 30 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const },
       },
       subheadline: {
         initial: { opacity: 0, y: 16 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.9, delay: 0.24, ease: [0.22, 1, 0.36, 1] as const },
       },
       cta: {
         initial: { opacity: 0, y: 14 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, delay: 0.32, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.55, delay: 0.32, ease: [0.22, 1, 0.36, 1] as const },
       },
     }
   }
@@ -198,22 +198,22 @@ function getHeroMotion(variant: HeroVariant, reduceMotion: boolean) {
     eyebrow: {
       initial: { opacity: 0, y: 18 },
       animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.55, ease: [0.33, 1, 0.68, 1] },
+      transition: { duration: 0.55, ease: [0.33, 1, 0.68, 1] as const },
     },
     headline: {
       initial: { opacity: 0, y: 34 },
       animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.8, delay: 0.08, ease: [0.2, 1, 0.3, 1] },
+      transition: { duration: 0.8, delay: 0.08, ease: [0.2, 1, 0.3, 1] as const },
     },
     subheadline: {
       initial: { opacity: 0, y: 16 },
       animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.55, delay: 0.24, ease: [0.33, 1, 0.68, 1] },
+      transition: { duration: 0.55, delay: 0.24, ease: [0.33, 1, 0.68, 1] as const },
     },
     cta: {
       initial: { opacity: 0, y: 14 },
       animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.55, delay: 0.32, ease: [0.33, 1, 0.68, 1] },
+      transition: { duration: 0.55, delay: 0.32, ease: [0.33, 1, 0.68, 1] as const },
     },
   }
 }
@@ -376,13 +376,13 @@ export function SwissHeroEnhanced({
             <motion.div
               initial={{ opacity: 0, scaleX: 0.9 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }}
               className="absolute right-[8%] top-24 h-px w-40 bg-pencil-300"
             />
             <motion.div
               initial={{ opacity: 0, scaleY: 0.9 }}
               animate={{ opacity: 1, scaleY: 1 }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
               className="absolute left-[7%] top-44 h-24 w-px bg-pencil-300"
             />
           </>
