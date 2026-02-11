@@ -15,14 +15,15 @@ export default function SolutionsPage() {
     <>
       {/* Hero */}
       <SwissHeroEnhanced
+        variant="solutions"
         eyebrow={t('pages.solutions.hero.eyebrow')}
         headline={t('pages.solutions.hero.headline')}
         headlineHighlight={t('pages.solutions.hero.headlineHighlight')}
         cycleWords={[
           { text: t('pages.solutions.hero.cycleWords.0.text'), className: 'text-cta' },
-          { text: t('pages.solutions.hero.cycleWords.1.text'), className: 'text-cyan-600' },
-          { text: t('pages.solutions.hero.cycleWords.2.text'), className: 'text-purple-600' },
-          { text: t('pages.solutions.hero.cycleWords.3.text'), className: 'text-emerald-600' },
+          { text: t('pages.solutions.hero.cycleWords.1.text'), className: 'text-neon-700' },
+          { text: t('pages.solutions.hero.cycleWords.2.text'), className: 'text-pencil-800' },
+          { text: t('pages.solutions.hero.cycleWords.3.text'), className: 'text-pencil-700' },
         ]}
         subheadline={t('pages.solutions.hero.subheadline')}
         ctaText={t('pages.solutions.hero.ctaText')}

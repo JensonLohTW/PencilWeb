@@ -15,13 +15,14 @@ export default function ProjectsPage() {
     <>
       {/* Hero */}
       <SwissHeroEnhanced
+        variant="projects"
         headline={t('pages.projects.hero.headline')}
         headlineHighlight={t('pages.projects.hero.headlineHighlight')}
         headlineSuffix={t('pages.projects.hero.headlineSuffix')}
         cycleWords={[
           { text: t('pages.projects.hero.cycleWords.0.text'), className: 'text-cta' },
-          { text: t('pages.projects.hero.cycleWords.1.text'), className: 'text-emerald-600' },
-          { text: t('pages.projects.hero.cycleWords.2.text'), className: 'text-purple-600' },
+          { text: t('pages.projects.hero.cycleWords.1.text'), className: 'text-pencil-800' },
+          { text: t('pages.projects.hero.cycleWords.2.text'), className: 'text-neon-700' },
         ]}
         subheadline={t('pages.projects.hero.subheadline')}
         ctaText={t('pages.projects.hero.ctaText')}

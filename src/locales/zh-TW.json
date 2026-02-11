@@ -160,23 +160,23 @@
       },
       "hero": {
         "eyebrow": "解決方案",
-        "headline": "找到最適合您的解決方案",
+        "headline": "以場域需求出發，選對解決方案",
         "headlineHighlight": "解決方案",
         "cycleWords": [
           {
             "text": "VR 訓練"
           },
           {
-            "text": "AR 視覺化"
-          },
-          {
-            "text": "AI 導入"
+            "text": "AR 導覽"
           },
           {
             "text": "智慧空間"
+          },
+          {
+            "text": "AI 協作"
           }
         ],
-        "subheadline": "從 VR/MR 沉浸式訓練到企業 AI 導入，四大方案快速選型，讓技術為您的業務帶來實質效益。",
+        "subheadline": "從沉浸式訓練、現場導覽到營運自動化，我們以可量化目標規劃導入路徑，讓每個方案都能在真實情境穩定落地。",
         "ctaText": "瀏覽方案"
       },
       "list": {
@@ -380,21 +380,21 @@
         "description": "飛行模擬、教育訓練、資料介接/推播、AI agent 與 chat 系統等交付能力。"
       },
       "hero": {
-        "headline": "用做過的專案建立信任",
-        "headlineHighlight": "專案",
-        "headlineSuffix": "建立信任",
+        "headline": "讓專案成果為能力說話",
+        "headlineHighlight": "專案成果",
+        "headlineSuffix": "",
         "cycleWords": [
           {
-            "text": "案例"
+            "text": "交付案例"
           },
           {
-            "text": "成果"
+            "text": "成效數據"
           },
           {
-            "text": "實績"
+            "text": "維運實績"
           }
         ],
-        "subheadline": "從飛行模擬到 AI 系統，我們已成功交付多種類型的專案。每一個案例都是我們能力的證明。",
+        "subheadline": "從飛行模擬、資料整合到企業 AI Agent，我們用一致的方法把需求拆解、實作與驗證，將成果轉成可持續的營運能力。",
         "ctaText": "查看專案"
       },
       "showcase": {
@@ -443,20 +443,20 @@
       },
       "hero": {
         "eyebrow": "技術核心",
-        "headline": "打造可落地的沉浸式互動體驗",
-        "headlineHighlight": "沉浸式",
+        "headline": "以技術模組打造可驗證的系統能力",
+        "headlineHighlight": "技術模組",
         "cycleWords": [
           {
-            "text": "真實感"
+            "text": "資料治理"
           },
           {
-            "text": "互動性"
+            "text": "即時互動"
           },
           {
-            "text": "智能化"
+            "text": "模型推理"
           }
         ],
-        "subheadline": "以 OASIS 為願景，整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，讓技術為您的業務創造實質價值。",
+        "subheadline": "我們以模組化架構整合 XR、AI、IoT 與網路層能力，確保系統可擴充、可維運，也能對應不同場域的效能需求。",
         "ctaText": "查看技術模組"
       },
       "cta": {
@@ -526,21 +526,21 @@
       },
       "hero": {
         "eyebrow": "關於我們",
-        "headline": "We Build The OASIS",
+        "headline": "我們把 OASIS 從概念做成現場",
         "headlineHighlight": "OASIS",
         "cycleWords": [
           {
-            "text": "FUTURE"
+            "text": "願景"
           },
           {
-            "text": "DREAM"
+            "text": "系統"
           },
           {
-            "text": "REALITY"
+            "text": "體驗"
           }
         ],
-        "subheadline": "空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。",
-        "ctaText": "了解更多"
+        "subheadline": "我們是一個跨域團隊，專注把新技術轉譯成可交付、可維運、可長期擴展的產品與服務，陪伴客戶從想法走到落地。",
+        "ctaText": "了解我們"
       },
       "values": {
         "eyebrow": "品牌方法",

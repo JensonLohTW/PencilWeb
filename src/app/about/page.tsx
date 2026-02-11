@@ -16,13 +16,14 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <SwissHeroEnhanced
+        variant="about"
         eyebrow={t('pages.about.hero.eyebrow')}
         headline={t('pages.about.hero.headline')}
         headlineHighlight={t('pages.about.hero.headlineHighlight')}
         cycleWords={[
-          { text: t('pages.about.hero.cycleWords.0.text'), className: 'text-cta font-mono tracking-widest' },
-          { text: t('pages.about.hero.cycleWords.1.text'), className: 'text-purple-600 font-serif italic' },
-          { text: t('pages.about.hero.cycleWords.2.text'), className: 'text-emerald-600 font-bold' },
+          { text: t('pages.about.hero.cycleWords.0.text'), className: 'text-cta' },
+          { text: t('pages.about.hero.cycleWords.1.text'), className: 'text-pencil-800' },
+          { text: t('pages.about.hero.cycleWords.2.text'), className: 'text-neon-700' },
         ]}
         subheadline={t('pages.about.hero.subheadline')}
         ctaText={t('pages.about.hero.ctaText')}

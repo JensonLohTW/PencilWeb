@@ -15,13 +15,14 @@ export default function TechnologyPage() {
     <>
       {/* Hero */}
       <SwissHeroEnhanced
+        variant="technology"
         eyebrow={t('pages.technology.hero.eyebrow')}
         headline={t('pages.technology.hero.headline')}
         headlineHighlight={t('pages.technology.hero.headlineHighlight')}
         cycleWords={[
-          { text: t('pages.technology.hero.cycleWords.0.text'), className: 'text-cta font-serif italic' },
-          { text: t('pages.technology.hero.cycleWords.1.text'), className: 'text-cyan-600 font-mono' },
-          { text: t('pages.technology.hero.cycleWords.2.text'), className: 'text-purple-600' },
+          { text: t('pages.technology.hero.cycleWords.0.text'), className: 'text-cta font-mono tracking-[0.06em]' },
+          { text: t('pages.technology.hero.cycleWords.1.text'), className: 'text-pencil-800 font-mono tracking-[0.06em]' },
+          { text: t('pages.technology.hero.cycleWords.2.text'), className: 'text-neon-700 font-mono tracking-[0.06em]' },
         ]}
         subheadline={t('pages.technology.hero.subheadline')}
         ctaText={t('pages.technology.hero.ctaText')}
