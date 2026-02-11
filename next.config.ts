@@ -5,9 +5,8 @@ const nextConfig: NextConfig = {
   output: 'export',
 
   // GitHub Pages 部署配置
-  // 請將 'REPO_NAME' 替換為你的 repository 名稱
-  basePath: '/REPO_NAME',
-  assetPrefix: '/REPO_NAME/',
+  basePath: '/PencilWeb',
+  assetPrefix: '/PencilWeb/',
 
   // 圖片優化配置
   // GitHub Pages 不支援 Next.js Image Optimization API，使用靜態圖片
