@@ -28,7 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white text-pencil-950">
+      <body className="bg-white text-pencil-950" suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
             <NavBar />

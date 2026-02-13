@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { TypewriterText } from '@/components/ui/typewriter-text'
+import { TubesEffect } from '@/components/ui/tubes-effect'
 
 interface SwissHomeHeroProps {
     headline: string
@@ -12,9 +13,12 @@ interface SwissHomeHeroProps {
 
 export function SwissHomeHero({ headline, subheadline, eyebrow }: SwissHomeHeroProps) {
     return (
-        <section className="relative flex min-h-screen flex-col justify-between px-6 pb-12 pt-32 lg:px-16 dark:bg-pencil-950">
+        <section className="relative flex min-h-screen flex-col justify-between overflow-hidden px-6 pb-12 pt-32 lg:px-16 dark:bg-pencil-950">
+            {/* Background Effect */}
+            <TubesEffect />
+
             {/* Main Content */}
-            <div className="flex flex-1 flex-col justify-center">
+            <div className="relative z-10 flex flex-1 flex-col justify-center">
                 {/* Eyebrow */}
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
