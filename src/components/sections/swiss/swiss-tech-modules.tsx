@@ -156,8 +156,8 @@ export function SwissTechModules() {
       {/* Section Header */}
       <div className="mb-16 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
         <div>
-          <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
-          <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
+          <p className="swiss-mono mb-2 text-cta dark:text-pencil-400">{eyebrow}</p>
+          <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">{title}</h2>
         </div>
         <p className="swiss-mono hidden text-pencil-400 md:block dark:text-pencil-500">{subtitle}</p>
       </div>

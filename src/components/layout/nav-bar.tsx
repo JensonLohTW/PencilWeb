@@ -45,17 +45,12 @@ export function NavBar() {
             }
             actions={
                 <>
-                    <Link
-                        href="/contact"
-                        className="hidden text-sm font-medium text-pencil-600 transition-colors hover:text-pencil-950 lg:block dark:text-pencil-400 dark:hover:text-white"
-                    >
-                        {t('nav.contact')}
-                    </Link>
+                    {/* Contact Link Removed */}
                     <ButtonLink
                         href="/contact"
-                        className="w-full justify-center border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
+                        className="w-full justify-center border-2 border-cta bg-cta text-white hover:bg-white hover:text-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta dark:hover:text-white"
                     >
-                        {t('nav.demo')}
+                        {t('nav.contact')}
                     </ButtonLink>
                 </>
             }

@@ -138,8 +138,8 @@ export function SwissFooter({
 
                         {/* Brand Mark */}
                         <div className="flex items-center gap-4">
-                            <div className="flex h-8 w-8 items-center justify-center border-2 border-pencil-950 dark:border-white">
-                                <span className="text-xs font-black text-pencil-950 dark:text-white">P</span>
+                            <div className="flex h-8 w-8 items-center justify-center border-2 border-cta dark:border-white">
+                                <span className="text-xs font-black text-cta dark:text-white">P</span>
                             </div>
                             <span className="swiss-mono text-pencil-400 dark:text-pencil-500">
                                 SYSTEM.ONLINE

@@ -8,47 +8,47 @@
 @theme {
   --color-scheme: light;
 
-  --color-pencil-50: #f8fafc;
-  --color-pencil-100: #f1f5f9;
-  --color-pencil-200: #e2e8f0;
-  --color-pencil-300: #cbd5e1;
-  --color-pencil-400: #94a3b8;
-  --color-pencil-500: #64748b;
-  --color-pencil-600: #475569;
-  --color-pencil-700: #334155;
-  --color-pencil-800: #1e293b;
-  --color-pencil-900: #0f172a;
-  --color-pencil-950: #020617;
-  /* Deepest Black */
+  /* New Neutral Scale: Warm Gray/Stone */
+  --color-pencil-50: #fafaf9;
+  --color-pencil-100: #f5f5f4;
+  --color-pencil-200: #e7e5e4;
+  --color-pencil-300: #d6d3d1;
+  --color-pencil-400: #a8a29e;
+  --color-pencil-500: #78716c;
+  --color-pencil-600: #57534e;
+  --color-pencil-700: #44403c;
+  --color-pencil-800: #292524;
+  --color-pencil-900: #1c1917;
+  --color-pencil-950: #0c0a09;
 
-  /* New Brand Orange: #C4682F (Close to 600 weight) */
-  --color-neon-50: #fff8f1;
-  --color-neon-100: #ffecd9;
-  --color-neon-200: #ffd5b0;
-  --color-neon-300: #ffb680;
-  --color-neon-400: #ff8e4d;
-  --color-neon-500: #e07a3e;
-  --color-neon-600: #c4682f;
-  /* Brand Color */
-  --color-neon-700: #9e4f20;
-  --color-neon-800: #7d3e1d;
-  --color-neon-900: #66341b;
-  --color-neon-950: #38190b;
+  /* Brand Orange: Vibrant & Energetic */
+  /* Base: #ea580c (Tailwind Orange-600) tuned for brand */
+  --color-neon-50: #fff7ed;
+  --color-neon-100: #ffedd5;
+  --color-neon-200: #fed7aa;
+  --color-neon-300: #fdba74;
+  --color-neon-400: #fb923c;
+  --color-neon-500: #f97316;
+  --color-neon-600: #ea580c;
+  --color-neon-700: #c2410c;
+  --color-neon-800: #9a3412;
+  --color-neon-900: #7c2d12;
+  --color-neon-950: #431407;
 
-  /* Accent mapped to Brand Orange for consistency */
-  --color-accent-50: #fff8f1;
-  --color-accent-100: #ffecd9;
-  --color-accent-200: #ffd5b0;
-  --color-accent-300: #ffb680;
-  --color-accent-400: #ff8e4d;
-  --color-accent-500: #e07a3e;
-  --color-accent-600: #c4682f;
-  --color-accent-700: #9e4f20;
-  --color-accent-800: #7d3e1d;
-  --color-accent-900: #66341b;
-  --color-accent-950: #38190b;
+  /* Accent mapped to Brand Orange */
+  --color-accent-50: var(--color-neon-50);
+  --color-accent-100: var(--color-neon-100);
+  --color-accent-200: var(--color-neon-200);
+  --color-accent-300: var(--color-neon-300);
+  --color-accent-400: var(--color-neon-400);
+  --color-accent-500: var(--color-neon-500);
+  --color-accent-600: var(--color-neon-600);
+  --color-accent-700: var(--color-neon-700);
+  --color-accent-800: var(--color-neon-800);
+  --color-accent-900: var(--color-neon-900);
+  --color-accent-950: var(--color-neon-950);
 
-  --color-cta: #C4682F;
+  --color-cta: #ea580c;
   --color-background: #F8FAFC;
   --color-text: #020617;
 
@@ -179,9 +179,9 @@
     min-height: 100vh;
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(circle at 50% 0%, #06b6d408, transparent 60%),
-      radial-gradient(circle at 80% 40%, #22c55e05, transparent 40%),
-      radial-gradient(circle at 20% 80%, #a855f705, transparent 40%),
+      radial-gradient(circle at 50% 0%, #ea580c08, transparent 60%),
+      radial-gradient(circle at 80% 40%, #fb923c05, transparent 40%),
+      radial-gradient(circle at 20% 80%, #78716c05, transparent 40%),
       linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 100% 100%, 100px 100px, 100px 100px;
@@ -221,9 +221,9 @@
   background-color: #000000;
   color: var(--color-pencil-50);
   background-image:
-    radial-gradient(circle at 50% 0%, #06b6d41a, transparent 60%),
-    radial-gradient(circle at 80% 40%, #22c55e0d, transparent 40%),
-    radial-gradient(circle at 20% 80%, #a855f70d, transparent 40%),
+    radial-gradient(circle at 50% 0%, #ea580c1a, transparent 60%),
+    radial-gradient(circle at 80% 40%, #fb923c0d, transparent 40%),
+    radial-gradient(circle at 20% 80%, #78716c0d, transparent 40%),
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }

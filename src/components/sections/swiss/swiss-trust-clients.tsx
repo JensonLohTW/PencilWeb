@@ -38,7 +38,7 @@ export function SwissTrustClients() {
         <section className="border-t border-pencil-200 bg-white px-6 py-16 lg:px-16 dark:bg-pencil-950 dark:border-white/10">
             <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                 {/* Label */}
-                <p className="swiss-mono shrink-0 text-pencil-500 dark:text-pencil-400">{t('pages.home.clients.title')}</p>
+                <p className="swiss-mono shrink-0 text-cta dark:text-pencil-400">{t('pages.home.clients.title')}</p>
 
                 {/* Clients */}
                 <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">

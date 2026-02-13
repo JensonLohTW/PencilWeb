@@ -5,8 +5,9 @@ const nextConfig: NextConfig = {
   output: 'export',
 
   // GitHub Pages 部署配置
-  basePath: '/PencilWeb',
-  assetPrefix: '/PencilWeb/',
+  // GitHub Pages 部署配置
+  basePath: process.env.NODE_ENV === 'production' ? '/PencilWeb' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/PencilWeb/' : '',
 
   // 圖片優化配置
   // GitHub Pages 不支援 Next.js Image Optimization API，使用靜態圖片

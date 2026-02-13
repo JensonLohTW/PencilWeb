@@ -22,8 +22,8 @@ export function SwissSolutionComparison() {
   return (
     <section className="border-t border-pencil-200 bg-white px-6 py-24 lg:px-16 dark:border-white/10 dark:bg-black">
       <div className="mb-12 flex flex-col gap-4">
-        <p className="swiss-mono text-pencil-500 dark:text-pencil-400">{t('pages.solutions.comparison.eyebrow')}</p>
-        <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+        <p className="swiss-mono text-cta dark:text-pencil-400">{t('pages.solutions.comparison.eyebrow')}</p>
+        <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">
           {t('pages.solutions.comparison.title')}
         </h2>
         <p className="max-w-2xl text-pencil-600 dark:text-pencil-400">{t('pages.solutions.comparison.description')}</p>

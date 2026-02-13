@@ -35,8 +35,8 @@ export function SwissStatsGrid() {
     <section className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
       {/* Section Header */}
       <div className="mb-16">
-        <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
-        <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
+        <p className="swiss-mono mb-2 text-cta dark:text-pencil-400">{eyebrow}</p>
+        <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">{title}</h2>
       </div>
 
       {/* Grid */}

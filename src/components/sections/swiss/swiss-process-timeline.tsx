@@ -32,10 +32,10 @@ export function SwissProcessTimeline() {
 
             {/* Section Header */}
             <div className="mx-auto mb-24 max-w-[1800px] text-center">
-                <span className="swiss-mono mb-6 block text-sm tracking-widest text-pencil-500 dark:text-pencil-400">
+                <span className="swiss-mono mb-6 block text-sm tracking-widest text-cta dark:text-pencil-400">
                     {t('pages.solutions.process.eyebrow')}
                 </span>
-                <h2 className="font-serif text-5xl font-medium tracking-tight text-pencil-950 lg:text-7xl dark:text-white">
+                <h2 className="font-serif text-5xl font-medium tracking-tight text-cta lg:text-7xl dark:text-white">
                     {t('pages.solutions.process.title')}
                 </h2>
             </div>

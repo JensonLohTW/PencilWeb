@@ -35,9 +35,9 @@ export function Footer() {
                     </p>
                     <ButtonLink
                         href="/contact"
-                        className="inline-flex border-2 border-pencil-950 bg-pencil-950 text-white hover:bg-cta hover:border-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta"
+                        className="inline-flex border-2 border-cta bg-cta text-white hover:bg-white hover:text-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta dark:hover:text-white"
                     >
-                        {t('nav.demo')} →
+                        {t('nav.contact')} →
                     </ButtonLink>
                 </div>
             }

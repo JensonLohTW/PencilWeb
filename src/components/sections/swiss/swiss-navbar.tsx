@@ -47,8 +47,8 @@ export function SwissNavbarLogo({ href, ...props }: { href: string } & Omit<Comp
     return (
         <Link href={href} {...props} className="group flex items-center gap-4">
             {/* Bold geometric logo mark */}
-            <div className="relative flex h-10 w-10 items-center justify-center border-2 border-pencil-950 transition-all duration-300 group-hover:bg-pencil-950 dark:border-white dark:group-hover:bg-white">
-                <span className="text-base font-black tracking-tighter text-pencil-950 transition-colors group-hover:text-white dark:text-white dark:group-hover:text-pencil-950">
+            <div className="relative flex h-10 w-10 items-center justify-center border-2 border-cta transition-all duration-300 group-hover:bg-cta dark:border-white dark:group-hover:bg-white">
+                <span className="text-base font-black tracking-tighter text-cta transition-colors group-hover:text-white dark:text-white dark:group-hover:text-cta">
                     P
                 </span>
                 {/* Corner accent */}
@@ -56,10 +56,10 @@ export function SwissNavbarLogo({ href, ...props }: { href: string } & Omit<Comp
             </div>
             {/* Brand name with bold typography */}
             <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-pencil-950 dark:text-white">
+                <span className="text-xl font-bold tracking-tight text-cta dark:text-white">
                     Pencil
                 </span>
-                <span className="swiss-mono text-[9px] text-pencil-400 dark:text-pencil-500">
+                <span className="swiss-mono text-[9px] text-cta dark:text-pencil-500">
                     空間動態科技
                 </span>
             </div>

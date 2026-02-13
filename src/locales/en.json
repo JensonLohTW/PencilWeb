@@ -5,7 +5,7 @@
     "technology": "Technology",
     "about": "About",
     "contact": "Contact",
-    "demo": "Book Demo"
+    "demo": "Contact Sales"
   },
   "theme": {
     "light": "Light",
@@ -131,7 +131,7 @@
         "items": [
           {
             "question": "How do I choose the right solution?",
-            "answer": "We recommend booking a demo first. Once we understand your needs and target scenarios, we'll provide the most suitable solution recommendations. Each solution can be customized to your requirements."
+            "answer": "We recommend contacting us first. Once we understand your needs and target scenarios, we'll provide the most suitable solution recommendations. Each solution can be customized to your requirements."
           },
           {
             "question": "What hardware equipment is needed?",
@@ -139,7 +139,7 @@
           },
           {
             "question": "What is the approximate implementation cost?",
-            "answer": "Costs depend on project scale and complexity. PoC validation stages are typically lower, while full project development depends on requirements. Please book a demo for detailed pricing."
+            "answer": "Costs depend on project scale and complexity. PoC validation stages are typically lower, while full project development depends on requirements. Please contact us for detailed pricing."
           },
           {
             "question": "Do you provide maintenance services?",
@@ -183,7 +183,7 @@
         "eyebrow": "Our Solutions",
         "title": "Four Solutions",
         "subtitle": "Quick Selection",
-        "bookDemo": "Book Demo",
+        "bookDemo": "Contact Sales",
         "mainFeatures": "Key Features",
         "useCases": "Use Cases",
         "deliveryTimeline": "Typical Timeline",
@@ -224,7 +224,12 @@
               "Real-time feedback and assessment",
               "Repeatable practice"
             ],
-            "useCases": ["Flight training", "Industrial operations", "Medical training", "Emergency response"],
+            "useCases": [
+              "Flight training",
+              "Industrial operations",
+              "Medical training",
+              "Emergency response"
+            ],
             "delivery": {
               "timeline": "8-12 weeks",
               "investment": "Medium to High",
@@ -243,7 +248,12 @@
               "Interactive operation guidance",
               "Multi-language support"
             ],
-            "useCases": ["Exhibition tours", "Equipment maintenance", "Sales demonstrations", "Educational tours"],
+            "useCases": [
+              "Exhibition tours",
+              "Equipment maintenance",
+              "Sales demonstrations",
+              "Educational tours"
+            ],
             "delivery": {
               "timeline": "4-8 weeks",
               "investment": "Medium",
@@ -262,7 +272,12 @@
               "Automated control",
               "Data analysis and reporting"
             ],
-            "useCases": ["Smart buildings", "Exhibition halls", "Commercial spaces", "Factory monitoring"],
+            "useCases": [
+              "Smart buildings",
+              "Exhibition halls",
+              "Commercial spaces",
+              "Factory monitoring"
+            ],
             "delivery": {
               "timeline": "8-16 weeks",
               "investment": "Medium to High",
@@ -281,7 +296,12 @@
               "Knowledge base query system",
               "Process automation"
             ],
-            "useCases": ["Customer service", "Knowledge management", "Data analysis", "Process automation"],
+            "useCases": [
+              "Customer service",
+              "Knowledge management",
+              "Data analysis",
+              "Process automation"
+            ],
             "delivery": {
               "timeline": "6-10 weeks",
               "investment": "Medium",
@@ -291,8 +311,8 @@
         ]
       },
       "cta": {
-        "headline": "Found the right solution? Book a demo for more detailed solution descriptions and recommendations.",
-        "ctaText": "Book Demo",
+        "headline": "Found the right solution? Contact us for more detailed solution descriptions and recommendations.",
+        "ctaText": "Contact Sales",
         "secondaryText": "Fill Out Requirements Form"
       },
       "process": {
@@ -627,13 +647,13 @@
     },
     "contact": {
       "metadata": {
-        "title": "Contact Us | Book XR/AI Demo | Pencil Spatial Dynamics",
-        "description": "Want to implement VR/AR/MR, smart spaces, or AI Agent/Chat? Leave your requirements, and we'll provide solution recommendations and demos."
+        "title": "Contact Us | Book XR/AI Consultation | Pencil Spatial Dynamics",
+        "description": "Want to implement VR/AR/MR, smart spaces, or AI Agent/Chat? Leave your requirements, and we'll provide solution recommendations and consultation."
       },
       "hero": {
         "eyebrow": "Contact Us",
         "headline": "Let's Build The Future",
-        "subheadline": "Whether booking a demo, inquiring about pricing, or discussing collaboration, we look forward to connecting with you."
+        "subheadline": "Whether inquiring about solutions, inquiring about pricing, or discussing collaboration, we look forward to connecting with you."
       },
       "form": {
         "title": "Fill Out Requirements Form",
@@ -660,12 +680,25 @@
           },
           "solutionType": {
             "label": "Solution Type of Interest",
-            "options": ["VR/MR Training", "AR Visualization", "Smart Space", "AI Implementation", "Other"],
+            "options": [
+              "VR/MR Training",
+              "AR Visualization",
+              "Smart Space",
+              "AI Implementation",
+              "Other"
+            ],
             "required": true
           },
           "targetScene": {
             "label": "Target Scenario",
-            "options": ["Education & Training", "Exhibition", "Commercial", "Industrial", "Daily Life", "Other"]
+            "options": [
+              "Education & Training",
+              "Exhibition",
+              "Commercial",
+              "Industrial",
+              "Daily Life",
+              "Other"
+            ]
           },
           "timeline": {
             "label": "Expected Timeline",
@@ -706,7 +739,7 @@
           "items": [
             "Response from our team within 2 business days",
             "Preliminary requirement confirmation and solution recommendations",
-            "Schedule online or on-site demo",
+            "Schedule online or on-site consultation",
             "Detailed pricing and timeline planning"
           ]
         },

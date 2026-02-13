@@ -24,10 +24,10 @@ export function SwissTeamPartners() {
     <section className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
       <div className="grid gap-12 lg:grid-cols-2">
         <div>
-          <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">
+          <p className="swiss-mono mb-2 text-cta dark:text-pencil-400">
             {t('pages.about.teamPartners.eyebrow')}
           </p>
-          <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+          <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">
             {t('pages.about.teamPartners.title')}
           </h2>
           <p className="mt-4 text-pencil-600 dark:text-pencil-400">{t('pages.about.teamPartners.description')}</p>

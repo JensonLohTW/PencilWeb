@@ -32,7 +32,7 @@ export function SwissHomeHero({ headline, subheadline, eyebrow }: SwissHomeHeroP
                     transition={{ duration: 0.8, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
                     className="max-w-5xl text-pencil-950 dark:text-white"
                     style={{
-                        fontSize: 'clamp(3rem, 12vw, 10rem)',
+                        fontSize: 'clamp(2.5rem, 8vw, 6rem)',
                         fontWeight: 700,
                         lineHeight: 0.9,
                         letterSpacing: '-0.04em',
@@ -79,7 +79,7 @@ export function SwissHomeHero({ headline, subheadline, eyebrow }: SwissHomeHeroP
                         href="/contact"
                         className="inline-flex items-center gap-2 bg-pencil-950 px-8 py-4 text-sm font-medium text-white transition-colors hover:bg-cta dark:bg-white dark:text-pencil-950 dark:hover:bg-white/90"
                     >
-                        預約 Demo <span>→</span>
+                        聯絡業務 <span>→</span>
                     </Link>
                     <Link
                         href="/solutions"

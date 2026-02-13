@@ -30,10 +30,10 @@ export function SwissHomeSolutions() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="swiss-mono mb-6 block text-sm font-medium tracking-wider uppercase text-pencil-500 dark:text-pencil-400">
+                        <span className="swiss-mono mb-6 block text-sm font-medium tracking-wider uppercase text-cta dark:text-pencil-400">
                             {t('pages.home.solutions.eyebrow')}
                         </span>
-                        <h2 className="text-5xl font-bold tracking-tight text-pencil-950 sm:text-7xl dark:text-white">
+                        <h2 className="text-5xl font-bold tracking-tight text-cta sm:text-7xl dark:text-white">
                             {t('pages.home.solutions.title')}
                         </h2>
                     </motion.div>

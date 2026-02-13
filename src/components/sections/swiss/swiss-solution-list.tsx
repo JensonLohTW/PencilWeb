@@ -56,10 +56,10 @@ export function SwissSolutionList() {
         {/* Section Header: Classical Typography */}
         <div className="mb-24 flex flex-col items-start justify-between gap-8 border-t border-pencil-950/10 pt-8 lg:flex-row lg:items-end dark:border-white/10">
           <div className="max-w-2xl">
-            <span className="swiss-mono mb-6 block text-sm tracking-widest text-pencil-500 dark:text-pencil-400">
+            <span className="swiss-mono mb-6 block text-sm tracking-widest text-cta dark:text-pencil-400">
               {t('pages.solutions.list.eyebrow')} — ARCHIVE
             </span>
-            <h2 className="font-serif text-6xl font-medium tracking-tight text-pencil-950 lg:text-8xl dark:text-white">
+            <h2 className="font-serif text-6xl font-medium tracking-tight text-cta lg:text-8xl dark:text-white">
               {t('pages.solutions.list.title')}
             </h2>
           </div>

@@ -27,8 +27,8 @@ export function SwissFAQ({ namespace = 'home' }: SwissFAQProps) {
       {/* Section Header */}
       <div className="mb-16 grid gap-8 lg:grid-cols-2">
         <div>
-          <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{t(`${basePath}.eyebrow`)}</p>
-          <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">
+          <p className="swiss-mono mb-2 text-cta dark:text-pencil-400">{t(`${basePath}.eyebrow`)}</p>
+          <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">
             {t(`${basePath}.title`)}
           </h2>
         </div>
@@ -62,9 +62,8 @@ export function SwissFAQ({ namespace = 'home' }: SwissFAQProps) {
                   </span>
                 </div>
                 <span
-                  className={`text-2xl text-pencil-400 transition-all group-hover:text-cta dark:text-pencil-500 ${
-                    openId === faqId ? 'rotate-45' : ''
-                  }`}
+                  className={`text-2xl text-pencil-400 transition-all group-hover:text-cta dark:text-pencil-500 ${openId === faqId ? 'rotate-45' : ''
+                    }`}
                 >
                   +
                 </span>
