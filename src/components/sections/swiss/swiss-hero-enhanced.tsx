@@ -366,7 +366,7 @@ export function SwissHeroEnhanced({
   return (
     <section
       className={clsx(
-        'relative flex min-h-[85vh] flex-col justify-center overflow-hidden px-6 pb-12 pt-32 lg:px-16',
+        'relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pb-12 pt-32 lg:px-16',
         centered ? 'items-center text-center' : 'items-start',
       )}
     >
