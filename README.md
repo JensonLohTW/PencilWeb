@@ -46,27 +46,15 @@ graph TB
 PencilWeb/
 ├── .github/workflows/     # GitHub Actions 部署配置
 ├── public/                # 靜態資源
-│   └── .nojekyll         # 禁用 Jekyll 處理標記
+│   └── .nojekyll          # 禁用 Jekyll 處理標記
 ├── src/
-│   ├── app/              # Next.js App Router 頁面
-│   │   ├── about/        # 關於我們
-│   │   ├── contact/      # 聯絡我們
-│   │   ├── projects/     # 專案展示
-│   │   ├── solutions/    # 解決方案
-│   │   ├── technology/   # 技術核心
-│   │   └── ...
-│   ├── components/
-│   │   ├── elements/     # 基礎元件
-│   │   ├── sections/     # 頁面區塊
-│   │   │   └── swiss/   # Swiss Design 風格組件
-│   │   └── providers/    # Context Provider
-│   └── locales/          # 多語言翻譯檔案
-│       ├── zh-TW.json   # 繁體中文
-│       ├── en.json      # 英文
-│       └── ja.json      # 日文
-├── next.config.ts        # Next.js 配置
-├── tailwind.config.ts   # Tailwind 配置
-└── package.json         # 依賴管理
+│   ├── app/               # 路由層（薄入口）與全域 providers
+│   ├── features/          # 功能模組層（marketing/contact/legal/system）
+│   ├── widgets/           # 跨頁組裝模組（NavBar/Footer）
+│   └── shared/            # 共用層（ui/lib/providers/config/i18n/types）
+├── tests/                 # 測試結構（unit/integration/e2e）
+├── next.config.ts         # Next.js 配置
+└── package.json           # 依賴管理
 ```
 
 ## 安裝與運行
