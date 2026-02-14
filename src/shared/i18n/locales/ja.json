@@ -162,20 +162,20 @@
                 "eyebrow": "ソリューション",
                 "headline": "あなたに最適なソリューションを見つける",
                 "headlineHighlight": "ソリューション",
-                "cycleWords": [
-                    {
+                "cycleWords": {
+                    "0": {
                         "text": "VR トレーニング"
                     },
-                    {
+                    "1": {
                         "text": "AR 可視化"
                     },
-                    {
+                    "2": {
                         "text": "AI 導入"
                     },
-                    {
+                    "3": {
                         "text": "スマート空間"
                     }
-                ],
+                },
                 "subheadline": "VR/MR没入型トレーニングから企業AI導入まで、4つの主要ソリューションでビジネスに実質的な価値をもたらします。",
                 "ctaText": "ソリューション一覧"
             },
@@ -401,17 +401,17 @@
                 "headline": "実績あるプロジェクトで信頼を築く",
                 "headlineHighlight": "プロジェクト",
                 "headlineSuffix": "信頼構築",
-                "cycleWords": [
-                    {
+                "cycleWords": {
+                    "0": {
                         "text": "事例"
                     },
-                    {
+                    "1": {
                         "text": "成果"
                     },
-                    {
+                    "2": {
                         "text": "実績"
                     }
-                ],
+                },
                 "subheadline": "飛行シミュレーションからAIシステムまで、多様なプロジェクトを成功させてきました。すべての事例が私たちの実力の証明です。",
                 "ctaText": "プロジェクトを見る"
             },
@@ -463,17 +463,17 @@
                 "eyebrow": "技術コア",
                 "headline": "実用可能な没入型インタラクティブ体験を創造",
                 "headlineHighlight": "没入型",
-                "cycleWords": [
-                    {
+                "cycleWords": {
+                    "0": {
                         "text": "リアリズム"
                     },
-                    {
+                    "1": {
                         "text": "インタラクティブ"
                     },
-                    {
+                    "2": {
                         "text": "インテリジェント"
                     }
-                ],
+                },
                 "subheadline": "OASISをビジョンに、XRデバイス、AIビッグデータ、5G/6Gネットワーク、五感技術を統合し、ビジネスに真の価値を創造します。",
                 "ctaText": "技術モジュールを見る"
             },
@@ -546,17 +546,17 @@
                 "eyebrow": "私たちについて",
                 "headline": "We Build The OASIS",
                 "headlineHighlight": "OASIS",
-                "cycleWords": [
-                    {
+                "cycleWords": {
+                    "0": {
                         "text": "FUTURE"
                     },
-                    {
+                    "1": {
                         "text": "DREAM"
                     },
-                    {
+                    "2": {
                         "text": "REALITY"
                     }
-                ],
+                },
                 "subheadline": "空間ダイナミクス技術（Pencil）は、XRデバイス、AIビッグデータ、5G/6Gネットワーク、五感技術を統合し、次世代の没入型インタラクティブ体験を創造します。",
                 "ctaText": "詳しく見る"
             },

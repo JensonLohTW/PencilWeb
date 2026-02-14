@@ -162,20 +162,20 @@
         "eyebrow": "Solutions",
         "headline": "Find the Perfect Solution for You",
         "headlineHighlight": "Solution",
-        "cycleWords": [
-          {
+        "cycleWords": {
+          "0": {
             "text": "VR Training"
           },
-          {
+          "1": {
             "text": "AR Visualization"
           },
-          {
+          "2": {
             "text": "AI Implementation"
           },
-          {
+          "3": {
             "text": "Smart Space"
           }
-        ],
+        },
         "subheadline": "From VR/MR immersive training to enterprise AI implementation, four quick-select solutions that bring real value to your business.",
         "ctaText": "Browse Solutions"
       },
@@ -423,17 +423,17 @@
         "headline": "Building Trust Through Proven Projects",
         "headlineHighlight": "Projects",
         "headlineSuffix": "Building Trust",
-        "cycleWords": [
-          {
+        "cycleWords": {
+          "0": {
             "text": "Cases"
           },
-          {
+          "1": {
             "text": "Results"
           },
-          {
+          "2": {
             "text": "Track Record"
           }
-        ],
+        },
         "subheadline": "From flight simulation to AI systems, we have successfully delivered various types of projects. Each case is proof of our capabilities.",
         "ctaText": "View Projects"
       },
@@ -485,17 +485,17 @@
         "eyebrow": "Technology Core",
         "headline": "Creating Deployable Immersive Interactive Experiences",
         "headlineHighlight": "Immersive",
-        "cycleWords": [
-          {
+        "cycleWords": {
+          "0": {
             "text": "Realism"
           },
-          {
+          "1": {
             "text": "Interactivity"
           },
-          {
+          "2": {
             "text": "Intelligence"
           }
-        ],
+        },
         "subheadline": "With OASIS as our vision, integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create real value for your business.",
         "ctaText": "View Tech Modules"
       },
@@ -568,17 +568,17 @@
         "eyebrow": "About Us",
         "headline": "We Build The OASIS",
         "headlineHighlight": "OASIS",
-        "cycleWords": [
-          {
+        "cycleWords": {
+          "0": {
             "text": "FUTURE"
           },
-          {
+          "1": {
             "text": "DREAM"
           },
-          {
+          "2": {
             "text": "REALITY"
           }
-        ],
+        },
         "subheadline": "Pencil Spatial Dynamics is dedicated to integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create the next generation of immersive interactive experiences.",
         "ctaText": "Learn More"
       },

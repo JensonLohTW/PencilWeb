@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState, type ComponentProps, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import { HackerText } from '@/shared/ui/primitives/hacker-text'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 interface FooterCategoryProps {
     title: ReactNode
@@ -36,14 +37,32 @@ export function SwissFooterCategory({
 
 export function SwissFooterLink({
     href,
+    onClick,
     ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
     const [isHovered, setIsHovered] = useState(false)
+    const router = useRouter()
+
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        onClick?.(event)
+        if (event.defaultPrevented) return
+
+        const isModifiedClick =
+            event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0
+
+        if (isModifiedClick || props.target === '_blank') return
+
+        if (href.startsWith('/')) {
+            event.preventDefault()
+            router.push(href)
+        }
+    }
 
     return (
         <li>
             <Link
                 href={href}
+                onClick={handleClick}
                 className="group flex items-center gap-2 text-sm text-pencil-500 transition-colors hover:text-pencil-950 dark:text-pencil-400 dark:hover:text-white"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -144,7 +163,7 @@ export function SwissFooter({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="grid grid-cols-2 gap-8 md:grid-cols-4"
+                    className="relative z-10 grid grid-cols-2 gap-8 md:grid-cols-4"
                 >
                     {links}
                 </motion.nav>
