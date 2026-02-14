@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useLanguage } from '@/shared/providers/language-provider'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/shared/lib/cn'

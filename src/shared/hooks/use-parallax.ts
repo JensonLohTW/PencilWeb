@@ -1,13 +1,21 @@
 'use client'
 
-import { useScroll, useTransform, useSpring, MotionValue, UseScrollOptions } from 'framer-motion'
+import {
+  useScroll,
+  useTransform,
+  useSpring,
+  MotionValue,
+  UseScrollOptions,
+} from 'framer-motion'
 import { RefObject } from 'react'
 
+type ParallaxOutput = string | number
+
 interface UseParallaxOptions {
-    offset?: UseScrollOptions['offset']
-    y?: [string, string] | [number, number] // Output range for Y translation (e.g. ["-20%", "20%"])
-    stiffness?: number
-    damping?: number
+  offset?: UseScrollOptions['offset']
+  y?: [ParallaxOutput, ParallaxOutput]
+  stiffness?: number
+  damping?: number
 }
 
 /**
@@ -20,31 +28,26 @@ interface UseParallaxOptions {
  * @returns y - 用於 transform y 的 MotionValue
  */
 export function useParallax(
-    ref: RefObject<HTMLElement | null>, // Allow null in RefObject for stricter typing compatibility
-    options: UseParallaxOptions = {}
-): MotionValue<any> {
-    const {
-        offset = ['start end', 'end start'],
-        y = ['-10%', '10%'],
-        stiffness = 50,
-        damping = 20
-    } = options
+  ref: RefObject<HTMLElement | null>,
+  options: UseParallaxOptions = {},
+): MotionValue<ParallaxOutput> {
+  const {
+    offset = ['start end', 'end start'],
+    y = ['-10%', '10%'],
+    stiffness = 50,
+    damping = 20,
+  } = options
 
-    // 1. 取得滾動進度
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: offset
-    })
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset,
+  })
 
-    // 2. 添加彈簧物理效果使動畫更平滑
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness,
-        damping,
-        restDelta: 0.001
-    }) as MotionValue<number>
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness,
+    damping,
+    restDelta: 0.001,
+  })
 
-    // 3. 轉換為位移值
-    const value = useTransform(smoothProgress, [0, 1], y as any) as unknown as MotionValue<any>
-
-    return value
+  return useTransform(smoothProgress, [0, 1], y)
 }

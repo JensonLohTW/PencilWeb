@@ -1,4 +1,15 @@
 declare module 'threejs-components/build/cursors/tubes1.min.js' {
-    const TubesCursor: (element: HTMLElement | null, options: any) => any;
-    export default TubesCursor;
+  interface TubesCursorInstance {
+    destroy?: () => void
+  }
+
+  interface TubesCursorOptions {
+    [key: string]: unknown
+  }
+
+  const TubesCursor: (
+    element: HTMLElement | null,
+    options?: TubesCursorOptions,
+  ) => TubesCursorInstance
+  export default TubesCursor
 }

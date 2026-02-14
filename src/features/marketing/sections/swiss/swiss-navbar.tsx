@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { ElDialog, ElDialogPanel } from '@tailwindplus/elements/react'
 import { clsx } from 'clsx/lite'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ComponentProps, ComponentPropsWithoutRef, ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
 interface NavbarLinkProps {
@@ -80,7 +80,7 @@ export function SwissNavbar({
     logo: ReactNode
     utilities: ReactNode
     actions: ReactNode
-} & ComponentProps<'header'>) {
+} & Omit<ComponentPropsWithoutRef<typeof motion.header>, 'children'>) {
     return (
         <motion.header
             initial={{ y: '-100%' }}
@@ -92,7 +92,7 @@ export function SwissNavbar({
                 'dark:border-white dark:bg-pencil-950/98',
                 className
             )}
-            {...props as any}
+            {...props}
         >
             <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-16">
                 {/* Logo Block - Asymmetric emphasis */}

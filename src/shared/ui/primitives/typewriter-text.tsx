@@ -40,10 +40,8 @@ export function TypewriterText({
     const isInView = useInView(ref, { once: true, margin: '-10% 0px -10% 0px' })
     const [count, setCount] = useState(0) // Number of characters of `text` shown
     const [started, setStarted] = useState(false)
-    const [isComplete, setIsComplete] = useState(false)
     const [cycleIndex, setCycleIndex] = useState(-1) // -1 means initial text, 0+ means cycleWords index
     const [isBackspacing, setIsBackspacing] = useState(false)
-    const [currentCycleText, setCurrentCycleText] = useState('')
 
     // Identify the "base" text length if highlighting or cycling
     // For cycling, we assume `text` ends with the word to be cycled or we strictly append?
@@ -118,7 +116,6 @@ export function TypewriterText({
                         return prev + 1
                     }
                     clearInterval(interval)
-                    setIsComplete(true)
 
                     if (cycleWords.length > 0) {
                         timeout = setTimeout(() => {

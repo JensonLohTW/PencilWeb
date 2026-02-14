@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { cn } from '@/shared/lib/cn'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 
 interface PixelProps {
     className?: string
@@ -35,18 +35,30 @@ export function PixelCorner({ className }: { className?: string }) {
 }
 
 export function PixelCluster({ count = 20, areaWidth = 300, areaHeight = 300, className }: { count?: number; areaWidth?: number; areaHeight?: number; className?: string }) {
-    const [pixels, setPixels] = useState<{ id: number; x: number; y: number; delay: number; duration: number }[]>([])
+    const pixels = useMemo(() => {
+        const random = (seed: number) => {
+            const value = Math.sin(seed * 12.9898) * 43758.5453
+            return value - Math.floor(value)
+        }
 
-    useEffect(() => {
-        // Generate random pixels on client-side only to avoid hydration mismatch
-        const newPixels = Array.from({ length: count }).map((_, i) => ({
-            id: i,
-            x: Math.random() * areaWidth,
-            y: Math.random() * areaHeight,
-            delay: Math.random() * 5,
-            duration: 3 + Math.random() * 4
-        }))
-        setPixels(newPixels)
+        return Array.from({ length: count }).map((_, i) => {
+            const xSeed = i + 1
+            const ySeed = i + 101
+            const delaySeed = i + 201
+            const durationSeed = i + 301
+            const targetYSeed = i + 401
+            const repeatDelaySeed = i + 501
+
+            return {
+                id: i,
+                x: random(xSeed) * areaWidth,
+                y: random(ySeed) * areaHeight,
+                delay: random(delaySeed) * 5,
+                duration: 3 + random(durationSeed) * 4,
+                targetY: -20 - random(targetYSeed) * 30,
+                repeatDelay: random(repeatDelaySeed) * 2,
+            }
+        })
     }, [count, areaWidth, areaHeight])
 
     return (
@@ -59,13 +71,13 @@ export function PixelCluster({ count = 20, areaWidth = 300, areaHeight = 300, cl
                     animate={{
                         opacity: [0, 0.6, 0.2, 0.8, 0],
                         scale: [0, 1, 1, 0.5, 0],
-                        y: [pixel.y, pixel.y - 20 - Math.random() * 30]
+                        y: [pixel.y, pixel.y + pixel.targetY]
                     }}
                     transition={{
                         duration: pixel.duration,
                         delay: pixel.delay,
                         repeat: Infinity,
-                        repeatDelay: Math.random() * 2
+                        repeatDelay: pixel.repeatDelay
                     }}
                     style={{
                         left: pixel.x,

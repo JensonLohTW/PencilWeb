@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // Demo playgrounds and bundled artifacts are not part of production app lint scope.
+    'demo/**',
   ]),
   { rules: { '@next/next/no-page-custom-font': 'off' } },
 ])

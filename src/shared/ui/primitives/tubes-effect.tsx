@@ -3,9 +3,13 @@
 import { useEffect, useRef } from 'react'
 import TubesCursor from 'threejs-components/build/cursors/tubes1.min.js'
 
+interface TubesEffectInstance {
+  destroy?: () => void
+}
+
 export function TubesEffect() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const appRef = useRef<any>(null)
+    const appRef = useRef<TubesEffectInstance | null>(null)
 
     useEffect(() => {
         if (!canvasRef.current) return

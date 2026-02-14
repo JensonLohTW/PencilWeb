@@ -12,7 +12,7 @@ interface ProcessStep {
     description: string
 }
 
-function ProcessNode({ index, isEven, number }: { index: number; isEven: boolean, number: string }) {
+function ProcessNode({ isEven, number }: { isEven: boolean, number: string }) {
     const nodeRef = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
         target: nodeRef,
@@ -62,7 +62,7 @@ function ProcessNode({ index, isEven, number }: { index: number; isEven: boolean
     )
 }
 
-function ProcessStepItem({ step, index, isEven }: { step: ProcessStep, index: number, isEven: boolean }) {
+function ProcessStepItem({ step, isEven }: { step: ProcessStep, isEven: boolean }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { margin: "-20% 0px -20% 0px" })
 
@@ -96,7 +96,7 @@ function ProcessStepItem({ step, index, isEven }: { step: ProcessStep, index: nu
             </div>
 
             {/* Center Marker Area */}
-            <ProcessNode index={index} isEven={isEven} number={step.number} />
+            <ProcessNode isEven={isEven} number={step.number} />
 
             {/* Empty Side for Balance */}
             <div className="hidden flex-1 md:block" />
@@ -154,7 +154,6 @@ export function SwissProcessTimeline() {
                         <ProcessStepItem
                             key={step.number}
                             step={step}
-                            index={index}
                             isEven={index % 2 === 0}
                         />
                     ))}

@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useLanguage } from '@/shared/providers/language-provider'
 import { TextReveal } from '@/shared/ui/primitives/text-reveal'
 import { useRef } from 'react'
-import { clsx } from 'clsx'
 
 interface SwissCTAProps {
     headline: string

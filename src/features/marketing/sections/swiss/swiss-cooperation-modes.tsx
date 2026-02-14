@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/shared/providers/language-provider'
-import { cn } from '@/shared/lib/cn'
 
 // Cooperation modes data structure
 const modesZhTw = [

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { useState, type ComponentProps, type ReactNode } from 'react'
+import { useState, type ComponentProps, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import { HackerText } from '@/shared/ui/primitives/hacker-text'
 import { motion } from 'framer-motion'
 
@@ -98,7 +98,7 @@ export function SwissFooter({
     links: ReactNode
     socialLinks: ReactNode
     fineprint: ReactNode
-} & ComponentProps<'footer'>) {
+} & Omit<ComponentPropsWithoutRef<typeof motion.footer>, 'children'>) {
     return (
         <motion.footer
             initial={{ opacity: 0 }}
@@ -106,7 +106,7 @@ export function SwissFooter({
             viewport={{ once: true, margin: '-10%' }}
             transition={{ duration: 0.6 }}
             className="border-t-2 border-pencil-950 bg-pencil-50 text-pencil-950 dark:border-white dark:bg-pencil-950 dark:text-white"
-            {...props as any}
+            {...props}
         >
             {/* CTA Section - Bold headline */}
             <div className="border-b-2 border-pencil-950 dark:border-white">

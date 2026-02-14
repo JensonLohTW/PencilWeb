@@ -11,7 +11,8 @@ export function WavesBackground({ className }: WavesBackgroundProps) {
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (!containerRef.current) return
+        const container = containerRef.current
+        if (!container) return
 
         // 2. Configuration Object
         const params = {
@@ -49,7 +50,7 @@ export function WavesBackground({ className }: WavesBackgroundProps) {
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
         renderer.setSize(window.innerWidth, window.innerHeight)
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-        containerRef.current.appendChild(renderer.domElement)
+        container.appendChild(renderer.domElement)
 
         // 3. Geometry Generation
         const ROWS = 50
@@ -243,8 +244,8 @@ export function WavesBackground({ className }: WavesBackgroundProps) {
         return () => {
             window.removeEventListener('resize', handleResize)
             cancelAnimationFrame(animationFrameId)
-            if (containerRef.current && containerRef.current.contains(renderer.domElement)) {
-                containerRef.current.removeChild(renderer.domElement)
+            if (container.contains(renderer.domElement)) {
+                container.removeChild(renderer.domElement)
             }
             particlesGeometry.dispose()
             linesGeometry.dispose()

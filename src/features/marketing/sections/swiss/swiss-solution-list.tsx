@@ -184,7 +184,7 @@ export function SwissSolutionList() {
         <LayoutGroup>
           <motion.div layout className="flex flex-col">
             <AnimatePresence>
-              {visibleSolutions.map((solution, index) => {
+              {visibleSolutions.map((solution) => {
                 const isExpanded = expandedId === solution.id
 
                 return (
@@ -384,4 +384,3 @@ export function SwissSolutionList() {
     </section>
   )
 }
-

@@ -3,7 +3,6 @@
 import { useLanguage } from '@/shared/providers/language-provider'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { clsx } from 'clsx'
 import { ComparisonMeter, MeterLevel } from '@/shared/ui/primitives/comparison-meter'
 
 interface ComparisonItem {
