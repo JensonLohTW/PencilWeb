@@ -7,6 +7,7 @@ import { useEffect, useMemo, useState, useRef } from 'react'
 import { TextReveal } from '@/components/ui/text-reveal'
 import { PixelCluster } from '@/components/ui/pixel-decorations'
 import { WavesBackground } from '@/components/ui/waves-background'
+import { TrailGrid } from '@/components/ui/trail-grid'
 
 interface CycleWord {
   text: string
@@ -397,7 +398,7 @@ export function SwissHeroEnhanced({
     <section
       ref={ref}
       className={clsx(
-        'relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pb-12 pt-32 lg:px-16',
+        'relative z-0 flex min-h-screen flex-col justify-center overflow-hidden px-6 pb-12 pt-32 lg:px-16',
         centered ? 'items-center text-center' : 'items-start',
       )}
     >
@@ -438,6 +439,7 @@ export function SwissHeroEnhanced({
 
         {variant === 'projects' && (
           <>
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.07)_1px,transparent_1px),linear-gradient(rgba(15,23,42,0.07)_1px,transparent_1px)] bg-[size:45px_45px] [mask-image:linear-gradient(160deg,black_30%,transparent_100%)] dark:bg-[linear-gradient(90deg,rgba(241,245,249,0.06)_1px,transparent_1px),linear-gradient(rgba(241,245,249,0.06)_1px,transparent_1px)]" />
             <motion.div
               animate={{ x: [0, 20, 0], opacity: [0.15, 0.25, 0.15] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
@@ -448,6 +450,10 @@ export function SwissHeroEnhanced({
               transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute bottom-16 left-8 h-40 w-40 rounded-full bg-pencil-200/40 blur-3xl"
             />
+            <div className="pointer-events-auto absolute inset-0 [mask-image:linear-gradient(180deg,transparent_0%,black_18%,black_72%,transparent_100%)]">
+              <TrailGrid className="opacity-60 dark:opacity-55" color="#ea580c" />
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/45 via-transparent to-white/70 dark:from-black/20 dark:to-black/65" />
           </>
         )}
 
@@ -542,4 +548,3 @@ export function SwissHeroEnhanced({
     </section>
   )
 }
-

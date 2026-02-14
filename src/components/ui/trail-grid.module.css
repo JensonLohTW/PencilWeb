@@ -1,0 +1,70 @@
+.grid {
+  --trail-mask: radial-gradient(120% 100% at 50% 35%, #000 15%, #000 62%, transparent 100%);
+  touch-action: none;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 20), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows, 10), minmax(0, 1fr));
+  width: 100%;
+  height: 100%;
+  font-size: clamp(1rem, 0.8vw + 0.6rem, 1.65rem);
+  font-weight: 600;
+  line-height: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: currentColor;
+  mask-image: var(--trail-mask);
+  -webkit-mask-image: var(--trail-mask);
+}
+
+.cell {
+  touch-action: none;
+  padding: 2px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  opacity: calc(var(--opacity, 0.2) * 0.55);
+  transition-property: opacity, rotate, filter;
+  transition-duration: 0.8s, 0.4s, 0.6s;
+  transition-timing-function: ease-in, ease-out, ease-out;
+  scale: 1.5;
+  rotate: 0deg;
+  filter: grayscale(1);
+  color: hsl(var(--hue, 18) 80% 50%);
+  user-select: none;
+}
+
+:global(.dark) .cell {
+  opacity: calc(var(--opacity, 0.2) + 0.22);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .grid {
+    cursor: none;
+  }
+
+  .cell:hover {
+    transition-duration: 0s, 0s, 0s;
+    rotate: calc(var(--grade, 0) * 90deg);
+    filter: grayscale(0) brightness(1.5);
+    opacity: 1;
+  }
+}
+
+.cell[data-hover='true'] {
+  transition-duration: 0s, 0s, 0s;
+  rotate: calc(var(--grade, 0) * 90deg);
+  filter: grayscale(0) brightness(1.5);
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cell {
+    transition-duration: 0s, 0s, 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    transition: none;
+    scale: 1.25;
+  }
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ButtonLink } from '@/components/elements/button'
+
 import { LanguageToggle } from '@/components/elements/language-toggle'
 import { ThemeToggle } from '@/components/elements/theme-toggle'
 import { useLanguage } from '@/components/providers/language-provider'
@@ -46,12 +46,12 @@ export function NavBar() {
             actions={
                 <>
                     {/* Contact Link Removed */}
-                    <ButtonLink
+                    <Link
                         href="/contact"
-                        className="w-full justify-center border-2 border-cta bg-cta text-white hover:bg-white hover:text-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta dark:hover:text-white"
+                        className="inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium w-full border-2 border-cta bg-cta text-white transition-colors hover:bg-white hover:text-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:border-cta dark:hover:bg-cta dark:hover:text-white"
                     >
                         {t('nav.contact')}
-                    </ButtonLink>
+                    </Link>
                 </>
             }
         />
