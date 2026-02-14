@@ -4,6 +4,7 @@ import { useLanguage } from '@/components/providers/language-provider'
 import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
+import Image from 'next/image'
 
 interface ProjectItem {
   id: string
@@ -15,6 +16,7 @@ interface ProjectItem {
   summary: string
   outcome: string
   timeline: string
+  image?: string
 }
 
 const projectsZhTw: ProjectItem[] = [
@@ -157,23 +159,23 @@ export function SwissProjectList() {
   }
 
   return (
-    <section id="projects" className="relative px-6 py-24 lg:px-16" onMouseMove={handleMouseMove}>
-      <div className="mb-8 flex items-end justify-between border-b border-pencil-200 pb-6 dark:border-white/10">
+    <section id="projects" className="relative px-6 py-32 lg:px-16" onMouseMove={handleMouseMove}>
+      <div className="mb-12 flex items-end justify-between border-b border-pencil-200 pb-8 dark:border-white/10">
         <div>
           <p className="swiss-mono mb-2 text-cta dark:text-pencil-400">{eyebrow}</p>
-          <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-5xl dark:text-white">{title}</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-cta lg:text-6xl dark:text-white">{title}</h2>
         </div>
         <p className="swiss-mono hidden text-pencil-400 md:block dark:text-pencil-500">{count}</p>
       </div>
 
-      <div className="mb-8 flex flex-wrap gap-3">
+      <div className="mb-12 flex flex-wrap gap-3">
         {filters.map((category) => (
           <button
             key={category}
             type="button"
             onClick={() => setActiveCategory(category)}
             className={cn(
-              'swiss-mono border px-4 py-2 text-xs tracking-wider transition-colors',
+              'swiss-mono border px-5 py-2 text-xs tracking-wider transition-colors',
               activeCategory === category
                 ? 'border-pencil-950 bg-pencil-950 text-white dark:border-white dark:bg-white dark:text-pencil-950'
                 : 'border-pencil-300 text-pencil-600 hover:border-cta hover:text-cta dark:border-white/20 dark:text-pencil-300',
@@ -195,7 +197,7 @@ export function SwissProjectList() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group border-b border-pencil-200 py-8 transition-colors hover:bg-pencil-50 dark:border-white/10 dark:hover:bg-white/5"
+              className="group border-b border-pencil-200 py-10 transition-colors hover:bg-pencil-50 dark:border-white/10 dark:hover:bg-white/5"
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
@@ -204,22 +206,27 @@ export function SwissProjectList() {
                 className="w-full text-left"
                 onClick={() => setExpandedId(isExpanded ? null : project.id)}
               >
-                <div className="flex items-center gap-8 lg:gap-16">
-                  <span className="swiss-mono w-12 text-pencil-400 transition-colors group-hover:text-cta dark:text-pencil-500">
-                    {project.number}
-                  </span>
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+                  <div className="flex items-center justify-between w-full lg:w-auto lg:gap-16">
+                    <span className="swiss-mono text-lg text-pencil-400 transition-colors group-hover:text-cta dark:text-pencil-500 lg:w-12">
+                      {project.number}
+                    </span>
+                    <span className="lg:hidden text-2xl text-pencil-300 dark:text-pencil-600">
+                      {isExpanded ? '−' : '+'}
+                    </span>
+                  </div>
 
-                  <h3 className="flex-1 text-2xl font-semibold text-pencil-900 transition-colors group-hover:text-cta lg:text-3xl dark:text-white">
+                  <h3 className="flex-1 text-3xl font-semibold text-pencil-900 transition-colors group-hover:text-cta lg:text-4xl dark:text-white tracking-tight">
                     {project.title}
                   </h3>
 
-                  <span className="hidden text-sm text-pencil-500 md:block dark:text-pencil-400">
+                  <span className="hidden text-sm text-pencil-500 lg:block dark:text-pencil-400 lg:w-32 lg:text-right">
                     {project.category}
                   </span>
 
                   <span
                     className={cn(
-                      'text-2xl text-pencil-300 transition-all dark:text-pencil-600',
+                      'hidden text-2xl text-pencil-300 transition-all lg:block dark:text-pencil-600 lg:ml-12',
                       isExpanded && 'rotate-90 text-cta',
                     )}
                   >
@@ -227,11 +234,11 @@ export function SwissProjectList() {
                   </span>
                 </div>
 
-                <div className="mt-4 ml-20 flex flex-wrap gap-3 lg:ml-28">
+                <div className="mt-6 flex flex-wrap gap-3 lg:ml-28">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="swiss-mono border border-pencil-200 px-3 py-1 text-pencil-500 dark:border-white/10 dark:text-pencil-400"
+                      className="swiss-mono border border-pencil-200 px-3 py-1 text-xs text-pencil-500 dark:border-white/10 dark:text-pencil-400"
                     >
                       {tag}
                     </span>
@@ -248,18 +255,18 @@ export function SwissProjectList() {
                     transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-6 ml-20 grid gap-4 pr-2 pb-2 lg:ml-28 lg:grid-cols-3">
-                      <p className="text-sm leading-relaxed text-pencil-600 lg:col-span-2 dark:text-pencil-300">
+                    <div className="mt-8 grid gap-8 lg:ml-28 lg:grid-cols-3 lg:gap-12">
+                      <p className="text-lg leading-relaxed text-pencil-600 lg:col-span-2 dark:text-pencil-300">
                         {project.summary}
                       </p>
-                      <div className="grid gap-3 text-sm">
-                        <div className="border border-pencil-200 p-3 dark:border-white/10">
-                          <p className="swiss-mono text-[11px] text-pencil-400">{isZh ? '交付結果' : 'Outcome'}</p>
-                          <p className="mt-1 font-medium text-pencil-900 dark:text-white">{project.outcome}</p>
+                      <div className="grid gap-4 text-sm">
+                        <div className="border border-pencil-200 p-4 dark:border-white/10 bg-white/50 dark:bg-pencil-900/50">
+                          <p className="swiss-mono text-[10px] uppercase tracking-wider text-pencil-400">{isZh ? '交付結果' : 'Outcome'}</p>
+                          <p className="mt-2 font-medium text-pencil-900 dark:text-white text-base">{project.outcome}</p>
                         </div>
-                        <div className="border border-pencil-200 p-3 dark:border-white/10">
-                          <p className="swiss-mono text-[11px] text-pencil-400">{isZh ? '導入時程' : 'Timeline'}</p>
-                          <p className="mt-1 font-medium text-pencil-900 dark:text-white">{project.timeline}</p>
+                        <div className="border border-pencil-200 p-4 dark:border-white/10 bg-white/50 dark:bg-pencil-900/50">
+                          <p className="swiss-mono text-[10px] uppercase tracking-wider text-pencil-400">{isZh ? '導入時程' : 'Timeline'}</p>
+                          <p className="mt-2 font-medium text-pencil-900 dark:text-white text-base">{project.timeline}</p>
                         </div>
                       </div>
                     </div>
@@ -271,29 +278,52 @@ export function SwissProjectList() {
         })}
       </div>
 
-      {hoveredId && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          className="pointer-events-none fixed z-50 hidden h-64 w-80 overflow-hidden lg:block"
-          style={{
-            left: mousePos.x + 20,
-            top: mousePos.y - 128,
-          }}
-        >
-          <div
-            className="flex h-full w-full items-center justify-center"
+      <AnimatePresence>
+        {hoveredId && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="pointer-events-none fixed z-50 hidden h-64 w-80 overflow-hidden lg:block shadow-2xl bg-white dark:bg-pencil-900"
             style={{
-              backgroundColor: projects.find((project) => project.id === hoveredId)?.color || '#C4682F',
+              left: mousePos.x + 40,
+              top: mousePos.y - 100,
             }}
           >
-            <span className="text-xl font-bold text-white/80">
-              {projects.find((project) => project.id === hoveredId)?.number}
-            </span>
-          </div>
-        </motion.div>
-      )}
+            {(() => {
+              const p = projects.find((project) => project.id === hoveredId)
+              if (p?.image) {
+                return (
+                  <div className="relative h-full w-full bg-pencil-100">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                  </div>
+                )
+              }
+              return (
+                <div
+                  className="flex h-full w-full items-center justify-center relative border border-pencil-200 dark:border-white/10"
+                  style={{
+                    backgroundColor: p?.color || '#C4682F',
+                  }}
+                >
+                  <span className="text-9xl font-bold text-white/20">
+                    {p?.number}
+                  </span>
+                  <div className="absolute bottom-4 left-6 text-white text-lg font-medium tracking-tight">
+                    {p?.title}
+                  </div>
+                </div>
+              )
+            })()}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

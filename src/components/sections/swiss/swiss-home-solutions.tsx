@@ -1,15 +1,99 @@
-'use client'
-
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLanguage } from '@/components/providers/language-provider'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useRef } from 'react'
+import { useParallax } from '@/hooks/use-parallax'
 
 interface SolutionItem {
     number: string
     title: string
     subtitle: string
     description: string
+}
+
+function SolutionCard({ solution, index }: { solution: SolutionItem; index: number }) {
+    const ref = useRef(null)
+
+    // 根據索引創建交錯視差效果
+    // 偶數卡片向下移動較慢，奇數卡片移動較快或反之，創造深度
+    const yRange: [string, string] = index % 2 === 0 ? ['-5%', '5%'] : ['-15%', '15%']
+    const y = useParallax(ref, { y: yRange })
+
+    const solutionId = `solution-${solution.number}`
+
+    return (
+        <motion.div
+            ref={ref}
+            style={{ y }}
+            className="h-full"
+        >
+            <motion.a
+                href={`/solutions#${solutionId}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={cn(
+                    "group relative flex min-h-[420px] h-full flex-col justify-between bg-pencil-50 p-8 transition-all duration-500",
+                    "hover:bg-pencil-950 hover:z-10",
+                    "dark:bg-pencil-900 dark:hover:bg-white"
+                )}
+            >
+                {/* Top: Number & Icon */}
+                <div className="flex w-full items-start justify-between">
+                    <span className={cn(
+                        "swiss-mono text-6xl font-bold tracking-tighter transition-colors duration-500",
+                        "text-pencil-950/10 group-hover:text-white/20",
+                        "dark:text-white/10 dark:group-hover:text-pencil-950/20"
+                    )}>
+                        {solution.number}
+                    </span>
+
+                    <div className={cn(
+                        "flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-500",
+                        "border-pencil-200 bg-white text-pencil-950 group-hover:border-white/20 group-hover:bg-white/10 group-hover:text-white",
+                        "dark:border-white/10 dark:bg-pencil-800 dark:text-white dark:group-hover:border-pencil-950/10 dark:group-hover:bg-pencil-950/5 dark:group-hover:text-pencil-950"
+                    )}>
+                        <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                </div>
+
+                {/* Bottom: Content */}
+                <div className="mt-auto">
+                    <h3 className={cn(
+                        "mb-3 text-2xl font-bold transition-colors duration-500",
+                        "text-pencil-950 group-hover:text-white",
+                        "dark:text-white dark:group-hover:text-pencil-950"
+                    )}>
+                        {solution.title}
+                    </h3>
+
+                    <div className="h-px w-12 bg-cta mb-4 origin-left transition-all duration-500 group-hover:w-full group-hover:bg-white/30 dark:group-hover:bg-pencil-950/30" />
+
+                    <p className={cn(
+                        "swiss-mono text-sm uppercase tracking-wide opacity-80 transition-colors duration-500",
+                        "text-pencil-600 group-hover:text-white/80",
+                        "dark:text-pencil-400 dark:group-hover:text-pencil-950/80"
+                    )}>
+                        {solution.subtitle}
+                    </p>
+
+                    <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr]">
+                        <div className="overflow-hidden">
+                            <p className={cn(
+                                "mt-4 text-base leading-relaxed transition-colors duration-500",
+                                "text-pencil-600 group-hover:text-white/90",
+                                "dark:text-pencil-300 dark:group-hover:text-pencil-950/80"
+                            )}>
+                                {solution.description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </motion.a>
+        </motion.div>
+    )
 }
 
 export function SwissHomeSolutions() {
@@ -20,7 +104,7 @@ export function SwissHomeSolutions() {
     const solutions = Array.isArray(solutionsData) ? (solutionsData as SolutionItem[]) : []
 
     return (
-        <section className="bg-white py-24 sm:py-32 dark:bg-pencil-950">
+        <section className="bg-white py-24 sm:py-32 dark:bg-pencil-950 overflow-hidden">
             <div className="mx-auto max-w-[1800px] px-6 lg:px-16">
                 {/* Header Section */}
                 <div className="mb-20 grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-2 lg:items-end">
@@ -58,78 +142,11 @@ export function SwissHomeSolutions() {
                 </div>
 
                 {/* Solutions Grid */}
-                <div className="grid grid-cols-1 gap-px bg-pencil-200 sm:grid-cols-2 lg:grid-cols-4 dark:bg-white/10">
-                    {solutions.map((solution, index) => {
-                        const solutionId = `solution-${solution.number}`
-
-                        return (
-                            <motion.a
-                                key={solution.number}
-                                href={`/solutions#${solutionId}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className={cn(
-                                    "group relative flex min-h-[420px] flex-col justify-between bg-pencil-50 p-8 transition-all duration-500",
-                                    "hover:bg-pencil-950 hover:z-10",
-                                    "dark:bg-pencil-900 dark:hover:bg-white"
-                                )}
-                            >
-                                {/* Top: Number & Icon */}
-                                <div className="flex w-full items-start justify-between">
-                                    <span className={cn(
-                                        "swiss-mono text-6xl font-bold tracking-tighter transition-colors duration-500",
-                                        "text-pencil-950/10 group-hover:text-white/20",
-                                        "dark:text-white/10 dark:group-hover:text-pencil-950/20"
-                                    )}>
-                                        {solution.number}
-                                    </span>
-
-                                    <div className={cn(
-                                        "flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-500",
-                                        "border-pencil-200 bg-white text-pencil-950 group-hover:border-white/20 group-hover:bg-white/10 group-hover:text-white",
-                                        "dark:border-white/10 dark:bg-pencil-800 dark:text-white dark:group-hover:border-pencil-950/10 dark:group-hover:bg-pencil-950/5 dark:group-hover:text-pencil-950"
-                                    )}>
-                                        <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                                    </div>
-                                </div>
-
-                                {/* Bottom: Content */}
-                                <div className="mt-auto">
-                                    <h3 className={cn(
-                                        "mb-3 text-2xl font-bold transition-colors duration-500",
-                                        "text-pencil-950 group-hover:text-white",
-                                        "dark:text-white dark:group-hover:text-pencil-950"
-                                    )}>
-                                        {solution.title}
-                                    </h3>
-
-                                    <div className="h-px w-12 bg-cta mb-4 origin-left transition-all duration-500 group-hover:w-full group-hover:bg-white/30 dark:group-hover:bg-pencil-950/30" />
-
-                                    <p className={cn(
-                                        "swiss-mono text-sm uppercase tracking-wide opacity-80 transition-colors duration-500",
-                                        "text-pencil-600 group-hover:text-white/80",
-                                        "dark:text-pencil-400 dark:group-hover:text-pencil-950/80"
-                                    )}>
-                                        {solution.subtitle}
-                                    </p>
-
-                                    <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr]">
-                                        <div className="overflow-hidden">
-                                            <p className={cn(
-                                                "mt-4 text-base leading-relaxed transition-colors duration-500",
-                                                "text-pencil-600 group-hover:text-white/90",
-                                                "dark:text-pencil-300 dark:group-hover:text-pencil-950/80"
-                                            )}>
-                                                {solution.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.a>
-                        )
-                    })}
+                {/* 增加 gap-y 以容納視差移動 */}
+                <div className="grid grid-cols-1 gap-x-px gap-y-12 sm:gap-y-16 bg-transparent sm:grid-cols-2 lg:grid-cols-4">
+                    {solutions.map((solution, index) => (
+                        <SolutionCard key={solution.number} solution={solution} index={index} />
+                    ))}
                 </div>
             </div>
         </section>

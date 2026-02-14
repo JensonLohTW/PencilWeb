@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, type ComponentProps, type ReactNode } from 'react'
 import { HackerText } from '@/components/ui/hacker-text'
+import { motion } from 'framer-motion'
 
 interface FooterCategoryProps {
     title: ReactNode
@@ -99,36 +100,64 @@ export function SwissFooter({
     fineprint: ReactNode
 } & ComponentProps<'footer'>) {
     return (
-        <footer
+        <motion.footer
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 0.6 }}
             className="border-t-2 border-pencil-950 bg-pencil-50 text-pencil-950 dark:border-white dark:bg-pencil-950 dark:text-white"
-            {...props}
+            {...props as any}
         >
             {/* CTA Section - Bold headline */}
             <div className="border-b-2 border-pencil-950 dark:border-white">
                 <div className="mx-auto max-w-7xl px-6 py-16 lg:px-16 lg:py-24">
                     <div className="grid gap-12 lg:grid-cols-3 lg:items-end">
                         {/* Large CTA */}
-                        <div className="lg:col-span-2">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="lg:col-span-2"
+                        >
                             {cta}
-                        </div>
+                        </motion.div>
 
                         {/* Social Links */}
-                        <div className="flex gap-4 lg:justify-end">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="flex gap-4 lg:justify-end"
+                        >
                             {socialLinks}
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
 
             {/* Links Grid */}
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
-                <nav className="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <motion.nav
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="grid grid-cols-2 gap-8 md:grid-cols-4"
+                >
                     {links}
-                </nav>
+                </motion.nav>
             </div>
 
             {/* Bottom Bar - Clean Swiss style */}
-            <div className="border-t-2 border-pencil-950 dark:border-white">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="border-t-2 border-pencil-950 dark:border-white"
+            >
                 <div className="mx-auto max-w-7xl px-6 lg:px-16">
                     <div className="flex flex-col items-start justify-between gap-6 py-8 lg:flex-row lg:items-center">
                         {/* Fineprint */}
@@ -147,7 +176,7 @@ export function SwissFooter({
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Decorative Grid Pattern */}
             <div className="h-2 w-full bg-pencil-950 dark:bg-white">
@@ -158,6 +187,6 @@ export function SwissFooter({
                     <div className="w-1/4 bg-pencil-950 dark:bg-white" />
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     )
 }

@@ -4,6 +4,7 @@ import { ButtonLink } from '@/components/elements/button'
 import { LinkedInIcon } from '@/components/icons/social/linkedin-icon'
 import { YouTubeIcon } from '@/components/icons/social/youtube-icon'
 import { useLanguage } from '@/components/providers/language-provider'
+import { motion } from 'framer-motion'
 import {
     SwissFooter,
     SwissFooterCategory,
@@ -18,27 +19,27 @@ export function Footer() {
         <SwissFooter
             id="footer"
             cta={
-                <div className="space-y-8">
-                    <h3
-                        className="text-pencil-950 dark:text-white"
-                        style={{
-                            fontSize: 'clamp(2rem, 5vw, 4rem)',
-                            fontWeight: 700,
-                            lineHeight: 1,
-                            letterSpacing: '-0.02em',
-                        }}
-                    >
+                <div className="relative space-y-10">
+                    <h3 className="font-serif text-6xl font-medium leading-[0.9] tracking-tight text-pencil-950 lg:text-8xl dark:text-white">
                         {t('footer.cta.title')}
+                        <motion.span
+                            animate={{ opacity: [1, 0] }}
+                            transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                            className="ml-2 inline-block h-[0.7em] w-[0.15em] bg-cta align-middle"
+                        />
                     </h3>
-                    <p className="max-w-md text-pencil-500 dark:text-pencil-400">
+                    <p className="swiss-mono max-w-xl text-lg text-pencil-600 dark:text-pencil-300">
                         {t('footer.cta.description')}
                     </p>
-                    <ButtonLink
-                        href="/contact"
-                        className="inline-flex border-2 border-cta bg-cta text-white hover:bg-white hover:text-cta dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta dark:hover:text-white"
-                    >
-                        {t('nav.contact')} →
-                    </ButtonLink>
+                    <div className="pt-2">
+                        <ButtonLink
+                            href="/contact"
+                            className="group inline-flex items-center gap-3 border-2 border-pencil-950 bg-pencil-950 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-transparent hover:text-pencil-950 dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-transparent dark:hover:text-white"
+                        >
+                            <span>{t('nav.contact')}</span>
+                            <span className="transition-transform group-hover:translate-x-1">→</span>
+                        </ButtonLink>
+                    </div>
                 </div>
             }
             links={

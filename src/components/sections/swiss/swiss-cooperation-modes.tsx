@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/components/providers/language-provider'
+import { cn } from '@/lib/utils'
 
 // Cooperation modes data structure
 const modesZhTw = [
@@ -33,15 +34,17 @@ export function SwissCooperationModes() {
     const eyebrow = language === 'zh-TW' ? '合作模式' : language === 'ja' ? '協力' : 'Cooperation'
 
     return (
-        <section className="border-t border-pencil-200 px-6 py-24 lg:px-16 dark:border-white/10">
+        <section className="border-t border-pencil-200 px-6 py-32 lg:px-16 dark:border-white/10 dark:bg-black">
             {/* Section Header */}
-            <div className="mb-16">
-                <p className="swiss-mono mb-2 text-pencil-500 dark:text-pencil-400">{eyebrow}</p>
-                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-5xl dark:text-white">{title}</h2>
+            <div className="mb-20">
+                <p className="swiss-mono mb-6 w-fit border border-pencil-200 bg-white/60 px-3 py-1 text-xs text-pencil-600 backdrop-blur-sm dark:border-white/10 dark:bg-pencil-900/50 dark:text-pencil-400">
+                    {eyebrow}
+                </p>
+                <h2 className="text-4xl font-bold tracking-tight text-pencil-950 lg:text-6xl dark:text-white">{title}</h2>
             </div>
 
             {/* Modes Grid */}
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
                 {modes.map((mode, index) => (
                     <motion.div
                         key={mode.number}
@@ -49,17 +52,17 @@ export function SwissCooperationModes() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group"
+                        className="group flex flex-col h-full"
                     >
                         {/* Number */}
-                        <span className="block text-6xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-7xl dark:text-white/20">
+                        <span className="block text-7xl font-bold text-pencil-100 transition-colors group-hover:text-cta lg:text-8xl dark:text-white/5 dark:group-hover:text-cta">
                             {mode.number}
                         </span>
 
                         {/* Content */}
-                        <div className="mt-4 border-t border-pencil-200 pt-4 dark:border-white/10">
-                            <h3 className="text-xl font-semibold text-pencil-950 dark:text-white">{mode.title}</h3>
-                            <p className="mt-2 text-sm leading-relaxed text-pencil-600 dark:text-pencil-300">{mode.description}</p>
+                        <div className="mt-8 border-t border-pencil-200 pt-6 dark:border-white/10 flex-1">
+                            <h3 className="text-2xl font-bold text-pencil-950 dark:text-white">{mode.title}</h3>
+                            <p className="mt-4 text-base leading-relaxed text-pencil-600 dark:text-pencil-300">{mode.description}</p>
                         </div>
                     </motion.div>
                 ))}

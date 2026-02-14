@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ElDialog, ElDialogPanel } from '@tailwindplus/elements/react'
 import { clsx } from 'clsx/lite'
 import type { ComponentProps, ReactNode } from 'react'
+import { motion } from 'framer-motion'
 
 interface NavbarLinkProps {
     children: ReactNode
@@ -81,14 +82,17 @@ export function SwissNavbar({
     actions: ReactNode
 } & ComponentProps<'header'>) {
     return (
-        <header
+        <motion.header
+            initial={{ y: '-100%' }}
+            animate={{ y: '0%' }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className={clsx(
                 'fixed top-0 left-0 right-0 z-50',
                 'border-b-2 border-pencil-950 bg-white/98 backdrop-blur-sm',
                 'dark:border-white dark:bg-pencil-950/98',
                 className
             )}
-            {...props}
+            {...props as any}
         >
             <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-16">
                 {/* Logo Block - Asymmetric emphasis */}
@@ -195,6 +199,6 @@ export function SwissNavbar({
                     </ElDialogPanel>
                 </dialog>
             </ElDialog>
-        </header>
+        </motion.header>
     )
 }
