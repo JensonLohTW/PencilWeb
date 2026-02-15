@@ -39,6 +39,7 @@ export default function Page() {
       {/* CTA */}
       <SwissCTA
         headline={t('pages.home.cta.headline')}
+        subheadline={t('pages.home.cta.subheadline')}
         ctaText={t('pages.home.cta.ctaText')}
         ctaHref="/contact"
         secondaryText={t('pages.home.cta.secondaryText')}

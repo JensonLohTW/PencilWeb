@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { TypewriterText } from '@/shared/ui/primitives/typewriter-text'
-import { TubesEffect } from '@/shared/ui/primitives/tubes-effect'
+
 
 interface SwissHomeHeroProps {
     headline: string
@@ -15,7 +15,7 @@ export function SwissHomeHero({ headline, subheadline, eyebrow }: SwissHomeHeroP
     return (
         <section className="relative flex min-h-screen flex-col justify-between overflow-hidden px-6 pb-12 pt-32 lg:px-16 dark:bg-pencil-950">
             {/* Background Effect */}
-            <TubesEffect />
+            {/* Background Effect Removed */}
 
             {/* Main Content */}
             <div className="relative z-10 flex flex-1 flex-col justify-center">

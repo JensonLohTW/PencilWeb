@@ -8,6 +8,7 @@ import { useRef } from 'react'
 
 interface SwissCTAProps {
     headline: string
+    subheadline?: string
     ctaText: string
     ctaHref: string
     secondaryText?: string
@@ -16,6 +17,7 @@ interface SwissCTAProps {
 
 export function SwissCTA({
     headline,
+    subheadline,
     ctaText,
     ctaHref,
     secondaryText,
@@ -58,6 +60,17 @@ export function SwissCTA({
                         className="text-4xl font-bold leading-tight text-pencil-950 lg:text-5xl dark:text-white"
                         stagger={0.03}
                     />
+                    {subheadline && (
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-6 text-lg text-pencil-600 dark:text-pencil-300"
+                        >
+                            {subheadline}
+                        </motion.p>
+                    )}
                 </div>
 
                 {/* CTAs */}

@@ -147,7 +147,8 @@
         ]
       },
       "cta": {
-        "headline": "Ready to Launch? 無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。",
+        "headline": "Ready to Launch?",
+        "subheadline": "無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。",
         "ctaText": "立即諮詢",
         "secondaryText": "探索解決方案"
       }

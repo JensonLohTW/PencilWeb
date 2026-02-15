@@ -113,7 +113,7 @@ export function SwissFooter({
     fineprint,
     ...props
 }: {
-    cta: ReactNode
+    cta?: ReactNode
     links: ReactNode
     socialLinks: ReactNode
     fineprint: ReactNode
@@ -127,34 +127,36 @@ export function SwissFooter({
             className="border-t-2 border-pencil-950 bg-pencil-50 text-pencil-950 dark:border-white dark:bg-pencil-950 dark:text-white"
             {...props}
         >
-            {/* CTA Section - Bold headline */}
-            <div className="border-b-2 border-pencil-950 dark:border-white">
-                <div className="mx-auto max-w-7xl px-6 py-16 lg:px-16 lg:py-24">
-                    <div className="grid gap-12 lg:grid-cols-3 lg:items-end">
-                        {/* Large CTA */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="lg:col-span-2"
-                        >
-                            {cta}
-                        </motion.div>
+            {/* CTA Section - Only render if CTA is present */}
+            {cta && (
+                <div className="border-b-2 border-pencil-950 dark:border-white">
+                    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-16 lg:py-24">
+                        <div className="grid gap-12 lg:grid-cols-3 lg:items-end">
+                            {/* Large CTA */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="lg:col-span-2"
+                            >
+                                {cta}
+                            </motion.div>
 
-                        {/* Social Links */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="flex gap-4 lg:justify-end"
-                        >
-                            {socialLinks}
-                        </motion.div>
+                            {/* Social Links (Top) */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                className="flex gap-4 lg:justify-end"
+                            >
+                                {socialLinks}
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
 
             {/* Links Grid */}
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
@@ -184,14 +186,23 @@ export function SwissFooter({
                             {fineprint}
                         </div>
 
-                        {/* Brand Mark */}
-                        <div className="flex items-center gap-4">
-                            <div className="flex h-8 w-8 items-center justify-center border-2 border-cta dark:border-white">
-                                <span className="text-xs font-black text-cta dark:text-white">P</span>
+                        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+                            {/* Social Links (Bottom - Only if CTA is missing) */}
+                            {!cta && (
+                                <div className="flex gap-4">
+                                    {socialLinks}
+                                </div>
+                            )}
+
+                            {/* Brand Mark */}
+                            <div className="flex items-center gap-4">
+                                <div className="flex h-8 w-8 items-center justify-center border-2 border-cta dark:border-white">
+                                    <span className="text-xs font-black text-cta dark:text-white">P</span>
+                                </div>
+                                <span className="swiss-mono text-pencil-400 dark:text-pencil-500">
+                                    SYSTEM.ONLINE
+                                </span>
                             </div>
-                            <span className="swiss-mono text-pencil-400 dark:text-pencil-500">
-                                SYSTEM.ONLINE
-                            </span>
                         </div>
                     </div>
                 </div>
