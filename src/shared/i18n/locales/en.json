@@ -148,7 +148,8 @@
         ]
       },
       "cta": {
-        "headline": "Ready to Launch? Whether it's VR training, AR guidance, smart spaces, or AI applications, we can create deployable solutions for you.",
+        "headline": "Ready to Launch?",
+        "subheadline": "Whether it's VR training, AR guidance, smart spaces, or AI applications, we can create deployable solutions for you.",
         "ctaText": "Contact Now",
         "secondaryText": "Explore Solutions"
       }

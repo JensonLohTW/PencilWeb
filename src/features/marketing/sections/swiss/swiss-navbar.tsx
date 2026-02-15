@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link, useRouter } from '@/i18n/routing'
 import { clsx } from 'clsx/lite'
 import {
   useState,
@@ -10,7 +10,6 @@ import {
   type ReactNode,
 } from 'react'
 import { motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
 
 interface NavbarLinkProps {
   children: ReactNode

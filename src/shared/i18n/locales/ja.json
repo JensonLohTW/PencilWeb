@@ -148,7 +148,8 @@
                 ]
             },
             "cta": {
-                "headline": "Ready to Launch? VRトレーニング、ARガイド、スマート空間、AI活用など、実用的なソリューションを構築します。",
+                "headline": "Ready to Launch?",
+                "subheadline": "VRトレーニング、ARガイド、スマート空間、AI活用など、実用的なソリューションを構築します。",
                 "ctaText": "今すぐ相談",
                 "secondaryText": "ソリューションを見る"
             }

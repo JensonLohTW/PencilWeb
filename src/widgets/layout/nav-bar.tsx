@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 
 import { primaryNavigationLinks } from '@/shared/config/navigation'
 import { LanguageToggle } from '@/shared/ui/elements/language-toggle'

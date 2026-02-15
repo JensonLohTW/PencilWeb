@@ -1,5 +1,17 @@
+import { setRequestLocale } from 'next-intl/server'
 import ContactPage from '@/features/contact/pages/contact-page'
+import { routing } from '@/i18n/routing'
 
-export default function Page() {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <ContactPage />
 }

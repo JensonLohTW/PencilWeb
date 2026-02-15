@@ -1,10 +1,9 @@
 "use client"
 
-import Link from 'next/link'
+import { Link, useRouter } from '@/i18n/routing'
 import { useState, type ComponentProps, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import { HackerText } from '@/shared/ui/primitives/hacker-text'
 import { motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
 
 interface FooterCategoryProps {
     title: ReactNode
