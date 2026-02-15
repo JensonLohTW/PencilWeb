@@ -1,5 +1,14 @@
-import HomePage from '@/features/marketing/pages/home-page'
+'use client'
 
-export default function Page() {
-  return <HomePage />
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+
+export default function RootPage() {
+    const router = useRouter()
+
+    useEffect(() => {
+        router.replace('/zh-TW')
+    }, [router])
+
+    return null
 }

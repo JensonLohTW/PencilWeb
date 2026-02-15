@@ -54,12 +54,12 @@ export function SwissStatsGrid() {
             <span className="swiss-mono text-pencil-300 dark:text-pencil-500">{stat.number}</span>
 
             {/* Value */}
-            <div className="mt-4 text-5xl font-bold text-pencil-950 transition-colors group-hover:text-cta lg:text-6xl dark:text-white">
+            <div className="mt-4 text-3xl sm:text-5xl font-bold text-pencil-950 transition-colors group-hover:text-cta lg:text-6xl dark:text-white break-words">
               {stat.value}
             </div>
 
             {/* Label */}
-            <p className="swiss-mono mt-4 text-pencil-500 dark:text-pencil-400">{stat.label}</p>
+            <p className="swiss-mono mt-4 text-sm sm:text-base text-pencil-500 dark:text-pencil-400">{stat.label}</p>
           </motion.div>
         ))}
       </div>

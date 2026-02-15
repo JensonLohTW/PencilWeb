@@ -256,6 +256,31 @@ export function SwissProjectList() {
                     className="overflow-hidden"
                   >
                     <div className="mt-8 grid gap-8 lg:ml-28 lg:grid-cols-3 lg:gap-12">
+                      {/* Mobile Preview */}
+                      <div className="col-span-1 lg:col-span-3 block lg:hidden">
+                        <div className="relative aspect-video w-full overflow-hidden border border-pencil-200 dark:border-white/10">
+                          {project.image ? (
+                            <>
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover"
+                              />
+                              <div className="absolute inset-0 bg-black/20" />
+                            </>
+                          ) : (
+                            <div
+                              className="flex h-full w-full items-center justify-center relative"
+                              style={{ backgroundColor: project.color || '#C4682F' }}
+                            >
+                              <span className="text-6xl font-bold text-white/20">
+                                {project.number}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                       <p className="text-lg leading-relaxed text-pencil-600 lg:col-span-2 dark:text-pencil-300">
                         {project.summary}
                       </p>

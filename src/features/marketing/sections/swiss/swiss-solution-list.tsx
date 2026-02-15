@@ -31,11 +31,13 @@ interface FilterItem {
 function SpotlightCard({
   children,
   className = "",
-  onClick
+  onClick,
+  isExpanded
 }: {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  isExpanded?: boolean;
 }) {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -87,7 +89,12 @@ function SpotlightCard({
       <div className="relative h-full">{children}</div>
 
       {/* Corner Decorations */}
-      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-0 transition-opacity duration-300",
+          isExpanded ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+        )}
+      >
         <PixelCorner className="top-2 left-2 rotate-0 text-cta" />
         <PixelCorner className="top-2 right-2 rotate-90 text-cta" />
         <PixelCorner className="bottom-2 right-2 rotate-180 text-cta" />
@@ -200,7 +207,10 @@ export function SwissSolutionList() {
                       isExpanded ? 'bg-white dark:bg-pencil-900' : 'hover:bg-white/50 dark:hover:bg-white/5',
                     )}
                   >
-                    <SpotlightCard onClick={() => setExpandedId(isExpanded ? null : solution.id)}>
+                    <SpotlightCard
+                      onClick={() => setExpandedId(isExpanded ? null : solution.id)}
+                      isExpanded={isExpanded}
+                    >
                       {/* Summary Row */}
                       <div
                         className="flex cursor-pointer flex-col gap-8 py-12 lg:flex-row lg:items-baseline lg:gap-16 lg:py-16"

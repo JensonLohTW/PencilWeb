@@ -99,10 +99,11 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
                     role="menu"
                     aria-orientation="vertical"
                     className={clsx(
-                        'absolute right-0 top-full mt-2 w-40 py-1 z-50',
+                        'absolute right-0 top-full mt-2 w-40 p-1 z-50',
                         'rounded-lg border shadow-lg',
                         'bg-white border-pencil-200',
-                        'dark:bg-pencil-900 dark:border-pencil-700'
+                        'dark:bg-pencil-900 dark:border-pencil-700',
+                        'animate-in fade-in slide-in-from-top-1 zoom-in-95 duration-200'
                     )}
                 >
                     {themeOptions.map((option) => {
@@ -118,7 +119,7 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
                                     setIsOpen(false)
                                 }}
                                 className={clsx(
-                                    'flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors',
+                                    'flex w-full items-center gap-3 px-3 py-2.5 text-sm transition-colors rounded-md',
                                     isActive
                                         ? 'bg-pencil-100 text-pencil-950 dark:bg-white/10 dark:text-white'
                                         : 'text-pencil-600 hover:bg-pencil-50 dark:text-pencil-400 dark:hover:bg-white/5'

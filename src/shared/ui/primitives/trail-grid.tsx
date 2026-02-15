@@ -9,7 +9,8 @@ interface TrailGridProps {
   color?: string
 }
 
-const CELL_SIZE = 42
+const CELL_SIZE_DESKTOP = 42
+const CELL_SIZE_MOBILE = 28
 const MIN_COLS = 8
 const MIN_ROWS = 6
 
@@ -32,9 +33,12 @@ export function TrailGrid({ className, color = 'currentColor' }: TrailGridProps)
       window.cancelAnimationFrame(frameId)
       frameId = window.requestAnimationFrame(() => {
         const { width, height } = grid.getBoundingClientRect()
+        // Responsive cell size: smaller cells for mobile (< 640px)
+        const cellSize = width < 640 ? CELL_SIZE_MOBILE : CELL_SIZE_DESKTOP
+
         const next = {
-          cols: Math.max(MIN_COLS, Math.floor(width / CELL_SIZE)),
-          rows: Math.max(MIN_ROWS, Math.floor(height / CELL_SIZE)),
+          cols: Math.max(MIN_COLS, Math.floor(width / cellSize)),
+          rows: Math.max(MIN_ROWS, Math.floor(height / cellSize)),
         }
 
         setDimensions((prev) => (

@@ -1,82 +1,38 @@
 'use client'
 
-import { STORAGE_KEYS } from '@/shared/config/storage'
-import { translate } from '@/shared/i18n/translate'
-import { supportedLanguages, type Language } from '@/shared/i18n/types'
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from 'react'
-
-interface LanguageContextValue {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: <T = string>(key: string) => T
-}
-
-const LanguageContext = createContext<LanguageContextValue>({
-  language: 'zh-TW',
-  setLanguage: () => {},
-  t: <T,>(key: string) => key as unknown as T,
-})
-
-function isLanguage(value: string): value is Language {
-  return (supportedLanguages as readonly string[]).includes(value)
-}
-
-function getStoredLanguage(): Language | null {
-  if (typeof window === 'undefined') {
-    return null
-  }
-
-  try {
-    const stored = localStorage.getItem(STORAGE_KEYS.languagePreference)
-    return stored && isLanguage(stored) ? stored : null
-  } catch {
-    return null
-  }
-}
-
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(
-    () => getStoredLanguage() ?? 'zh-TW',
-  )
-
-  useEffect(() => {
-    document.documentElement.lang = language
-  }, [language])
-
-  const setLanguage = useCallback((nextLanguage: Language) => {
-    setLanguageState(nextLanguage)
-    try {
-      localStorage.setItem(STORAGE_KEYS.languagePreference, nextLanguage)
-    } catch {
-      // localStorage may be blocked by browser privacy settings.
-    }
-  }, [])
-
-  const t = useCallback(
-    <T,>(key: string) => translate(language, key) as T,
-    [language],
-  )
-
-  const value = useMemo(
-    () => ({
-      language,
-      setLanguage,
-      t,
-    }),
-    [language, setLanguage, t],
-  )
-
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
-}
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/i18n/routing'
+import { useCallback } from 'react'
+import type { Language } from '@/shared/i18n/types'
 
 export function useLanguage() {
-  return useContext(LanguageContext)
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const t = useTranslations()
+
+  const setLanguage = useCallback(
+    (nextLanguage: Language) => {
+      router.replace(pathname, { locale: nextLanguage })
+    },
+    [pathname, router]
+  )
+
+  const translate = useCallback(
+    <T = string>(key: string) => {
+      return t.raw(key) as T
+    },
+    [t]
+  )
+
+  return {
+    language: locale as Language,
+    setLanguage,
+    t: translate,
+  }
+}
+
+// Deprecated: No longer needed with NextIntlClientProvider
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
 }
