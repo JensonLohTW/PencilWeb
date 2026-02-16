@@ -1535,6 +1535,248 @@
       "button": "return_to_base()",
       "errorCode": "ERR_CODE: 0x404_MISSING",
       "status": "SYS_STATUS: CRITICAL"
+    },
+    "technologyTemplate": {
+      "hero": {
+        "eyebrow": "Technology Core",
+        "title": "Build verifiable and scalable systems with modular technology",
+        "description": "We structure XR, AI, IoT, and networking capabilities into composable modules so rollout paths can be validated step by step and expanded with control.",
+        "panelTitle": "Capability navigation",
+        "panelDescription": "Quickly review modules, architecture, delivery flow, and reliability strategy.",
+        "tags": [
+          "XR interaction scenarios",
+          "AI inference pipelines",
+          "Cross-system API contracts",
+          "Device and edge delivery"
+        ],
+        "quickLinks": [
+          {
+            "label": "Core modules",
+            "href": "#tech-modules"
+          },
+          {
+            "label": "Architecture layers",
+            "href": "#tech-architecture"
+          },
+          {
+            "label": "Delivery flow",
+            "href": "#tech-flow"
+          },
+          {
+            "label": "Reliability model",
+            "href": "#tech-reliability"
+          }
+        ],
+        "primaryAction": {
+          "label": "Discuss technical collaboration",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "View core modules",
+          "href": "#tech-modules"
+        }
+      },
+      "overview": {
+        "eyebrow": "Capability Overview",
+        "title": "Map technology choices directly to delivery outcomes",
+        "description": "Each module can be adopted independently and connected through stable contracts over time.",
+        "items": [
+          {
+            "label": "Implementation cadence",
+            "value": "5 delivery phases",
+            "description": "From source alignment to on-site deployment, each stage has measurable outputs."
+          },
+          {
+            "label": "Architecture model",
+            "value": "3 layered boundaries",
+            "description": "Data and device, service and intelligence, and experience and endpoint layers."
+          },
+          {
+            "label": "Module coverage",
+            "value": "6 core modules",
+            "description": "XR, movement platform, haptics, AI data, network, and multi-sensory integration."
+          },
+          {
+            "label": "Quality baseline",
+            "value": "Continuous assurance",
+            "description": "Testing, compatibility, and maintenance are governed in one delivery rhythm."
+          }
+        ]
+      },
+      "modules": {
+        "eyebrow": "Core Tech Stack",
+        "title": "Six modules powering immersive system delivery",
+        "description": "Select a module to inspect its role and operational capability.",
+        "activeItemLabel": "Selected module",
+        "items": [
+          {
+            "id": "xr",
+            "number": "01",
+            "title": "XR (VR/MR/AR)",
+            "subtitle": "Extended Reality",
+            "description": "Integrates immersive visual and interaction layers for training, guidance, and simulation scenarios.",
+            "features": [
+              "Headset and device integration",
+              "Spatial tracking and mapping",
+              "Cross-platform rendering",
+              "Interaction telemetry"
+            ]
+          },
+          {
+            "id": "treadmill",
+            "number": "02",
+            "title": "Omnidirectional Treadmill",
+            "subtitle": "Movement Platform",
+            "description": "Synchronizes movement hardware with simulation logic for natural and controlled navigation.",
+            "features": [
+              "Omnidirectional tracking",
+              "Gait data mapping",
+              "Safety constraints",
+              "Multi-user coordination"
+            ]
+          },
+          {
+            "id": "haptics",
+            "number": "03",
+            "title": "Haptic Feedback",
+            "subtitle": "Touch Sensation",
+            "description": "Extends immersion with tactile feedback channels for procedural training and interaction response.",
+            "features": [
+              "Wearable feedback devices",
+              "Force and vibration mapping",
+              "Event-driven response",
+              "Device calibration flow"
+            ]
+          },
+          {
+            "id": "ai-data",
+            "number": "04",
+            "title": "AI & Big Data",
+            "subtitle": "Intelligence Engine",
+            "description": "Combines model inference, rule orchestration, and analytics for adaptive decision support.",
+            "features": [
+              "Inference orchestration",
+              "Knowledge retrieval",
+              "Behavior analytics",
+              "Recommendation feedback loop"
+            ]
+          },
+          {
+            "id": "network",
+            "number": "05",
+            "title": "5G/6G Network",
+            "subtitle": "Low-Latency Delivery",
+            "description": "Maintains low-latency transport and stable synchronization across cloud, edge, and devices.",
+            "features": [
+              "Real-time streaming optimization",
+              "Edge-aware routing",
+              "Bandwidth prioritization",
+              "Multi-user sync"
+            ]
+          },
+          {
+            "id": "multisensory",
+            "number": "06",
+            "title": "Multi-Sensory Interaction",
+            "subtitle": "Extended Sensory Layer",
+            "description": "Expands beyond visual and audio channels to increase contextual realism in immersive systems.",
+            "features": [
+              "Environment trigger control",
+              "Scent and ambience modules",
+              "Multi-channel timing sync",
+              "Experimental integration hooks"
+            ]
+          }
+        ]
+      },
+      "architecture": {
+        "eyebrow": "Architecture Overview",
+        "title": "Layered design from data to experience",
+        "description": "Modular boundaries preserve maintainability while supporting phased expansion.",
+        "layers": [
+          {
+            "layer": "LAYER 01",
+            "title": "Data & Device Layer",
+            "description": "Unifies sensor streams, external APIs, and enterprise sources into stable input contracts."
+          },
+          {
+            "layer": "LAYER 02",
+            "title": "Service & Intelligence Layer",
+            "description": "Processes data flow, orchestration rules, and AI inference through backend services."
+          },
+          {
+            "layer": "LAYER 03",
+            "title": "Experience Layer",
+            "description": "Delivers outputs to web interfaces, XR endpoints, and on-site device surfaces."
+          }
+        ]
+      },
+      "flow": {
+        "eyebrow": "Delivery Flow",
+        "title": "Controlled integration from input to deployment",
+        "description": "Each step maps to concrete outputs and lowers rollout uncertainty.",
+        "steps": [
+          {
+            "number": "01",
+            "title": "Data Sources",
+            "description": "Consolidate sensor data, enterprise systems, and third-party API inputs."
+          },
+          {
+            "number": "02",
+            "title": "API Integration",
+            "description": "Define interface contracts and dependencies for stable cross-system integration."
+          },
+          {
+            "number": "03",
+            "title": "Backend Processing",
+            "description": "Execute governance rules, AI inference, and service orchestration pipelines."
+          },
+          {
+            "number": "04",
+            "title": "Frontend Rendering",
+            "description": "Map outputs to web and XR interfaces with clear information hierarchy."
+          },
+          {
+            "number": "05",
+            "title": "Device Delivery",
+            "description": "Deploy to field devices and control endpoints for real-world operation."
+          }
+        ]
+      },
+      "reliability": {
+        "eyebrow": "Reliability & Operations",
+        "title": "Quality governance embedded in the delivery lifecycle",
+        "description": "Delivery includes repeatable testing, compatibility validation, and long-term operations support.",
+        "items": [
+          {
+            "number": "01",
+            "title": "Quality verification",
+            "description": "Functional, performance, and load testing are executed before every release gate."
+          },
+          {
+            "number": "02",
+            "title": "Device compatibility",
+            "description": "Target platform and hardware combinations are validated before field rollout."
+          },
+          {
+            "number": "03",
+            "title": "Continuous maintenance",
+            "description": "Monitoring, incident handling, and version updates keep services stable and scalable."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Need deeper technical planning?",
+        "description": "Share your constraints and timeline, and we will propose architecture, phased milestones, and implementation strategy.",
+        "primaryAction": {
+          "label": "Talk to the technical team",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "View solutions",
+          "href": "/solutions"
+        }
+      }
     }
   },
   "common": {

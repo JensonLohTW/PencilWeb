@@ -1535,6 +1535,248 @@
             "button": "return_to_base()",
             "errorCode": "エラーコード：0x404_MISSING",
             "status": "システム状態：クリティカル"
+        },
+        "technologyTemplate": {
+            "hero": {
+                "eyebrow": "技術コア",
+                "title": "モジュール設計で検証可能かつ拡張可能なシステムを構築",
+                "description": "XR、AI、IoT、ネットワーク機能を組み合わせ可能なモジュールとして設計し、段階的な検証と安全な拡張を実現します。",
+                "panelTitle": "機能ナビゲーション",
+                "panelDescription": "コアモジュール、アーキテクチャ、導入フロー、運用信頼性を素早く確認できます。",
+                "tags": [
+                    "XR インタラクション",
+                    "AI 推論パイプライン",
+                    "クロスシステム API 契約",
+                    "デバイス/エッジ展開"
+                ],
+                "quickLinks": [
+                    {
+                        "label": "コアモジュール",
+                        "href": "#tech-modules"
+                    },
+                    {
+                        "label": "アーキテクチャ層",
+                        "href": "#tech-architecture"
+                    },
+                    {
+                        "label": "導入フロー",
+                        "href": "#tech-flow"
+                    },
+                    {
+                        "label": "信頼性モデル",
+                        "href": "#tech-reliability"
+                    }
+                ],
+                "primaryAction": {
+                    "label": "技術連携を相談",
+                    "href": "/contact"
+                },
+                "secondaryAction": {
+                    "label": "コアモジュールを見る",
+                    "href": "#tech-modules"
+                }
+            },
+            "overview": {
+                "eyebrow": "機能概要",
+                "title": "技術判断をそのまま導入成果へ接続",
+                "description": "各モジュールは単独導入も可能で、安定した契約を通じて段階的に統合できます。",
+                "items": [
+                    {
+                        "label": "導入ペース",
+                        "value": "5 段階デリバリー",
+                        "description": "データ整備から現場展開まで、各フェーズで検証可能な成果を定義。"
+                    },
+                    {
+                        "label": "アーキテクチャ",
+                        "value": "3 層責務分離",
+                        "description": "データ/デバイス、サービス/知能、体験/出力の責務を明確化。"
+                    },
+                    {
+                        "label": "モジュール範囲",
+                        "value": "6 つの中核機能",
+                        "description": "XR、移動基盤、ハプティクス、AI、通信、マルチセンサーを包含。"
+                    },
+                    {
+                        "label": "品質基準",
+                        "value": "継続的信頼性管理",
+                        "description": "テスト、互換性、運用保守を同一のガバナンス周期で管理。"
+                    }
+                ]
+            },
+            "modules": {
+                "eyebrow": "コア技術スタック",
+                "title": "没入型システムを支える6つの技術モジュール",
+                "description": "モジュールを選択して、役割と実装能力を確認してください。",
+                "activeItemLabel": "選択中モジュール",
+                "items": [
+                    {
+                        "id": "xr",
+                        "number": "01",
+                        "title": "XR（VR/MR/AR）",
+                        "subtitle": "Extended Reality",
+                        "description": "訓練、ガイダンス、シミュレーションに対応する没入型インタラクション層を提供します。",
+                        "features": [
+                            "ヘッドセット統合",
+                            "空間トラッキング",
+                            "クロスプラットフォーム描画",
+                            "インタラクション計測"
+                        ]
+                    },
+                    {
+                        "id": "treadmill",
+                        "number": "02",
+                        "title": "全方向トレッドミル",
+                        "subtitle": "Movement Platform",
+                        "description": "移動ハードウェアとシミュレーションを同期し、自然かつ制御可能な移動体験を実現します。",
+                        "features": [
+                            "全方向トラッキング",
+                            "歩行データ連携",
+                            "安全制御",
+                            "複数ユーザー同期"
+                        ]
+                    },
+                    {
+                        "id": "haptics",
+                        "number": "03",
+                        "title": "ハプティクス",
+                        "subtitle": "Touch Sensation",
+                        "description": "触覚チャンネルを追加し、操作の実在感と学習効果を高めます。",
+                        "features": [
+                            "ウェアラブル触覚装置",
+                            "力覚/振動マッピング",
+                            "イベント駆動反応",
+                            "デバイス校正フロー"
+                        ]
+                    },
+                    {
+                        "id": "ai-data",
+                        "number": "04",
+                        "title": "AI & ビッグデータ",
+                        "subtitle": "Intelligence Engine",
+                        "description": "推論、ルール、分析を統合し、状況に応じた意思決定支援を提供します。",
+                        "features": [
+                            "推論オーケストレーション",
+                            "ナレッジ検索連携",
+                            "行動分析",
+                            "推奨フィードバックループ"
+                        ]
+                    },
+                    {
+                        "id": "network",
+                        "number": "05",
+                        "title": "5G/6G ネットワーク",
+                        "subtitle": "Low-Latency Delivery",
+                        "description": "クラウド、エッジ、デバイス間の低遅延通信と安定同期を維持します。",
+                        "features": [
+                            "リアルタイム配信最適化",
+                            "エッジ対応ルーティング",
+                            "帯域優先制御",
+                            "マルチユーザー同期"
+                        ]
+                    },
+                    {
+                        "id": "multisensory",
+                        "number": "06",
+                        "title": "五感インタラクション",
+                        "subtitle": "Extended Sensory Layer",
+                        "description": "視聴覚以外の感覚チャネルを加え、より高い臨場感を実現します。",
+                        "features": [
+                            "環境トリガー制御",
+                            "嗅覚/環境モジュール",
+                            "多チャネル時系列同期",
+                            "実験的統合インターフェース"
+                        ]
+                    }
+                ]
+            },
+            "architecture": {
+                "eyebrow": "アーキテクチャ概要",
+                "title": "データから体験までのレイヤー設計",
+                "description": "モジュール境界により保守性を確保しつつ、段階的な拡張を支えます。",
+                "layers": [
+                    {
+                        "layer": "LAYER 01",
+                        "title": "データ・デバイスレイヤー",
+                        "description": "センサー、外部 API、企業データを統合し、安定した入力契約を形成。"
+                    },
+                    {
+                        "layer": "LAYER 02",
+                        "title": "サービス・インテリジェンスレイヤー",
+                        "description": "バックエンドサービスでデータ処理、ルール制御、AI 推論を実行。"
+                    },
+                    {
+                        "layer": "LAYER 03",
+                        "title": "エクスペリエンスレイヤー",
+                        "description": "Web、XR、現場デバイスへ出力し、実運用可能な体験に接続。"
+                    }
+                ]
+            },
+            "flow": {
+                "eyebrow": "導入フロー",
+                "title": "入力から展開までを制御可能な統合プロセスで推進",
+                "description": "各ステップを具体成果に結び、導入時の不確実性を抑制します。",
+                "steps": [
+                    {
+                        "number": "01",
+                        "title": "データソース",
+                        "description": "センサー、社内システム、外部 API から入力を統合します。"
+                    },
+                    {
+                        "number": "02",
+                        "title": "API 統合",
+                        "description": "サービス契約と依存関係を定義し、安定した連携を確立します。"
+                    },
+                    {
+                        "number": "03",
+                        "title": "バックエンド処理",
+                        "description": "ガバナンスルール、AI 推論、処理パイプラインを実行します。"
+                    },
+                    {
+                        "number": "04",
+                        "title": "フロントエンド表示",
+                        "description": "結果を Web/XR インターフェースへ反映し、情報階層を最適化します。"
+                    },
+                    {
+                        "number": "05",
+                        "title": "デバイス展開",
+                        "description": "現場デバイスと制御端末へ展開し、実運用に接続します。"
+                    }
+                ]
+            },
+            "reliability": {
+                "eyebrow": "信頼性と運用",
+                "title": "品質ガバナンスを導入ライフサイクルに組み込む",
+                "description": "初期リリースだけでなく、継続運用を前提に品質を設計します。",
+                "items": [
+                    {
+                        "number": "01",
+                        "title": "品質検証",
+                        "description": "機能、性能、負荷テストを各リリースゲートで実施します。"
+                    },
+                    {
+                        "number": "02",
+                        "title": "デバイス互換性",
+                        "description": "対象プラットフォームとハードウェアの組み合わせを事前検証します。"
+                    },
+                    {
+                        "number": "03",
+                        "title": "継続運用保守",
+                        "description": "監視、障害対応、バージョン更新により安定稼働を維持します。"
+                    }
+                ]
+            },
+            "cta": {
+                "title": "より深い技術設計が必要ですか？",
+                "description": "制約条件と希望時期をご共有ください。段階計画と実装戦略をご提案します。",
+                "primaryAction": {
+                    "label": "技術チームに相談",
+                    "href": "/contact"
+                },
+                "secondaryAction": {
+                    "label": "ソリューションを見る",
+                    "href": "/solutions"
+                }
+            }
         }
     },
     "common": {

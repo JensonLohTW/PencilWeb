@@ -1534,6 +1534,248 @@
       "button": "return_to_base()",
       "errorCode": "錯誤代碼：0x404_MISSING",
       "status": "系統狀態：嚴重"
+    },
+    "technologyTemplate": {
+      "hero": {
+        "eyebrow": "技術核心",
+        "title": "以模組化技術打造可驗證、可擴展的系統能力",
+        "description": "我們把 XR、AI、IoT 與網路能力拆成可組裝模組，讓導入路徑可逐步驗證、可控擴展，並在上線後持續優化。",
+        "panelTitle": "能力導覽",
+        "panelDescription": "快速查看核心模組、分層架構、交付流程與維運策略。",
+        "tags": [
+          "XR 互動場景",
+          "AI 推理管線",
+          "跨系統 API 契約",
+          "裝置與邊緣部署"
+        ],
+        "quickLinks": [
+          {
+            "label": "核心技術模組",
+            "href": "#tech-modules"
+          },
+          {
+            "label": "技術分層架構",
+            "href": "#tech-architecture"
+          },
+          {
+            "label": "系統整合流程",
+            "href": "#tech-flow"
+          },
+          {
+            "label": "可靠性與維運",
+            "href": "#tech-reliability"
+          }
+        ],
+        "primaryAction": {
+          "label": "洽談技術合作",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看核心模組",
+          "href": "#tech-modules"
+        }
+      },
+      "overview": {
+        "eyebrow": "能力總覽",
+        "title": "讓技術決策直接對應交付成果",
+        "description": "每個模組可獨立導入，也能透過穩定契約逐步組合成完整系統。",
+        "items": [
+          {
+            "label": "導入節奏",
+            "value": "5 階段交付",
+            "description": "從資料來源盤點到現場裝置部署，每一階段都有可驗證輸出。"
+          },
+          {
+            "label": "架構模型",
+            "value": "3 層技術分工",
+            "description": "資料與裝置層、服務與智能層、體驗與輸出層責任清晰。"
+          },
+          {
+            "label": "模組覆蓋",
+            "value": "6 大核心模組",
+            "description": "涵蓋 XR、動作平台、觸覺、AI、網路與多感官互動能力。"
+          },
+          {
+            "label": "品質機制",
+            "value": "持續可靠性治理",
+            "description": "功能、效能、相容與維運都被納入同一套交付治理節奏。"
+          }
+        ]
+      },
+      "modules": {
+        "eyebrow": "核心技術堆疊",
+        "title": "六大技術模組支撐沉浸式系統交付",
+        "description": "選擇模組檢視其在整體方案中的角色與能力。",
+        "activeItemLabel": "目前模組",
+        "items": [
+          {
+            "id": "xr",
+            "number": "01",
+            "title": "XR（VR/MR/AR）",
+            "subtitle": "Extended Reality",
+            "description": "整合沉浸式視覺與互動層，支援訓練、導覽與操作模擬場景。",
+            "features": [
+              "頭顯與裝置整合",
+              "空間追蹤與定位",
+              "跨平台渲染",
+              "互動事件遙測"
+            ]
+          },
+          {
+            "id": "treadmill",
+            "number": "02",
+            "title": "全向跑步機",
+            "subtitle": "Movement Platform",
+            "description": "將移動硬體與場景邏輯同步，提供更自然且可控的行走體驗。",
+            "features": [
+              "全向移動追蹤",
+              "步態資料映射",
+              "安全防護機制",
+              "多人協同同步"
+            ]
+          },
+          {
+            "id": "haptics",
+            "number": "03",
+            "title": "觸覺回饋",
+            "subtitle": "Haptic Feedback",
+            "description": "透過觸覺通道提升操作真實感，強化沉浸式訓練與互動反饋。",
+            "features": [
+              "穿戴式回饋裝置",
+              "力覺與震動映射",
+              "事件驅動回應",
+              "設備校準流程"
+            ]
+          },
+          {
+            "id": "ai-data",
+            "number": "04",
+            "title": "AI 與大數據",
+            "subtitle": "Intelligence Engine",
+            "description": "整合模型推理、規則引擎與分析流程，提升決策與互動智能化程度。",
+            "features": [
+              "推理流程編排",
+              "知識檢索整合",
+              "行為資料分析",
+              "推薦回饋閉環"
+            ]
+          },
+          {
+            "id": "network",
+            "number": "05",
+            "title": "5G/6G",
+            "subtitle": "Low-Latency Delivery",
+            "description": "確保雲端、邊緣與裝置之間的低延遲傳輸與穩定資料同步。",
+            "features": [
+              "即時串流優化",
+              "邊緣路由策略",
+              "頻寬優先調度",
+              "多人狀態同步"
+            ]
+          },
+          {
+            "id": "multisensory",
+            "number": "06",
+            "title": "五感互動",
+            "subtitle": "Extended Sensory Layer",
+            "description": "擴展視聽之外的感官通道，為沉浸式體驗帶來更高情境真實度。",
+            "features": [
+              "環境觸發控制",
+              "嗅覺與氛圍模組",
+              "多通道時序同步",
+              "前瞻技術整合介面"
+            ]
+          }
+        ]
+      },
+      "architecture": {
+        "eyebrow": "架構總覽",
+        "title": "從資料到體驗的分層設計",
+        "description": "以模組邊界保持可維運性，並支援階段性擴展。",
+        "layers": [
+          {
+            "layer": "LAYER 01",
+            "title": "Data & Device Layer",
+            "description": "整合感測器、外部 API 與企業資料源，建立一致輸入契約。"
+          },
+          {
+            "layer": "LAYER 02",
+            "title": "Service & Intelligence Layer",
+            "description": "以後端服務與 AI 模組處理資料流、規則與推理流程。"
+          },
+          {
+            "layer": "LAYER 03",
+            "title": "Experience Layer",
+            "description": "將結果輸出到 Web、XR 與現場裝置介面，形成可落地體驗。"
+          }
+        ]
+      },
+      "flow": {
+        "eyebrow": "交付流程",
+        "title": "從輸入到部署的可控整合流程",
+        "description": "每一步都對應具體產出，降低導入不確定性。",
+        "steps": [
+          {
+            "number": "01",
+            "title": "資料來源",
+            "description": "整合感測器、企業資料庫與外部 API，建立乾淨輸入層。"
+          },
+          {
+            "number": "02",
+            "title": "API 整合",
+            "description": "定義服務介面與資料契約，確保跨系統可持續串接。"
+          },
+          {
+            "number": "03",
+            "title": "後端處理",
+            "description": "執行規則運算、AI 推理與資料治理，形成可用服務。"
+          },
+          {
+            "number": "04",
+            "title": "前端呈現",
+            "description": "將結果映射到 Web/XR 介面，優化資訊層級與互動流程。"
+          },
+          {
+            "number": "05",
+            "title": "裝置輸出",
+            "description": "部署到現場裝置與控制端，完成實際場域落地。"
+          }
+        ]
+      },
+      "reliability": {
+        "eyebrow": "可靠性與維運",
+        "title": "把品質治理內建到交付生命週期",
+        "description": "不只交付上線，更包含可持續運作的測試、相容與維運機制。",
+        "items": [
+          {
+            "number": "01",
+            "title": "品質測試",
+            "description": "完整執行功能測試、效能測試與壓力測試，確保每次發布可預期。"
+          },
+          {
+            "number": "02",
+            "title": "裝置相容",
+            "description": "在目標平台與裝置組合上進行相容驗證，降低現場整合風險。"
+          },
+          {
+            "number": "03",
+            "title": "持續維護",
+            "description": "提供監控、問題排除與版本更新，維持長期穩定與可擴展性。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "需要更深入的技術規劃嗎？",
+        "description": "告訴我們你的場域限制與時程，我們會提供架構建議、階段里程碑與導入策略。",
+        "primaryAction": {
+          "label": "洽談技術合作",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看解決方案",
+          "href": "/solutions"
+        }
+      }
     }
   },
   "common": {
