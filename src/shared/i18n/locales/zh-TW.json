@@ -57,13 +57,73 @@
       "hero": {
         "eyebrow": "XR • AI • IoT",
         "headline": "一切空間的動態都來自於 Pencil",
-        "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+        "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。",
+        "cta": "探索解決方案"
       },
       "technology": {
-        "title": "技術架構"
+        "title": "技術架構",
+        "description": "我們以模組化架構整合 XR、AI、IoT 與網路層能力，確保系統可擴充、可維運。",
+        "list": [
+          {
+            "number": "01",
+            "title": "XR",
+            "subtitle": "VR/MR/AR"
+          },
+          {
+            "number": "02",
+            "title": "AI",
+            "subtitle": "LLM/Agent"
+          },
+          {
+            "number": "03",
+            "title": "IoT",
+            "subtitle": "Sensors"
+          },
+          {
+            "number": "04",
+            "title": "5G/6G",
+            "subtitle": "Network"
+          },
+          {
+            "number": "05",
+            "title": "Haptic",
+            "subtitle": "Feedback"
+          },
+          {
+            "number": "06",
+            "title": "Digital Twin",
+            "subtitle": "Simulation"
+          }
+        ]
       },
       "clients": {
-        "title": "合作夥伴"
+        "title": "合作夥伴",
+        "list": [
+          {
+            "name": "Client A",
+            "sector": "國防"
+          },
+          {
+            "name": "Client B",
+            "sector": "醫療"
+          },
+          {
+            "name": "Client C",
+            "sector": "教育"
+          },
+          {
+            "name": "Client D",
+            "sector": "工業"
+          },
+          {
+            "name": "Client E",
+            "sector": "零售"
+          },
+          {
+            "name": "Client F",
+            "sector": "政府"
+          }
+        ]
       },
       "solutions": {
         "eyebrow": "我們的解決方案",
@@ -151,6 +211,32 @@
         "subheadline": "無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。",
         "ctaText": "立即諮詢",
         "secondaryText": "探索解決方案"
+      },
+      "stats": {
+        "title": "公司數據",
+        "eyebrow": "數據概覽",
+        "items": [
+          {
+            "number": "01",
+            "label": "已交付案型",
+            "value": "15+"
+          },
+          {
+            "number": "02",
+            "label": "平均啟動週期",
+            "value": "2 週"
+          },
+          {
+            "number": "03",
+            "label": "覆蓋技術領域",
+            "value": "XR+AI+IoT"
+          },
+          {
+            "number": "04",
+            "label": "服務地區",
+            "value": "TW / APAC"
+          }
+        ]
       }
     },
     "solutions": {
@@ -565,22 +651,22 @@
         "description": "空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。"
       },
       "hero": {
-        "eyebrow": "關於我們",
-        "headline": "我們把 OASIS 從概念做成現場",
-        "headlineHighlight": "OASIS",
+        "eyebrow": "關於且視 | About Pencil",
+        "headline": "以空間動態技術，重新定義人與環境的互動",
+        "headlineHighlight": "互動",
         "cycleWords": {
           "0": {
-            "text": "願景"
+            "text": "感知"
           },
           "1": {
-            "text": "系統"
+            "text": "理解"
           },
           "2": {
-            "text": "體驗"
+            "text": "共鳴"
           }
         },
-        "subheadline": "我們是一個跨域團隊，專注把新技術轉譯成可交付、可維運、可長期擴展的產品與服務，陪伴客戶從想法走到落地。",
-        "ctaText": "了解我們"
+        "subheadline": "Pencil 致力於將 XR、AI 與 IoT 技術深度整合，為企業與場域打造具備感知能力的智慧空間。我們不只是技術提供者，更是您通往元宇宙與數位孿生的戰略夥伴。",
+        "ctaText": "探索我們的願景"
       },
       "values": {
         "eyebrow": "品牌方法",
@@ -602,40 +688,40 @@
         ]
       },
       "teamPartners": {
-        "eyebrow": "團隊與生態",
-        "title": "跨域團隊與合作網絡",
-        "description": "我們以跨職能團隊協作，並與不同產業夥伴共創落地方案。",
+        "eyebrow": "生態系夥伴",
+        "title": "強強聯手，共創未來",
+        "description": "我們深知創新無法獨行，因此積極建立跨產業的合作夥伴生態系，整合各領域的專業知識與技術資源。",
         "partnerLabel": "合作領域",
         "team": [
           {
             "role": "Solution Architect",
-            "focus": "需求拆解、架構規劃、導入路線"
+            "focus": "頂層架構設計、技術落地路徑規劃"
           },
           {
-            "role": "XR Experience Team",
-            "focus": "互動設計、內容製作、裝置整合"
+            "role": "XR Experience Lead",
+            "focus": "沉浸式體驗設計、人機互動優化"
           },
           {
-            "role": "AI & Data Team",
-            "focus": "Agent 流程、資料治理、模型整合"
+            "role": "AI Research Lead",
+            "focus": "生成式 AI 應用、多模態模型整合"
           }
         ],
         "partners": [
           {
-            "name": "Aerospace Partner",
-            "field": "Training / Simulation"
+            "name": "Aerospace & Defense",
+            "field": "高階模擬訓練 / 戰術模擬"
           },
           {
-            "name": "Industrial Partner",
-            "field": "IoT / Data"
+            "name": "Smart Manufacturing",
+            "field": "工業 IoT / 數位孿生"
           },
           {
-            "name": "Education Partner",
-            "field": "Learning Experience"
+            "name": "Higher Education",
+            "field": "沉浸式學習 / 遠距協作"
           },
           {
-            "name": "Service Partner",
-            "field": "Deployment / Operation"
+            "name": "Enterprise Services",
+            "field": "系統整合 / 雲端部署"
           }
         ]
       },
@@ -645,81 +731,81 @@
         "secondaryText": "查看專案"
       },
       "timeline": {
-        "title": "公司歷程",
-        "description": "從創立至今，我們不斷突破技術邊界，達成多個重要里程碑。",
+        "title": "創新歷程",
+        "description": "從核心技術研發到跨領域應用落地，我們持續突破技術邊界，與合作夥伴共同定義未來。",
         "items": [
           {
             "year": "2021",
-            "title": "公司成立",
-            "description": "正式成立空間動態科技，確立 XR 與 AI 技術研發方向，致力於打造沉浸式互動體驗。"
+            "title": "奠定基石",
+            "description": "Pencil Spatial Dynamics 正式成立，確立以「空間動態」為核心的技術願景，投入 XR 與 AI 的底層技術研發。"
           },
           {
             "year": "2022",
-            "title": "首個 XR 標竿專案",
-            "description": "完成首個大型飛行模擬訓練系統，驗證了軟硬體整合與高擬真場景的落地能力。"
+            "title": "技術突破",
+            "description": "成功交付首套軍規級飛行模擬訓練系統，驗證了高擬真物理引擎與軟硬體整合的工程實力。"
           },
           {
             "year": "2023",
-            "title": "AI Agent 系統導入",
-            "description": "推出企業級 AI Agent 解決方案，協助客戶導入自動化知識管理與客服系統。"
+            "title": "產品深化",
+            "description": "推出企業級 OASIS AI 引擎，將大型語言模型 (LLM) 應用於企業知識管理與自動化客服，解決產業痛點。"
           },
           {
             "year": "2024",
-            "title": "拓展智慧空間市場",
-            "description": "整合 IoT 與空間定位技術，將服務範疇延伸至智慧建築與展演場域，實現虛實融合。"
+            "title": "生態系擴展",
+            "description": "整合 IoT 感測網絡與 5G 通訊技術，進軍智慧建築與數位孿生領域，實現從虛擬到實體的完整閉環。"
           }
         ]
       },
       "stats": {
-        "headline": "我們以技術模組打造可驗證的系統能力",
-        "description": "從需求拆解、快速驗證到穩定交付，我們用一致流程把創新方案落地。我們不只交付程式碼，更交付可持續運營的商業價值。",
+        "headline": "以數據定義專業，以成效贏得信賴",
+        "description": "我們不僅提供技術，更承諾可量化的商業價值。每一個數字背後，都是客戶對 Pencil 的信任與肯定。",
         "items": [
           {
             "value": "3 大核心",
             "label": "XR • AI • IoT",
-            "description": "整合三大技術領域，打造完整的虛實融合解決方案。"
+            "description": "深度整合三大前瞻技術，構建全方位的智慧空間解決方案。"
           },
           {
-            "value": "50+",
-            "label": "成功交付專案",
-            "description": "服務跨足航空、工業、教育與商業場域，累積豐富的落地經驗。"
+            "value": "15+",
+            "label": "企業級落地案",
+            "description": "成功交付至國防、醫療、製造等高標準場域，實戰經驗豐富。"
           },
           {
             "value": "100%",
-            "label": "客戶滿意度",
-            "description": "以小步驗證降低風險，確保每個交付都符合客戶的預期與商業目標。"
+            "label": "客戶留存率",
+            "description": "以長期的夥伴關係為目標，持續提供維運與優化服務。"
           }
         ]
       },
       "team": {
-        "title": "我們的團隊",
-        "description": "我們是一個由 Solution Architect、XR 體驗設計師、AI 工程師與資料科學家組成的跨域團隊。",
-        "detail": "不同於傳統軟體接案公司，我們深入了解產業領域知識 (Domain Know-how)，從飛行模擬的物理參數到工廠產線的通訊協定，我們都能與領域專家深度對話，轉譯為可執行的技術架構。"
+        "title": "跨領域專家團隊",
+        "description": "Pencil 匯聚了來自 XR 開發、人工智慧、資料科學與互動設計領域的頂尖人才，是技術與創意的完美融合。",
+        "detail": "我們不僅精通技術代碼，更具備深厚的產業 Know-how。從航空動力學到工廠自動化協定，我們的團隊能夠與領域專家深度對話，將複雜的業務需求轉化為優雅的技術解決方案。"
       },
       "partners": {
-        "title": "跨域合作夥伴",
-        "description": "我們與航空、工業、教育等領域的領導品牌合作，共同打造落地的創新應用。"
+        "title": "全球策略夥伴",
+        "description": "與各領域的領導品牌攜手，共同推動數位轉型與技術創新。"
       },
       "jobs": {
-        "headline": "我們持續尋找優秀的夥伴加入",
-        "description": "如果你對 XR 技術有熱情，對 AI 應用有想法，並且喜歡挑戰將新技術應用在真實場域中解決問題，歡迎加入我們。",
+        "headline": "尋找不甘平凡的你",
+        "description": "如果你渴望挑戰技術極限，想親手打造改變未來的產品，歡迎加入 Pencil。在這裡，你的每一個想法都有可能改變世界。",
         "viewAll": "查看所有職缺",
         "items": [
           {
             "role": "資深 XR 軟體工程師",
-            "description": "負責 Unity/Unreal 應用程式開發，整合 VR/MR 裝置與外部硬體串接。需熟悉 C# 或 C++，有優化渲染效能經驗者佳。",
+            "description": "主導 Unity/Unreal 核心架構開發，挑戰極致的渲染效能與互動體驗。需熟悉 C++/C#，具備圖學優化經驗。",
             "salary": "面議",
-            "location": "高雄市"
+            "location": "高雄市 / 混合辦公"
           },
           {
             "role": "AI 演算法工程師",
-            "description": "負責 LLM 應用落地與 RAG 系統開發。需熟悉 Python、LangChain 與相關向量資料庫技術。",
+            "description": "負責 LLM 應用落地與 RAG 系統開發，探索生成式 AI 在企業場景的無限可能。需熟悉 Python、PyTorch 與向量資料庫。",
             "salary": "面議",
-            "location": "台北市/遠端"
+            "location": "台北市 / 遠端協作"
           },
           {
-            "role": "專案經理 (PM)",
-            "description": "負責跨部門溝通與專案時程控管，協助客戶釐清需求並轉化為開發規格。需具備軟體專案管理經驗。",
+            "role": "技術專案經理 (TPM)",
+            "description": "擔任技術團隊與客戶間的橋樑，將商業需求轉化為精確的技術規格，確保專案如期如質交付。",
             "salary": "面議",
             "location": "高雄市"
           }

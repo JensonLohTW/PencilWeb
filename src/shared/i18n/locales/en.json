@@ -58,13 +58,73 @@
       "hero": {
         "eyebrow": "XR • AI • IoT",
         "headline": "All Spatial Dynamics Start with Pencil",
-        "subheadline": "We integrate AI and XR technologies into real-world scenarios to create deployable immersive interactions and intelligent spatial experiences."
+        "subheadline": "We integrate AI and XR technologies into real-world scenarios to create deployable immersive interactions and intelligent spatial experiences.",
+        "cta": "Explore Solutions"
       },
       "technology": {
-        "title": "Tech Stack"
+        "title": "Tech Stack",
+        "description": "We integrate XR, AI, IoT and network capabilities with a modular architecture to ensure system scalability and maintainability.",
+        "list": [
+          {
+            "number": "01",
+            "title": "XR",
+            "subtitle": "VR/MR/AR"
+          },
+          {
+            "number": "02",
+            "title": "AI",
+            "subtitle": "LLM/Agent"
+          },
+          {
+            "number": "03",
+            "title": "IoT",
+            "subtitle": "Sensors"
+          },
+          {
+            "number": "04",
+            "title": "5G/6G",
+            "subtitle": "Network"
+          },
+          {
+            "number": "05",
+            "title": "Haptic",
+            "subtitle": "Feedback"
+          },
+          {
+            "number": "06",
+            "title": "Digital Twin",
+            "subtitle": "Simulation"
+          }
+        ]
       },
       "clients": {
-        "title": "Trusted By"
+        "title": "Trusted By",
+        "list": [
+          {
+            "name": "Client A",
+            "sector": "Defence"
+          },
+          {
+            "name": "Client B",
+            "sector": "Healthcare"
+          },
+          {
+            "name": "Client C",
+            "sector": "Education"
+          },
+          {
+            "name": "Client D",
+            "sector": "Industrial"
+          },
+          {
+            "name": "Client E",
+            "sector": "Retail"
+          },
+          {
+            "name": "Client F",
+            "sector": "Government"
+          }
+        ]
       },
       "solutions": {
         "eyebrow": "Our Solutions",
@@ -152,6 +212,32 @@
         "subheadline": "Whether it's VR training, AR guidance, smart spaces, or AI applications, we can create deployable solutions for you.",
         "ctaText": "Contact Now",
         "secondaryText": "Explore Solutions"
+      },
+      "stats": {
+        "title": "Key Metrics",
+        "eyebrow": "Overview",
+        "items": [
+          {
+            "number": "01",
+            "label": "Delivered Cases",
+            "value": "15+"
+          },
+          {
+            "number": "02",
+            "label": "Average Kickoff",
+            "value": "2 weeks"
+          },
+          {
+            "number": "03",
+            "label": "Tech Domains",
+            "value": "XR+AI+IoT"
+          },
+          {
+            "number": "04",
+            "label": "Service Region",
+            "value": "TW / APAC"
+          }
+        ]
       }
     },
     "solutions": {
@@ -566,22 +652,22 @@
         "description": "Pencil Spatial Dynamics is dedicated to integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create the next generation of immersive interactive experiences."
       },
       "hero": {
-        "eyebrow": "About Us",
-        "headline": "We Build The OASIS",
-        "headlineHighlight": "OASIS",
+        "eyebrow": "About Pencil",
+        "headline": "Redefining Human-Environment Interaction with Spatial Dynamics",
+        "headlineHighlight": "Interaction",
         "cycleWords": {
           "0": {
-            "text": "FUTURE"
+            "text": "Sensing"
           },
           "1": {
-            "text": "DREAM"
+            "text": "Understanding"
           },
           "2": {
-            "text": "REALITY"
+            "text": "Resonating"
           }
         },
-        "subheadline": "Pencil Spatial Dynamics is dedicated to integrating XR devices, AI big data, 5G/6G networks, and multi-sensory technologies to create the next generation of immersive interactive experiences.",
-        "ctaText": "Learn More"
+        "subheadline": "Pencil integrates XR, AI, and IoT to create sentient smart spaces. We are your strategic partner for the Metaverse and Digital Twins, bridging the gap between physical and virtual worlds.",
+        "ctaText": "Explore Our Vision"
       },
       "values": {
         "eyebrow": "Our Method",
@@ -603,40 +689,40 @@
         ]
       },
       "teamPartners": {
-        "eyebrow": "Team & Ecosystem",
-        "title": "Cross-functional Team with Delivery Partners",
-        "description": "We collaborate across disciplines and partner domains to build deployable solutions.",
-        "partnerLabel": "Partner Domains",
+        "eyebrow": "Ecosystem Partners",
+        "title": "Stronger Together",
+        "description": "We believe innovation cannot happen in isolation. We build a robust ecosystem across industries, integrating domain expertise with cutting-edge technology.",
+        "partnerLabel": "Cooperation Areas",
         "team": [
           {
             "role": "Solution Architect",
-            "focus": "Problem framing, architecture planning, delivery roadmap"
+            "focus": "Top-level architecture, specialized delivery roadmap"
           },
           {
-            "role": "XR Experience Team",
-            "focus": "Interaction design, content production, device integration"
+            "role": "XR Experience Lead",
+            "focus": "Immersive design, human-machine interaction"
           },
           {
-            "role": "AI & Data Team",
-            "focus": "Agent workflow, data governance, model integration"
+            "role": "AI Research Lead",
+            "focus": "Generative AI applications, multimodal models"
           }
         ],
         "partners": [
           {
-            "name": "Aerospace Partner",
-            "field": "Training / Simulation"
+            "name": "Aerospace & Defense",
+            "field": "Training Simulation / Tactical Sim"
           },
           {
-            "name": "Industrial Partner",
-            "field": "IoT / Data"
+            "name": "Smart Manufacturing",
+            "field": "Industrial IoT / Digital Twins"
           },
           {
-            "name": "Education Partner",
-            "field": "Learning Experience"
+            "name": "Higher Education",
+            "field": "Immersive Learning / Remote Collab"
           },
           {
-            "name": "Service Partner",
-            "field": "Deployment / Operation"
+            "name": "Enterprise Services",
+            "field": "System Integration / Cloud Deployment"
           }
         ]
       },
@@ -646,83 +732,83 @@
         "secondaryText": "View Projects"
       },
       "timeline": {
-        "title": "Company History",
-        "description": "From our founding to today, we continue to push technical boundaries and achieve key milestones.",
+        "title": "Innovation Journey",
+        "description": "From core R&D to cross-domain application, we continuously push boundaries and define the future with our partners.",
         "items": [
           {
             "year": "2021",
-            "title": "Company Founded",
-            "description": "Formally established Pencil Spatial Dynamics, defining R&D direction in XR and AI to create immersive interactive experiences."
+            "title": "Foundation",
+            "description": "Established Pencil Spatial Dynamics with a vision centered on 'Spatial Dynamics', investing in core XR and AI technologies."
           },
           {
             "year": "2022",
-            "title": "First XR Benchmark Project",
-            "description": "Completed first large-scale flight simulator system, validating software/hardware integration and high-fidelity scene deployment capabilities."
+            "title": "Breakthrough",
+            "description": "Delivered first military-grade flight simulation system, validating engineering capabilities in high-fidelity physics and hardware integration."
           },
           {
             "year": "2023",
-            "title": "AI Agent System Introduction",
-            "description": "Launched enterprise AI Agent solution, assisting clients in implementing automated knowledge management and customer service systems."
+            "title": "Productization",
+            "description": "Launched enterprise-grade OASIS AI Engine, applying LLMs to knowledge management and automated customer service."
           },
           {
             "year": "2024",
-            "title": "Smart Space Market Expansion",
-            "description": "Integrated IoT and spatial positioning technologies, extending services to smart buildings and exhibition venues to realize fusion of virtual and real."
+            "title": "Expansion",
+            "description": "Integrated IoT sensing networks and 5G, expanding into Smart Buildings and Digital Twins to close the loop between virtual and physical."
           }
         ]
       },
       "stats": {
-        "headline": "Building Verifiable System Capabilities with Technical Modules",
-        "description": "From requirement breakdown and rapid validation to stable delivery, we use a consistent process to land innovative solutions. We deliver not just code, but sustainable business value.",
+        "headline": "Defined by Data, Trusted by Results",
+        "description": "We don't just provide technology; we commit to verifiable business value. Every number represents client trust and our dedication.",
         "items": [
           {
             "value": "3 Cores",
             "label": "XR • AI • IoT",
-            "description": "Integrating three major technical fields to create complete virtual-real fusion solutions."
+            "description": "Deeply integrating three forward-looking technologies to build comprehensive smart space solutions."
           },
           {
-            "value": "50+",
-            "label": "Projects Delivered",
-            "description": "Services spanning aerospace, industrial, education, and commercial sectors, accumulating rich deployment experience."
+            "value": "15+",
+            "label": "Enterprise Deployments",
+            "description": "Successfully delivered to high-standard sectors including defense, healthcare, and manufacturing."
           },
           {
             "value": "100%",
-            "label": "Customer Satisfaction",
-            "description": "Reducing risk through small-step validation to ensure every delivery meets client expectations and business goals."
+            "label": "Client Retention",
+            "description": "Aiming for long-term partnerships, providing continuous operation and optimization services."
           }
         ]
       },
       "team": {
-        "title": "Our Team",
-        "description": "We are a cross-disciplinary team composed of Solution Architects, XR Experience Designers, AI Engineers, and Data Scientists.",
-        "detail": "Unlike traditional software outsourcing companies, we deeply understand industry domain know-how. From flight simulation physics parameters to factory line communication protocols, we engage deeply with domain experts to translate them into executable technical architectures."
+        "title": "Multidisciplinary Experts",
+        "description": "Pencil brings together top talent in XR development, AI, Data Science, and Interaction Design—a perfect fusion of technology and creativity.",
+        "detail": "We master not just code, but deep domain know-how. From aerodynamics to industrial automation protocols, our team engages deeply with experts to translate complex business needs into elegant technical solutions."
       },
       "partners": {
-        "title": "Cross-Domain Partners",
-        "description": "We collaborate with leading brands in aerospace, industry, and education to jointly build innovative applications that work."
+        "title": "Global Strategic Partners",
+        "description": "Collaborating with industry leaders to jointly drive digital transformation and technical innovation."
       },
       "jobs": {
-        "headline": "We Are Continually Looking for Excellent Partners",
-        "description": "If you are passionate about XR technology, have ideas for AI applications, and love the challenge of applying new technologies to solve problems in real-world scenarios, welcome to join us.",
-        "viewAll": "View All Openings",
+        "headline": "Join the Extraordinary",
+        "description": "If you yearn to challenge technical limits and build products that shape the future, welcome to Pencil. Here, every idea has the potential to change the world.",
+        "viewAll": "View Openings",
         "items": [
           {
             "role": "Senior XR Software Engineer",
-            "description": "Responsible for Unity/Unreal application development, integrating VR/MR devices and external hardware. Familiarity with C# or C++ required; experience optimizing rendering performance is a plus.",
+            "description": "Lead Unity/Unreal core architecture, challenging the limits of rendering performance and interaction. C++/C# and graphics optimization experience required.",
             "salary": "Negotiable",
-            "location": "Kaohsiung City"
+            "location": "Kaohsiung / Hybrid"
           },
           {
             "role": "AI Algorithm Engineer",
-            "description": "Responsible for LLM application deployment and RAG system development. Familiarity with Python, LangChain, and related vector database technologies required.",
+            "description": "Responsible for LLM deployment and RAG system development, exploring the infinite possibilities of Generative AI in enterprise scenarios. Python, PyTorch, and Vector DBs required.",
             "salary": "Negotiable",
-            "location": "Taipei City/Remote"
+            "location": "Taipei / Remote"
           },
           {
-            "role": "Project Manager (PM)",
-            "description": "Responsible for cross-department communication and project schedule control, assisting clients in clarifying requirements and translating them into development specifications. Software project management experience required.",
+            "role": "Technical Program Manager (TPM)",
+            "description": "Bridge between technical teams and clients, translating business needs into precise technical specifications, ensuring on-time and high-quality delivery.",
             "salary": "Negotiable",
-            "location": "Kaohsiung City"
+            "location": "Kaohsiung"
           }
         ]
       }
