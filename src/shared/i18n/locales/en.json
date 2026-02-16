@@ -502,6 +502,213 @@
         ]
       }
     },
+    "solutionsTemplate": {
+      "hero": {
+        "title": "Deploy to the cloud with confidence",
+        "description": "From immersive training and on-site guidance to operational automation, we plan implementation paths around measurable goals so every solution can land reliably in real environments.",
+        "primaryAction": {
+          "label": "Talk to an advisor",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "View solution details",
+          "href": "#features"
+        },
+        "image": {
+          "src": "/plus-assets/img/component-images/project-app-screenshot.png",
+          "alt": "Solutions platform preview",
+          "width": 2432,
+          "height": 1442
+        }
+      },
+      "logoCloud": {
+        "logos": [
+          {
+            "name": "Transistor",
+            "alt": "Transistor",
+            "src": "/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Reform",
+            "alt": "Reform",
+            "src": "/plus-assets/img/logos/158x48/reform-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Tuple",
+            "alt": "Tuple",
+            "src": "/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "SavvyCal",
+            "alt": "SavvyCal",
+            "src": "/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Statamic",
+            "alt": "Statamic",
+            "src": "/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          }
+        ]
+      },
+      "socialProof": {
+        "text": "We have delivered 15+ projects across defense, manufacturing, healthcare, and education with predictable timelines and stable delivery quality.",
+        "linkLabel": "Read case study",
+        "linkHref": "/projects"
+      },
+      "features": {
+        "eyebrow": "Four Core Solutions",
+        "title": "Match technical capability to business outcomes",
+        "description": "Each module can be adopted independently or combined into phased milestones to reduce rollout risk.",
+        "items": [
+          {
+            "name": "VR/MR Immersive Training",
+            "description": "Build high-fidelity simulation environments with repeatable drills, real-time feedback, and measurable training outcomes.",
+            "icon": "cloud"
+          },
+          {
+            "name": "AR Visualization & Guidance",
+            "description": "Overlay 3D and process data on real environments to improve maintenance speed, onboarding, and guidance accuracy.",
+            "icon": "lock"
+          },
+          {
+            "name": "Smart Space IoT Integration",
+            "description": "Connect sensors, gateways, and control systems for real-time monitoring and automated environmental response.",
+            "icon": "queue"
+          },
+          {
+            "name": "SME AI Agent Applications",
+            "description": "Deploy tailored AI assistants for customer support, knowledge retrieval, and workflow automation.",
+            "icon": "security"
+          }
+        ]
+      },
+      "testimonial": {
+        "quote": "Pencil broke our requirements into executable milestones from day one. We moved from PoC to production with clear progress and measurable outcomes.",
+        "authorName": "Operations Director",
+        "authorRole": "Aerospace Training Program",
+        "logo": {
+          "src": "/plus-assets/img/logos/workcation-logo-white.svg",
+          "alt": "Workcation"
+        },
+        "backgroundImage": {
+          "src": "https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?auto=format&fit=crop&w=1216&q=80",
+          "alt": "Team collaboration scene"
+        }
+      },
+      "pricing": {
+        "eyebrow": "Engagement Model",
+        "title": "Three phased paths from validation to scale",
+        "description": "We use staged delivery instead of rigid subscriptions. Each phase has clear objectives, timeline, and acceptance outcomes.",
+        "mostPopularLabel": "Recommended path",
+        "perMonthLabel": "typical timeline",
+        "tiers": [
+          {
+            "name": "PoC Validation",
+            "id": "tier-poc",
+            "href": "/contact",
+            "priceMonthly": "4-6 weeks",
+            "description": "Validate technical feasibility and expected business value with limited scope.",
+            "features": [
+              "Scenario workshop and requirement framing",
+              "Prototype and technical feasibility validation",
+              "Initial architecture and implementation recommendation",
+              "Decision report for pilot readiness"
+            ],
+            "mostPopular": false
+          },
+          {
+            "name": "Pilot Deployment",
+            "id": "tier-pilot",
+            "href": "/contact",
+            "priceMonthly": "8-12 weeks",
+            "description": "Launch a production-capable pilot in one department or site with measurable KPIs.",
+            "features": [
+              "End-to-end implementation and data integration",
+              "On-site deployment and user onboarding",
+              "Dashboard and KPI tracking",
+              "Iteration cycle with risk control"
+            ],
+            "mostPopular": true
+          },
+          {
+            "name": "Scale Expansion",
+            "id": "tier-scale",
+            "href": "/contact",
+            "priceMonthly": "12-20 weeks",
+            "description": "Scale validated capabilities across teams and systems with long-term operational governance.",
+            "features": [
+              "Multi-site rollout and high-availability architecture",
+              "Cross-system governance and access control",
+              "Maintenance framework and performance optimization",
+              "Quarterly roadmap and continuous improvement"
+            ],
+            "mostPopular": false
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "id": 1,
+            "question": "Where should we start if this is our first implementation?",
+            "answer": "Start from a focused scenario with clear outcomes, such as AR guidance or an AI knowledge assistant, then expand to IoT and XR in phases."
+          },
+          {
+            "id": 2,
+            "question": "Can we plan multiple solutions in one roadmap?",
+            "answer": "Yes. We define a phase-one MVP first, then split technical milestones so each stage is validated before scaling."
+          },
+          {
+            "id": 3,
+            "question": "Can you integrate with our existing systems and APIs?",
+            "answer": "Yes. We assess your current architecture and design integration layers so legacy and new systems run reliably together."
+          },
+          {
+            "id": 4,
+            "question": "How do you handle hardware planning for XR or IoT projects?",
+            "answer": "Hardware planning is included in early design. We provide device specifications, compatibility checks, and deployment planning."
+          },
+          {
+            "id": 5,
+            "question": "Do you provide maintenance and optimization after go-live?",
+            "answer": "Yes. We offer monitoring, incident response, version upgrades, and performance optimization based on your operating model."
+          },
+          {
+            "id": 6,
+            "question": "How do you keep technical and business teams aligned?",
+            "answer": "We run fixed milestone reviews, versioned requirement documents, and KPI checkpoints to keep execution and business goals synchronized."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Found the right path? Let us define the rollout plan together.",
+        "description": "Share your target scenario and timeline. We will propose a practical architecture, phased milestones, and delivery recommendations.",
+        "primaryAction": {
+          "label": "Talk to an advisor",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "View solution details",
+          "href": "/solutions#pricing"
+        }
+      },
+      "actions": {
+        "getStarted": "Talk to an advisor",
+        "learnMore": "View solution details",
+        "buyPlan": "Book consultation"
+      }
+    },
     "projects": {
       "metadata": {
         "title": "Projects & Capabilities | XR/AI/IoT System Integration and Case Studies",

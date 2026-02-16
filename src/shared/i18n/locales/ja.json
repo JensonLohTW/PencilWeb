@@ -502,6 +502,213 @@
                 ]
             }
         },
+        "solutionsTemplate": {
+            "hero": {
+                "title": "自信を持ってクラウドへ展開",
+                "description": "没入型トレーニング、現場ガイダンス、運用自動化まで、定量目標に基づく導入設計で、実環境への安定稼働を実現します。",
+                "primaryAction": {
+                    "label": "導入相談",
+                    "href": "/contact"
+                },
+                "secondaryAction": {
+                    "label": "ソリューション詳細",
+                    "href": "#features"
+                },
+                "image": {
+                    "src": "/plus-assets/img/component-images/project-app-screenshot.png",
+                    "alt": "ソリューションプラットフォームのプレビュー",
+                    "width": 2432,
+                    "height": 1442
+                }
+            },
+            "logoCloud": {
+                "logos": [
+                    {
+                        "name": "Transistor",
+                        "alt": "Transistor",
+                        "src": "/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg",
+                        "width": 158,
+                        "height": 48
+                    },
+                    {
+                        "name": "Reform",
+                        "alt": "Reform",
+                        "src": "/plus-assets/img/logos/158x48/reform-logo-gray-900.svg",
+                        "width": 158,
+                        "height": 48
+                    },
+                    {
+                        "name": "Tuple",
+                        "alt": "Tuple",
+                        "src": "/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg",
+                        "width": 158,
+                        "height": 48
+                    },
+                    {
+                        "name": "SavvyCal",
+                        "alt": "SavvyCal",
+                        "src": "/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg",
+                        "width": 158,
+                        "height": 48
+                    },
+                    {
+                        "name": "Statamic",
+                        "alt": "Statamic",
+                        "src": "/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg",
+                        "width": 158,
+                        "height": 48
+                    }
+                ]
+            },
+            "socialProof": {
+                "text": "防衛・製造・医療・教育領域で 15 件以上を納品し、予測可能なスケジュールと安定した品質を実現しています。",
+                "linkLabel": "導入事例を見る",
+                "linkHref": "/projects"
+            },
+            "features": {
+                "eyebrow": "4つの中核ソリューション",
+                "title": "業務成果に直結する技術モジュール",
+                "description": "各モジュールは単独導入も段階統合も可能で、大規模な一括刷新リスクを抑えます。",
+                "items": [
+                    {
+                        "name": "VR/MR 没入型トレーニング",
+                        "description": "高精細シミュレーションと反復訓練、リアルタイム評価により、訓練品質と安全性を向上します。",
+                        "icon": "cloud"
+                    },
+                    {
+                        "name": "AR 可視化・現場ガイド",
+                        "description": "3D 情報と業務手順を現場へ重畳表示し、保守・案内・教育の判断速度を高めます。",
+                        "icon": "lock"
+                    },
+                    {
+                        "name": "スマート空間 IoT 統合",
+                        "description": "センサー、ゲートウェイ、制御系を統合し、空間状態の可視化と自動制御を実現します。",
+                        "icon": "queue"
+                    },
+                    {
+                        "name": "中小企業向け AI Agent",
+                        "description": "顧客対応、ナレッジ検索、業務自動化に対応した AI アシスタントを段階導入できます。",
+                        "icon": "security"
+                    }
+                ]
+            },
+            "testimonial": {
+                "quote": "Pencil は初期段階で要件を実行可能なマイルストーンに分解してくれたため、PoC から本番展開まで着実に進められました。",
+                "authorName": "オペレーション責任者",
+                "authorRole": "航空訓練プログラム",
+                "logo": {
+                    "src": "/plus-assets/img/logos/workcation-logo-white.svg",
+                    "alt": "Workcation"
+                },
+                "backgroundImage": {
+                    "src": "https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?auto=format&fit=crop&w=1216&q=80",
+                    "alt": "チームのコラボレーションシーン"
+                }
+            },
+            "pricing": {
+                "eyebrow": "導入モデル",
+                "title": "検証から拡張までの3段階アプローチ",
+                "description": "固定サブスクリプションではなく、目的に合わせた段階納品で、各フェーズを確実に前進させます。",
+                "mostPopularLabel": "推奨ルート",
+                "perMonthLabel": "標準期間",
+                "tiers": [
+                    {
+                        "name": "PoC 検証",
+                        "id": "tier-poc",
+                        "href": "/contact",
+                        "priceMonthly": "4-6 週間",
+                        "description": "技術実現性と事業効果を小規模で検証し、導入リスクを早期に低減します。",
+                        "features": [
+                            "業務シナリオ整理と要件定義",
+                            "プロトタイプと技術検証",
+                            "初期アーキテクチャ提案",
+                            "Pilot 移行判断レポート"
+                        ],
+                        "mostPopular": false
+                    },
+                    {
+                        "name": "Pilot 導入",
+                        "id": "tier-pilot",
+                        "href": "/contact",
+                        "priceMonthly": "8-12 週間",
+                        "description": "単一部門または拠点で稼働可能なパイロットを構築し、KPI で効果を可視化します。",
+                        "features": [
+                            "機能実装とデータ連携",
+                            "現場導入とユーザートレーニング",
+                            "ダッシュボードと KPI 追跡",
+                            "改善サイクルとリスク管理"
+                        ],
+                        "mostPopular": true
+                    },
+                    {
+                        "name": "Scale 拡張",
+                        "id": "tier-scale",
+                        "href": "/contact",
+                        "priceMonthly": "12-20 週間",
+                        "description": "検証済み機能を複数部門・複数システムへ展開し、継続運用基盤を確立します。",
+                        "features": [
+                            "複数拠点展開と高可用構成",
+                            "横断ガバナンスと権限制御",
+                            "運用体制と性能最適化",
+                            "四半期ロードマップ運用"
+                        ],
+                        "mostPopular": false
+                    }
+                ]
+            },
+            "faq": {
+                "title": "よくある質問",
+                "items": [
+                    {
+                        "id": 1,
+                        "question": "初回導入はどのソリューションから始めるべきですか？",
+                        "answer": "まずは AR 可視化や AI ナレッジ支援など、成果が明確な小規模シナリオから開始し、段階的に IoT・XR へ拡張するのが効果的です。"
+                    },
+                    {
+                        "id": 2,
+                        "question": "複数ソリューションを同時に計画できますか？",
+                        "answer": "可能です。まず Phase 1 の MVP を定義し、段階ごとに技術マイルストーンを分割して検証しながら拡張します。"
+                    },
+                    {
+                        "id": 3,
+                        "question": "既存システムや API 連携は可能ですか？",
+                        "answer": "可能です。現行アーキテクチャを評価し、既存資産を活かした連携レイヤーを設計します。"
+                    },
+                    {
+                        "id": 4,
+                        "question": "XR / IoT 案件のハードウェアはどう決めますか？",
+                        "answer": "企画段階で推奨スペック、互換性、設置条件まで定義し、後工程での手戻りを防ぎます。"
+                    },
+                    {
+                        "id": 5,
+                        "question": "本番後の保守・改善支援はありますか？",
+                        "answer": "あります。監視、障害対応、バージョン更新、性能最適化を含む運用支援を提供します。"
+                    },
+                    {
+                        "id": 6,
+                        "question": "技術側と業務側の認識をどう揃えますか？",
+                        "answer": "定例マイルストーンレビュー、要件ドキュメントの版管理、KPI 確認を通じて、意思決定を同期させます。"
+                    }
+                ]
+            },
+            "cta": {
+                "title": "最適な道筋が見えたら、導入計画を一緒に設計しましょう。",
+                "description": "目標シナリオと希望時期を共有いただければ、実行可能な技術構成と段階ロードマップをご提案します。",
+                "primaryAction": {
+                    "label": "導入相談",
+                    "href": "/contact"
+                },
+                "secondaryAction": {
+                    "label": "ソリューション詳細",
+                    "href": "/solutions#pricing"
+                }
+            },
+            "actions": {
+                "getStarted": "導入相談",
+                "learnMore": "ソリューション詳細",
+                "buyPlan": "相談を予約"
+            }
+        },
         "projects": {
             "metadata": {
                 "title": "プロジェクトと実力｜XR/AI/IoT システム統合事例",

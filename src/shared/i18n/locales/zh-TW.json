@@ -501,6 +501,213 @@
         ]
       }
     },
+    "solutionsTemplate": {
+      "hero": {
+        "title": "以場域需求出發，選對解決方案",
+        "description": "從沉浸式訓練、現場導覽到營運自動化，我們以可量化目標規劃導入路徑，讓每個方案都能在真實情境穩定落地。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看方案細節",
+          "href": "#features"
+        },
+        "image": {
+          "src": "/plus-assets/img/component-images/project-app-screenshot.png",
+          "alt": "解決方案平台畫面預覽",
+          "width": 2432,
+          "height": 1442
+        }
+      },
+      "logoCloud": {
+        "logos": [
+          {
+            "name": "Transistor",
+            "alt": "Transistor",
+            "src": "/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Reform",
+            "alt": "Reform",
+            "src": "/plus-assets/img/logos/158x48/reform-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Tuple",
+            "alt": "Tuple",
+            "src": "/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "SavvyCal",
+            "alt": "SavvyCal",
+            "src": "/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Statamic",
+            "alt": "Statamic",
+            "src": "/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          }
+        ]
+      },
+      "socialProof": {
+        "text": "已在國防、製造、醫療與教育場域交付 15+ 專案，並以一致流程維持可預測時程與交付品質。",
+        "linkLabel": "閱讀案例",
+        "linkHref": "/projects"
+      },
+      "features": {
+        "eyebrow": "四大核心方案",
+        "title": "以可落地成果對應你的場域需求",
+        "description": "每個模組可獨立導入，也可依里程碑串接成分階段路線，降低一次性大改造風險。",
+        "items": [
+          {
+            "name": "VR/MR 沉浸式訓練",
+            "description": "建立高擬真訓練場景與標準化操作流程，透過即時回饋提升訓練品質與安全性。",
+            "icon": "cloud"
+          },
+          {
+            "name": "AR 視覺化與導覽",
+            "description": "將 3D 模型與流程資訊疊加到現場，提升維護、導覽與教學情境的決策效率。",
+            "icon": "lock"
+          },
+          {
+            "name": "智慧空間 IoT 整合",
+            "description": "串接感測器、閘道器與控制系統，讓空間狀態可被即時監測並觸發自動化反應。",
+            "icon": "queue"
+          },
+          {
+            "name": "中小企業 AI Agent",
+            "description": "導入可客製 AI 助理，支援客服、知識查詢與流程自動化，降低重複作業成本。",
+            "icon": "security"
+          }
+        ]
+      },
+      "testimonial": {
+        "quote": "Pencil 在 PoC 階段就把需求拆成可執行里程碑，讓我們從驗證到正式上線都能穩定推進，並持續看見可量化成效。",
+        "authorName": "營運總監",
+        "authorRole": "航太訓練專案",
+        "logo": {
+          "src": "/plus-assets/img/logos/workcation-logo-white.svg",
+          "alt": "Workcation"
+        },
+        "backgroundImage": {
+          "src": "https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?auto=format&fit=crop&w=1216&q=80",
+          "alt": "團隊協作場景"
+        }
+      },
+      "pricing": {
+        "eyebrow": "合作方案",
+        "title": "從驗證到擴展的三段式導入",
+        "description": "我們採階段式交付，不以固定訂閱限制你；每一階段都對應明確目標、時程與可驗證成果。",
+        "mostPopularLabel": "推薦路徑",
+        "perMonthLabel": "典型時程",
+        "tiers": [
+          {
+            "name": "PoC 驗證",
+            "id": "tier-poc",
+            "href": "/contact",
+            "priceMonthly": "4-6 週",
+            "description": "先驗證技術可行性與商業效益，快速降低導入不確定性。",
+            "features": [
+              "需求訪談與場景盤點",
+              "原型與技術可行性驗證",
+              "初版架構與導入建議",
+              "進入 Pilot 的決策報告"
+            ],
+            "mostPopular": false
+          },
+          {
+            "name": "Pilot 導入",
+            "id": "tier-pilot",
+            "href": "/contact",
+            "priceMonthly": "8-12 週",
+            "description": "在單一部門或據點上線可運作版本，建立可衡量 KPI。",
+            "features": [
+              "完整功能開發與資料串接",
+              "現場部署與教育訓練",
+              "儀表板與成效指標追蹤",
+              "迭代優化與風險控管"
+            ],
+            "mostPopular": true
+          },
+          {
+            "name": "Scale 擴展",
+            "id": "tier-scale",
+            "href": "/contact",
+            "priceMonthly": "12-20 週",
+            "description": "將已驗證能力擴展到多部門與跨系統場景，建立長期維運體系。",
+            "features": [
+              "多據點部署與高可用架構",
+              "跨系統治理與權限流程",
+              "維運制度與效能優化",
+              "季度 roadmap 與持續改進"
+            ],
+            "mostPopular": false
+          }
+        ]
+      },
+      "faq": {
+        "title": "常見問題",
+        "items": [
+          {
+            "id": 1,
+            "question": "第一次導入建議從哪個方案開始？",
+            "answer": "建議先從需求明確、可快速驗證的場景開始，例如 AR 視覺化或 AI 知識助理，再逐步擴展到 IoT 與 XR。"
+          },
+          {
+            "id": 2,
+            "question": "可以同時規劃多個方案嗎？",
+            "answer": "可以。我們會先定義第一階段 MVP，再按優先級切分里程碑，讓每階段都可被驗證並可控擴展。"
+          },
+          {
+            "id": 3,
+            "question": "是否能整合既有系統與 API？",
+            "answer": "可以。我們會先盤點現有架構，再設計資料流與介接層，確保新舊系統能穩定共存。"
+          },
+          {
+            "id": 4,
+            "question": "XR 或 IoT 專案的硬體怎麼評估？",
+            "answer": "在規劃階段就會提供設備規格、相容性與部署建議，避免開發後才遇到整合瓶頸。"
+          },
+          {
+            "id": 5,
+            "question": "上線後是否提供維護與優化？",
+            "answer": "提供。可依需求選擇監控、故障排除、版本更新與效能優化等維運服務。"
+          },
+          {
+            "id": 6,
+            "question": "如何確保技術與業務目標同步？",
+            "answer": "我們透過固定里程碑檢視、需求文件版本控管與 KPI 追蹤，確保每階段成果都對應商業目標。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "找到適合的路徑了嗎？讓我們一起定義導入計畫。",
+        "description": "告訴我們你的場域目標與時程，我們會提供可執行的技術架構、分階段里程碑與交付建議。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看方案細節",
+          "href": "/solutions#pricing"
+        }
+      },
+      "actions": {
+        "getStarted": "聯絡顧問",
+        "learnMore": "查看方案細節",
+        "buyPlan": "預約諮詢"
+      }
+    },
     "projects": {
       "metadata": {
         "title": "專案與能力｜XR/AI/IoT 系統整合與落地案例",

@@ -22,6 +22,7 @@ export interface NavigationItem {
 export const headerNavigation: NavigationItem[] = [
     {
         nameKey: 'nav.solutions',
+        href: '/solutions',
         type: 'dropdown',
         children: [
             {
@@ -56,6 +57,7 @@ export const headerNavigation: NavigationItem[] = [
     },
     {
         nameKey: 'nav.projects',
+        href: '/projects',
         type: 'dropdown',
         children: [
             {
