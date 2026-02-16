@@ -73,8 +73,14 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
         return () => document.removeEventListener('keydown', handleEscape)
     }, [])
 
-    // Get current icon
-    const CurrentIcon = resolvedTheme === 'dark' ? MoonIcon : SunIcon
+    // Prevent hydration mismatch by waiting for mount
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    // Get current icon - default to SunIcon (light) on server/initial client render
+    const CurrentIcon = mounted && resolvedTheme === 'dark' ? MoonIcon : SunIcon
 
     return (
         <div ref={menuRef} className={clsx('relative', className)} {...props}>
