@@ -644,6 +644,87 @@
         "headline": "Want to join our team or collaborate with us?",
         "ctaText": "Contact Us",
         "secondaryText": "View Projects"
+      },
+      "timeline": {
+        "title": "Company History",
+        "description": "From our founding to today, we continue to push technical boundaries and achieve key milestones.",
+        "items": [
+          {
+            "year": "2021",
+            "title": "Company Founded",
+            "description": "Formally established Pencil Spatial Dynamics, defining R&D direction in XR and AI to create immersive interactive experiences."
+          },
+          {
+            "year": "2022",
+            "title": "First XR Benchmark Project",
+            "description": "Completed first large-scale flight simulator system, validating software/hardware integration and high-fidelity scene deployment capabilities."
+          },
+          {
+            "year": "2023",
+            "title": "AI Agent System Introduction",
+            "description": "Launched enterprise AI Agent solution, assisting clients in implementing automated knowledge management and customer service systems."
+          },
+          {
+            "year": "2024",
+            "title": "Smart Space Market Expansion",
+            "description": "Integrated IoT and spatial positioning technologies, extending services to smart buildings and exhibition venues to realize fusion of virtual and real."
+          }
+        ]
+      },
+      "stats": {
+        "headline": "Building Verifiable System Capabilities with Technical Modules",
+        "description": "From requirement breakdown and rapid validation to stable delivery, we use a consistent process to land innovative solutions. We deliver not just code, but sustainable business value.",
+        "items": [
+          {
+            "value": "3 Cores",
+            "label": "XR • AI • IoT",
+            "description": "Integrating three major technical fields to create complete virtual-real fusion solutions."
+          },
+          {
+            "value": "50+",
+            "label": "Projects Delivered",
+            "description": "Services spanning aerospace, industrial, education, and commercial sectors, accumulating rich deployment experience."
+          },
+          {
+            "value": "100%",
+            "label": "Customer Satisfaction",
+            "description": "Reducing risk through small-step validation to ensure every delivery meets client expectations and business goals."
+          }
+        ]
+      },
+      "team": {
+        "title": "Our Team",
+        "description": "We are a cross-disciplinary team composed of Solution Architects, XR Experience Designers, AI Engineers, and Data Scientists.",
+        "detail": "Unlike traditional software outsourcing companies, we deeply understand industry domain know-how. From flight simulation physics parameters to factory line communication protocols, we engage deeply with domain experts to translate them into executable technical architectures."
+      },
+      "partners": {
+        "title": "Cross-Domain Partners",
+        "description": "We collaborate with leading brands in aerospace, industry, and education to jointly build innovative applications that work."
+      },
+      "jobs": {
+        "headline": "We Are Continually Looking for Excellent Partners",
+        "description": "If you are passionate about XR technology, have ideas for AI applications, and love the challenge of applying new technologies to solve problems in real-world scenarios, welcome to join us.",
+        "viewAll": "View All Openings",
+        "items": [
+          {
+            "role": "Senior XR Software Engineer",
+            "description": "Responsible for Unity/Unreal application development, integrating VR/MR devices and external hardware. Familiarity with C# or C++ required; experience optimizing rendering performance is a plus.",
+            "salary": "Negotiable",
+            "location": "Kaohsiung City"
+          },
+          {
+            "role": "AI Algorithm Engineer",
+            "description": "Responsible for LLM application deployment and RAG system development. Familiarity with Python, LangChain, and related vector database technologies required.",
+            "salary": "Negotiable",
+            "location": "Taipei City/Remote"
+          },
+          {
+            "role": "Project Manager (PM)",
+            "description": "Responsible for cross-department communication and project schedule control, assisting clients in clarifying requirements and translating them into development specifications. Software project management experience required.",
+            "salary": "Negotiable",
+            "location": "Kaohsiung City"
+          }
+        ]
       }
     },
     "contact": {
