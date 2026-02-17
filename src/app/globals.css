@@ -381,4 +381,25 @@
     border-top: 1px solid currentColor;
     opacity: 0.2;
   }
+
+  /* Page Background Gradient */
+  .page-gradient {
+    background-image:
+      radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-accent-600), transparent 90%), transparent 60%),
+      radial-gradient(circle at 80% 40%, color-mix(in srgb, var(--color-accent-400), transparent 95%), transparent 40%),
+      radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--color-pencil-500), transparent 95%), transparent 40%),
+      linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100px 100px, 100px 100px;
+    background-attachment: fixed;
+  }
+
+  :is(.dark) .page-gradient {
+    background-image:
+      radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-accent-600), transparent 80%), transparent 60%),
+      radial-gradient(circle at 80% 40%, color-mix(in srgb, var(--color-accent-400), transparent 90%), transparent 40%),
+      radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--color-pencil-500), transparent 90%), transparent 40%),
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
 }

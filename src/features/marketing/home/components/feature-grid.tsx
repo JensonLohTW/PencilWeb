@@ -16,10 +16,10 @@ export function FeatureGrid() {
     }>
 
     return (
-        <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
+        <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{t('eyebrow')}</h2>
+                    <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">{t('eyebrow')}</h2>
                     <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
                         {t('title')}
                     </p>
@@ -34,15 +34,15 @@ export function FeatureGrid() {
                             return (
                                 <div key={feature.number} className="flex flex-col">
                                     <dt className="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900 dark:text-white">
-                                        <div className="h-10 w-10 flex-none flex items-center justify-center rounded-lg bg-indigo-600 dark:bg-indigo-500/20">
-                                            <Icon className="h-6 w-6 text-white dark:text-indigo-400" aria-hidden="true" />
+                                        <div className="h-10 w-10 flex-none flex items-center justify-center rounded-lg bg-accent-600 dark:bg-accent-500/20">
+                                            <Icon className="h-6 w-6 text-white dark:text-accent-400" aria-hidden="true" />
                                         </div>
                                         {feature.title}
                                     </dt>
                                     <dd className="mt-4 flex flex-auto flex-col text-base/7 text-gray-600 dark:text-gray-400">
                                         <p className="flex-auto">{feature.description}</p>
                                         <p className="mt-6">
-                                            <Link href="/solutions" className="text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400">
+                                            <Link href="/solutions" className="text-sm/6 font-semibold text-accent-600 dark:text-accent-400">
                                                 {t('viewAll')} <span aria-hidden="true">→</span>
                                             </Link>
                                         </p>

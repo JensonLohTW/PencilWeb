@@ -9,7 +9,7 @@ import { CTA } from '@/features/marketing/home/components/cta'
 
 export default function Page() {
   return (
-    <div className="bg-gray-900">
+    <div className="page-gradient">
       <main>
         <Hero />
         <LogoCloud />

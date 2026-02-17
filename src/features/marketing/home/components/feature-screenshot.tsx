@@ -25,7 +25,7 @@ export function FeatureScreenshot() {
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     <div className="lg:pr-8 lg:pt-4">
                         <div className="lg:max-w-lg">
-                            <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{t('title')}</h2>
+                            <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">{t('title')}</h2>
                             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
                                 {t.has('headline') ? t('headline') : t('title')}
                             </p>
@@ -38,7 +38,7 @@ export function FeatureScreenshot() {
                                     return (
                                         <div key={feature.number} className="relative pl-9">
                                             <dt className="inline font-semibold text-gray-900 dark:text-white">
-                                                <Icon className="absolute left-1 top-1 size-5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                                                <Icon className="absolute left-1 top-1 size-5 text-accent-600 dark:text-accent-400" aria-hidden="true" />
                                                 {feature.title}
                                             </dt>{' '}
                                             <dd className="inline">{feature.subtitle}</dd>
@@ -50,12 +50,12 @@ export function FeatureScreenshot() {
                     </div>
                     <div className="flex items-start justify-end lg:order-last">
                         <div className="relative w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] dark:bg-gray-800 dark:ring-white/10 overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-purple-500/10 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-tr from-accent-500/20 via-orange-500/10 to-transparent"></div>
                             <div className="relative p-8 h-full min-h-[400px] flex items-center justify-center text-gray-300">
                                 {/* Placeholder for tech visualization - can be replaced with actual image or 3D canvas later */}
                                 <div className="text-center">
-                                    <CpuChipIcon className="w-24 h-24 mx-auto text-indigo-500/50 mb-4" />
-                                    <span className="text-xl font-mono text-indigo-300">SYSTEM ARCHITECTURE VISUALIZATION</span>
+                                    <CpuChipIcon className="w-24 h-24 mx-auto text-accent-500/50 mb-4" />
+                                    <span className="text-xl font-mono text-accent-300">SYSTEM ARCHITECTURE VISUALIZATION</span>
                                 </div>
                             </div>
                         </div>

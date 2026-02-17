@@ -7,7 +7,7 @@ export function CTA() {
     const t = useTranslations('pages.home.cta')
 
     return (
-        <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8 bg-gray-900 dark:bg-gray-900 text-white">
+        <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8 text-white">
             <svg
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"

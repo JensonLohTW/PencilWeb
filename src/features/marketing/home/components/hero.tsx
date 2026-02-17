@@ -7,7 +7,7 @@ export function Hero() {
     const t = useTranslations('pages.home.hero')
 
     return (
-        <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
+        <div className="relative isolate overflow-hidden">
             <svg
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -47,12 +47,12 @@ export function Hero() {
             <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
                 <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
                     <div className="flex items-center gap-x-2">
-                        <div className="rounded-md bg-indigo-500/10 p-2 ring-1 ring-inset ring-indigo-500/20">
-                            <svg className="h-8 w-8 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                        <div className="rounded-md bg-accent-500/10 p-2 ring-1 ring-inset ring-accent-500/20">
+                            <svg className="h-8 w-8 text-accent-600 dark:text-accent-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                             </svg>
                         </div>
-                        <span className="text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400">{t('eyebrow')}</span>
+                        <span className="text-sm/6 font-semibold text-accent-600 dark:text-accent-400">{t('eyebrow')}</span>
                     </div>
                     <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
                         {t('headline')}
@@ -63,7 +63,7 @@ export function Hero() {
                     <div className="mt-10 flex items-center gap-x-6">
                         <Link
                             href="/solutions"
-                            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            className="rounded-md bg-accent-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600"
                         >
                             {t('cta')}
                         </Link>

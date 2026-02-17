@@ -16,7 +16,7 @@ export default function SolutionsPage() {
   const content = buildSolutionsTemplateContent(t)
 
   return (
-    <div className="overflow-hidden bg-white pb-24 dark:bg-pencil-950">
+    <div className="page-gradient overflow-hidden pb-24">
       <SolutionsHeroSection hero={content.hero} />
       <SolutionsLogoCloudSection logoCloud={content.logoCloud} />
       <SolutionsSocialProofSection socialProof={content.socialProof} />

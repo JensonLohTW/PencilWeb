@@ -9,7 +9,7 @@ export function CompanyTimeline() {
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
                 {items.map((index) => (
                     <div key={index}>
-                        <time dateTime={t(`items.${index}.year`)} className="flex items-center text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-300">
+                        <time dateTime={t(`items.${index}.year`)} className="flex items-center text-sm/6 font-semibold text-accent-600 dark:text-accent-400 transition-colors duration-300">
                             <svg viewBox="0 0 4 4" aria-hidden="true" className="mr-4 size-1 flex-none fill-current">
                                 <circle r={2} cx={2} cy={2} />
                             </svg>

@@ -17,7 +17,7 @@ export function JobOpenings() {
                     <img
                         alt=""
                         src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
-                        className="mt-16 aspect-[6/5] w-full rounded-2xl object-cover outline outline-1 -outline-offset-1 outline-gray-200 lg:aspect-auto lg:h-[34.5rem] shadow-2xl shadow-indigo-500/10 dark:outline-white/10 transition-colors duration-300"
+                        className="mt-16 aspect-[6/5] w-full rounded-2xl object-cover outline outline-1 -outline-offset-1 outline-gray-200 lg:aspect-auto lg:h-[34.5rem] shadow-2xl shadow-accent-500/10 dark:outline-white/10 transition-colors duration-300"
                     />
                 </div>
                 <div className="w-full lg:max-w-xl lg:flex-auto">
@@ -28,7 +28,7 @@ export function JobOpenings() {
                                 <dl className="relative flex flex-wrap gap-x-3">
                                     <dt className="sr-only">Role</dt>
                                     <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
-                                        <a href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        <a href="#" className="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
                                             {t(`items.${index}.role`)}
                                             <span aria-hidden="true" className="absolute inset-0" />
                                         </a>
@@ -49,7 +49,7 @@ export function JobOpenings() {
                         ))}
                     </ul>
                     <div className="mt-8 flex border-t border-gray-200 pt-8 dark:border-gray-800 transition-colors duration-300">
-                        <a href="#" className="text-sm/6 font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">
+                        <a href="#" className="text-sm/6 font-semibold text-accent-600 hover:text-accent-500 dark:text-accent-400 dark:hover:text-accent-300 transition-colors">
                             {t('viewAll')} <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>

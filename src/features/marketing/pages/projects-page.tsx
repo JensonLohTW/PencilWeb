@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   const content = buildProjectsTemplateContent(t)
 
   return (
-    <div className="bg-white transition-colors duration-300 dark:bg-pencil-950">
+    <div className="page-gradient transition-colors duration-300">
       <ProjectsHeroSection hero={content.hero} />
       <ProjectsLogoCloudSection logoCloud={content.logoCloud} />
       <ProjectsFeatureHighlightSection featureHighlight={content.featureHighlight} />

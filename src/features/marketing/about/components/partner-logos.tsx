@@ -4,7 +4,7 @@ export function PartnerLogos() {
     const t = useTranslations('pages.about.partners')
     return (
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center after:pointer-events-none after:absolute after:inset-0 after:ring-1 after:ring-inset after:ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl shadow-2xl shadow-indigo-500/10 dark:bg-gray-900 dark:shadow-indigo-500/10 duration-300">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center after:pointer-events-none after:absolute after:inset-0 after:ring-1 after:ring-inset after:ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl shadow-2xl shadow-accent-500/10 dark:bg-gray-900 dark:shadow-accent-500/10 duration-300">
                 <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
                     {t('title')}
                 </h2>
