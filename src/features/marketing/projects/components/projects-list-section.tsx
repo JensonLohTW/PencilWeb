@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import type { ProjectsListSectionProps } from '@/features/marketing/projects/types'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useMemo, useState } from 'react'
@@ -68,11 +69,17 @@ export function ProjectsListSection({ projectList }: ProjectsListSectionProps) {
               whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : index * 0.05 }}
-              className="rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-pencil-900"
+              className="glass-card-hover rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-pencil-900"
             >
               <div className="grid gap-6 lg:grid-cols-[14rem_minmax(0,1fr)_15rem]">
                 <div className="overflow-hidden rounded-xl border border-pencil-200 dark:border-white/10">
-                  <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={720}
+                    height={540}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
 
                 <div>

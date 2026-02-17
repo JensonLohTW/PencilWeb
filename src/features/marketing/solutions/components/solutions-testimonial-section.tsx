@@ -1,12 +1,15 @@
+import Image from 'next/image'
 import type { SolutionsTestimonialSectionProps } from '../types'
+import { FadeIn } from '@/components/animations/fade-in'
 
 export function SolutionsTestimonialSection({ testimonial }: SolutionsTestimonialSectionProps) {
   return (
     <section className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden bg-pencil-950 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
-        <img
+      <FadeIn className="relative overflow-hidden bg-pencil-950 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+        <Image
           src={testimonial.backgroundImage.src}
           alt={testimonial.backgroundImage.alt}
+          fill
           className="absolute inset-0 size-full object-cover brightness-150 saturate-0"
         />
         <div className="absolute inset-0 bg-pencil-950/90 mix-blend-multiply" />
@@ -22,7 +25,13 @@ export function SolutionsTestimonialSection({ testimonial }: SolutionsTestimonia
         </div>
 
         <div className="relative mx-auto max-w-2xl lg:mx-0">
-          <img src={testimonial.logo.src} alt={testimonial.logo.alt} className="h-12 w-auto" />
+          <Image
+            src={testimonial.logo.src}
+            alt={testimonial.logo.alt}
+            width={160}
+            height={48}
+            className="h-12 w-auto"
+          />
           <figure>
             <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl/8">
               <p>{`“${testimonial.quote}”`}</p>
@@ -33,7 +42,7 @@ export function SolutionsTestimonialSection({ testimonial }: SolutionsTestimonia
             </figcaption>
           </figure>
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

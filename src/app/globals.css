@@ -243,6 +243,58 @@
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
   }
 
+  .glass-card-hover {
+    transition:
+      border-color 220ms ease,
+      box-shadow 220ms ease,
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: color-mix(in srgb, var(--color-accent-500), transparent 45%);
+    box-shadow:
+      0 16px 35px -18px color-mix(in srgb, var(--color-accent-600), transparent 35%),
+      0 6px 15px -8px rgba(12, 10, 9, 0.22);
+    transform: translateY(-2px);
+  }
+
+  .skeleton-shimmer {
+    background-image:
+      linear-gradient(
+        100deg,
+        color-mix(in srgb, var(--color-pencil-200), transparent 10%) 15%,
+        color-mix(in srgb, var(--color-pencil-100), transparent 6%) 45%,
+        color-mix(in srgb, var(--color-pencil-200), transparent 10%) 75%
+      );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+  }
+
+  :is(.dark) .skeleton-shimmer {
+    background-image:
+      linear-gradient(
+        100deg,
+        color-mix(in srgb, var(--color-pencil-800), transparent 12%) 15%,
+        color-mix(in srgb, var(--color-pencil-700), transparent 8%) 45%,
+        color-mix(in srgb, var(--color-pencil-800), transparent 12%) 75%
+      );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass-card-hover {
+      transition: none;
+    }
+
+    .glass-card-hover:hover {
+      transform: none;
+    }
+
+    .skeleton-shimmer {
+      animation: none;
+    }
+  }
+
   .glass-nav {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(16px) saturate(180%);

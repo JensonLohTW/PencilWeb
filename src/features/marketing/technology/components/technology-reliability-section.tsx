@@ -23,7 +23,7 @@ export function TechnologyReliabilitySection({ reliability }: TechnologyReliabil
           <motion.article
             key={item.number}
             {...technologyReveal(!!reduceMotion, { delay: index * 0.07 })}
-            className="group rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
+            className="glass-card-hover group rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
           >
             <p className="swiss-mono text-sm text-pencil-500 transition-colors duration-200 group-hover:text-cta dark:text-pencil-400">
               {item.number}

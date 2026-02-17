@@ -1,4 +1,5 @@
 import type { SolutionsCtaSectionProps } from '../types'
+import { FadeIn } from '@/components/animations/fade-in'
 import { SolutionsLink } from './solutions-link'
 
 export function SolutionsCtaSection({ cta }: SolutionsCtaSectionProps) {
@@ -17,7 +18,7 @@ export function SolutionsCtaSection({ cta }: SolutionsCtaSectionProps) {
         />
       </div>
 
-      <div className="mx-auto max-w-2xl text-center">
+      <FadeIn className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-pencil-950 sm:text-5xl dark:text-white">
           {cta.title}
         </h2>
@@ -36,7 +37,7 @@ export function SolutionsCtaSection({ cta }: SolutionsCtaSectionProps) {
             {cta.secondaryAction.label} <span aria-hidden="true">→</span>
           </SolutionsLink>
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

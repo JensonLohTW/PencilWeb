@@ -6,7 +6,6 @@ import {
     ComputerDesktopIcon,
     CpuChipIcon,
     CubeTransparentIcon,
-    GlobeAltIcon,
     AcademicCapIcon,
 } from '@heroicons/react/24/outline'
 

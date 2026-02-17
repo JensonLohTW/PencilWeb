@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import type { ProjectsTestimonialsSectionProps } from '@/features/marketing/projects/types'
 import { motion, useReducedMotion } from 'framer-motion'
 
@@ -37,15 +38,17 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
             whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: reduceMotion ? 0 : 0.5 }}
-            className="rounded-2xl border border-pencil-200 bg-white shadow-sm dark:border-white/10 dark:bg-pencil-900"
+            className="glass-card-hover rounded-2xl border border-pencil-200 bg-white shadow-sm dark:border-white/10 dark:bg-pencil-900"
           >
             <blockquote className="p-8 text-lg font-medium leading-relaxed text-pencil-900 sm:p-10 sm:text-xl dark:text-white">
               <p>{`“${testimonials.featured.quote}”`}</p>
             </blockquote>
             <figcaption className="flex flex-wrap items-center gap-4 border-t border-pencil-200 px-8 py-5 dark:border-white/10 sm:px-10">
-              <img
+              <Image
                 src={testimonials.featured.author.imageUrl}
                 alt={testimonials.featured.author.name}
+                width={44}
+                height={44}
                 className="size-11 rounded-full border border-pencil-200 object-cover dark:border-white/10"
               />
               <div className="min-w-0 flex-1">
@@ -53,9 +56,11 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
                 <p className="truncate text-sm text-pencil-600 dark:text-pencil-300">@{testimonials.featured.author.handle}</p>
               </div>
               {testimonials.featured.author.logoUrl ? (
-                <img
+                <Image
                   src={testimonials.featured.author.logoUrl}
                   alt="Company logo"
+                  width={120}
+                  height={32}
                   className="h-8 w-auto opacity-80 dark:opacity-70"
                 />
               ) : null}
@@ -75,15 +80,17 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
                       duration: reduceMotion ? 0 : 0.4,
                       delay: reduceMotion ? 0 : columnIndex * 0.08 + itemIndex * 0.05,
                     }}
-                    className="rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-pencil-900"
+                    className="glass-card-hover rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-pencil-900"
                   >
                     <blockquote className="text-sm leading-relaxed text-pencil-700 dark:text-pencil-200">
                       <p>{`“${item.quote}”`}</p>
                     </blockquote>
                     <figcaption className="mt-5 flex items-center gap-3">
-                      <img
+                      <Image
                         src={item.author.imageUrl}
                         alt={item.author.name}
+                        width={36}
+                        height={36}
                         className="size-9 rounded-full border border-pencil-200 object-cover dark:border-white/10"
                       />
                       <div>

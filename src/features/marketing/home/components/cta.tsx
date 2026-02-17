@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { FadeIn } from '@/components/animations/fade-in'
 
 export function CTA() {
     const t = useTranslations('pages.home.cta')
@@ -44,7 +45,7 @@ export function CTA() {
                     className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
                 />
             </div>
-            <div className="mx-auto max-w-2xl text-center">
+            <FadeIn className="mx-auto max-w-2xl text-center">
                 <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                     {t('headline')}
                 </h2>
@@ -64,7 +65,7 @@ export function CTA() {
                         {t('secondaryText')} <span aria-hidden="true">→</span>
                     </Link>
                 </div>
-            </div>
+            </FadeIn>
         </div>
     )
 }

@@ -1,53 +1,68 @@
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 export function PartnerLogos() {
     const t = useTranslations('pages.about.partners')
     return (
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
             <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center after:pointer-events-none after:absolute after:inset-0 after:ring-1 after:ring-inset after:ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl shadow-2xl shadow-accent-500/10 dark:bg-gray-900 dark:shadow-accent-500/10 duration-300">
-                <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    {t('title')}
-                </h2>
-                <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
-                    {t('description')}
-                </p>
-                <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-                    <img
-                        alt="Transistor"
-                        src="/plus-assets/img/logos/158x48/transistor-logo-white.svg"
-                        width={158}
-                        height={48}
-                        className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                    <img
-                        alt="Reform"
-                        src="/plus-assets/img/logos/158x48/reform-logo-white.svg"
-                        width={158}
-                        height={48}
-                        className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                    <img
-                        alt="Tuple"
-                        src="/plus-assets/img/logos/158x48/tuple-logo-white.svg"
-                        width={158}
-                        height={48}
-                        className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                    <img
-                        alt="SavvyCal"
-                        src="/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
-                        width={158}
-                        height={48}
-                        className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                    <img
-                        alt="Statamic"
-                        src="/plus-assets/img/logos/158x48/statamic-logo-white.svg"
-                        width={158}
-                        height={48}
-                        className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                </div>
+                <FadeIn>
+                    <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        {t('title')}
+                    </h2>
+                    <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
+                        {t('description')}
+                    </p>
+                </FadeIn>
+                <StaggerContainer className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
+                    <StaggerItem className="col-span-2 lg:col-span-1">
+                        <Image
+                            alt="Transistor"
+                            src="/plus-assets/img/logos/158x48/transistor-logo-white.svg"
+                            width={158}
+                            height={48}
+                            className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+                        />
+                    </StaggerItem>
+                    <StaggerItem className="col-span-2 lg:col-span-1">
+                        <Image
+                            alt="Reform"
+                            src="/plus-assets/img/logos/158x48/reform-logo-white.svg"
+                            width={158}
+                            height={48}
+                            className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+                        />
+                    </StaggerItem>
+                    <StaggerItem className="col-span-2 lg:col-span-1">
+                        <Image
+                            alt="Tuple"
+                            src="/plus-assets/img/logos/158x48/tuple-logo-white.svg"
+                            width={158}
+                            height={48}
+                            className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+                        />
+                    </StaggerItem>
+                    <StaggerItem className="col-span-2 sm:col-start-2 lg:col-span-1">
+                        <Image
+                            alt="SavvyCal"
+                            src="/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
+                            width={158}
+                            height={48}
+                            className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+                        />
+                    </StaggerItem>
+                    <StaggerItem className="col-span-2 col-start-2 sm:col-start-auto lg:col-span-1">
+                        <Image
+                            alt="Statamic"
+                            src="/plus-assets/img/logos/158x48/statamic-logo-white.svg"
+                            width={158}
+                            height={48}
+                            className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+                        />
+                    </StaggerItem>
+                </StaggerContainer>
                 <div aria-hidden="true" className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
                     <div
                         style={{

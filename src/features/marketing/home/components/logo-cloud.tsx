@@ -1,6 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 export function LogoCloud() {
     const t = useTranslations('pages.home.clients')
@@ -16,21 +18,26 @@ export function LogoCloud() {
     return (
         <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <h2 className="text-center text-lg/8 font-semibold text-gray-900 dark:text-white">
-                    {t('title')}
-                </h2>
-                <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6">
+                <FadeIn>
+                    <h2 className="text-center text-lg/8 font-semibold text-gray-900 dark:text-white">
+                        {t('title')}
+                    </h2>
+                </FadeIn>
+                <StaggerContainer
+                    className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     {Array.isArray(clients) && clients.map((client, index) => (
-                        <div key={index} className="col-span-1 flex flex-col items-center justify-center gap-1 group">
+                        <StaggerItem key={index} className="col-span-1 flex flex-col items-center justify-center gap-1 group">
                             <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                                 {client.name}
                             </span>
                             <span className="text-xs text-gray-500 dark:text-gray-400">
                                 {client.sector}
                             </span>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </div>
     )

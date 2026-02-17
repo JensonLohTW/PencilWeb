@@ -29,7 +29,7 @@ export function TechnologyCtaSection({ cta }: TechnologyCtaSectionProps) {
     <TechnologySectionShell className="pt-12 pb-24">
       <motion.div
         {...technologyReveal(!!reduceMotion)}
-        className="overflow-hidden rounded-3xl border border-pencil-200 bg-white p-8 shadow-sm sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-8 dark:border-white/10 dark:bg-pencil-900"
+        className="glass-card-hover overflow-hidden rounded-3xl border border-pencil-200 bg-white p-8 shadow-sm sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-8 dark:border-white/10 dark:bg-pencil-900"
       >
         <div className="max-w-3xl">
           <h2 className="text-3xl font-semibold tracking-tight text-pencil-950 sm:text-4xl dark:text-white">{cta.title}</h2>

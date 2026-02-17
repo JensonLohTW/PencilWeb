@@ -41,7 +41,7 @@ export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
               onMouseEnter={() => setActiveIndex(index)}
               onFocus={() => setActiveIndex(index)}
               {...technologyReveal(!!reduceMotion, { delay: index * 0.05 })}
-              className="group rounded-2xl border border-pencil-200 bg-white p-5 text-left shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
+              className="glass-card-hover group rounded-2xl border border-pencil-200 bg-white p-5 text-left shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
             >
               <div
                 className={

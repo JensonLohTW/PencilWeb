@@ -3,6 +3,8 @@
 import { Link } from '@/i18n/routing'
 import type { TechnologyHeroSectionProps } from '@/features/marketing/technology/types'
 import { motion, useReducedMotion } from 'framer-motion'
+import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
+import { ParticleField } from '@/shared/ui/animations/particle-field'
 import { technologyReveal } from './technology-motion'
 
 function renderAction(href: string, label: string, className: string) {
@@ -26,6 +28,7 @@ export function TechnologyHeroSection({ hero }: TechnologyHeroSectionProps) {
 
   return (
     <section className="relative isolate overflow-hidden border-b border-pencil-200 px-6 pb-24 pt-24 lg:px-16 lg:pt-32 dark:border-white/10">
+      <ParticleField className="opacity-55" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(12,10,9,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(12,10,9,0.05)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:bg-[linear-gradient(rgba(248,250,252,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(248,250,252,0.06)_1px,transparent_1px)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-neon-100/40 via-neon-50/20 to-transparent dark:from-neon-950/25 dark:via-neon-900/10" />
 
@@ -35,9 +38,11 @@ export function TechnologyHeroSection({ hero }: TechnologyHeroSectionProps) {
             {hero.eyebrow}
           </p>
 
-          <h1 className="mt-7 max-w-4xl text-4xl font-semibold tracking-tight text-pencil-950 sm:text-6xl lg:text-7xl dark:text-white">
-            {hero.title}
-          </h1>
+          <KineticHeading
+            as="h1"
+            text={hero.title}
+            className="mt-7 max-w-4xl text-4xl font-semibold tracking-tight text-pencil-950 sm:text-6xl lg:text-7xl dark:text-white"
+          />
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-pencil-600 sm:text-xl dark:text-pencil-300">
             {hero.description}
           </p>

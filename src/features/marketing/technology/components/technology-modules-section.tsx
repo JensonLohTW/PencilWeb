@@ -28,7 +28,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
         <motion.article
           key={activeModule.id}
           {...technologyReveal(!!reduceMotion, { delay: 0.06, y: 14, duration: 0.35 })}
-          className="mt-10 rounded-3xl border border-pencil-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-pencil-900"
+          className="glass-card-hover mt-10 rounded-3xl border border-pencil-200 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-pencil-900"
         >
           <p className="swiss-mono text-[10px] text-pencil-500 dark:text-pencil-400">{modules.activeItemLabel}</p>
           <div className="mt-3 flex flex-wrap items-baseline gap-3">
@@ -60,7 +60,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
             className={
               activeId === module.id
                 ? 'group rounded-2xl border border-cta bg-neon-50 p-6 text-left shadow-md transition-all duration-200 dark:bg-neon-950/20'
-                : 'group rounded-2xl border border-pencil-200 bg-white p-6 text-left shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900'
+                : 'glass-card-hover group rounded-2xl border border-pencil-200 bg-white p-6 text-left shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900'
             }
           >
             <p className="swiss-mono text-[10px] text-pencil-500 dark:text-pencil-400">{module.number}</p>

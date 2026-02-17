@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 export function JobOpenings() {
     const t = useTranslations('pages.about.jobs')
@@ -8,23 +11,27 @@ export function JobOpenings() {
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 pb-32">
             <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
                 <div className="w-full lg:max-w-lg lg:flex-auto">
-                    <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white transition-colors duration-300">
-                        {t('headline')}
-                    </h2>
-                    <p className="mt-6 text-xl/8 text-gray-600 dark:text-gray-400 transition-colors duration-300">
-                        {t('description')}
-                    </p>
-                    <img
+                    <FadeIn>
+                        <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white transition-colors duration-300">
+                            {t('headline')}
+                        </h2>
+                        <p className="mt-6 text-xl/8 text-gray-600 dark:text-gray-400 transition-colors duration-300">
+                            {t('description')}
+                        </p>
+                    </FadeIn>
+                    <Image
                         alt=""
                         src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
+                        width={1344}
+                        height={1104}
                         className="mt-16 aspect-[6/5] w-full rounded-2xl object-cover outline outline-1 -outline-offset-1 outline-gray-200 lg:aspect-auto lg:h-[34.5rem] shadow-2xl shadow-accent-500/10 dark:outline-white/10 transition-colors duration-300"
                     />
                 </div>
                 <div className="w-full lg:max-w-xl lg:flex-auto">
                     <h3 className="sr-only">Job openings</h3>
-                    <ul className="-my-8 divide-y divide-gray-200 dark:divide-gray-800 transition-colors duration-300">
+                    <StaggerContainer className="-my-8 divide-y divide-gray-200 dark:divide-gray-800 transition-colors duration-300">
                         {jobs.map((index) => (
-                            <li key={index} className="py-8">
+                            <StaggerItem key={index} as="article" className="py-8">
                                 <dl className="relative flex flex-wrap gap-x-3">
                                     <dt className="sr-only">Role</dt>
                                     <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
@@ -45,9 +52,9 @@ export function JobOpenings() {
                                         {t(`items.${index}.location`)}
                                     </dd>
                                 </dl>
-                            </li>
+                            </StaggerItem>
                         ))}
-                    </ul>
+                    </StaggerContainer>
                     <div className="mt-8 flex border-t border-gray-200 pt-8 dark:border-gray-800 transition-colors duration-300">
                         <a href="#" className="text-sm/6 font-semibold text-accent-600 hover:text-accent-500 dark:text-accent-400 dark:hover:text-accent-300 transition-colors">
                             {t('viewAll')} <span aria-hidden="true">&rarr;</span>

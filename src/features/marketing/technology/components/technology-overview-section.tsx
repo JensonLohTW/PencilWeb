@@ -21,7 +21,7 @@ export function TechnologyOverviewSection({ overview }: TechnologyOverviewSectio
           <motion.article
             key={item.label}
             {...technologyReveal(!!reduceMotion, { delay: index * 0.06 })}
-            className="rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
+            className="glass-card-hover rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg dark:border-white/10 dark:bg-pencil-900"
           >
             <p className="swiss-mono text-[10px] text-pencil-500 dark:text-pencil-400">{item.label}</p>
             <p className="mt-3 text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white">{item.value}</p>

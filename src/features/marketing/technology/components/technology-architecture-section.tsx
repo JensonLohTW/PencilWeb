@@ -23,7 +23,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
           <motion.article
             key={layer.layer}
             {...technologyReveal(!!reduceMotion, { delay: index * 0.06 })}
-            className="grid gap-4 rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg lg:grid-cols-[11rem_minmax(0,1fr)] dark:border-white/10 dark:bg-pencil-900"
+            className="glass-card-hover grid gap-4 rounded-2xl border border-pencil-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-cta hover:shadow-lg lg:grid-cols-[11rem_minmax(0,1fr)] dark:border-white/10 dark:bg-pencil-900"
           >
             <p className="swiss-mono text-xs tracking-[0.14em] text-pencil-500 dark:text-pencil-400">{layer.layer}</p>
             <div>

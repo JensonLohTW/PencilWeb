@@ -1,6 +1,8 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
 import type { SolutionsPricingSectionProps } from '../types'
 import { SolutionsLink } from './solutions-link'
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 function classNames(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(' ')
@@ -10,25 +12,29 @@ export function SolutionsPricingSection({ pricing, buyPlanLabel }: SolutionsPric
   return (
     <section id="pricing" className="py-24 sm:pt-48">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
+        <FadeIn className="mx-auto max-w-4xl text-center">
           <h2 className="text-base/7 font-semibold text-cta">{pricing.eyebrow}</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-pencil-950 sm:text-5xl dark:text-white">
             {pricing.title}
           </p>
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg/8 text-pretty text-pencil-600 sm:text-xl/8 dark:text-pencil-300">
+        </FadeIn>
+        <FadeIn delay={0.2} className="mx-auto mt-6 max-w-2xl text-center text-lg/8 text-pretty text-pencil-600 sm:text-xl/8 dark:text-pencil-300">
           {pricing.description}
-        </p>
+        </FadeIn>
 
-        <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <StaggerContainer
+          viewport={{ once: true, amount: 0.2 }}
+          className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+        >
           {pricing.tiers.map((tier, tierIdx) => (
-            <article
+            <StaggerItem
+              as="article"
               key={tier.id}
               className={classNames(
                 tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                 tierIdx === 0 && '-mr-px lg:rounded-r-none',
                 tierIdx === pricing.tiers.length - 1 && '-ml-px lg:rounded-l-none',
-                'flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-pencil-200 dark:bg-pencil-900 dark:inset-ring-white/10 xl:p-10',
+                'glass-card-hover flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-pencil-200 dark:bg-pencil-900 dark:inset-ring-white/10 xl:p-10',
               )}
             >
               <div>
@@ -76,9 +82,9 @@ export function SolutionsPricingSection({ pricing, buyPlanLabel }: SolutionsPric
               >
                 {buyPlanLabel}
               </SolutionsLink>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

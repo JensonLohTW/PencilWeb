@@ -51,6 +51,11 @@ const themeOptions: { value: Theme; labelZh: string; labelEn: string; icon: type
 export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
     const { theme, resolvedTheme, setTheme } = useTheme()
     const [isOpen, setIsOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
     const menuRef = useRef<HTMLDivElement>(null)
 
     // Close menu when clicking outside
@@ -73,13 +78,6 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
         return () => document.removeEventListener('keydown', handleEscape)
     }, [])
 
-    // Prevent hydration mismatch by waiting for mount
-    const [mounted, setMounted] = useState(false)
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    // Get current icon - default to SunIcon (light) on server/initial client render
     const CurrentIcon = mounted && resolvedTheme === 'dark' ? MoonIcon : SunIcon
 
     return (
