@@ -20,7 +20,11 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
     return (
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
             <div className="fixed inset-0 z-50" />
-            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-sm
+                bg-black/70 backdrop-blur-2xl backdrop-saturate-150
+                sm:border-l sm:border-white/10
+                sm:shadow-[-24px_0_48px_-12px_rgba(0,0,0,0.5)]"
+            >
                 <div className="flex items-center justify-between">
                     <Logo className="-m-1.5 p-1.5" />
                     <button

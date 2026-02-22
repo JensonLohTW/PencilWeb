@@ -305,6 +305,44 @@
     backdrop-filter: blur(16px) saturate(180%);
   }
 
+  /* Glass Displacement Effect from Demo */
+  /* --glass-frost 控制磨砂透明度（0=全透明, 1=不透明），--glass-saturation 控制折射飽和度 */
+  .glass-displacement {
+    --glass-frost: 0.55;
+    --glass-saturation: 1.6;
+
+    /* 半透明背景：模擬玻璃磨砂感 */
+    background: hsl(0 0% 100% / var(--glass-frost));
+
+    /* SVG displacement + 飽和度強化折射感 */
+    backdrop-filter: url(#glass-displacement-filter) saturate(var(--glass-saturation));
+
+    /* 深度陰影 + 內緣高光（使用 color-mix 自適應深淺色） */
+    box-shadow:
+      /* 細邊緣高亮 */
+      0 0 0 0.5px color-mix(in oklch, canvasText, transparent 80%),
+      /* 內緣頂部折射光 */
+      0 0 2px 1px color-mix(in oklch, canvasText, transparent 85%) inset,
+      /* 內緣擴散光 */
+      0 0 10px 4px color-mix(in oklch, canvasText, transparent 90%) inset,
+      /* 外部提升陰影 */
+      0px 4px 16px rgba(17, 17, 26, 0.06),
+      0px 8px 24px rgba(17, 17, 26, 0.06),
+      0px 8px 32px rgba(17, 17, 26, 0.22),
+      0px 16px 56px rgba(17, 17, 26, 0.06),
+      /* 內部立體感 */
+      0px 4px 16px rgba(17, 17, 26, 0.04) inset,
+      0px 8px 24px rgba(17, 17, 26, 0.04) inset;
+
+    overflow: visible;
+  }
+
+  :is(.dark) .glass-displacement {
+    --glass-frost: 0.45;
+    --glass-saturation: 1.4;
+    background: hsl(0 0% 0% / var(--glass-frost));
+  }
+
   .hud-border {
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.1);
