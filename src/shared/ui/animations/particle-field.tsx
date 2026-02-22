@@ -42,8 +42,10 @@ export function ParticleField({
 }: ParticleFieldProps) {
   const { particles } = useMotionSettings()
   const [viewportWidth, setViewportWidth] = useState(1280)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const updateWidth = () => setViewportWidth(window.innerWidth)
 
     updateWidth()
@@ -52,23 +54,24 @@ export function ParticleField({
   }, [])
 
   const specs = useMemo<ParticleSpec[]>(() => {
+    if (!mounted) return []
     const count = resolveParticleCount(viewportWidth)
 
     return Array.from({ length: count }, (_, index) => {
       const seed = index + count
       return {
         id: index,
-        left: seeded(seed + 3) * 100,
-        top: seeded(seed + 9) * 100,
-        size: 3 + seeded(seed + 17) * 5,
-        duration: 6 + seeded(seed + 27) * 8,
-        delay: seeded(seed + 39) * 2.8,
-        drift: -14 + seeded(seed + 51) * 28,
+        left: Number((seeded(seed + 3) * 100).toFixed(4)),
+        top: Number((seeded(seed + 9) * 100).toFixed(4)),
+        size: Number((3 + seeded(seed + 17) * 5).toFixed(4)),
+        duration: Number((6 + seeded(seed + 27) * 8).toFixed(4)),
+        delay: Number((seeded(seed + 39) * 2.8).toFixed(4)),
+        drift: Number((-14 + seeded(seed + 51) * 28).toFixed(4)),
       }
     })
-  }, [viewportWidth])
+  }, [viewportWidth, mounted])
 
-  if (!particles) {
+  if (!mounted || !particles) {
     return null
   }
 

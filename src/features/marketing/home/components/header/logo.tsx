@@ -2,11 +2,14 @@
 
 import { Link } from '@/i18n/routing'
 import { clsx } from 'clsx/lite'
+import { useTranslations } from 'next-intl'
 
 export function Logo({
     className,
     ...props
 }: { className?: string } & Omit<React.ComponentPropsWithoutRef<'a'>, 'href'>) {
+    const t = useTranslations('brand')
+
     return (
         <Link href="/" className={clsx('group flex items-center gap-4', className)} {...props}>
             <div className="relative flex h-10 w-10 items-center justify-center border-2 border-cta transition-all duration-300 group-hover:bg-cta dark:border-white dark:group-hover:bg-white">
@@ -17,7 +20,7 @@ export function Logo({
             </div>
             <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-cta dark:text-white">Pencil</span>
-                <span className="swiss-mono text-[9px] text-cta dark:text-pencil-500">空間動態科技</span>
+                <span className="swiss-mono text-[9px] text-cta dark:text-pencil-500">{t('tagline')}</span>
             </div>
         </Link>
     )

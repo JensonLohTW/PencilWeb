@@ -170,7 +170,7 @@
 /* Base Styles */
 @layer base {
   html {
-    background-color: #000000;
+    background-color: var(--color-pencil-50);
   }
 
   body {
@@ -261,24 +261,20 @@
 
   .skeleton-shimmer {
     background-image:
-      linear-gradient(
-        100deg,
+      linear-gradient(100deg,
         color-mix(in srgb, var(--color-pencil-200), transparent 10%) 15%,
         color-mix(in srgb, var(--color-pencil-100), transparent 6%) 45%,
-        color-mix(in srgb, var(--color-pencil-200), transparent 10%) 75%
-      );
+        color-mix(in srgb, var(--color-pencil-200), transparent 10%) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.4s linear infinite;
   }
 
   :is(.dark) .skeleton-shimmer {
     background-image:
-      linear-gradient(
-        100deg,
+      linear-gradient(100deg,
         color-mix(in srgb, var(--color-pencil-800), transparent 12%) 15%,
         color-mix(in srgb, var(--color-pencil-700), transparent 8%) 45%,
-        color-mix(in srgb, var(--color-pencil-800), transparent 12%) 75%
-      );
+        color-mix(in srgb, var(--color-pencil-800), transparent 12%) 75%);
   }
 
   @media (prefers-reduced-motion: reduce) {

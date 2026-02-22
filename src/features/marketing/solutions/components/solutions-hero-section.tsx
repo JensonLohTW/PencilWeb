@@ -1,10 +1,10 @@
-import Image from 'next/image'
 import { SolutionsLink } from './solutions-link'
 import type { SolutionsHeroSectionProps } from '../types'
 import { FadeIn } from '@/components/animations/fade-in'
 import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
 import { ParallaxLayer } from '@/shared/ui/animations/parallax-layer'
 import { ParticleField } from '@/shared/ui/animations/particle-field'
+import { SolutionsImageCarousel } from './solutions-image-carousel'
 
 export function SolutionsHeroSection({ hero }: SolutionsHeroSectionProps) {
   return (
@@ -54,14 +54,8 @@ export function SolutionsHeroSection({ hero }: SolutionsHeroSectionProps) {
           </div>
 
           <div className="mt-16 flow-root sm:mt-24">
-            <FadeIn delay={0.2} className="-m-2 rounded-xl bg-pencil-900/5 p-2 ring-1 ring-pencil-900/10 ring-inset dark:bg-white/5 dark:ring-white/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <Image
-                src={hero.image.src}
-                alt={hero.image.alt}
-                width={hero.image.width}
-                height={hero.image.height}
-                className="w-304 rounded-md bg-white shadow-xl ring-1 ring-pencil-900/10 dark:bg-pencil-900 dark:ring-white/10"
-              />
+            <FadeIn delay={0.2}>
+              <SolutionsImageCarousel />
             </FadeIn>
           </div>
         </div>

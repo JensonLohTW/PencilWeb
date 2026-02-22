@@ -2,6 +2,7 @@
 
 import { Link, useRouter } from '@/i18n/routing'
 import { clsx } from 'clsx/lite'
+import { useTranslations } from 'next-intl'
 import {
   useState,
   type ComponentProps,
@@ -77,6 +78,7 @@ export function SwissNavbarLogo({
   onClick,
   ...props
 }: { href: string; onNavigate?: () => void } & Omit<ComponentProps<'a'>, 'href'>) {
+  const t = useTranslations('brand')
   const router = useRouter()
 
   const handleClick = (event: ReactMouseEvent<HTMLAnchorElement>) => {
@@ -105,7 +107,7 @@ export function SwissNavbarLogo({
       </div>
       <div className="flex flex-col">
         <span className="text-xl font-bold tracking-tight text-cta dark:text-white">Pencil</span>
-        <span className="swiss-mono text-[9px] text-cta dark:text-pencil-500">空間動態科技</span>
+        <span className="swiss-mono text-[9px] text-cta dark:text-pencil-500">{t('tagline')}</span>
       </div>
     </Link>
   )

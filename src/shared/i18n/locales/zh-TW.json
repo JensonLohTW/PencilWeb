@@ -20,6 +20,9 @@
     "on": "開啟",
     "off": "關閉"
   },
+  "brand": {
+    "tagline": "空間動態科技"
+  },
   "home": {
     "hero": {
       "eyebrow": "XR • AI • IoT",

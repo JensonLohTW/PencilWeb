@@ -8,10 +8,10 @@ export function CTA() {
     const t = useTranslations('pages.home.cta')
 
     return (
-        <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8 text-white">
+        <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8 text-pencil-950 dark:text-white">
             <svg
                 aria-hidden="true"
-                className="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                className="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
             >
                 <defs>
                     <pattern
@@ -25,7 +25,7 @@ export function CTA() {
                         <path d="M.5 200V.5H200" fill="none" />
                     </pattern>
                 </defs>
-                <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
+                <svg x="50%" y={-1} className="overflow-visible fill-gray-50 dark:fill-gray-800/20">
                     <path
                         d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                         strokeWidth={0}
@@ -46,22 +46,22 @@ export function CTA() {
                 />
             </div>
             <FadeIn className="mx-auto max-w-2xl text-center">
-                <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                <h2 className="text-balance text-4xl font-semibold tracking-tight text-pencil-950 sm:text-5xl dark:text-white">
                     {t('headline')}
                 </h2>
-                <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-300">
+                <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-pencil-600 dark:text-gray-300">
                     {t('subheadline')}
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                     <Link
                         href="/contact"
-                        className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        className="rounded-md bg-cta px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 dark:focus-visible:outline-white"
                     >
                         {t('ctaText')}
                     </Link>
                     <Link
                         href="/solutions"
-                        className="text-sm/6 font-semibold text-white">
+                        className="text-sm/6 font-semibold text-pencil-950 hover:text-pencil-600 dark:text-white dark:hover:text-gray-300 transition-colors">
                         {t('secondaryText')} <span aria-hidden="true">→</span>
                     </Link>
                 </div>

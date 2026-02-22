@@ -12,16 +12,19 @@
         "dark": "ダークモード",
         "system": "システム準拠"
     },
-  "language": {
-    "label": "言語"
-  },
-  "motion": {
-    "label": "モーション",
-    "system": "システム",
-    "on": "オン",
-    "off": "オフ"
-  },
-  "home": {
+    "language": {
+        "label": "言語"
+    },
+    "motion": {
+        "label": "モーション",
+        "system": "システム",
+        "on": "オン",
+        "off": "オフ"
+    },
+    "brand": {
+        "tagline": "空間ダイナミクステクノロジー"
+    },
+    "home": {
         "hero": {
             "eyebrow": "XR • AI • IoT",
             "headline": "空間ダイナミクスを再定義する",

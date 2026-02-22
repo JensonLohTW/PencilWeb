@@ -66,7 +66,7 @@ export function Hero() {
                         <KineticHeading
                             as="h1"
                             text={t('headline')}
-                            className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white"
+                            className="mt-10 break-keep text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white"
                         />
                     </StaggerItem>
                     <StaggerItem>

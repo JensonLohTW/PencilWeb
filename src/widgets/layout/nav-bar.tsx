@@ -4,7 +4,6 @@ import { Link } from '@/i18n/routing'
 
 
 import { LanguageToggle } from '@/shared/ui/elements/language-toggle'
-import { MotionToggle } from '@/shared/ui/elements/motion-toggle'
 import { ThemeToggle } from '@/shared/ui/elements/theme-toggle'
 import { useLanguage } from '@/shared/providers/language-provider'
 import { Header } from '@/features/marketing/home/components/header/header'
@@ -17,7 +16,6 @@ export function NavBar() {
             utilities={
                 <>
                     <LanguageToggle />
-                    <MotionToggle />
                     <ThemeToggle />
                 </>
             }
