@@ -736,7 +736,7 @@
           "href": "#project-list"
         },
         "image": {
-          "src": "/plus-assets/img/component-images/mobile-app-screenshot.png",
+          "src": "/images/projects/verifiable-outcomes.png",
           "alt": "Project portfolio dashboard preview",
           "width": 316,
           "height": 684
@@ -785,8 +785,8 @@
         "title": "Predictable execution from PoC to production",
         "description": "We run phased milestones so both technical and business stakeholders can review progress, risks, and outcomes at every stage.",
         "image": {
-          "src": "/plus-assets/img/component-images/dark-project-app-screenshot.png",
-          "alt": "Project delivery operations dashboard",
+          "src": "/images/projects/delivery-rhythm.png",
+          "alt": "Project delivery management dashboard",
           "width": 2432,
           "height": 1442
         },
@@ -895,7 +895,7 @@
             "summary": "Built immersive simulation flow and operational checkpoints to improve training consistency.",
             "outcome": "Standardized training process",
             "timeline": "10-14 weeks",
-            "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+            "image": "/images/projects/flight-simulator.png"
           },
           {
             "id": "flight-training",
@@ -910,7 +910,7 @@
             "summary": "Combined interactive lessons and mission scripts to improve training completion quality.",
             "outcome": "Higher course completion rate",
             "timeline": "8-12 weeks",
-            "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+            "image": "/images/projects/flight-training.png"
           },
           {
             "id": "data-integration",
@@ -925,7 +925,7 @@
             "summary": "Integrated cross-system data pipelines and defined stable contracts for expansion.",
             "outcome": "Improved data integration efficiency",
             "timeline": "6-10 weeks",
-            "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+            "image": "/images/projects/data-integration.png"
           },
           {
             "id": "ai-agent",
@@ -940,7 +940,7 @@
             "summary": "Built enterprise retrieval and task-agent workflows to accelerate service and operations.",
             "outcome": "Reduced response and handling time",
             "timeline": "6-12 weeks",
-            "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+            "image": "/images/projects/ai-agent.png"
           }
         ]
       },
@@ -1558,6 +1558,16 @@
           "Cross-system API contracts",
           "Device and edge delivery"
         ],
+        "graphicStates": [
+          "Generating...",
+          "Morphing...",
+          "Refining...",
+          "Abstracting...",
+          "Projecting...",
+          "Rotating...",
+          "Expanding...",
+          "Pulsing..."
+        ],
         "quickLinks": [
           {
             "label": "Core modules",
@@ -1724,6 +1734,20 @@
         "eyebrow": "Delivery Flow",
         "title": "Controlled integration from input to deployment",
         "description": "Each step maps to concrete outputs and lowers rollout uncertainty.",
+        "stats": [
+          {
+            "label": "LATENCY",
+            "value": "4ms"
+          },
+          {
+            "label": "PROTOCOL",
+            "value": "UDP/TCP"
+          },
+          {
+            "label": "THROUGHPUT",
+            "value": "10GB/s"
+          }
+        ],
         "steps": [
           {
             "number": "01",

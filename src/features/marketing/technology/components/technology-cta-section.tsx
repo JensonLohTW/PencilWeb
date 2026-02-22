@@ -26,29 +26,34 @@ export function TechnologyCtaSection({ cta }: TechnologyCtaSectionProps) {
   const reduceMotion = useReducedMotion()
 
   return (
-    <TechnologySectionShell className="pt-12 pb-24">
+    <TechnologySectionShell className="border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white pt-24 pb-32">
       <motion.div
         {...technologyReveal(!!reduceMotion)}
-        className="glass-card-hover overflow-hidden rounded-3xl border border-pencil-200 bg-white p-8 shadow-sm sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-8 dark:border-white/10 dark:bg-pencil-900"
+        className="flex flex-col border-l border-cta pl-8 lg:flex-row lg:items-end lg:justify-between lg:gap-8 lg:pl-12"
       >
         <div className="max-w-3xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-pencil-950 sm:text-4xl dark:text-white">{cta.title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-pencil-600 dark:text-pencil-300">{cta.description}</p>
+          <h2 className="text-4xl font-semibold tracking-tighter text-pencil-950 dark:text-white sm:text-5xl lg:text-7xl uppercase">
+            {cta.title}
+          </h2>
+          <p className="mt-6 font-mono text-sm leading-relaxed text-pencil-600 dark:text-[#888] lg:text-base">
+            {cta.description}
+          </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3 lg:mt-0">
+        <div className="mt-12 flex shrink-0 flex-wrap gap-4 lg:mt-0">
           {renderAction(
             cta.primaryAction.href,
             cta.primaryAction.label,
-            'inline-flex items-center rounded-md bg-cta px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-neon-700',
+            'inline-flex h-12 items-center justify-center border border-pencil-950 bg-pencil-950 dark:border-white dark:bg-white px-8 font-mono text-xs font-semibold uppercase tracking-widest text-white dark:text-black transition-all duration-300 hover:bg-transparent dark:hover:bg-transparent hover:text-pencil-950 dark:hover:text-white',
           )}
           {renderAction(
             cta.secondaryAction.href,
             cta.secondaryAction.label,
-            'inline-flex items-center rounded-md border border-pencil-300 px-5 py-3 text-sm font-semibold text-pencil-900 transition-colors duration-200 hover:border-cta hover:text-cta dark:border-white/20 dark:text-white dark:hover:text-neon-300',
+            'inline-flex h-12 items-center justify-center border border-pencil-700/20 dark:border-white/20 bg-transparent px-8 font-mono text-xs font-semibold uppercase tracking-widest text-pencil-500 dark:text-[#bbb] transition-all duration-300 hover:border-cta hover:text-cta dark:hover:border-cta dark:hover:text-cta',
           )}
         </div>
       </motion.div>
     </TechnologySectionShell>
   )
 }
+

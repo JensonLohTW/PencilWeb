@@ -63,7 +63,7 @@ const defaultContent: ProjectsTemplateContent = {
     primaryAction: { label: 'Get started', href: '/contact' },
     secondaryAction: { label: 'Learn more', href: '#project-list' },
     image: {
-      src: '/plus-assets/img/component-images/mobile-app-screenshot.png',
+      src: '/images/projects/verifiable-outcomes.png',
       alt: 'Project portfolio dashboard preview',
       width: 316,
       height: 684,
@@ -109,12 +109,11 @@ const defaultContent: ProjectsTemplateContent = {
     ],
   },
   featureHighlight: {
-    title: 'Execution discipline from PoC to production.',
-    description:
-      'We run phased delivery with clear checkpoints, so project progress can be reviewed by both technical and business teams.',
+    title: 'From PoC to Scale, Maintaining Predictable Delivery Rhythm',
+    description: 'We advance projects through phased milestones, allowing both technical and business teams to review risks, progress, and outcomes at each node.',
     image: {
-      src: '/plus-assets/img/component-images/dark-project-app-screenshot.png',
-      alt: 'Project delivery operating dashboard',
+      src: '/images/projects/delivery-rhythm.png',
+      alt: 'Project delivery management dashboard',
       width: 2432,
       height: 1442,
     },

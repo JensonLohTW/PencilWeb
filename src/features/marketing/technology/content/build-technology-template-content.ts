@@ -4,6 +4,7 @@ import type {
   TechnologyArchitectureLayer,
   TechnologyCtaContent,
   TechnologyFlowContent,
+  TechnologyFlowStat,
   TechnologyFlowStep,
   TechnologyHeroContent,
   TechnologyModuleItem,
@@ -173,6 +174,29 @@ function parseFlowSteps(value: unknown, fallback: TechnologyFlowStep[]): Technol
   return mapped.length > 0 ? mapped : fallback
 }
 
+function parseFlowStats(value: unknown, fallback: TechnologyFlowStat[]): TechnologyFlowStat[] {
+  if (!Array.isArray(value)) {
+    return fallback
+  }
+
+  const mapped = value
+    .map((item, index) => {
+      const itemFallback = fallback[index] ?? fallback[0]
+      const record = asRecord(item)
+      if (!record || !itemFallback) {
+        return null
+      }
+
+      return {
+        label: asString(record.label, itemFallback.label),
+        value: asString(record.value, itemFallback.value),
+      }
+    })
+    .filter((item): item is TechnologyFlowStat => item !== null)
+
+  return mapped.length > 0 ? mapped : fallback
+}
+
 function parseReliabilityItems(value: unknown, fallback: TechnologyReliabilityItem[]): TechnologyReliabilityItem[] {
   if (!Array.isArray(value)) {
     return fallback
@@ -205,6 +229,16 @@ const defaultHero: TechnologyHeroContent = {
   panelTitle: 'Capability navigation',
   panelDescription: 'Jump to key sections and review the stack from architecture to delivery and maintenance.',
   tags: ['XR / Spatial Interfaces', 'AI Inference Pipelines', 'Cross-System API Contracts', 'Edge & Device Delivery'],
+  graphicStates: [
+    'Generating...',
+    'Morphing...',
+    'Refining...',
+    'Abstracting...',
+    'Projecting...',
+    'Rotating...',
+    'Expanding...',
+    'Pulsing...',
+  ],
   quickLinks: [
     { label: 'Core modules', href: '#tech-modules' },
     { label: 'Architecture layers', href: '#tech-architecture' },
@@ -327,6 +361,11 @@ const defaultFlow: TechnologyFlowContent = {
   eyebrow: 'Delivery Flow',
   title: 'Controlled integration from input to deployment',
   description: 'Every step produces concrete outputs to reduce uncertainty during rollout.',
+  stats: [
+    { label: 'Latency', value: '4ms' },
+    { label: 'Protocol', value: 'UDP/TCP' },
+    { label: 'Throughput', value: '10GB/s' },
+  ],
   steps: [
     {
       number: '01',
@@ -409,6 +448,7 @@ function parseHero(value: unknown, fallback: TechnologyHeroContent): TechnologyH
     panelTitle: asString(record.panelTitle, fallback.panelTitle),
     panelDescription: asString(record.panelDescription, fallback.panelDescription),
     tags: asStringArray(record.tags, fallback.tags),
+    graphicStates: asStringArray(record.graphicStates, fallback.graphicStates),
     quickLinks: parseActionLinks(record.quickLinks, fallback.quickLinks),
     primaryAction: parseActionLink(record.primaryAction, fallback.primaryAction),
     secondaryAction: parseActionLink(record.secondaryAction, fallback.secondaryAction),
@@ -468,6 +508,7 @@ function parseFlow(value: unknown, fallback: TechnologyFlowContent): TechnologyF
     eyebrow: asString(record.eyebrow, fallback.eyebrow),
     title: asString(record.title, fallback.title),
     description: asString(record.description, fallback.description),
+    stats: parseFlowStats(record.stats, fallback.stats),
     steps: parseFlowSteps(record.steps, fallback.steps),
   }
 }

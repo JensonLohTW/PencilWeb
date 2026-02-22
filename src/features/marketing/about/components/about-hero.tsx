@@ -3,11 +3,13 @@ import { useTranslations } from 'next-intl'
 import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
 import { ParallaxLayer } from '@/shared/ui/animations/parallax-layer'
 import { ParticleField } from '@/shared/ui/animations/particle-field'
+import { PointCloudBust } from '@/shared/ui/animations/point-cloud-bust'
 
 export function AboutHero() {
     const t = useTranslations('pages.about.hero')
     return (
         <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-accent-100/20 pt-14 dark:from-accent-950/20 transition-colors duration-300">
+            {/* <PointCloudBust /> - Temporarily hidden per user request */}
             <ParticleField className="opacity-50" />
             <ParallaxLayer
                 aria-hidden="true"

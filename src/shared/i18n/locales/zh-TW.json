@@ -735,7 +735,7 @@
           "href": "#project-list"
         },
         "image": {
-          "src": "/plus-assets/img/component-images/mobile-app-screenshot.png",
+          "src": "/images/projects/verifiable-outcomes.png",
           "alt": "專案組合儀表板預覽",
           "width": 316,
           "height": 684
@@ -784,7 +784,7 @@
         "title": "從 PoC 到上線，維持可預測的交付節奏",
         "description": "我們以分階段里程碑推進專案，讓技術與業務團隊都能在每個節點檢視風險、進度與成果。",
         "image": {
-          "src": "/plus-assets/img/component-images/dark-project-app-screenshot.png",
+          "src": "/images/projects/delivery-rhythm.png",
           "alt": "專案交付管理儀表板",
           "width": 2432,
           "height": 1442
@@ -894,7 +894,7 @@
             "summary": "建立沉浸式模擬流程與操作檢核，強化訓練一致性與安全性。",
             "outcome": "訓練流程標準化",
             "timeline": "10-14 週",
-            "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+            "image": "/images/projects/flight-simulator.png"
           },
           {
             "id": "flight-training",
@@ -909,7 +909,7 @@
             "summary": "以互動課程搭配任務腳本，提高訓練完成率與實作品質。",
             "outcome": "課程完成率提升",
             "timeline": "8-12 週",
-            "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+            "image": "/images/projects/flight-training.png"
           },
           {
             "id": "data-integration",
@@ -924,7 +924,7 @@
             "summary": "整合跨系統資料流並建立穩定契約，支援後續擴充與治理。",
             "outcome": "資料整合效率提升",
             "timeline": "6-10 週",
-            "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+            "image": "/images/projects/data-integration.png"
           },
           {
             "id": "ai-agent",
@@ -939,7 +939,7 @@
             "summary": "建立企業知識檢索與任務代理流程，加速客服與營運作業。",
             "outcome": "回應與處理時間縮短",
             "timeline": "6-12 週",
-            "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+            "image": "/images/projects/ai-agent.png"
           }
         ]
       },
@@ -1557,6 +1557,16 @@
           "跨系統 API 契約",
           "裝置與邊緣部署"
         ],
+        "graphicStates": [
+          "正在生成...",
+          "型態轉譯...",
+          "精煉邊界...",
+          "抽象提取...",
+          "全息投影...",
+          "空間旋轉...",
+          "維度展開...",
+          "核心脈衝..."
+        ],
         "quickLinks": [
           {
             "label": "核心技術模組",
@@ -1723,6 +1733,20 @@
         "eyebrow": "交付流程",
         "title": "從輸入到部署的可控整合流程",
         "description": "每一步都對應具體產出，降低導入不確定性。",
+        "stats": [
+          {
+            "label": "LATENCY",
+            "value": "4ms"
+          },
+          {
+            "label": "PROTOCOL",
+            "value": "UDP/TCP"
+          },
+          {
+            "label": "THROUGHPUT",
+            "value": "10GB/s"
+          }
+        ],
         "steps": [
           {
             "number": "01",

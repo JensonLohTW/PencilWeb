@@ -9,11 +9,13 @@ import {
     AcademicCapIcon,
 } from '@heroicons/react/24/outline'
 
+import { ComponentType, SVGProps } from 'react'
+
 export interface NavigationItem {
     nameKey: string
     href?: string
     descriptionKey?: string
-    icon?: React.ElementType
+    icon?: ComponentType<SVGProps<SVGSVGElement>>
     type: 'link' | 'dropdown'
     children?: NavigationItem[]
 }

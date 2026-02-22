@@ -29,12 +29,13 @@ export function KineticHeading({
   const { reduced } = useMotionSettings()
   const letters = Array.from(text)
 
+  const Tag = Component as any
   if (reduced) {
-    return <Component className={className}>{text}</Component>
+    return <Tag className={className}>{text}</Tag>
   }
 
   return (
-    <Component className={className}>
+    <Tag className={className}>
       <motion.span
         ref={ref}
         initial="hidden"
@@ -73,6 +74,6 @@ export function KineticHeading({
           </motion.span>
         ))}
       </motion.span>
-    </Component>
+    </Tag>
   )
 }

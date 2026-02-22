@@ -4,8 +4,8 @@ import { Link } from '@/i18n/routing'
 import type { TechnologyHeroSectionProps } from '@/features/marketing/technology/types'
 import { motion, useReducedMotion } from 'framer-motion'
 import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
-import { ParticleField } from '@/shared/ui/animations/particle-field'
 import { technologyReveal } from './technology-motion'
+import { TechnologyHeroGraphic } from './technology-hero-graphic'
 
 function renderAction(href: string, label: string, className: string) {
   if (href.startsWith('#')) {
@@ -25,72 +25,107 @@ function renderAction(href: string, label: string, className: string) {
 
 export function TechnologyHeroSection({ hero }: TechnologyHeroSectionProps) {
   const reduceMotion = useReducedMotion()
+  const columns = Array.from({ length: 10 })
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-pencil-200 px-6 pb-24 pt-24 lg:px-16 lg:pt-32 dark:border-white/10">
-      <ParticleField className="opacity-55" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(12,10,9,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(12,10,9,0.05)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:bg-[linear-gradient(rgba(248,250,252,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(248,250,252,0.06)_1px,transparent_1px)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-neon-100/40 via-neon-50/20 to-transparent dark:from-neon-950/25 dark:via-neon-900/10" />
+    <section className="relative isolate flex min-h-[calc(100vh-4rem)] flex-col border-b border-pencil-200 bg-pencil-50 overflow-hidden dark:border-white/10 dark:bg-pencil-950">
+      {/* Top Bar */}
+      <div className="grid grid-cols-2 border-b border-pencil-700/10 text-[10px] uppercase tracking-widest text-pencil-500 sm:grid-cols-4 dark:border-white/10 dark:text-pencil-400 font-mono">
+        <div className="border-r border-pencil-700/10 px-6 py-4 dark:border-white/10">
+          <span className="font-semibold text-pencil-900 dark:text-pencil-100">{hero.eyebrow}</span> v1.0.4
+        </div>
+        <div className="border-r border-pencil-700/10 px-6 py-4 hidden sm:block dark:border-white/10">
+          System Status: <span className="text-emerald-500">● Online</span>
+        </div>
+        <div className="border-r border-pencil-700/10 px-6 py-4 hidden sm:block dark:border-white/10">
+          User: Guest
+        </div>
+        <div className="px-6 py-4 text-right">
+          <a href={hero.primaryAction.href} className="hover:text-cta transition-colors">
+            Menu +
+          </a>
+        </div>
+      </div>
 
-      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
-        <motion.div {...technologyReveal(!!reduceMotion)}>
-          <p className="swiss-mono inline-flex rounded-full border border-pencil-300 bg-white/80 px-3 py-1 text-xs text-cta backdrop-blur-sm dark:border-white/15 dark:bg-pencil-900/80">
-            {hero.eyebrow}
-          </p>
+      {/* Main Grid Area */}
+      <div className="relative flex flex-1 flex-col">
+        {/* Background Grid Elements */}
+        <div className="pointer-events-none absolute inset-0 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-10">
+          {columns.map((_, i) => (
+            <div
+              key={i}
+              className="border-r border-pencil-700/10 last:border-r-0 dark:border-white/10"
+            />
+          ))}
+        </div>
 
-          <KineticHeading
-            as="h1"
-            text={hero.title}
-            className="mt-7 max-w-4xl text-4xl font-semibold tracking-tight text-pencil-950 sm:text-6xl lg:text-7xl dark:text-white"
-          />
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-pencil-600 sm:text-xl dark:text-pencil-300">
-            {hero.description}
-          </p>
+        {/* Horizontal Bisecting Line */}
+        <div className="pointer-events-none absolute top-1/2 w-full border-t border-pencil-700/10 dark:border-white/10" />
 
-          <ul className="mt-9 flex flex-wrap gap-3">
-            {hero.tags.map((tag) => (
-              <li
-                key={tag}
-                className="rounded-full border border-pencil-300 bg-white/70 px-4 py-2 text-xs font-medium text-pencil-700 backdrop-blur-sm dark:border-white/15 dark:bg-pencil-900/60 dark:text-pencil-200"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+        {/* Central Generator Block */}
+        <TechnologyHeroGraphic labels={hero.graphicStates} />
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            {renderAction(
-              hero.primaryAction.href,
-              hero.primaryAction.label,
-              'inline-flex items-center gap-2 rounded-md bg-cta px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-neon-700',
-            )}
-            {renderAction(
-              hero.secondaryAction.href,
-              hero.secondaryAction.label,
-              'inline-flex items-center gap-2 text-sm font-semibold text-pencil-900 transition-colors duration-200 hover:text-cta dark:text-white dark:hover:text-neon-300',
-            )}
+        {/* Bottom Content Area */}
+        <div className="relative z-10 mt-auto flex flex-col justify-end p-6 sm:p-10 lg:p-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
+            {/* Left Typography */}
+            <motion.div {...technologyReveal(!!reduceMotion, { delay: 0.3 })} className="max-w-3xl">
+              <div className="mb-4 text-[10px] font-mono uppercase tracking-widest text-pencil-500 leading-relaxed dark:text-pencil-400 space-y-1">
+                <p>RENDER_TARGET: NULL</p>
+                <p>LATENCY: 12ms</p>
+                <p>SEED: 3938210</p>
+              </div>
+
+              <KineticHeading
+                as="h1"
+                text={hero.title}
+                className="text-5xl font-medium tracking-tight text-pencil-950 sm:text-6xl md:text-7xl lg:text-[5.5rem] lg:leading-[0.9] dark:text-white"
+              />
+              <p className="mt-8 max-w-xl text-sm leading-relaxed text-pencil-700 sm:text-base dark:text-pencil-300">
+                {hero.description}
+              </p>
+            </motion.div>
+
+            {/* Right Action Panel */}
+            <motion.div
+              {...technologyReveal(!!reduceMotion, { delay: 0.4 })}
+              className="flex shrink-0 flex-col gap-4 font-mono text-[10px] uppercase tracking-widest sm:flex-row md:flex-col"
+            >
+              <ul className="flex flex-col gap-2 mb-4 sm:mb-0 md:mb-4">
+                {hero.tags.map((tag) => (
+                  <li
+                    key={tag}
+                    className="border border-pencil-700/10 px-3 py-1.5 rounded-full bg-white/50 backdrop-blur-sm dark:bg-pencil-900/50 dark:border-white/10 text-pencil-600 dark:text-pencil-300 w-fit"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+
+              {renderAction(
+                hero.primaryAction.href,
+                hero.primaryAction.label,
+                'flex items-center justify-center gap-2 border border-pencil-900 bg-pencil-900 px-8 py-5 text-pencil-50 transition-all hover:bg-cta hover:border-cta hover:text-white dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:bg-cta dark:hover:border-cta dark:hover:text-white w-full sm:w-auto text-xs',
+              )}
+              {renderAction(
+                hero.secondaryAction.href,
+                hero.secondaryAction.label,
+                'flex items-center justify-center gap-2 border border-pencil-300 bg-transparent px-8 py-5 text-pencil-900 transition-all hover:border-pencil-900 dark:border-pencil-700 dark:text-white dark:hover:border-white w-full sm:w-auto text-xs',
+              )}
+            </motion.div>
           </div>
-        </motion.div>
 
-        <motion.aside
-          {...technologyReveal(!!reduceMotion, { delay: 0.08, y: 20, duration: 0.5 })}
-          className="rounded-3xl border border-pencil-200 bg-white/90 p-7 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-pencil-900/85"
-        >
-          <p className="swiss-mono text-xs text-cta">{hero.panelTitle}</p>
-          <p className="mt-3 text-sm leading-relaxed text-pencil-600 dark:text-pencil-300">{hero.panelDescription}</p>
-
-          <ul className="mt-6 space-y-3 border-t border-pencil-200 pt-5 dark:border-white/10">
-            {hero.quickLinks.map((link) => (
-              <li key={`${link.label}-${link.href}`}>
-                {renderAction(
-                  link.href,
-                  link.label,
-                  'group inline-flex w-full items-center justify-between rounded-xl border border-transparent px-3 py-2 text-sm font-medium text-pencil-700 transition-all duration-200 hover:border-pencil-200 hover:bg-pencil-50 hover:text-cta dark:text-pencil-200 dark:hover:border-white/10 dark:hover:bg-white/5',
-                )}
-              </li>
-            ))}
-          </ul>
-        </motion.aside>
+          {/* Bottom Slider / Progress Bar (Decorative) */}
+          <motion.div
+            {...technologyReveal(!!reduceMotion, { delay: 0.5 })}
+            className="mt-16 flex items-center gap-4 text-[10px] font-mono uppercase tracking-widest text-pencil-500 dark:text-pencil-400"
+          >
+            <span>COMPLEXITY</span>
+            <div className="relative flex-1 h-[1px] bg-pencil-700/20 dark:bg-white/20">
+              <div className="absolute left-1/4 top-1/2 h-2.5 w-2.5 -translate-y-1/2 bg-pencil-900 dark:bg-white" />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

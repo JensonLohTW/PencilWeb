@@ -736,8 +736,8 @@
                     "href": "#project-list"
                 },
                 "image": {
-                    "src": "/plus-assets/img/component-images/mobile-app-screenshot.png",
-                    "alt": "プロジェクトポートフォリオダッシュボード",
+                    "src": "/images/projects/verifiable-outcomes.png",
+                    "alt": "プロジェクトポートフォリオダッシュボードのプレビュー",
                     "width": 316,
                     "height": 684
                 }
@@ -785,8 +785,8 @@
                 "title": "PoC から本番導入まで、予測可能な実行リズム",
                 "description": "段階的なマイルストーン運用により、技術側と業務側の双方が進捗・リスク・成果を同じ視点で確認できます。",
                 "image": {
-                    "src": "/plus-assets/img/component-images/dark-project-app-screenshot.png",
-                    "alt": "プロジェクト運用ダッシュボード",
+                    "src": "/images/projects/delivery-rhythm.png",
+                    "alt": "プロジェクトデリバリー管理ダッシュボード",
                     "width": 2432,
                     "height": 1442
                 },
@@ -895,7 +895,7 @@
                         "summary": "没入型シミュレーションと運用チェックポイントを整備し、訓練品質を標準化。",
                         "outcome": "訓練フローの標準化",
                         "timeline": "10-14 週",
-                        "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+                        "image": "/images/projects/flight-simulator.png"
                     },
                     {
                         "id": "flight-training",
@@ -910,7 +910,7 @@
                         "summary": "インタラクティブ教材とミッションスクリプトを組み合わせ、学習完了率を改善。",
                         "outcome": "コース完了率の向上",
                         "timeline": "8-12 週",
-                        "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+                        "image": "/images/projects/flight-training.png"
                     },
                     {
                         "id": "data-integration",
@@ -925,7 +925,7 @@
                         "summary": "複数システムのデータパイプラインを統合し、拡張可能な契約を整備。",
                         "outcome": "データ統合効率の向上",
                         "timeline": "6-10 週",
-                        "image": "/plus-assets/img/component-images/project-app-screenshot.png"
+                        "image": "/images/projects/data-integration.png"
                     },
                     {
                         "id": "ai-agent",
@@ -940,7 +940,7 @@
                         "summary": "企業ナレッジ検索とタスク実行フローを構築し、業務応答を高速化。",
                         "outcome": "応答・処理時間の短縮",
                         "timeline": "6-12 週",
-                        "image": "/plus-assets/img/component-images/mobile-app-screenshot.png"
+                        "image": "/images/projects/ai-agent.png"
                     }
                 ]
             },
@@ -1558,6 +1558,16 @@
                     "クロスシステム API 契約",
                     "デバイス/エッジ展開"
                 ],
+                "graphicStates": [
+                    "生成中...",
+                    "変形中...",
+                    "精製中...",
+                    "抽象化中...",
+                    "投影中...",
+                    "回転中...",
+                    "展開中...",
+                    "パルス中..."
+                ],
                 "quickLinks": [
                     {
                         "label": "コアモジュール",
@@ -1724,6 +1734,20 @@
                 "eyebrow": "導入フロー",
                 "title": "入力から展開までを制御可能な統合プロセスで推進",
                 "description": "各ステップを具体成果に結び、導入時の不確実性を抑制します。",
+                "stats": [
+                    {
+                        "label": "LATENCY",
+                        "value": "4ms"
+                    },
+                    {
+                        "label": "PROTOCOL",
+                        "value": "UDP/TCP"
+                    },
+                    {
+                        "label": "THROUGHPUT",
+                        "value": "10GB/s"
+                    }
+                ],
                 "steps": [
                     {
                         "number": "01",

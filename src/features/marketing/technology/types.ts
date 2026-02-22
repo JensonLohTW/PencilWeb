@@ -13,6 +13,7 @@ export interface TechnologyHeroContent {
   quickLinks: ActionLink[]
   primaryAction: ActionLink
   secondaryAction: ActionLink
+  graphicStates: string[]
 }
 
 export interface TechnologyOverviewItem {
@@ -64,10 +65,16 @@ export interface TechnologyFlowStep {
   description: string
 }
 
+export interface TechnologyFlowStat {
+  label: string
+  value: string
+}
+
 export interface TechnologyFlowContent {
   eyebrow: string
   title: string
   description: string
+  stats: TechnologyFlowStat[]
   steps: TechnologyFlowStep[]
 }
 

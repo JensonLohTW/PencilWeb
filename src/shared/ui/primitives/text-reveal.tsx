@@ -59,8 +59,10 @@ export function TextReveal({
         },
     }
 
+    const Tag = Component as any
+
     return (
-        <Component
+        <Tag
             ref={ref}
             className={cn('inline-block', className)}
             initial="hidden"
@@ -76,6 +78,6 @@ export function TextReveal({
                     {char === ' ' ? '\u00A0' : char}
                 </motion.span>
             ))}
-        </Component>
+        </Tag>
     )
 }
