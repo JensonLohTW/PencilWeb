@@ -22,7 +22,7 @@ export function NavBar() {
             actions={
                 <Link
                     href="/contact"
-                    className="inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium w-full border-2 border-cta bg-cta text-white transition-colors hover:bg-white hover:text-cta lg:w-auto dark:border-white dark:bg-white dark:text-pencil-950 dark:hover:border-cta dark:hover:bg-cta dark:hover:text-white"
+                    className="inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm font-medium border border-pencil-900/50 dark:border-white/30 bg-transparent px-5 py-2 text-pencil-900 dark:text-white/70 transition-colors hover:border-pencil-900 dark:hover:border-white dark:hover:text-white hover:bg-pencil-900/5 dark:hover:bg-white/10"
                 >
                     {t('nav.contact')}
                 </Link>

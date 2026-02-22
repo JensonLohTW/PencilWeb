@@ -11,9 +11,9 @@ export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section id="tech-flow" className="relative grid min-h-screen grid-cols-1 border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white lg:grid-cols-[1fr_1fr]">
+    <section id="tech-flow" className="relative grid grid-cols-1 border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white lg:grid-cols-[1fr_1fr]">
       {/* Left Column: Content */}
-      <div className="flex flex-col border-r border-pencil-700/10 dark:border-white/10 pb-20">
+      <div className="flex flex-col border-r border-pencil-700/10 dark:border-white/10">
 
         {/* Header Block */}
         <motion.div {...technologyReveal(!!reduceMotion)} className="p-8 lg:p-12 xl:p-16">
@@ -76,7 +76,7 @@ export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
       </div>
 
       {/* Right Column: Graphic */}
-      <div className="relative hidden h-[600px] border-pencil-700/10 dark:border-white/10 lg:block lg:h-auto">
+      <div className="relative hidden h-[400px] border-pencil-700/10 dark:border-white/10 lg:block lg:flex-1 lg:h-auto">
         <TechnologyFlowGraphic />
       </div>
     </section>

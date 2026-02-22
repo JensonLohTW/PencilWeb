@@ -55,15 +55,7 @@ export function TechnologyFlowGraphic() {
                 </motion.div>
             </motion.div>
 
-            {/* Floating Action Buttons mimicking Forma reference */}
-            <div className="absolute right-6 top-1/2 flex -translate-y-1/2 flex-col gap-3">
-                <button type="button" className="flex h-10 w-10 items-center justify-center rounded-full border border-pencil-900/20 dark:border-white/20 bg-pencil-900/5 dark:bg-white/5 text-pencil-950 dark:text-white shadow-xl backdrop-blur-md transition hover:bg-pencil-900/10 dark:hover:bg-white/20 hover:scale-110">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M3 3h18v18H3z M8 3v18 M16 3v18 M3 8h18 M3 16h18" /></svg>
-                </button>
-                <button type="button" className="flex h-10 w-10 items-center justify-center rounded-full border border-cta/50 bg-cta/10 dark:bg-cta/20 text-cta shadow-xl backdrop-blur-md transition hover:bg-cta/20 dark:hover:bg-cta/40 hover:scale-110">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" /></svg>
-                </button>
-            </div>
+
         </div>
     )
 }

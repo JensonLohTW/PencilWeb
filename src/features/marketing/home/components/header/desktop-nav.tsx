@@ -9,7 +9,7 @@ export function DesktopNav() {
     const [openItem, setOpenItem] = useState<string | null>(null)
 
     return (
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-10 items-center">
             {headerNavigation.map((item) =>
                 item.type === 'dropdown' ? (
                     <div
@@ -22,10 +22,10 @@ export function DesktopNav() {
                     >
                         <Link
                             href={item.href || '#'}
-                            className="flex items-center gap-x-1 text-sm/6 font-medium text-pencil-950 hover:text-pencil-600 dark:text-white dark:hover:text-gray-300 transition-colors"
+                            className="flex items-center gap-x-1 text-[13px] tracking-wide font-normal text-pencil-950/40 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white transition-all duration-300"
                         >
                             {t(item.nameKey)}
-                            <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-500" />
+                            <ChevronDownIcon aria-hidden="true" className="size-3 flex-none opacity-50" />
                         </Link>
 
                         {openItem === item.nameKey && (
@@ -66,7 +66,7 @@ export function DesktopNav() {
                     <Link
                         key={item.nameKey}
                         href={item.href || '#'}
-                        className="text-sm/6 font-medium text-pencil-950 hover:text-pencil-600 dark:text-white dark:hover:text-gray-300 transition-colors"
+                        className="text-[13px] tracking-wide font-normal text-pencil-950/40 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white transition-all duration-300"
                     >
                         {t(item.nameKey)}
                     </Link>

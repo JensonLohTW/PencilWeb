@@ -16,33 +16,26 @@ interface HeaderProps {
 export function Header({ utilities, actions }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { scrollY } = useScroll()
-    const [hidden, setHidden] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious()
-        if (latest > 100 && latest > previous!) {
-            setHidden(true)
-        } else {
-            setHidden(false)
-        }
+        setIsScrolled(latest > 50)
     })
 
     return (
         <motion.header
-            variants={{
-                visible: { y: 0 },
-                hidden: { y: "-100%" },
-            }}
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
             className={clsx(
-                "fixed inset-x-0 top-0 z-50",
-                "bg-white/70 backdrop-blur-md border-b border-gray-200",
-                "dark:bg-gray-900/70 dark:border-white/10"
+                "fixed z-50 transition-all duration-500",
+                isScrolled
+                    ? "top-4 inset-x-0 mx-auto w-[95%] max-w-7xl rounded-full bg-white/20 dark:bg-[#0A0A0A]/20 backdrop-blur-3xl backdrop-saturate-150 border border-white/40 dark:border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] shadow-2xl"
+                    : "top-0 inset-x-0 w-full bg-transparent border-transparent"
             )}
         >
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-                <div className="flex lg:flex-1">
+            <nav aria-label="Global" className={clsx(
+                "mx-auto flex w-full items-center justify-between transition-all duration-500",
+                isScrolled ? "px-6 py-3 lg:px-8" : "p-6 lg:px-12 max-w-[90rem]"
+            )}>
+                <div className="flex lg:flex-1 lg:justify-start">
                     <Logo className="-m-1.5 p-1.5" />
                 </div>
                 <div className="flex lg:hidden">
@@ -56,9 +49,11 @@ export function Header({ utilities, actions }: HeaderProps) {
                     </button>
                 </div>
 
-                <DesktopNav />
+                <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+                    <DesktopNav />
+                </div>
 
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 items-center">
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center">
                     {utilities}
                     {actions || (
                         <a href="#" className="text-sm/6 font-semibold text-white">
