@@ -12,6 +12,7 @@ import type {
   ProjectsSharedActions,
   HeroAnnouncement,
 } from '../types'
+import { getPath } from '@/shared/lib/paths'
 
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
@@ -63,7 +64,7 @@ const defaultContent: ProjectsTemplateContent = {
     primaryAction: { label: 'Get started', href: '/contact' },
     secondaryAction: { label: 'Learn more', href: '#project-list' },
     image: {
-      src: '/images/projects/verifiable-outcomes.png',
+      src: getPath('/images/projects/verifiable-outcomes.png'),
       alt: 'Project portfolio dashboard preview',
       width: 316,
       height: 684,
@@ -74,35 +75,35 @@ const defaultContent: ProjectsTemplateContent = {
       {
         name: 'Transistor',
         alt: 'Transistor',
-        src: '/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg',
+        src: getPath('/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg'),
         width: 158,
         height: 48,
       },
       {
         name: 'Reform',
         alt: 'Reform',
-        src: '/plus-assets/img/logos/158x48/reform-logo-gray-900.svg',
+        src: getPath('/plus-assets/img/logos/158x48/reform-logo-gray-900.svg'),
         width: 158,
         height: 48,
       },
       {
         name: 'Tuple',
         alt: 'Tuple',
-        src: '/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg',
+        src: getPath('/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg'),
         width: 158,
         height: 48,
       },
       {
         name: 'SavvyCal',
         alt: 'SavvyCal',
-        src: '/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg',
+        src: getPath('/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg'),
         width: 158,
         height: 48,
       },
       {
         name: 'Statamic',
         alt: 'Statamic',
-        src: '/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg',
+        src: getPath('/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg'),
         width: 158,
         height: 48,
       },
@@ -112,7 +113,7 @@ const defaultContent: ProjectsTemplateContent = {
     title: 'From PoC to Scale, Maintaining Predictable Delivery Rhythm',
     description: 'We advance projects through phased milestones, allowing both technical and business teams to review risks, progress, and outcomes at each node.',
     image: {
-      src: '/images/projects/delivery-rhythm.png',
+      src: getPath('/images/projects/delivery-rhythm.png'),
       alt: 'Project delivery management dashboard',
       width: 2432,
       height: 1442,
@@ -215,7 +216,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Established immersive simulation flow and operation checkpoints for pilot training.',
         outcome: 'Standardized training process',
         timeline: '10-14 weeks',
-        image: '/plus-assets/img/component-images/project-app-screenshot.png',
+        image: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
       },
       {
         id: 'flight-training',
@@ -226,7 +227,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Combined interactive lessons with mission scripts to improve training completion quality.',
         outcome: 'Higher course completion rate',
         timeline: '8-12 weeks',
-        image: '/plus-assets/img/component-images/mobile-app-screenshot.png',
+        image: getPath('/plus-assets/img/component-images/mobile-app-screenshot.png'),
       },
       {
         id: 'data-integration',
@@ -237,7 +238,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Integrated multi-source data pipelines and built stable contracts for downstream systems.',
         outcome: 'Improved integration efficiency',
         timeline: '6-10 weeks',
-        image: '/plus-assets/img/component-images/project-app-screenshot.png',
+        image: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
       },
       {
         id: 'ai-agent',
@@ -248,7 +249,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Built enterprise retrieval and action workflows for support and internal operations.',
         outcome: 'Reduced response and handling time',
         timeline: '6-12 weeks',
-        image: '/plus-assets/img/component-images/mobile-app-screenshot.png',
+        image: getPath('/plus-assets/img/component-images/mobile-app-screenshot.png'),
       },
     ],
   },
@@ -358,7 +359,7 @@ function parseImage(value: unknown, fallback: SectionImage): SectionImage {
   }
 
   return {
-    src: asString(record.src, fallback.src),
+    src: getPath(asString(record.src, fallback.src)),
     alt: asString(record.alt, fallback.alt),
     width: asNumber(record.width, fallback.width),
     height: asNumber(record.height, fallback.height),
@@ -394,7 +395,7 @@ function parseLogos(value: unknown, fallback: LogoItem[]): LogoItem[] {
       return {
         name: asString(record.name, itemFallback.name),
         alt: asString(record.alt, itemFallback.alt),
-        src: asString(record.src, itemFallback.src),
+        src: getPath(asString(record.src, itemFallback.src)),
         width: asNumber(record.width, itemFallback.width),
         height: asNumber(record.height, itemFallback.height),
       }
@@ -503,7 +504,7 @@ function parseProjectListItems(value: unknown, fallback: ProjectListItem[]): Pro
         summary: asString(record.summary, itemFallback.summary),
         outcome: asString(record.outcome, itemFallback.outcome),
         timeline: asString(record.timeline, itemFallback.timeline),
-        image: asString(record.image, itemFallback.image),
+        image: getPath(asString(record.image, itemFallback.image)),
       }
     })
     .filter((item): item is ProjectListItem => item !== null)

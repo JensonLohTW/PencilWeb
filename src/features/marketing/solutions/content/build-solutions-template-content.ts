@@ -10,6 +10,7 @@ import type {
   SolutionsTemplateContent,
   TestimonialContent,
 } from '../types'
+import { getPath } from '@/shared/lib/paths'
 
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
@@ -59,7 +60,7 @@ const defaultContent: SolutionsTemplateContent = {
     primaryAction: { label: 'Talk to an advisor', href: '/contact' },
     secondaryAction: { label: 'View details', href: '#features' },
     image: {
-      src: '/plus-assets/img/component-images/project-app-screenshot.png',
+      src: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
       alt: 'Solutions architecture overview',
       width: 2432,
       height: 1442,
@@ -67,11 +68,11 @@ const defaultContent: SolutionsTemplateContent = {
   },
   logoCloud: {
     logos: [
-      { name: 'Transistor', alt: 'Transistor', src: '/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg', width: 158, height: 48 },
-      { name: 'Reform', alt: 'Reform', src: '/plus-assets/img/logos/158x48/reform-logo-gray-900.svg', width: 158, height: 48 },
-      { name: 'Tuple', alt: 'Tuple', src: '/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg', width: 158, height: 48 },
-      { name: 'SavvyCal', alt: 'SavvyCal', src: '/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg', width: 158, height: 48 },
-      { name: 'Statamic', alt: 'Statamic', src: '/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg', width: 158, height: 48 },
+      { name: 'Transistor', alt: 'Transistor', src: getPath('/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg'), width: 158, height: 48 },
+      { name: 'Reform', alt: 'Reform', src: getPath('/plus-assets/img/logos/158x48/reform-logo-gray-900.svg'), width: 158, height: 48 },
+      { name: 'Tuple', alt: 'Tuple', src: getPath('/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg'), width: 158, height: 48 },
+      { name: 'SavvyCal', alt: 'SavvyCal', src: getPath('/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg'), width: 158, height: 48 },
+      { name: 'Statamic', alt: 'Statamic', src: getPath('/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg'), width: 158, height: 48 },
     ],
   },
   socialProof: {
@@ -112,7 +113,7 @@ const defaultContent: SolutionsTemplateContent = {
     authorName: 'Operations Director',
     authorRole: 'Aerospace Training Program',
     logo: {
-      src: '/plus-assets/img/logos/workcation-logo-white.svg',
+      src: getPath('/plus-assets/img/logos/workcation-logo-white.svg'),
       alt: 'Partner logo',
     },
     backgroundImage: {
@@ -249,7 +250,7 @@ function parseHero(value: unknown, fallback: HeroContent, actions: SharedActions
     primaryAction: parseActionLink(record.primaryAction, { ...fallback.primaryAction, label: actions.getStarted }),
     secondaryAction: parseActionLink(record.secondaryAction, { ...fallback.secondaryAction, label: actions.learnMore }),
     image: {
-      src: asString(imageRecord?.src, fallback.image.src),
+      src: getPath(asString(imageRecord?.src, fallback.image.src)),
       alt: asString(imageRecord?.alt, fallback.image.alt),
       width: asNumber(imageRecord?.width, fallback.image.width),
       height: asNumber(imageRecord?.height, fallback.image.height),
@@ -273,7 +274,7 @@ function parseLogos(value: unknown, fallback: LogoItem[]): LogoItem[] {
       return {
         name: asString(record.name, itemFallback.name),
         alt: asString(record.alt, itemFallback.alt),
-        src: asString(record.src, itemFallback.src),
+        src: getPath(asString(record.src, itemFallback.src)),
         width: asNumber(record.width, itemFallback.width),
         height: asNumber(record.height, itemFallback.height),
       }
@@ -321,11 +322,11 @@ function parseTestimonial(value: unknown, fallback: TestimonialContent): Testimo
     authorName: asString(record.authorName, fallback.authorName),
     authorRole: asString(record.authorRole, fallback.authorRole),
     logo: {
-      src: asString(logoRecord?.src, fallback.logo.src),
+      src: getPath(asString(logoRecord?.src, fallback.logo.src)),
       alt: asString(logoRecord?.alt, fallback.logo.alt),
     },
     backgroundImage: {
-      src: asString(backgroundRecord?.src, fallback.backgroundImage.src),
+      src: getPath(asString(backgroundRecord?.src, fallback.backgroundImage.src)),
       alt: asString(backgroundRecord?.alt, fallback.backgroundImage.alt),
     },
   }
