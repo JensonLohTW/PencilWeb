@@ -4,11 +4,12 @@ import { useRef, useMemo, useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { PointMaterial, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
+import { getPath } from '@/shared/lib/paths'
 
 function BustParticles() {
     const pointsRef = useRef<THREE.Points>(null!)
     const { mouse } = useThree()
-    const { scene } = useGLTF('/models/bust.glb')
+    const { scene } = useGLTF(getPath('/models/bust.glb'))
 
     const [positions, colors] = useMemo(() => {
         /* eslint-disable react-hooks/purity */
@@ -118,7 +119,7 @@ export function PointCloudBust() {
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true)
-        useGLTF.preload('/models/bust.glb')
+        useGLTF.preload(getPath('/models/bust.glb'))
     }, [])
 
     if (!mounted) return null

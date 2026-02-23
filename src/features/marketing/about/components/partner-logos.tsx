@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import { getPath } from '@/shared/lib/paths'
 
 export function PartnerLogos() {
     const t = useTranslations('pages.about.partners')
@@ -20,7 +21,7 @@ export function PartnerLogos() {
                     <StaggerItem className="col-span-2 lg:col-span-1">
                         <Image
                             alt="Transistor"
-                            src="/plus-assets/img/logos/158x48/transistor-logo-white.svg"
+                            src={getPath("/plus-assets/img/logos/158x48/transistor-logo-white.svg")}
                             width={158}
                             height={48}
                             className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
@@ -29,7 +30,7 @@ export function PartnerLogos() {
                     <StaggerItem className="col-span-2 lg:col-span-1">
                         <Image
                             alt="Reform"
-                            src="/plus-assets/img/logos/158x48/reform-logo-white.svg"
+                            src={getPath("/plus-assets/img/logos/158x48/reform-logo-white.svg")}
                             width={158}
                             height={48}
                             className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
@@ -38,7 +39,7 @@ export function PartnerLogos() {
                     <StaggerItem className="col-span-2 lg:col-span-1">
                         <Image
                             alt="Tuple"
-                            src="/plus-assets/img/logos/158x48/tuple-logo-white.svg"
+                            src={getPath("/plus-assets/img/logos/158x48/tuple-logo-white.svg")}
                             width={158}
                             height={48}
                             className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
@@ -47,7 +48,7 @@ export function PartnerLogos() {
                     <StaggerItem className="col-span-2 sm:col-start-2 lg:col-span-1">
                         <Image
                             alt="SavvyCal"
-                            src="/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
+                            src={getPath("/plus-assets/img/logos/158x48/savvycal-logo-white.svg")}
                             width={158}
                             height={48}
                             className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"
@@ -56,7 +57,7 @@ export function PartnerLogos() {
                     <StaggerItem className="col-span-2 col-start-2 sm:col-start-auto lg:col-span-1">
                         <Image
                             alt="Statamic"
-                            src="/plus-assets/img/logos/158x48/statamic-logo-white.svg"
+                            src={getPath("/plus-assets/img/logos/158x48/statamic-logo-white.svg")}
                             width={158}
                             height={48}
                             className="max-h-12 w-full object-contain opacity-80 transition-opacity hover:opacity-100"

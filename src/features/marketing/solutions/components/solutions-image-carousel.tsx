@@ -4,24 +4,25 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { getPath } from '@/shared/lib/paths'
 
 const slides = [
     {
         id: 'taipei',
         title: '台北市',
-        src: '/images/solutions/smart_space_iot_dashboard.png',
+        src: getPath('/images/solutions/smart_space_iot_dashboard.png'),
         alt: 'Smart Space IoT Dashboard in Taipei',
     },
     {
         id: 'new-taipei',
         title: '新北市',
-        src: '/images/solutions/ar_project_management_dashboard.png',
+        src: getPath('/images/solutions/ar_project_management_dashboard.png'),
         alt: 'AR Project Management Dashboard in New Taipei',
     },
     {
         id: 'kaohsiung',
         title: '高雄市',
-        src: '/images/solutions/vr_training_management_dashboard.png',
+        src: getPath('/images/solutions/vr_training_management_dashboard.png'),
         alt: 'VR Training Management Dashboard in Kaohsiung',
     },
 ]
