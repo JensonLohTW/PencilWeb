@@ -78,32 +78,38 @@
                     {
                         "number": "01",
                         "title": "XR",
-                        "subtitle": "VR/MR/AR"
+                        "subtitle": "VR/MR/AR",
+                        "description": "リモートコラボレーション、専門的なトレーニング、および3D可視化をカバーする没入型の仮想現実および複合現実体験を提供します。"
                     },
                     {
                         "number": "02",
                         "title": "AI",
-                        "subtitle": "LLM/Agent"
+                        "subtitle": "LLM/Agent",
+                        "description": "大規模言語モデルとインテリジェントエージェントを統合し、データ分析、意思決定の自動化を実現します。"
                     },
                     {
                         "number": "03",
                         "title": "IoT",
-                        "subtitle": "Sensors"
+                        "subtitle": "Sensors",
+                        "description": "高精度センサーネットワークを展開し、エンドデバイス間のスマートな相互接続を実現します。"
                     },
                     {
                         "number": "04",
                         "title": "5G/6G",
-                        "subtitle": "Network"
+                        "subtitle": "Network",
+                        "description": "次世代の高速かつ低遅延のネットワークアーキテクチャを採用し、大量データのリアルタイム伝送とシステムの安定性を確保します。"
                     },
                     {
                         "number": "05",
                         "title": "Haptic",
-                        "subtitle": "Feedback"
+                        "subtitle": "Feedback",
+                        "description": "高度な触覚フィードバック技術を導入し、仮想的な相互作用においてリアルな触感を再現し、没入感を高めます。"
                     },
                     {
                         "number": "06",
                         "title": "Digital Twin",
-                        "subtitle": "Simulation"
+                        "subtitle": "Simulation",
+                        "description": "高精度のデジタルツインモデルを構築し、リアルタイムのモニタリングやシミュレーション予測、運用の最適化をサポートします。"
                     }
                 ]
             },
@@ -246,6 +252,26 @@
                         "number": "04",
                         "label": "拠点",
                         "value": "TW"
+                    },
+                    {
+                        "number": "05",
+                        "label": "技術特許と認証",
+                        "value": "3+"
+                    },
+                    {
+                        "number": "06",
+                        "label": "空間センシング精度",
+                        "value": "ミリメートル級"
+                    },
+                    {
+                        "number": "07",
+                        "label": "システム可用性",
+                        "value": "99.9%"
+                    },
+                    {
+                        "number": "08",
+                        "label": "顧客満足度",
+                        "value": "98%"
                     }
                 ]
             }

@@ -3,7 +3,7 @@
 import { Hero } from '@/features/marketing/home/components/hero'
 import { LogoCloud } from '@/features/marketing/home/components/logo-cloud'
 import { FeatureGrid } from '@/features/marketing/home/components/feature-grid'
-import { FeatureScreenshot } from '@/features/marketing/home/components/feature-screenshot'
+import { Technology } from '@/features/marketing/home/components/technology'
 import { Stats } from '@/features/marketing/home/components/stats'
 import { CTA } from '@/features/marketing/home/components/cta'
 
@@ -14,7 +14,7 @@ export default function Page() {
         <Hero />
         <LogoCloud />
         <FeatureGrid />
-        <FeatureScreenshot />
+        <Technology />
         <Stats />
         <CTA />
       </main>

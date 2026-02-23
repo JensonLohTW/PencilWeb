@@ -1,35 +1,68 @@
 import { Link } from '@/i18n/routing'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { clsx } from 'clsx/lite'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { headerNavigation } from './header-data'
 
-export function DesktopNav() {
+const DROPDOWN_CLOSE_DELAY_MS = 140
+
+interface DesktopNavProps {
+    compact?: boolean
+}
+
+export function DesktopNav({ compact = false }: DesktopNavProps) {
     const t = useTranslations()
     const [openItem, setOpenItem] = useState<string | null>(null)
+    const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    const clearCloseTimer = () => {
+        if (!closeTimerRef.current) return
+        clearTimeout(closeTimerRef.current)
+        closeTimerRef.current = null
+    }
+
+    const handleOpen = (nameKey: string) => {
+        clearCloseTimer()
+        setOpenItem(nameKey)
+    }
+
+    const handleCloseWithDelay = (nameKey: string) => {
+        clearCloseTimer()
+        closeTimerRef.current = setTimeout(() => {
+            setOpenItem((current) => (current === nameKey ? null : current))
+            closeTimerRef.current = null
+        }, DROPDOWN_CLOSE_DELAY_MS)
+    }
+
+    useEffect(() => {
+        return () => clearCloseTimer()
+    }, [])
 
     return (
-        <div className="hidden lg:flex lg:gap-x-10 items-center">
+        <div className={clsx('hidden items-center whitespace-nowrap lg:flex', compact ? 'lg:gap-x-7' : 'lg:gap-x-10')}>
             {headerNavigation.map((item) =>
                 item.type === 'dropdown' ? (
                     <div
                         key={item.nameKey}
                         className="relative"
-                        onMouseEnter={() => setOpenItem(item.nameKey)}
-                        onMouseLeave={() =>
-                            setOpenItem((current) => (current === item.nameKey ? null : current))
-                        }
+                        onMouseEnter={() => handleOpen(item.nameKey)}
+                        onMouseLeave={() => handleCloseWithDelay(item.nameKey)}
                     >
                         <Link
                             href={item.href || '#'}
-                            className="flex items-center gap-x-1 text-[13px] tracking-wide font-normal text-pencil-950/40 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white transition-all duration-300"
+                            className="flex items-center gap-x-1 whitespace-nowrap text-[13px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                         >
                             {t(item.nameKey)}
                             <ChevronDownIcon aria-hidden="true" className="size-3 flex-none opacity-50" />
                         </Link>
 
                         {openItem === item.nameKey && (
-                            <div className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white dark:bg-gray-800 shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10">
+                            <div
+                                className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white dark:bg-gray-800 shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10"
+                                onMouseEnter={() => handleOpen(item.nameKey)}
+                                onMouseLeave={() => handleCloseWithDelay(item.nameKey)}
+                            >
                                 <div className="p-4">
                                     {item.children?.map((child) => (
                                         <div
@@ -66,7 +99,7 @@ export function DesktopNav() {
                     <Link
                         key={item.nameKey}
                         href={item.href || '#'}
-                        className="text-[13px] tracking-wide font-normal text-pencil-950/40 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white transition-all duration-300"
+                        className="whitespace-nowrap text-[13px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                     >
                         {t(item.nameKey)}
                     </Link>

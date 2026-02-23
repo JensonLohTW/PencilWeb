@@ -78,32 +78,38 @@
           {
             "number": "01",
             "title": "XR",
-            "subtitle": "VR/MR/AR"
+            "subtitle": "VR/MR/AR",
+            "description": "Delivering immersive virtual and mixed reality experiences, covering remote collaboration, professional training, and 3D visualization."
           },
           {
             "number": "02",
             "title": "AI",
-            "subtitle": "LLM/Agent"
+            "subtitle": "LLM/Agent",
+            "description": "Integrating LLMs and intelligent agents to empower data analysis, automated decision-making, and seamless interaction."
           },
           {
             "number": "03",
             "title": "IoT",
-            "subtitle": "Sensors"
+            "subtitle": "Sensors",
+            "description": "Deploying high-precision sensor networks for real-time environmental data collection and smart interconnection."
           },
           {
             "number": "04",
             "title": "5G/6G",
-            "subtitle": "Network"
+            "subtitle": "Network",
+            "description": "Adopting next-generation high-speed, low-latency network architectures to ensure real-time transmission and system stability."
           },
           {
             "number": "05",
             "title": "Haptic",
-            "subtitle": "Feedback"
+            "subtitle": "Feedback",
+            "description": "Introducing advanced haptic feedback technology to recreate realistic touch sensations in virtual interactions."
           },
           {
             "number": "06",
             "title": "Digital Twin",
-            "subtitle": "Simulation"
+            "subtitle": "Simulation",
+            "description": "Constructing high-fidelity digital twin models to support real-time monitoring, predictive simulation, and operational optimization."
           }
         ]
       },
@@ -246,6 +252,26 @@
             "number": "04",
             "label": "Service Region",
             "value": "TW / APAC"
+          },
+          {
+            "number": "05",
+            "label": "Tech Patents & Certs",
+            "value": "3+"
+          },
+          {
+            "number": "06",
+            "label": "Spatial Accuracy",
+            "value": "Millimeter"
+          },
+          {
+            "number": "07",
+            "label": "System Uptime",
+            "value": "99.9%"
+          },
+          {
+            "number": "08",
+            "label": "Client Satisfaction",
+            "value": "98%"
           }
         ]
       }

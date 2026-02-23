@@ -1,11 +1,21 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 export function JobOpenings() {
     const t = useTranslations('pages.about.jobs')
     const jobs = [0, 1, 2]
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+    const toggleAccordion = (index: number) => {
+        setExpandedIndex(expandedIndex === index ? null : index)
+    }
 
     return (
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 pb-32">
@@ -30,30 +40,66 @@ export function JobOpenings() {
                 <div className="w-full lg:max-w-xl lg:flex-auto">
                     <h3 className="sr-only">Job openings</h3>
                     <StaggerContainer className="-my-8 divide-y divide-gray-200 dark:divide-gray-800 transition-colors duration-300">
-                        {jobs.map((index) => (
-                            <StaggerItem key={index} as="article" className="py-8">
-                                <dl className="relative flex flex-wrap gap-x-3">
-                                    <dt className="sr-only">Role</dt>
-                                    <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
-                                        <a href="#" className="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
-                                            {t(`items.${index}.role`)}
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                        </a>
-                                    </dd>
-                                    <dt className="sr-only">Description</dt>
-                                    <dd className="mt-2 w-full flex-none text-base/7 text-gray-600 dark:text-gray-400 transition-colors duration-300">{t(`items.${index}.description`)}</dd>
-                                    <dt className="sr-only">Salary</dt>
-                                    <dd className="mt-4 text-base/7 font-semibold text-gray-900 dark:text-white transition-colors duration-300">{t(`items.${index}.salary`)}</dd>
-                                    <dt className="sr-only">Location</dt>
-                                    <dd className="mt-4 flex items-center gap-x-3 text-base/7 text-gray-500 dark:text-gray-400 transition-colors duration-300">
-                                        <svg viewBox="0 0 2 2" aria-hidden="true" className="size-0.5 flex-none fill-current">
-                                            <circle r={1} cx={1} cy={1} />
-                                        </svg>
-                                        {t(`items.${index}.location`)}
-                                    </dd>
-                                </dl>
-                            </StaggerItem>
-                        ))}
+                        {jobs.map((index) => {
+                            const isExpanded = expandedIndex === index
+                            return (
+                                <StaggerItem key={index} as="article" className="py-8">
+                                    <dl className="relative flex flex-col gap-x-3">
+                                        <dt className="sr-only">Role</dt>
+                                        <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900 dark:text-white transition-colors duration-300">
+                                            <button
+                                                onClick={() => toggleAccordion(index)}
+                                                className="group flex w-full items-center justify-between text-left hover:text-accent-600 dark:hover:text-accent-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded-md"
+                                                aria-expanded={isExpanded}
+                                                aria-controls={`job-details-${index}`}
+                                            >
+                                                <span>{t(`items.${index}.role`)}</span>
+                                                <span className="ml-6 flex h-7 items-center">
+                                                    <ChevronDownIcon
+                                                        className={`${isExpanded ? '-rotate-180' : 'rotate-0'
+                                                            } h-6 w-6 transform text-gray-400 dark:text-gray-500 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-all duration-300 ease-in-out`}
+                                                        aria-hidden="true"
+                                                    />
+                                                </span>
+                                            </button>
+                                        </dd>
+
+                                        <AnimatePresence initial={false}>
+                                            {isExpanded && (
+                                                <motion.dd
+                                                    id={`job-details-${index}`}
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="pt-4 pb-2">
+                                                        <dt className="sr-only">Description</dt>
+                                                        <dd className="w-full flex-none text-base/7 text-gray-600 dark:text-gray-400 transition-colors duration-300">
+                                                            {t(`items.${index}.description`)}
+                                                        </dd>
+
+                                                        <dt className="sr-only">Salary</dt>
+                                                        <dd className="mt-4 text-base/7 font-semibold text-gray-900 dark:text-white transition-colors duration-300">
+                                                            {t(`items.${index}.salary`)}
+                                                        </dd>
+
+                                                        <dt className="sr-only">Location</dt>
+                                                        <dd className="mt-4 flex items-center gap-x-3 text-base/7 text-gray-500 dark:text-gray-400 transition-colors duration-300">
+                                                            <svg viewBox="0 0 2 2" aria-hidden="true" className="size-0.5 flex-none fill-current">
+                                                                <circle r={1} cx={1} cy={1} />
+                                                            </svg>
+                                                            {t(`items.${index}.location`)}
+                                                        </dd>
+                                                    </div>
+                                                </motion.dd>
+                                            )}
+                                        </AnimatePresence>
+                                    </dl>
+                                </StaggerItem>
+                            )
+                        })}
                     </StaggerContainer>
                     <div className="mt-8 flex border-t border-gray-200 pt-8 dark:border-gray-800 transition-colors duration-300">
                         <a href="#" className="text-sm/6 font-semibold text-accent-600 hover:text-accent-500 dark:text-accent-400 dark:hover:text-accent-300 transition-colors">

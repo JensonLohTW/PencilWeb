@@ -36,7 +36,7 @@ export function Header({ utilities, actions }: HeaderProps) {
                 isScrolled ? "px-6 py-3 lg:px-8" : "p-6 lg:px-12 max-w-[90rem]"
             )}>
                 <div className="flex lg:flex-1 lg:justify-start">
-                    <Logo className="-m-1.5 p-1.5" />
+                    <Logo compact={isScrolled} className="-m-1.5 p-1.5" />
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -50,10 +50,10 @@ export function Header({ utilities, actions }: HeaderProps) {
                 </div>
 
                 <div className="hidden lg:flex lg:flex-1 lg:justify-center">
-                    <DesktopNav />
+                    <DesktopNav compact={isScrolled} />
                 </div>
 
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center">
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center whitespace-nowrap">
                     {utilities}
                     {actions || (
                         <a href="#" className="text-sm/6 font-semibold text-white">

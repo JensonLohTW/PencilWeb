@@ -77,32 +77,38 @@
           {
             "number": "01",
             "title": "XR",
-            "subtitle": "VR/MR/AR"
+            "subtitle": "VR/MR/AR",
+            "description": "提供沉浸式虛擬與混合實境體驗，涵蓋遠端協作、專業培訓與 3D 視覺化呈現。"
           },
           {
             "number": "02",
             "title": "AI",
-            "subtitle": "LLM/Agent"
+            "subtitle": "LLM/Agent",
+            "description": "整合大型語言模型與智慧代理，賦能數據分析、自動化決策與互動。"
           },
           {
             "number": "03",
             "title": "IoT",
-            "subtitle": "Sensors"
+            "subtitle": "Sensors",
+            "description": "佈建高精度感測器網絡，即時蒐集環境數據，實現終端設備的智慧互聯。"
           },
           {
             "number": "04",
             "title": "5G/6G",
-            "subtitle": "Network"
+            "subtitle": "Network",
+            "description": "採用新世代高速低延遲網路架構，確保海量數據的即時傳輸與系統穩定。"
           },
           {
             "number": "05",
             "title": "Haptic",
-            "subtitle": "Feedback"
+            "subtitle": "Feedback",
+            "description": "導入先進的觸覺回饋技術，在虛擬互動中重現真實觸感，提升沉浸度。"
           },
           {
             "number": "06",
             "title": "Digital Twin",
-            "subtitle": "Simulation"
+            "subtitle": "Simulation",
+            "description": "建構場域的高擬真數位雙生模型，支援即時監控、模擬預測與營運最佳化。"
           }
         ]
       },
@@ -245,6 +251,26 @@
             "number": "04",
             "label": "服務地區",
             "value": "TW / APAC"
+          },
+          {
+            "number": "05",
+            "label": "技術專利與認證",
+            "value": "3+ 項"
+          },
+          {
+            "number": "06",
+            "label": "空間感測精度",
+            "value": "毫米級"
+          },
+          {
+            "number": "07",
+            "label": "系統可用性",
+            "value": "99.9%"
+          },
+          {
+            "number": "08",
+            "label": "客戶滿意度",
+            "value": "98%"
           }
         ]
       }

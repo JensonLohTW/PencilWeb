@@ -1,13 +1,25 @@
 'use client'
 
 import type { TechnologyArchitectureSectionProps } from '@/features/marketing/technology/types'
+import { cn } from '@/shared/lib/cn'
 import { motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
 import { technologyReveal } from './technology-motion'
 import { TechnologySectionShell } from './technology-section-shell'
 import { ParallaxLayer } from '@/shared/ui/animations/parallax-layer'
 
 export function TechnologyArchitectureSection({ architecture }: TechnologyArchitectureSectionProps) {
   const reduceMotion = useReducedMotion()
+  const [activeLayerIndex, setActiveLayerIndex] = useState(0)
+
+  const layoutTransition = reduceMotion
+    ? { duration: 0 }
+    : {
+        type: 'spring' as const,
+        stiffness: 220,
+        damping: 24,
+        mass: 0.7,
+      }
 
   return (
     <TechnologySectionShell id="tech-architecture" className="relative overflow-hidden border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white">
@@ -38,36 +50,79 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
         </p>
       </motion.div>
 
-      <div className="relative z-10 mt-16 flex flex-col border-t border-pencil-700/10 dark:border-white/10">
+      <div className="relative z-10 mt-16 grid grid-cols-1 gap-4 border-t border-pencil-700/10 pt-6 dark:border-white/10 md:grid-cols-12 md:gap-5 md:pt-8">
         {architecture.layers.map((layer, index) => (
           <motion.article
             key={layer.layer}
+            layout
             {...technologyReveal(!!reduceMotion, { delay: index * 0.06 })}
-            className="group relative flex flex-col border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] p-8 transition-colors duration-300 hover:bg-pencil-50 dark:hover:bg-white/[0.02] lg:flex-row lg:items-center lg:p-12"
+            transition={layoutTransition}
+            className={cn(
+              'group relative overflow-hidden border border-pencil-700/10 bg-white/95 dark:border-white/10 dark:bg-[#0A0A0A]/95',
+              'transition-colors duration-300 hover:bg-pencil-50 dark:hover:bg-white/[0.02]',
+              'md:col-span-6 lg:col-span-4',
+              index === activeLayerIndex && 'md:col-span-12 lg:col-span-8'
+            )}
           >
-            {/* Left structural node */}
-            <div className="mb-6 flex shrink-0 items-center gap-6 lg:mb-0 lg:w-64">
-              <div className="flex h-12 w-12 items-center justify-center border border-pencil-700/20 dark:border-white/20 bg-white dark:bg-[#0A0A0A] transition-colors duration-300 group-hover:border-cta group-hover:bg-cta/10">
-                <div className="h-1.5 w-1.5 bg-pencil-300 dark:bg-white/50 group-hover:bg-cta dark:group-hover:bg-cta" />
+            <button
+              id={`tech-architecture-trigger-${index}`}
+              type="button"
+              aria-expanded={index === activeLayerIndex}
+              aria-controls={`tech-architecture-panel-${index}`}
+              onClick={() => setActiveLayerIndex(index)}
+              className="w-full cursor-pointer p-6 text-left outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-cta/70 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0A0A0A] sm:p-7 lg:p-8"
+            >
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center border border-pencil-700/20 bg-white transition-colors duration-300 group-hover:border-cta group-hover:bg-cta/10 dark:border-white/20 dark:bg-[#0A0A0A]">
+                    <div className="h-1.5 w-1.5 bg-pencil-300 transition-colors duration-300 group-hover:bg-cta dark:bg-white/50 dark:group-hover:bg-cta" />
+                  </div>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-pencil-400 transition-colors duration-200 group-hover:text-pencil-900 dark:text-[#666] dark:group-hover:text-white">
+                    {layer.layer}
+                  </p>
+                </div>
+
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    'inline-flex h-7 w-7 items-center justify-center border border-pencil-700/15 font-mono text-xs text-pencil-500 transition-transform duration-300 dark:border-white/15 dark:text-[#888]',
+                    index === activeLayerIndex && 'rotate-45 text-cta dark:text-cta'
+                  )}
+                >
+                  +
+                </span>
               </div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-pencil-400 dark:text-[#666] transition-colors duration-200 group-hover:text-pencil-900 dark:group-hover:text-white">
-                {layer.layer}
-              </p>
-            </div>
 
-            {/* Vertical connector line (desktop) */}
-            <div className="absolute top-0 bottom-0 left-14 hidden w-px bg-pencil-700/10 dark:bg-white/10 lg:block lg:group-last:bottom-1/2" />
-
-            <div className="lg:pl-16">
               <h3 className="text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white uppercase">{layer.title}</h3>
-              <p className="mt-4 max-w-3xl font-mono text-[11px] leading-relaxed text-pencil-500 dark:text-[#888] uppercase tracking-wide">
+              <p
+                className={cn(
+                  'mt-4 font-mono text-[11px] uppercase tracking-wide text-pencil-500 transition-opacity duration-300 dark:text-[#888]',
+                  index === activeLayerIndex ? 'opacity-40' : 'opacity-100'
+                )}
+              >
                 {layer.description}
               </p>
-            </div>
+            </button>
+
+            <motion.div
+              id={`tech-architecture-panel-${index}`}
+              role="region"
+              aria-labelledby={`tech-architecture-trigger-${index}`}
+              initial={false}
+              animate={index === activeLayerIndex ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+              transition={reduceMotion ? { duration: 0 } : { duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className={cn(
+                'overflow-hidden border-t border-pencil-700/10 dark:border-white/10',
+                index === activeLayerIndex ? 'pointer-events-auto' : 'pointer-events-none'
+              )}
+            >
+              <div className="px-6 pb-7 pt-5 sm:px-7 lg:px-8">
+                <p className="max-w-3xl font-mono text-xs leading-relaxed text-pencil-600 dark:text-[#999]">{layer.description}</p>
+              </div>
+            </motion.div>
           </motion.article>
         ))}
       </div>
     </TechnologySectionShell>
   )
 }
-
