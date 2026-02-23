@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
   // GitHub Pages 不支援 Next.js Image Optimization API，使用靜態圖片
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 
   // 禁用 trailing slashes

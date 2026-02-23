@@ -14,6 +14,15 @@
   "language": {
     "label": "語言"
   },
+  "motion": {
+    "label": "動畫效果",
+    "system": "跟隨系統",
+    "on": "開啟",
+    "off": "關閉"
+  },
+  "brand": {
+    "tagline": "空間動態科技"
+  },
   "home": {
     "hero": {
       "eyebrow": "XR • AI • IoT",
@@ -47,6 +56,7 @@
       "agent": "AI Agent 系統"
     },
     "legal": "法律",
+    "faq": "常見問題",
     "links": {
       "privacy": "隱私權政策",
       "terms": "服務條款"
@@ -57,13 +67,79 @@
       "hero": {
         "eyebrow": "XR • AI • IoT",
         "headline": "一切空間的動態都來自於 Pencil",
-        "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。"
+        "subheadline": "我們將 AI 與 XR 技術注入真實場域，打造可落地的沉浸式互動與智慧空間體驗。",
+        "cta": "探索解決方案"
       },
       "technology": {
-        "title": "技術架構"
+        "title": "技術架構",
+        "description": "我們以模組化架構整合 XR、AI、IoT 與網路層能力，確保系統可擴充、可維運。",
+        "list": [
+          {
+            "number": "01",
+            "title": "XR",
+            "subtitle": "VR/MR/AR",
+            "description": "提供沉浸式虛擬與混合實境體驗，涵蓋遠端協作、專業培訓與 3D 視覺化呈現。"
+          },
+          {
+            "number": "02",
+            "title": "AI",
+            "subtitle": "LLM/Agent",
+            "description": "整合大型語言模型與智慧代理，賦能數據分析、自動化決策與互動。"
+          },
+          {
+            "number": "03",
+            "title": "IoT",
+            "subtitle": "Sensors",
+            "description": "佈建高精度感測器網絡，即時蒐集環境數據，實現終端設備的智慧互聯。"
+          },
+          {
+            "number": "04",
+            "title": "5G/6G",
+            "subtitle": "Network",
+            "description": "採用新世代高速低延遲網路架構，確保海量數據的即時傳輸與系統穩定。"
+          },
+          {
+            "number": "05",
+            "title": "Haptic",
+            "subtitle": "Feedback",
+            "description": "導入先進的觸覺回饋技術，在虛擬互動中重現真實觸感，提升沉浸度。"
+          },
+          {
+            "number": "06",
+            "title": "Digital Twin",
+            "subtitle": "Simulation",
+            "description": "建構場域的高擬真數位雙生模型，支援即時監控、模擬預測與營運最佳化。"
+          }
+        ]
       },
       "clients": {
-        "title": "合作夥伴"
+        "title": "合作夥伴",
+        "list": [
+          {
+            "name": "Client A",
+            "sector": "國防"
+          },
+          {
+            "name": "Client B",
+            "sector": "醫療"
+          },
+          {
+            "name": "Client C",
+            "sector": "教育"
+          },
+          {
+            "name": "Client D",
+            "sector": "工業"
+          },
+          {
+            "name": "Client E",
+            "sector": "零售"
+          },
+          {
+            "name": "Client F",
+            "sector": "政府"
+          }
+        ]
       },
       "solutions": {
         "eyebrow": "我們的解決方案",
@@ -151,6 +227,52 @@
         "subheadline": "無論是 VR 訓練、AR 導覽、智慧空間或 AI 應用，我們都能為您打造可落地的解決方案。",
         "ctaText": "立即諮詢",
         "secondaryText": "探索解決方案"
+      },
+      "stats": {
+        "title": "公司數據",
+        "eyebrow": "數據概覽",
+        "items": [
+          {
+            "number": "01",
+            "label": "已交付案型",
+            "value": "15+"
+          },
+          {
+            "number": "02",
+            "label": "平均啟動週期",
+            "value": "2 週"
+          },
+          {
+            "number": "03",
+            "label": "覆蓋技術領域",
+            "value": "XR+AI+IoT"
+          },
+          {
+            "number": "04",
+            "label": "服務地區",
+            "value": "TW / APAC"
+          },
+          {
+            "number": "05",
+            "label": "技術專利與認證",
+            "value": "3+ 項"
+          },
+          {
+            "number": "06",
+            "label": "空間感測精度",
+            "value": "毫米級"
+          },
+          {
+            "number": "07",
+            "label": "系統可用性",
+            "value": "99.9%"
+          },
+          {
+            "number": "08",
+            "label": "客戶滿意度",
+            "value": "98%"
+          }
+        ]
       }
     },
     "solutions": {
@@ -414,6 +536,526 @@
         ]
       }
     },
+    "solutionsTemplate": {
+      "hero": {
+        "title": "以場域需求出發，選對解決方案",
+        "description": "從沉浸式訓練、現場導覽到營運自動化，我們以可量化目標規劃導入路徑，讓每個方案都能在真實情境穩定落地。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看方案細節",
+          "href": "#features"
+        },
+        "image": {
+          "src": "/plus-assets/img/component-images/project-app-screenshot.png",
+          "alt": "解決方案平台畫面預覽",
+          "width": 2432,
+          "height": 1442
+        }
+      },
+      "logoCloud": {
+        "logos": [
+          {
+            "name": "Transistor",
+            "alt": "Transistor",
+            "src": "/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Reform",
+            "alt": "Reform",
+            "src": "/plus-assets/img/logos/158x48/reform-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Tuple",
+            "alt": "Tuple",
+            "src": "/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "SavvyCal",
+            "alt": "SavvyCal",
+            "src": "/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Statamic",
+            "alt": "Statamic",
+            "src": "/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          }
+        ]
+      },
+      "socialProof": {
+        "text": "已在國防、製造、醫療與教育場域交付 15+ 專案，並以一致流程維持可預測時程與交付品質。",
+        "linkLabel": "閱讀案例",
+        "linkHref": "/projects"
+      },
+      "features": {
+        "eyebrow": "四大核心方案",
+        "title": "以可落地成果對應你的場域需求",
+        "description": "每個模組可獨立導入，也可依里程碑串接成分階段路線，降低一次性大改造風險。",
+        "items": [
+          {
+            "name": "VR/MR 沉浸式訓練",
+            "description": "建立高擬真訓練場景與標準化操作流程，透過即時回饋提升訓練品質與安全性。",
+            "icon": "cloud"
+          },
+          {
+            "name": "AR 視覺化與導覽",
+            "description": "將 3D 模型與流程資訊疊加到現場，提升維護、導覽與教學情境的決策效率。",
+            "icon": "lock"
+          },
+          {
+            "name": "智慧空間 IoT 整合",
+            "description": "串接感測器、閘道器與控制系統，讓空間狀態可被即時監測並觸發自動化反應。",
+            "icon": "queue"
+          },
+          {
+            "name": "中小企業 AI Agent",
+            "description": "導入可客製 AI 助理，支援客服、知識查詢與流程自動化，降低重複作業成本。",
+            "icon": "security"
+          }
+        ]
+      },
+      "testimonial": {
+        "quote": "Pencil 在 PoC 階段就把需求拆成可執行里程碑，讓我們從驗證到正式上線都能穩定推進，並持續看見可量化成效。",
+        "authorName": "營運總監",
+        "authorRole": "航太訓練專案",
+        "logo": {
+          "src": "/plus-assets/img/logos/workcation-logo-white.svg",
+          "alt": "Workcation"
+        },
+        "backgroundImage": {
+          "src": "https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?auto=format&fit=crop&w=1216&q=80",
+          "alt": "團隊協作場景"
+        }
+      },
+      "pricing": {
+        "eyebrow": "合作方案",
+        "title": "從驗證到擴展的三段式導入",
+        "description": "我們採階段式交付，不以固定訂閱限制你；每一階段都對應明確目標、時程與可驗證成果。",
+        "mostPopularLabel": "推薦路徑",
+        "perMonthLabel": "典型時程",
+        "tiers": [
+          {
+            "name": "PoC 驗證",
+            "id": "tier-poc",
+            "href": "/contact",
+            "priceMonthly": "4-6 週",
+            "description": "先驗證技術可行性與商業效益，快速降低導入不確定性。",
+            "features": [
+              "需求訪談與場景盤點",
+              "原型與技術可行性驗證",
+              "初版架構與導入建議",
+              "進入 Pilot 的決策報告"
+            ],
+            "mostPopular": false
+          },
+          {
+            "name": "Pilot 導入",
+            "id": "tier-pilot",
+            "href": "/contact",
+            "priceMonthly": "8-12 週",
+            "description": "在單一部門或據點上線可運作版本，建立可衡量 KPI。",
+            "features": [
+              "完整功能開發與資料串接",
+              "現場部署與教育訓練",
+              "儀表板與成效指標追蹤",
+              "迭代優化與風險控管"
+            ],
+            "mostPopular": true
+          },
+          {
+            "name": "Scale 擴展",
+            "id": "tier-scale",
+            "href": "/contact",
+            "priceMonthly": "12-20 週",
+            "description": "將已驗證能力擴展到多部門與跨系統場景，建立長期維運體系。",
+            "features": [
+              "多據點部署與高可用架構",
+              "跨系統治理與權限流程",
+              "維運制度與效能優化",
+              "季度 roadmap 與持續改進"
+            ],
+            "mostPopular": false
+          }
+        ]
+      },
+      "faq": {
+        "title": "常見問題",
+        "items": [
+          {
+            "id": 1,
+            "question": "第一次導入建議從哪個方案開始？",
+            "answer": "建議先從需求明確、可快速驗證的場景開始，例如 AR 視覺化或 AI 知識助理，再逐步擴展到 IoT 與 XR。"
+          },
+          {
+            "id": 2,
+            "question": "可以同時規劃多個方案嗎？",
+            "answer": "可以。我們會先定義第一階段 MVP，再按優先級切分里程碑，讓每階段都可被驗證並可控擴展。"
+          },
+          {
+            "id": 3,
+            "question": "是否能整合既有系統與 API？",
+            "answer": "可以。我們會先盤點現有架構，再設計資料流與介接層，確保新舊系統能穩定共存。"
+          },
+          {
+            "id": 4,
+            "question": "XR 或 IoT 專案的硬體怎麼評估？",
+            "answer": "在規劃階段就會提供設備規格、相容性與部署建議，避免開發後才遇到整合瓶頸。"
+          },
+          {
+            "id": 5,
+            "question": "上線後是否提供維護與優化？",
+            "answer": "提供。可依需求選擇監控、故障排除、版本更新與效能優化等維運服務。"
+          },
+          {
+            "id": 6,
+            "question": "如何確保技術與業務目標同步？",
+            "answer": "我們透過固定里程碑檢視、需求文件版本控管與 KPI 追蹤，確保每階段成果都對應商業目標。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "找到適合的路徑了嗎？讓我們一起定義導入計畫。",
+        "description": "告訴我們你的場域目標與時程，我們會提供可執行的技術架構、分階段里程碑與交付建議。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看方案細節",
+          "href": "/solutions#pricing"
+        }
+      },
+      "actions": {
+        "getStarted": "聯絡顧問",
+        "learnMore": "查看方案細節",
+        "buyPlan": "預約諮詢"
+      }
+    },
+    "projectsTemplate": {
+      "hero": {
+        "announcement": {
+          "label": "精選案例",
+          "linkLabel": "查看代表專案",
+          "href": "#project-showcase"
+        },
+        "title": "用可驗證成果，證明專案交付能力",
+        "description": "從飛行模擬、資料整合到企業 AI Agent，我們以一致的方法拆解需求、落實里程碑並交付可衡量成效。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "瀏覽專案清單",
+          "href": "#project-list"
+        },
+        "image": {
+          "src": "/images/projects/verifiable-outcomes.png",
+          "alt": "專案組合儀表板預覽",
+          "width": 316,
+          "height": 684
+        }
+      },
+      "logoCloud": {
+        "logos": [
+          {
+            "name": "Transistor",
+            "alt": "Transistor",
+            "src": "/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Reform",
+            "alt": "Reform",
+            "src": "/plus-assets/img/logos/158x48/reform-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Tuple",
+            "alt": "Tuple",
+            "src": "/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "SavvyCal",
+            "alt": "SavvyCal",
+            "src": "/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          },
+          {
+            "name": "Statamic",
+            "alt": "Statamic",
+            "src": "/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg",
+            "width": 158,
+            "height": 48
+          }
+        ]
+      },
+      "featureHighlight": {
+        "title": "從 PoC 到上線，維持可預測的交付節奏",
+        "description": "我們以分階段里程碑推進專案，讓技術與業務團隊都能在每個節點檢視風險、進度與成果。",
+        "image": {
+          "src": "/images/projects/delivery-rhythm.png",
+          "alt": "專案交付管理儀表板",
+          "width": 2432,
+          "height": 1442
+        },
+        "items": [
+          {
+            "name": "里程碑可檢視",
+            "description": "每個階段都有明確目標、驗收條件與決策點，避免需求漂移。",
+            "icon": "cloud"
+          },
+          {
+            "name": "跨系統可整合",
+            "description": "先確認 API 契約與依賴關係，再進入擴展階段，降低後期重工。",
+            "icon": "lock"
+          },
+          {
+            "name": "品質可追蹤",
+            "description": "以 KPI 與例行風險檢視維持交付品質，確保上線可持續運作。",
+            "icon": "server"
+          }
+        ]
+      },
+      "featureGrid": {
+        "eyebrow": "交付能力",
+        "title": "跨專案共用的核心實作能力",
+        "description": "不同產業場域有不同需求，但我們以一致的執行方法處理 XR、資料與 AI 導入。",
+        "items": [
+          {
+            "name": "場景盤點與需求界定",
+            "description": "先釐清業務目標、限制條件與部署情境，再啟動實作。",
+            "href": "/contact",
+            "icon": "cloud",
+            "linkLabel": "了解更多"
+          },
+          {
+            "name": "跨系統介接落地",
+            "description": "建立穩定資料流與服務介面，讓既有系統與新模組可持續共存。",
+            "href": "/contact",
+            "icon": "lock",
+            "linkLabel": "了解更多"
+          },
+          {
+            "name": "上線後持續優化",
+            "description": "上線後持續調校效能與流程治理，維持服務穩定與擴展性。",
+            "href": "/contact",
+            "icon": "sync",
+            "linkLabel": "了解更多"
+          }
+        ]
+      },
+      "showcase": {
+        "eyebrow": "代表案例",
+        "title": "從需求到成果的典型交付路徑",
+        "description": "三個代表案例，快速理解我們如何將需求轉成可追蹤的交付成果。",
+        "metricLabel": "關鍵成果",
+        "viewLabel": "查看案例",
+        "items": [
+          {
+            "number": "01",
+            "title": "飛行模擬訓練系統",
+            "category": "XR / Training",
+            "summary": "整合高擬真場景、任務腳本與回饋機制，建立可重複的訓練流程。",
+            "metric": "訓練流程穩定度提升",
+            "href": "/contact"
+          },
+          {
+            "number": "02",
+            "title": "產業資料整合平台",
+            "category": "Data / Integration",
+            "summary": "串接內外部資料來源，建立可追蹤同步與推播節點。",
+            "metric": "跨系統資料同步效率提升",
+            "href": "/contact"
+          },
+          {
+            "number": "03",
+            "title": "企業 AI Agent 導入",
+            "category": "AI / Agent",
+            "summary": "建置知識檢索與任務代理流程，降低重複作業負擔。",
+            "metric": "回應時間縮短且一致性提升",
+            "href": "/contact"
+          }
+        ]
+      },
+      "projectList": {
+        "eyebrow": "專案清單",
+        "title": "交付案例列表",
+        "allFilterLabel": "全部",
+        "filters": [
+          "XR",
+          "Data",
+          "AI"
+        ],
+        "countLabel": "個專案",
+        "outcomeLabel": "交付成果",
+        "timelineLabel": "導入時程",
+        "items": [
+          {
+            "id": "flight-simulator",
+            "number": "01",
+            "title": "飛行模擬系統",
+            "category": "XR",
+            "tags": [
+              "VR",
+              "Simulator",
+              "Training"
+            ],
+            "summary": "建立沉浸式模擬流程與操作檢核，強化訓練一致性與安全性。",
+            "outcome": "訓練流程標準化",
+            "timeline": "10-14 週",
+            "image": "/images/projects/flight-simulator.png"
+          },
+          {
+            "id": "flight-training",
+            "number": "02",
+            "title": "飛行教育訓練",
+            "category": "XR",
+            "tags": [
+              "Curriculum",
+              "VR",
+              "Task Scripts"
+            ],
+            "summary": "以互動課程搭配任務腳本，提高訓練完成率與實作品質。",
+            "outcome": "課程完成率提升",
+            "timeline": "8-12 週",
+            "image": "/images/projects/flight-training.png"
+          },
+          {
+            "id": "data-integration",
+            "number": "03",
+            "title": "資料介接流程規劃",
+            "category": "Data",
+            "tags": [
+              "API",
+              "Data Flow",
+              "Governance"
+            ],
+            "summary": "整合跨系統資料流並建立穩定契約，支援後續擴充與治理。",
+            "outcome": "資料整合效率提升",
+            "timeline": "6-10 週",
+            "image": "/images/projects/data-integration.png"
+          },
+          {
+            "id": "ai-agent",
+            "number": "04",
+            "title": "AI Agent 查詢系統",
+            "category": "AI",
+            "tags": [
+              "AI Agent",
+              "Knowledge Base",
+              "Automation"
+            ],
+            "summary": "建立企業知識檢索與任務代理流程，加速客服與營運作業。",
+            "outcome": "回應與處理時間縮短",
+            "timeline": "6-12 週",
+            "image": "/images/projects/ai-agent.png"
+          }
+        ]
+      },
+      "testimonials": {
+        "eyebrow": "客戶回饋",
+        "title": "與複雜專案團隊共同交付",
+        "featured": {
+          "quote": "Pencil 團隊很快把需求拆成分階段里程碑，從 PoC 到正式上線都能穩定推進，成果也能量化呈現。",
+          "author": {
+            "name": "營運總監",
+            "handle": "aerospace-ops",
+            "imageUrl": "https://images.unsplash.com/photo-1550525811-e5869dd03032?auto=format&fit=facearea&facepad=2&w=512&h=512&q=80",
+            "logoUrl": "/plus-assets/img/logos/savvycal-logo-gray-900.svg"
+          }
+        },
+        "items": [
+          {
+            "quote": "從啟動到上線的節奏透明且可預期，跨部門溝通成本也明顯降低。",
+            "author": {
+              "name": "專案經理",
+              "handle": "program-manager",
+              "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          },
+          {
+            "quote": "介接規劃同時兼顧技術限制與營運需求，落地過程非常務實。",
+            "author": {
+              "name": "資料平台主管",
+              "handle": "data-platform",
+              "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          },
+          {
+            "quote": "KPI 與使用成效對齊後，團隊可以更快做出下一步決策。",
+            "author": {
+              "name": "創新部門主管",
+              "handle": "innovation-manager",
+              "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          },
+          {
+            "quote": "上線後的優化支援讓我們在多部門擴展時仍維持穩定品質。",
+            "author": {
+              "name": "營運分析師",
+              "handle": "ops-analyst",
+              "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          },
+          {
+            "quote": "每個里程碑都有明確風險檢視，讓管理層掌握度高很多。",
+            "author": {
+              "name": "PMO 協調人",
+              "handle": "pmo-coordinator",
+              "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          },
+          {
+            "quote": "AI Agent 導入後，一季內就顯著降低重複客服工時。",
+            "author": {
+              "name": "客服成功主管",
+              "handle": "cs-lead",
+              "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            }
+          }
+        ]
+      },
+      "newsletter": {
+        "title": "訂閱專案更新與導入洞察",
+        "description": "接收精選案例、交付方法與系統整合更新，掌握下一步落地策略。",
+        "emailPlaceholder": "輸入 Email",
+        "submitLabel": "訂閱"
+      },
+      "cta": {
+        "title": "正在尋找有交付實績的合作夥伴？",
+        "description": "告訴我們你的場域目標與時程，我們會提供可執行的技術架構、里程碑與導入路線。",
+        "primaryAction": {
+          "label": "聯絡顧問",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看解決方案",
+          "href": "/solutions"
+        }
+      },
+      "actions": {
+        "getStarted": "聯絡顧問",
+        "learnMore": "了解更多",
+        "contactSales": "聯絡顧問"
+      }
+    },
     "projects": {
       "metadata": {
         "title": "專案與能力｜XR/AI/IoT 系統整合與落地案例",
@@ -565,22 +1207,22 @@
         "description": "空間動態科技致力於整合 XR 裝置、AI 大數據、5G/6G 網路與五感技術，打造下一個世代的沉浸式互動體驗。"
       },
       "hero": {
-        "eyebrow": "關於我們",
-        "headline": "我們把 OASIS 從概念做成現場",
-        "headlineHighlight": "OASIS",
+        "eyebrow": "關於且視 | About Pencil",
+        "headline": "以空間動態技術，重新定義人與環境的互動",
+        "headlineHighlight": "互動",
         "cycleWords": {
           "0": {
-            "text": "願景"
+            "text": "感知"
           },
           "1": {
-            "text": "系統"
+            "text": "理解"
           },
           "2": {
-            "text": "體驗"
+            "text": "共鳴"
           }
         },
-        "subheadline": "我們是一個跨域團隊，專注把新技術轉譯成可交付、可維運、可長期擴展的產品與服務，陪伴客戶從想法走到落地。",
-        "ctaText": "了解我們"
+        "subheadline": "Pencil 致力於將 XR、AI 與 IoT 技術深度整合，為企業與場域打造具備感知能力的智慧空間。我們不只是技術提供者，更是您通往元宇宙與數位孿生的戰略夥伴。",
+        "ctaText": "探索我們的願景"
       },
       "values": {
         "eyebrow": "品牌方法",
@@ -602,40 +1244,40 @@
         ]
       },
       "teamPartners": {
-        "eyebrow": "團隊與生態",
-        "title": "跨域團隊與合作網絡",
-        "description": "我們以跨職能團隊協作，並與不同產業夥伴共創落地方案。",
+        "eyebrow": "生態系夥伴",
+        "title": "強強聯手，共創未來",
+        "description": "我們深知創新無法獨行，因此積極建立跨產業的合作夥伴生態系，整合各領域的專業知識與技術資源。",
         "partnerLabel": "合作領域",
         "team": [
           {
             "role": "Solution Architect",
-            "focus": "需求拆解、架構規劃、導入路線"
+            "focus": "頂層架構設計、技術落地路徑規劃"
           },
           {
-            "role": "XR Experience Team",
-            "focus": "互動設計、內容製作、裝置整合"
+            "role": "XR Experience Lead",
+            "focus": "沉浸式體驗設計、人機互動優化"
           },
           {
-            "role": "AI & Data Team",
-            "focus": "Agent 流程、資料治理、模型整合"
+            "role": "AI Research Lead",
+            "focus": "生成式 AI 應用、多模態模型整合"
           }
         ],
         "partners": [
           {
-            "name": "Aerospace Partner",
-            "field": "Training / Simulation"
+            "name": "Aerospace & Defense",
+            "field": "高階模擬訓練 / 戰術模擬"
           },
           {
-            "name": "Industrial Partner",
-            "field": "IoT / Data"
+            "name": "Smart Manufacturing",
+            "field": "工業 IoT / 數位孿生"
           },
           {
-            "name": "Education Partner",
-            "field": "Learning Experience"
+            "name": "Higher Education",
+            "field": "沉浸式學習 / 遠距協作"
           },
           {
-            "name": "Service Partner",
-            "field": "Deployment / Operation"
+            "name": "Enterprise Services",
+            "field": "系統整合 / 雲端部署"
           }
         ]
       },
@@ -645,81 +1287,81 @@
         "secondaryText": "查看專案"
       },
       "timeline": {
-        "title": "公司歷程",
-        "description": "從創立至今，我們不斷突破技術邊界，達成多個重要里程碑。",
+        "title": "創新歷程",
+        "description": "從核心技術研發到跨領域應用落地，我們持續突破技術邊界，與合作夥伴共同定義未來。",
         "items": [
           {
             "year": "2021",
-            "title": "公司成立",
-            "description": "正式成立空間動態科技，確立 XR 與 AI 技術研發方向，致力於打造沉浸式互動體驗。"
+            "title": "奠定基石",
+            "description": "Pencil Spatial Dynamics 正式成立，確立以「空間動態」為核心的技術願景，投入 XR 與 AI 的底層技術研發。"
           },
           {
             "year": "2022",
-            "title": "首個 XR 標竿專案",
-            "description": "完成首個大型飛行模擬訓練系統，驗證了軟硬體整合與高擬真場景的落地能力。"
+            "title": "技術突破",
+            "description": "成功交付首套軍規級飛行模擬訓練系統，驗證了高擬真物理引擎與軟硬體整合的工程實力。"
           },
           {
             "year": "2023",
-            "title": "AI Agent 系統導入",
-            "description": "推出企業級 AI Agent 解決方案，協助客戶導入自動化知識管理與客服系統。"
+            "title": "產品深化",
+            "description": "推出企業級 OASIS AI 引擎，將大型語言模型 (LLM) 應用於企業知識管理與自動化客服，解決產業痛點。"
           },
           {
             "year": "2024",
-            "title": "拓展智慧空間市場",
-            "description": "整合 IoT 與空間定位技術，將服務範疇延伸至智慧建築與展演場域，實現虛實融合。"
+            "title": "生態系擴展",
+            "description": "整合 IoT 感測網絡與 5G 通訊技術，進軍智慧建築與數位孿生領域，實現從虛擬到實體的完整閉環。"
           }
         ]
       },
       "stats": {
-        "headline": "我們以技術模組打造可驗證的系統能力",
-        "description": "從需求拆解、快速驗證到穩定交付，我們用一致流程把創新方案落地。我們不只交付程式碼，更交付可持續運營的商業價值。",
+        "headline": "以數據定義專業，以成效贏得信賴",
+        "description": "我們不僅提供技術，更承諾可量化的商業價值。每一個數字背後，都是客戶對 Pencil 的信任與肯定。",
         "items": [
           {
             "value": "3 大核心",
             "label": "XR • AI • IoT",
-            "description": "整合三大技術領域，打造完整的虛實融合解決方案。"
+            "description": "深度整合三大前瞻技術，構建全方位的智慧空間解決方案。"
           },
           {
-            "value": "50+",
-            "label": "成功交付專案",
-            "description": "服務跨足航空、工業、教育與商業場域，累積豐富的落地經驗。"
+            "value": "15+",
+            "label": "企業級落地案",
+            "description": "成功交付至國防、醫療、製造等高標準場域，實戰經驗豐富。"
           },
           {
             "value": "100%",
-            "label": "客戶滿意度",
-            "description": "以小步驗證降低風險，確保每個交付都符合客戶的預期與商業目標。"
+            "label": "客戶留存率",
+            "description": "以長期的夥伴關係為目標，持續提供維運與優化服務。"
           }
         ]
       },
       "team": {
-        "title": "我們的團隊",
-        "description": "我們是一個由 Solution Architect、XR 體驗設計師、AI 工程師與資料科學家組成的跨域團隊。",
-        "detail": "不同於傳統軟體接案公司，我們深入了解產業領域知識 (Domain Know-how)，從飛行模擬的物理參數到工廠產線的通訊協定，我們都能與領域專家深度對話，轉譯為可執行的技術架構。"
+        "title": "跨領域專家團隊",
+        "description": "Pencil 匯聚了來自 XR 開發、人工智慧、資料科學與互動設計領域的頂尖人才，是技術與創意的完美融合。",
+        "detail": "我們不僅精通技術代碼，更具備深厚的產業 Know-how。從航空動力學到工廠自動化協定，我們的團隊能夠與領域專家深度對話，將複雜的業務需求轉化為優雅的技術解決方案。"
       },
       "partners": {
-        "title": "跨域合作夥伴",
-        "description": "我們與航空、工業、教育等領域的領導品牌合作，共同打造落地的創新應用。"
+        "title": "全球策略夥伴",
+        "description": "與各領域的領導品牌攜手，共同推動數位轉型與技術創新。"
       },
       "jobs": {
-        "headline": "我們持續尋找優秀的夥伴加入",
-        "description": "如果你對 XR 技術有熱情，對 AI 應用有想法，並且喜歡挑戰將新技術應用在真實場域中解決問題，歡迎加入我們。",
+        "headline": "尋找不甘平凡的你",
+        "description": "如果你渴望挑戰技術極限，想親手打造改變未來的產品，歡迎加入 Pencil。在這裡，你的每一個想法都有可能改變世界。",
         "viewAll": "查看所有職缺",
         "items": [
           {
             "role": "資深 XR 軟體工程師",
-            "description": "負責 Unity/Unreal 應用程式開發，整合 VR/MR 裝置與外部硬體串接。需熟悉 C# 或 C++，有優化渲染效能經驗者佳。",
+            "description": "主導 Unity/Unreal 核心架構開發，挑戰極致的渲染效能與互動體驗。需熟悉 C++/C#，具備圖學優化經驗。",
             "salary": "面議",
-            "location": "高雄市"
+            "location": "高雄市 / 混合辦公"
           },
           {
             "role": "AI 演算法工程師",
-            "description": "負責 LLM 應用落地與 RAG 系統開發。需熟悉 Python、LangChain 與相關向量資料庫技術。",
+            "description": "負責 LLM 應用落地與 RAG 系統開發，探索生成式 AI 在企業場景的無限可能。需熟悉 Python、PyTorch 與向量資料庫。",
             "salary": "面議",
-            "location": "台北市/遠端"
+            "location": "台北市 / 遠端協作"
           },
           {
-            "role": "專案經理 (PM)",
-            "description": "負責跨部門溝通與專案時程控管，協助客戶釐清需求並轉化為開發規格。需具備軟體專案管理經驗。",
+            "role": "技術專案經理 (TPM)",
+            "description": "擔任技術團隊與客戶間的橋樑，將商業需求轉化為精確的技術規格，確保專案如期如質交付。",
             "salary": "面議",
             "location": "高雄市"
           }
@@ -927,6 +1569,272 @@
       "button": "return_to_base()",
       "errorCode": "錯誤代碼：0x404_MISSING",
       "status": "系統狀態：嚴重"
+    },
+    "technologyTemplate": {
+      "hero": {
+        "eyebrow": "技術核心",
+        "title": "以模組化技術打造可驗證、可擴展的系統能力",
+        "description": "我們把 XR、AI、IoT 與網路能力拆成可組裝模組，讓導入路徑可逐步驗證、可控擴展，並在上線後持續優化。",
+        "panelTitle": "能力導覽",
+        "panelDescription": "快速查看核心模組、分層架構、交付流程與維運策略。",
+        "tags": [
+          "XR 互動場景",
+          "AI 推理管線",
+          "跨系統 API 契約",
+          "裝置與邊緣部署"
+        ],
+        "graphicStates": [
+          "正在生成...",
+          "型態轉譯...",
+          "精煉邊界...",
+          "抽象提取...",
+          "全息投影...",
+          "空間旋轉...",
+          "維度展開...",
+          "核心脈衝..."
+        ],
+        "quickLinks": [
+          {
+            "label": "核心技術模組",
+            "href": "#tech-modules"
+          },
+          {
+            "label": "技術分層架構",
+            "href": "#tech-architecture"
+          },
+          {
+            "label": "系統整合流程",
+            "href": "#tech-flow"
+          },
+          {
+            "label": "可靠性與維運",
+            "href": "#tech-reliability"
+          }
+        ],
+        "primaryAction": {
+          "label": "洽談技術合作",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看核心模組",
+          "href": "#tech-modules"
+        }
+      },
+      "overview": {
+        "eyebrow": "能力總覽",
+        "title": "讓技術決策直接對應交付成果",
+        "description": "每個模組可獨立導入，也能透過穩定契約逐步組合成完整系統。",
+        "items": [
+          {
+            "label": "導入節奏",
+            "value": "5 階段交付",
+            "description": "從資料來源盤點到現場裝置部署，每一階段都有可驗證輸出。"
+          },
+          {
+            "label": "架構模型",
+            "value": "3 層技術分工",
+            "description": "資料與裝置層、服務與智能層、體驗與輸出層責任清晰。"
+          },
+          {
+            "label": "模組覆蓋",
+            "value": "6 大核心模組",
+            "description": "涵蓋 XR、動作平台、觸覺、AI、網路與多感官互動能力。"
+          },
+          {
+            "label": "品質機制",
+            "value": "持續可靠性治理",
+            "description": "功能、效能、相容與維運都被納入同一套交付治理節奏。"
+          }
+        ]
+      },
+      "modules": {
+        "eyebrow": "核心技術堆疊",
+        "title": "六大技術模組支撐沉浸式系統交付",
+        "description": "選擇模組檢視其在整體方案中的角色與能力。",
+        "activeItemLabel": "目前模組",
+        "items": [
+          {
+            "id": "xr",
+            "number": "01",
+            "title": "XR（VR/MR/AR）",
+            "subtitle": "Extended Reality",
+            "description": "整合沉浸式視覺與互動層，支援訓練、導覽與操作模擬場景。",
+            "features": [
+              "頭顯與裝置整合",
+              "空間追蹤與定位",
+              "跨平台渲染",
+              "互動事件遙測"
+            ]
+          },
+          {
+            "id": "treadmill",
+            "number": "02",
+            "title": "全向跑步機",
+            "subtitle": "Movement Platform",
+            "description": "將移動硬體與場景邏輯同步，提供更自然且可控的行走體驗。",
+            "features": [
+              "全向移動追蹤",
+              "步態資料映射",
+              "安全防護機制",
+              "多人協同同步"
+            ]
+          },
+          {
+            "id": "haptics",
+            "number": "03",
+            "title": "觸覺回饋",
+            "subtitle": "Haptic Feedback",
+            "description": "透過觸覺通道提升操作真實感，強化沉浸式訓練與互動反饋。",
+            "features": [
+              "穿戴式回饋裝置",
+              "力覺與震動映射",
+              "事件驅動回應",
+              "設備校準流程"
+            ]
+          },
+          {
+            "id": "ai-data",
+            "number": "04",
+            "title": "AI 與大數據",
+            "subtitle": "Intelligence Engine",
+            "description": "整合模型推理、規則引擎與分析流程，提升決策與互動智能化程度。",
+            "features": [
+              "推理流程編排",
+              "知識檢索整合",
+              "行為資料分析",
+              "推薦回饋閉環"
+            ]
+          },
+          {
+            "id": "network",
+            "number": "05",
+            "title": "5G/6G",
+            "subtitle": "Low-Latency Delivery",
+            "description": "確保雲端、邊緣與裝置之間的低延遲傳輸與穩定資料同步。",
+            "features": [
+              "即時串流優化",
+              "邊緣路由策略",
+              "頻寬優先調度",
+              "多人狀態同步"
+            ]
+          },
+          {
+            "id": "multisensory",
+            "number": "06",
+            "title": "五感互動",
+            "subtitle": "Extended Sensory Layer",
+            "description": "擴展視聽之外的感官通道，為沉浸式體驗帶來更高情境真實度。",
+            "features": [
+              "環境觸發控制",
+              "嗅覺與氛圍模組",
+              "多通道時序同步",
+              "前瞻技術整合介面"
+            ]
+          }
+        ]
+      },
+      "architecture": {
+        "eyebrow": "架構總覽",
+        "title": "從資料到體驗的分層設計",
+        "description": "以模組邊界保持可維運性，並支援階段性擴展。",
+        "layers": [
+          {
+            "layer": "LAYER 01",
+            "title": "Data & Device Layer",
+            "description": "整合感測器、外部 API 與企業資料源，建立一致輸入契約。"
+          },
+          {
+            "layer": "LAYER 02",
+            "title": "Service & Intelligence Layer",
+            "description": "以後端服務與 AI 模組處理資料流、規則與推理流程。"
+          },
+          {
+            "layer": "LAYER 03",
+            "title": "Experience Layer",
+            "description": "將結果輸出到 Web、XR 與現場裝置介面，形成可落地體驗。"
+          }
+        ]
+      },
+      "flow": {
+        "eyebrow": "交付流程",
+        "title": "從輸入到部署的可控整合流程",
+        "description": "每一步都對應具體產出，降低導入不確定性。",
+        "stats": [
+          {
+            "label": "LATENCY",
+            "value": "4ms"
+          },
+          {
+            "label": "PROTOCOL",
+            "value": "UDP/TCP"
+          },
+          {
+            "label": "THROUGHPUT",
+            "value": "10GB/s"
+          }
+        ],
+        "steps": [
+          {
+            "number": "01",
+            "title": "資料來源",
+            "description": "整合感測器、企業資料庫與外部 API，建立乾淨輸入層。"
+          },
+          {
+            "number": "02",
+            "title": "API 整合",
+            "description": "定義服務介面與資料契約，確保跨系統可持續串接。"
+          },
+          {
+            "number": "03",
+            "title": "後端處理",
+            "description": "執行規則運算、AI 推理與資料治理，形成可用服務。"
+          },
+          {
+            "number": "04",
+            "title": "前端呈現",
+            "description": "將結果映射到 Web/XR 介面，優化資訊層級與互動流程。"
+          },
+          {
+            "number": "05",
+            "title": "裝置輸出",
+            "description": "部署到現場裝置與控制端，完成實際場域落地。"
+          }
+        ]
+      },
+      "reliability": {
+        "eyebrow": "可靠性與維運",
+        "title": "把品質治理內建到交付生命週期",
+        "description": "不只交付上線，更包含可持續運作的測試、相容與維運機制。",
+        "items": [
+          {
+            "number": "01",
+            "title": "品質測試",
+            "description": "完整執行功能測試、效能測試與壓力測試，確保每次發布可預期。"
+          },
+          {
+            "number": "02",
+            "title": "裝置相容",
+            "description": "在目標平台與裝置組合上進行相容驗證，降低現場整合風險。"
+          },
+          {
+            "number": "03",
+            "title": "持續維護",
+            "description": "提供監控、問題排除與版本更新，維持長期穩定與可擴展性。"
+          }
+        ]
+      },
+      "cta": {
+        "title": "需要更深入的技術規劃嗎？",
+        "description": "告訴我們你的場域限制與時程，我們會提供架構建議、階段里程碑與導入策略。",
+        "primaryAction": {
+          "label": "洽談技術合作",
+          "href": "/contact"
+        },
+        "secondaryAction": {
+          "label": "查看解決方案",
+          "href": "/solutions"
+        }
+      }
     }
   },
   "common": {

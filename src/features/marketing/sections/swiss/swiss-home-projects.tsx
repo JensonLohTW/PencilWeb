@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Link } from '@/i18n/routing'
 import { useLanguage } from '@/shared/providers/language-provider'
 
 interface ProjectItem {
@@ -37,9 +38,9 @@ export function SwissHomeProjects() {
                         {t('pages.home.projects.title')}
                     </h2>
                 </div>
-                <a href="/projects" className="swiss-mono hidden text-pencil-400 transition-colors hover:text-cta md:block dark:text-pencil-500">
+                <Link href="/projects" className="swiss-mono hidden text-pencil-400 transition-colors hover:text-cta md:block dark:text-pencil-500">
                     {t('pages.home.projects.viewAll')} →
-                </a>
+                </Link>
             </div>
 
             {/* Project List */}
@@ -53,7 +54,7 @@ export function SwissHomeProjects() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="group cursor-pointer border-b border-pencil-200 py-6 transition-colors hover:bg-pencil-50 dark:border-white/10 dark:hover:bg-white/5"
                     >
-                        <a href={getProjectHref(project.number)} className="flex items-center gap-6 lg:gap-12">
+                        <Link href={getProjectHref(project.number)} className="flex items-center gap-6 lg:gap-12">
                             {/* Number */}
                             <span className="swiss-mono text-4xl font-bold text-pencil-200 transition-colors group-hover:text-cta lg:text-5xl dark:text-white/20">
                                 {project.number}
@@ -69,7 +70,7 @@ export function SwissHomeProjects() {
 
                             {/* Arrow */}
                             <span className="text-2xl text-pencil-300 transition-all group-hover:translate-x-2 group-hover:text-cta dark:text-pencil-600">→</span>
-                        </a>
+                        </Link>
                     </motion.div>
                 ))}
             </div>

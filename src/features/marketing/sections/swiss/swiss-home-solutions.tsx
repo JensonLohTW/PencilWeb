@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/shared/lib/cn'
 import { useRef } from 'react'
 import { useParallax } from '@/shared/hooks/use-parallax'
+import { Link } from '@/i18n/routing'
 
 interface SolutionItem {
     number: string
@@ -28,14 +29,13 @@ function SolutionCard({ solution, index }: { solution: SolutionItem; index: numb
             style={{ y }}
             className="h-full"
         >
-            <motion.a
-                href={`/solutions#${solutionId}`}
+            <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={cn(
-                    "group relative flex min-h-[420px] h-full flex-col justify-between bg-pencil-50 p-8 transition-all duration-500",
+                    "group relative flex h-full min-h-[420px] flex-col justify-between bg-pencil-50 p-8 transition-all duration-500",
                     "hover:bg-pencil-950 hover:z-10",
                     "dark:bg-pencil-900 dark:hover:bg-white"
                 )}
@@ -91,7 +91,10 @@ function SolutionCard({ solution, index }: { solution: SolutionItem; index: numb
                         </div>
                     </div>
                 </div>
-            </motion.a>
+                <Link href={`/solutions#${solutionId}`} className="absolute inset-0 z-10">
+                    <span className="sr-only">{solution.title}</span>
+                </Link>
+            </motion.article>
         </motion.div>
     )
 }
@@ -129,7 +132,7 @@ export function SwissHomeSolutions() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex justify-start lg:justify-end"
                     >
-                        <a
+                        <Link
                             href="/solutions"
                             className="group flex items-center gap-3 text-lg font-medium text-pencil-950 transition-colors hover:text-cta dark:text-white"
                         >
@@ -137,7 +140,7 @@ export function SwissHomeSolutions() {
                                 {t('pages.home.solutions.viewAll')}
                             </span>
                             <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                        </a>
+                        </Link>
                     </motion.div>
                 </div>
 

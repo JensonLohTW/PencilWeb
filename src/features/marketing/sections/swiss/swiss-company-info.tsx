@@ -12,14 +12,14 @@ const infoZhTw = [
 ]
 
 const infoEn = [
-    { label: 'Company Name', value: 'Pencil (Space Dynamics Tech)' },
+    { label: 'Company Name', value: 'Pencil (Spatial Dynamics Tech)' },
     { label: 'Headquarters', value: 'Kaohsiung, Taiwan' },
     { label: 'Core Tech', value: 'XR, AI, IoT, Digital Twin' },
     { label: 'Contact', value: 'contact@pencil.com.tw', isHighlight: true },
 ]
 
 const infoJa = [
-    { label: '会社名', value: 'Pencil (Space Dynamics Tech)' },
+    { label: '会社名', value: 'Pencil (空間ダイナミクステクノロジー)' },
     { label: '本社', value: '台湾・高雄' },
     { label: 'コア技術', value: 'XR, AI, IoT, Digital Twin' },
     { label: 'お問い合わせ', value: 'contact@pencil.com.tw', isHighlight: true },

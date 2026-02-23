@@ -51,6 +51,12 @@ const themeOptions: { value: Theme; labelZh: string; labelEn: string; icon: type
 export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
     const { theme, resolvedTheme, setTheme } = useTheme()
     const [isOpen, setIsOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setMounted(true)
+    }, [])
     const menuRef = useRef<HTMLDivElement>(null)
 
     // Close menu when clicking outside
@@ -73,8 +79,7 @@ export function ThemeToggle({ className, ...props }: ComponentProps<'div'>) {
         return () => document.removeEventListener('keydown', handleEscape)
     }, [])
 
-    // Get current icon
-    const CurrentIcon = resolvedTheme === 'dark' ? MoonIcon : SunIcon
+    const CurrentIcon = mounted && resolvedTheme === 'dark' ? MoonIcon : SunIcon
 
     return (
         <div ref={menuRef} className={clsx('relative', className)} {...props}>

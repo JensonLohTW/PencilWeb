@@ -2,14 +2,12 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import { siteMetadata, siteTypography } from '@/shared/config/site'
+import { RouteTransition } from '@/shared/ui/animations/route-transition'
 import { Main } from '@/shared/ui/elements/main'
+
 import { Footer } from '@/widgets/layout/footer'
 import { NavBar } from '@/widgets/layout/nav-bar'
 import { AppProviders } from './providers'
-import '../globals.css'
-
-export const metadata = siteMetadata
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -25,7 +23,7 @@ export default async function RootLayout({
   const { locale } = await params
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound()
   }
 
@@ -37,21 +35,15 @@ export default async function RootLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href={siteTypography.googleFontsHref} rel="stylesheet" />
-      </head>
-      <body className="bg-white text-pencil-950" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
-          <AppProviders>
-            <NavBar />
-            <Main>{children}</Main>
-            <Footer />
-          </AppProviders>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <AppProviders>
+        <NavBar />
+        <Main>
+          <RouteTransition>{children}</RouteTransition>
+        </Main>
+        <Footer />
+
+      </AppProviders>
+    </NextIntlClientProvider>
   )
 }

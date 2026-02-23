@@ -7,7 +7,7 @@ import { JobOpenings } from '../about/components/job-openings'
 
 export default function AboutPage() {
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+    <div className="page-gradient min-h-screen transition-colors duration-300">
       <main className="isolate">
         <AboutHero />
         <CompanyTimeline />

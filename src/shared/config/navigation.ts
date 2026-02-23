@@ -14,6 +14,14 @@ export interface FooterCategoryConfig {
   }>
 }
 
+export interface FooterNavigationConfig {
+  solutions: Array<{ name: string; href: string }>
+  support: Array<{ name: string; href: string }>
+  company: Array<{ name: string; href: string }>
+  legal: Array<{ name: string; href: string }>
+  social: Array<{ name: string; href: string; iconName: string }>
+}
+
 export const primaryNavigationLinks: NavigationLinkConfig[] = [
   { href: '/solutions', index: '01', labelKey: 'nav.solutions' },
   { href: '/projects', index: '02', labelKey: 'nav.projects' },
@@ -61,3 +69,34 @@ export const footerCategoryLinks: FooterCategoryConfig[] = [
     ],
   },
 ]
+
+export const footerNavigation: FooterNavigationConfig = {
+  solutions: [
+    { name: 'nav.solutions', href: '/solutions' },
+    { name: 'footer.solutions.xr', href: '/solutions#xr-training' },
+    { name: 'footer.solutions.ar', href: '/solutions#ar-visualization' },
+    { name: 'footer.solutions.iot', href: '/solutions#smart-space' },
+    { name: 'footer.solutions.ai', href: '/solutions#ai-for-sme' },
+  ],
+  support: [
+    { name: 'nav.contact', href: '/contact' },
+    { name: 'footer.faq', href: '/#faq' },
+  ],
+  company: [
+    { name: 'nav.about', href: '/about' },
+    { name: 'nav.technology', href: '/technology' },
+    { name: 'nav.projects', href: '/projects' },
+  ],
+  legal: [
+    { name: 'footer.links.privacy', href: '/privacy-policy' },
+    { name: 'footer.links.terms', href: '/terms' },
+  ],
+  social: [
+    { name: 'Facebook', href: '#', iconName: 'facebook' },
+    { name: 'Instagram', href: '#', iconName: 'instagram' },
+    { name: 'X', href: '#', iconName: 'x' },
+    { name: 'GitHub', href: '#', iconName: 'github' },
+    { name: 'YouTube', href: 'https://www.youtube.com', iconName: 'youtube' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com', iconName: 'linkedin' },
+  ],
+}
