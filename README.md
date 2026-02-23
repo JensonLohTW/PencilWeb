@@ -1,208 +1,83 @@
-# Pencil 空間動態科技
+# Pencil 空間動態科技 (PencilWeb)
 
 > Pencil Spatial Dynamics Technology - Official Website
 
-## 項目簡介
-
-Pencil（空間動態科技）是專注於 XR（VR/AR/MR）、AI 大數據、5G/6G 網路及五感互動技術整合的創新型企業。我們以「We Build The OASIS」為願景，致力於打造次世代的沉浸式互動體驗，為企業與機構提供專業的數位轉型解決方案。
-
----
-
-Pencil (Spatial Dynamics Technology) is an innovative enterprise specializing in the integration of XR (VR/AR/MR), AI big data, 5G/6G networks, and sensory interaction technologies. With the vision of "We Build The OASIS," we are dedicated to creating next-generation immersive interactive experiences, providing professional digital transformation solutions for enterprises and institutions.
+Pencil（空間動態科技）是專注於 XR (VR/AR/MR)、AI 大數據、5G/6G 網路及五感互動技術整合的創新型企業。本專案為其官方網站，採用現代化 Web 技術棧建構，強調高效能與極致的視覺互動體驗。
 
 ## 技術架構
 
+### 核心技術棧
 ```mermaid
 graph TB
-    subgraph 核心技術棧 Core Tech Stack
-        A[Next.js 16] --> B[React 19]
-        B --> C[TypeScript 5]
-        C --> D[Tailwind CSS 4.1]
-        D --> E[Framer Motion]
+    subgraph Frontend [前端核心]
+        A[Next.js 15.4+] --> B[React 19]
+        B --> C[TypeScript 5.x]
+        C --> D[Tailwind CSS 4.x]
     end
     
-    subgraph 部署與工具 Deployment & Tools
-        F[GitHub Actions] --> G[GitHub Pages]
-        H[ESLint 9] --> I[Prettier 3]
+    subgraph Graphics [視覺特效]
+        E[Three.js] --> F[React Three Fiber]
+        F --> G[Framer Motion]
     end
     
-    A -.-> F
+    subgraph CI_CD [工程治理]
+        H[GitHub Actions] --> I[Shell Scripts]
+        I --> J[GitHub Pages]
+    end
 ```
 
 ### 技術規格
-
 | 技術 | 版本 | 用途 |
 |------|------|------|
-| Next.js | 16.1.6 | React 框架與靜態導出 |
-| React | 19.0.0 | UI 元件庫 |
-| TypeScript | 5.x | 型別安全開發 |
-| Tailwind CSS | 4.1.18 | 原子化 CSS 樣式 |
-| Framer Motion | 12.0.0 | 動畫與互動效果 |
-| clsx/lite | 2.1.1 | 條件類名處理 |
+| **Next.js** | 15.4.x | React 框架與靜態導出 (SSG) |
+| **React** | 19.x | UI 元件與狀態管理 |
+| **TypeScript** | 5.x | 型別安全開發 |
+| **Tailwind CSS** | 4.x | 原子化樣式系統 |
+| **Three.js** | 0.182+ | 3D 渲染引擎 |
+| **Framer Motion**| 12.x | 聲明式動畫與微互動 |
 
 ## 項目結構
 
 ```
 PencilWeb/
-├── .github/workflows/     # GitHub Actions 部署配置
-├── public/                # 靜態資源
-│   └── .nojekyll          # 禁用 Jekyll 處理標記
+├── docs/                  # 正式文件 (ADR, Release Notes)
+├── discuss/               # 方案討論與 Waiver 申請紀錄
+├── scripts/               # 唯一准許的開發與維護腳本入口
 ├── src/
-│   ├── app/               # 路由層（薄入口）與全域 providers
-│   ├── features/          # 功能模組層（marketing/contact/legal/system）
-│   ├── widgets/           # 跨頁組裝模組（NavBar/Footer）
-│   └── shared/            # 共用層（ui/lib/providers/config/i18n/types）
-├── tests/                 # 測試結構（unit/integration/e2e）
-├── next.config.ts         # Next.js 配置
-└── package.json           # 依賴管理
+│   ├── app/               # 路由、全域樣式與 Providers
+│   ├── features/          # 核心功能模組 (Marketing, Solutions, Tech)
+│   ├── components/        # 高階 UI 元件與動畫
+│   ├── shared/            # 共用基礎設施 (hooks, lib, types, ui primitives)
+│   └── i18n/              # 國際化語系 (zh-TW, en, ja)
+├── public/                # 靜態資源、3D 模型與圖標
+└── tests/                 # 單元、整合與 E2E 測試
 ```
 
-## 安裝與運行
+## 開發指令
 
-### 環境要求
+根據專案工程規範，**嚴禁直接**呼叫底層包管理具。所有操作必須透過 `scripts/` 下的腳本執行。
 
-- Node.js 20 或更高版本
-- npm 或 pnpm
+| 指令 | 腳本路徑 | 用途 |
+|------|----------|------|
+| **安裝** | `./scripts/install.sh` | 初始化專案環境與依賴 |
+| **開發** | `./scripts/start.sh` | 啟動 Next.js 開發伺服器 |
+| **檢查** | `./scripts/check.sh` | 執行 Lint、型別與目錄規格檢查 |
+| **測試** | `./scripts/test.sh` | 執行所有測試案例 |
+| **建置** | `./scripts/build.sh` | 執行生產版本建置與靜態導出 |
 
-### 開發指令
+## 工程治理準則
 
-```bash
-# 安裝依賴
-npm install
+本專案遵循嚴格的開發規範：
+- **單檔限制**：TypeScript 檔案一律控制在 200 行以內。
+- **目錄扁平**：每層資料夾檔案數上限為 8 個，超過即拆分子目錄。
+- **Linus 方法論**：追求「好品味（Good Taste）」代碼，消除特殊情況，保持設計簡潔。
+- **無虛擬實作**：所有提交必須可執行且通過 `check.sh`。
 
-# 啟動開發伺服器
-npm run dev
+## 公司願景
 
-# 建構生產版本
-npm run build
+> **「We Build The OASIS」**
 
-# 執行程式碼檢查
-npm run lint
-```
-
-### 部署流程
-
-本專案使用 GitHub Actions 自動部署至 GitHub Pages：
-
-```mermaid
-flowchart LR
-    A[Push to main] --> B[GitHub Actions]
-    B --> C[Build Next.js]
-    C --> D[Export Static]
-    D --> E[Deploy to Pages]
-```
-
-部署網址：`https://jensonlohtw.github.io/PencilWeb/`
-
-## 開發規範
-
-### 代碼風格
-
-- **語言**：TypeScript 嚴格模式
-- **樣式**：Tailwind CSS 原子化類名
-- **組件**：函數式組件 + React Hooks
-- **動畫**：Framer Motion 聲明式動畫
-
-### 提交規範
-
-```
-類型: 簡短描述
-
-- feat: 新功能
-- fix: 錯誤修復
-- docs: 文檔更新
-- style: 代碼格式（不影響功能）
-- refactor: 重構
-- deploy: 部署相關
-```
-
-## 公司願景與價值觀
-
-### 願景 Vision
-
-> 「We Build The OASIS」
-
-OASIS 代表 **O**pen **A**ccess **S**patial **I**nteractive **S**ystem（開放式空間互動系統），我們以此為願景，致力於打破虛擬與現實的邊界，創造無縫融合的空間體驗。
-
-### 核心價值觀
-
-1. **挑戰優先的務實精神** - 先定義業務目標與限制，再選擇最適技術
-2. **快速驗證的開發哲學** - 透過 PoC 與階段式部署，早期驗證價值
-3. **長期營運的永續思維** - 持續監測與優化，確保方案永續發展
-
-## 業務領域
-
-```mermaid
-mindmap
-  root((Pencil\n空間動態科技))
-    XR 技術
-      VR 虛擬實境
-      AR 擴增實境
-      MR 混合實境
-    AI 應用
-      企業知識助手
-      智慧客服
-      數據分析
-    智慧空間
-      IoT 感測整合
-      環境監控
-      空間管理
-    服務對象
-      航空訓練
-      企業培訓
-      教育機構
-      工業應用
-```
-
-### 解決方案
-
-| 方案 | 說明 | 應用場景 |
-|------|------|----------|
-| **VR/MR 沉浸式訓練** | 高擬真虛擬環境訓練系統 | 飛行訓練、工業操作、醫療培訓 |
-| **AR 視覺化** | 擴增實境資訊疊加 | 設備維修、展場導覽、教育展示 |
-| **智慧空間 IoT** | 感測器網路與空間管理 | 智慧工廠、辦公空間、倉儲管理 |
-| **中小企業 AI** | 客製化 AI 助理與知識庫 | 客戶服務、內部培訓、文件管理 |
-
-### 團隊理念
-
-我們相信技術應該**服務於人**，而非讓人遷就於技術。每個專案都從深入理解客戶需求開始，透過跨領域團隊協作，將複雜的技術轉化為直覺、高效的解決方案。
-
-**團隊組成**：
-- 解決方案架構師（挑戰定義、架構設計、部署路線圖）
-- XR 體驗團隊（互動設計、內容製作、設備整合）
-- AI 與數據團隊（代理工作流、數據治理、模型整合）
+OASIS 代表 **Open Access Spatial Interactive System**。我們致力於打破虛擬與現實的邊界，透過空間動態技術為企業提供次世代的數位轉型解決方案。
 
 ---
-
-## 彩蛋專區
-
-<details>
-<summary>點擊展開彩蛋</summary>
-
-### 彩蛋 1：專案代號的由來
-
-專案代號 **"Oatmeal"**（燕麥片）其實是早期內部原型時的暫時命名，因為團隊在第一次全體會議時集體吃了燕麥片早餐，後來雖然改名為 Pencil，但 `package.json` 中的 `"name": "oatmeal-demo"` 保留了這段歷史。
-
-### 彩蛋 2：隱藏的設計哲學
-
-所有 Swiss Design 風格組件的 CSS 類名都以 `swiss-` 為前綴，但這並非巧合。設計師特別選用瑞士國際主義風格（Swiss Style）的網格系統與字體規範，呼應公司追求精確、簡潔、功能導向的核心價值。
-
-### 彩蛋 3：語言切換的秘密
-
-語言切換組件（`LanguageToggle`）的循環順序是：中文 → 英文 → 日文 → 中文。這個順序對應著公司發展的三個階段：台灣起家（中文）、拓展國際（英文）、深化日韓市場（日文）。每次切換都是一段發展歷程的縮影。
-
-</details>
-
----
-
-## 授權與聯絡
-
-本專案為 Pencil 空間動態科技官方網站原始碼，保留所有權利。
-
-**總部**：高雄市
-
-**業務洽詢**：請透過網站表單或 Email 聯絡
-
----
-
-*最後更新：2025 年 2 月*
+最後更新：2026 年 2 月
