@@ -29,7 +29,7 @@ export function KineticHeading({
   const { reduced } = useMotionSettings()
   const letters = Array.from(text)
 
-  const Tag = Component as any
+  const Tag = Component as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
   if (reduced) {
     return <Tag className={className}>{text}</Tag>
   }

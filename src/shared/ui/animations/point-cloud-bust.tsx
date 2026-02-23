@@ -11,6 +11,7 @@ function BustParticles() {
     const { scene } = useGLTF('/models/bust.glb')
 
     const [positions, colors] = useMemo(() => {
+        /* eslint-disable react-hooks/purity */
         let geo: THREE.BufferGeometry | null = null
 
         scene.traverse((child) => {
@@ -84,6 +85,7 @@ function BustParticles() {
         }
 
         return [positions, colors]
+        /* eslint-enable react-hooks/purity */
     }, [scene])
 
     const baseRotationY = useRef(0)
@@ -114,6 +116,7 @@ export function PointCloudBust() {
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true)
         useGLTF.preload('/models/bust.glb')
     }, [])

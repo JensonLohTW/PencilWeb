@@ -59,7 +59,20 @@ export function TextReveal({
         },
     }
 
-    const Tag = Component as any
+    const motionElements = {
+        h1: motion.h1,
+        h2: motion.h2,
+        h3: motion.h3,
+        h4: motion.h4,
+        h5: motion.h5,
+        h6: motion.h6,
+        p: motion.p,
+        span: motion.span,
+        div: motion.div,
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const Tag = (motionElements[Component as keyof typeof motionElements] || motion.h1) as any
 
     return (
         <Tag

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import { technologyReveal } from './technology-motion'
 
 export function TechnologyFlowGraphic() {

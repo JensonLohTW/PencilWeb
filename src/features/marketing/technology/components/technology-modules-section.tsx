@@ -39,7 +39,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
       <div className="relative z-10 mt-16 grid grid-cols-1 border border-pencil-700/10 dark:border-white/10 lg:grid-cols-[300px_1fr]">
         {/* Left Side: Module Selection Menu */}
         <div className="flex flex-col border-b border-pencil-700/10 dark:border-white/10 lg:border-b-0 lg:border-r">
-          {modules.items.map((module, index) => (
+          {modules.items.map((module) => (
             <button
               key={module.id}
               type="button"

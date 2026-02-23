@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl'
 import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
 import { ParallaxLayer } from '@/shared/ui/animations/parallax-layer'
 import { ParticleField } from '@/shared/ui/animations/particle-field'
-import { PointCloudBust } from '@/shared/ui/animations/point-cloud-bust'
 
 export function AboutHero() {
     const t = useTranslations('pages.about.hero')
