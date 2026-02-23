@@ -58,7 +58,7 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
               {testimonials.featured.author.logoUrl ? (
                 <Image
                   src={testimonials.featured.author.logoUrl}
-                  alt="Company logo"
+                  alt={`${testimonials.featured.author.name} company logo`}
                   width={120}
                   height={32}
                   className="h-8 w-auto opacity-80 dark:opacity-70"

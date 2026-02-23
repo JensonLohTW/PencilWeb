@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { SeoJsonLd } from '@/shared/seo/seo-json-ld'
+import { buildDefaultSeoGraph } from '@/shared/seo/structured-data'
 import { RouteTransition } from '@/shared/ui/animations/route-transition'
 import { Main } from '@/shared/ui/elements/main'
 
@@ -37,12 +39,12 @@ export default async function RootLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <AppProviders>
+        <SeoJsonLd id={`seo-jsonld-${locale}`} data={buildDefaultSeoGraph(locale)} />
         <NavBar />
         <Main>
           <RouteTransition>{children}</RouteTransition>
         </Main>
         <Footer />
-
       </AppProviders>
     </NextIntlClientProvider>
   )

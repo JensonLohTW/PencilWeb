@@ -1,8 +1,14 @@
 import type { PropsWithChildren } from 'react'
+import type { Viewport } from 'next'
 import { siteMetadata, siteTypography } from '@/shared/config/site'
 import './globals.css'
 
 export const metadata = siteMetadata
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

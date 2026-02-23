@@ -1,11 +1,6 @@
-import type { Metadata } from 'next'
+import { buildRootMetadata } from '@/shared/seo/metadata'
 
-export const siteMetadata: Metadata = {
-  title: '空間動態科技 Pencil｜XR（VR/AR/MR）× AI × 智慧空間解決方案',
-  description:
-    '提供 VR/MR 沉浸式訓練、AR 視覺化與智慧空間 IoT 整合，並協助中小企業導入 AI Agent / AI Chat，打造可落地互動體驗。',
-  keywords: 'VR 教育訓練, AR 解決方案, 智慧空間 IoT, AI agent, 沉浸式體驗, XR, VR, AR, MR',
-}
+export const siteMetadata = buildRootMetadata()
 
 export const siteTypography = {
   googleFontsHref:

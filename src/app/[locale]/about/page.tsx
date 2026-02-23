@@ -1,9 +1,18 @@
 import { setRequestLocale } from 'next-intl/server'
 import AboutPage from '@/features/marketing/pages/about-page'
 import { routing } from '@/i18n/routing'
+import { buildLocalePageMetadata } from '@/shared/seo/page-metadata'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  return buildLocalePageMetadata(params, 'about', { imagePath: '/images/projects/flight-simulator.png' })
 }
 
 export default async function Page({
