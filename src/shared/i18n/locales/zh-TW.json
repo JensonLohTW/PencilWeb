@@ -113,7 +113,8 @@
         ]
       },
       "clients": {
-        "title": "合作夥伴",
+        "eyebrow": "服務對象",
+        "title": "應用領域",
         "list": [
           {
             "name": "Client A",

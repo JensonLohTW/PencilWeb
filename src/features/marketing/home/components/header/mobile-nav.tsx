@@ -56,6 +56,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                                                     as={Link}
                                                     href={child.href || '#'}
                                                     className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-white hover:bg-white/5"
+                                                    onClick={() => setMobileMenuOpen(false)}
                                                 >
                                                     {t(child.nameKey)}
                                                 </DisclosureButton>
@@ -67,6 +68,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                                         key={item.nameKey}
                                         href={item.href || '#'}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                        onClick={() => setMobileMenuOpen(false)}
                                     >
                                         {t(item.nameKey)}
                                     </Link>
@@ -81,6 +83,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                                 <Link
                                     href="/login"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Log in
                                 </Link>

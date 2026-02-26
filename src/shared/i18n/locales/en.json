@@ -114,7 +114,8 @@
         ]
       },
       "clients": {
-        "title": "Trusted By",
+        "eyebrow": "Our Clients",
+        "title": "Application Domains",
         "list": [
           {
             "name": "Client A",

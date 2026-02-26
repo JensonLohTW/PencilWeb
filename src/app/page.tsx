@@ -1,14 +1,10 @@
-'use client'
+import { redirect } from 'next/navigation'
+import { routing } from '@/i18n/routing'
 
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
-
+/**
+ * 根路徑重定向至預設語系，使用伺服器端 redirect
+ * 以避免 output: export + client useRouter 的靜態導出不相容問題
+ */
 export default function RootPage() {
-    const router = useRouter()
-
-    useEffect(() => {
-        router.replace('/zh-TW')
-    }, [router])
-
-    return null
+    redirect(`/${routing.defaultLocale}`)
 }

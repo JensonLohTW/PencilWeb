@@ -50,7 +50,7 @@ export function Hero() {
                     className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
                 />
             </ParallaxLayer>
-            <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+            <div className="mx-auto max-w-7xl px-6 pb-24 pt-24 sm:pb-32 sm:pt-32 lg:flex lg:px-8 lg:py-40">
                 <StaggerContainer className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8" viewport={{ once: true, amount: 0.5 }}>
                     <StaggerItem>
                         <div className="flex items-center gap-x-2">

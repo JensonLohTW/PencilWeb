@@ -2,43 +2,102 @@
 
 import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/animations/fade-in'
-import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import { SectorNetworkCanvas } from './sector-network-canvas'
+
+// 左欄：技術輸入層  dots = 信號強度（最多 4）
+const TECH_INPUTS = [
+    { label: 'XR', dots: 4 },
+    { label: 'AI / LLM', dots: 4 },
+    { label: 'IoT', dots: 3 },
+    { label: '5G / 6G', dots: 3 },
+    { label: 'Haptic', dots: 2 },
+    { label: 'Digital Twin', dots: 2 },
+]
+
+// 右欄：服務成果
+const OUTCOMES = [
+    '沉浸式訓練',
+    '智慧空間',
+    'AI 協作',
+    'AR 視覺導覽',
+]
+
+// 點陣：最多 4 個，前 count 個亮
+function Dots({ count, total = 4 }: { count: number; total?: number }) {
+    return (
+        <span className="flex gap-[3px] items-center">
+            {Array.from({ length: total }, (_, i) => (
+                <span
+                    key={i}
+                    className={`inline-block size-[5px] rounded-full ${i < count ? 'bg-accent-500' : 'bg-white/12'}`}
+                />
+            ))}
+        </span>
+    )
+}
 
 export function LogoCloud() {
     const t = useTranslations('pages.home.clients')
-    // We use key mapping here to retrieve the array from locales
-    // Note: next-intl doesn't strongly type array access via t(), 
-    // so we iterate a known number of times or use raw if configured.
-    // Given standard setup, we can access specific indicies or just map a static list to keys if keys are "0", "1", etc.
-    // But we defined "list" as an array object in JSON.
-    // To keep it simple and safe without t.raw(), we can use:
-
-    const clients = t.raw('list') as Array<{ name: string; sector: string }>
 
     return (
-        <div className="py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-[#0e0b08] py-16 sm:py-20">
+            {/* 品牌漸層光暈 */}
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{ background: 'radial-gradient(ellipse 55% 45% at 50% 52%, rgba(234,88,12,0.07) 0%, transparent 100%)' }}
+            />
+
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+                {/* 欄位標頭 */}
+                <div className="mb-3 grid grid-cols-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/22 select-none">
+                    <span>技術輸入層</span>
+                    <span className="text-center">{t('eyebrow')} · {t('title')}</span>
+                    <span className="text-right">服務成果</span>
+                </div>
+
+                {/* 三欄主體 */}
                 <FadeIn>
-                    <h2 className="text-center text-lg/8 font-semibold text-gray-900 dark:text-white">
-                        {t('title')}
-                    </h2>
+                    <div className="grid grid-cols-[160px_1fr_160px] lg:grid-cols-[200px_1fr_200px] min-h-[380px] rounded-xl border border-white/7 overflow-hidden">
+
+                        {/* 左欄 */}
+                        <div className="border-r border-white/7 px-5 py-6 flex flex-col justify-center gap-5">
+                            {TECH_INPUTS.map(item => (
+                                <div key={item.label} className="flex items-center justify-between gap-3">
+                                    <span className="font-mono text-[11px] text-white/55 tracking-wide">{item.label}</span>
+                                    <Dots count={item.dots} />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* 中欄：Canvas 節點圖 */}
+                        <div className="relative">
+                            <SectorNetworkCanvas className="absolute inset-0" />
+                            {/* 右下角統計 */}
+                            <div className="absolute bottom-3 right-4 text-right pointer-events-none">
+                                <p className="font-mono text-[9px] text-white/22 tracking-wide">6 應用領域 → 4 服務成果</p>
+                                <div className="mt-1 h-[2px] w-24 ml-auto rounded-full bg-white/10 overflow-hidden">
+                                    <div className="h-full w-[68%] rounded-full bg-accent-500" />
+                                </div>
+                            </div>
+                            {/* 版本號 */}
+                            <div className="absolute bottom-3 left-4 pointer-events-none">
+                                <p className="font-mono text-[9px] text-white/15 tracking-wide">— Fig. 1.1</p>
+                            </div>
+                        </div>
+
+                        {/* 右欄 */}
+                        <div className="border-l border-white/7 px-5 py-6 flex flex-col justify-center gap-5">
+                            {OUTCOMES.map(label => (
+                                <div key={label} className="flex items-center gap-2.5">
+                                    <span className="size-2 shrink-0 rounded-full bg-accent-500 shadow-[0_0_6px_rgba(234,88,12,0.7)]" />
+                                    <span className="font-mono text-[11px] text-white/70 tracking-wide">{label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </FadeIn>
-                <StaggerContainer
-                    className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {Array.isArray(clients) && clients.map((client, index) => (
-                        <StaggerItem key={index} className="col-span-1 flex flex-col items-center justify-center gap-1 group">
-                            <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                                {client.name}
-                            </span>
-                            <span className="text-xs text-gray-500 dark:text-gray-400">
-                                {client.sector}
-                            </span>
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
             </div>
-        </div>
+        </section>
     )
 }

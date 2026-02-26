@@ -114,7 +114,8 @@
                 ]
             },
             "clients": {
-                "title": "導入実績",
+                "eyebrow": "導入業種",
+                "title": "適用領域",
                 "list": [
                     {
                         "name": "Client A",
