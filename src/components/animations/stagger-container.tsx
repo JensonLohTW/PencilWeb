@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion, type HTMLMotionProps } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { transitions, variants, viewportConfig } from '@/config/animations'
 import { cn } from '@/shared/lib/cn'
@@ -65,7 +65,7 @@ export function StaggerContainer({
   )
 }
 
-interface StaggerItemBaseProps {
+interface StaggerItemBaseProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   children: ReactNode
   className?: string
   variant?: keyof typeof variants
@@ -77,6 +77,7 @@ export function StaggerItem({
   className,
   variant = 'fadeInUp',
   as = 'div',
+  ...props
 }: StaggerItemBaseProps) {
   const selectedVariant = variants[variant]
 
@@ -96,6 +97,7 @@ export function StaggerItem({
       <motion.article
         variants={animationVariants}
         className={cn(className)}
+        {...props}
       >
         {children}
       </motion.article>
@@ -106,6 +108,7 @@ export function StaggerItem({
     <motion.div
       variants={animationVariants}
       className={cn(className)}
+      {...props}
     >
       {children}
     </motion.div>

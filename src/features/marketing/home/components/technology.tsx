@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import { cn } from '@/shared/lib/cn'
 
 const icons = [
     ViewfinderCircleIcon, // 01 XR
@@ -47,9 +48,6 @@ export function Technology() {
 
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
-    const toggleAccordion = (index: number) => {
-        setExpandedIndex(expandedIndex === index ? null : index)
-    }
 
     return (
         <div className="overflow-hidden bg-pencil-50 py-24 sm:py-32 dark:bg-pencil-950">
@@ -66,7 +64,7 @@ export function Technology() {
 
                 <StaggerContainer
                     viewport={{ once: true, amount: 0.2 }}
-                    className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 md:grid-cols-2 lg:max-w-none lg:grid-cols-4 lg:grid-rows-3"
+                    className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 md:grid-cols-2 lg:max-w-none lg:grid-cols-4 lg:auto-rows-min lg:items-start"
                 >
                     {Array.isArray(list) && list.map((feature, index) => {
                         const isExpanded = expandedIndex === index
@@ -74,65 +72,107 @@ export function Technology() {
                         return (
                             <StaggerItem
                                 key={feature.number}
-                                className={`glass-card-hover group relative flex flex-col overflow-hidden rounded-3xl border border-pencil-200/60 bg-white/60 backdrop-blur-md transition-all duration-300 hover:border-accent-500/30 dark:border-white/10 dark:bg-white/5 dark:hover:border-accent-400/30 ${getBentoClasses(index)} ${isExpanded ? 'shadow-lg shadow-accent-500/10' : 'hover:-translate-y-1'}`}
+                                onMouseEnter={() => setExpandedIndex(index)}
+                                onMouseLeave={() => setExpandedIndex(null)}
+                                className={cn(
+                                    "relative rounded-[2.5rem] p-1", // 偵測層 (Detector): 穩定不變的 Hitbox
+                                    getBentoClasses(index)
+                                )}
                             >
-                                {/* 背景微光暈 */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-white/5 via-accent-50/30 to-accent-100/40 dark:via-transparent dark:to-accent-900/20 pointer-events-none" />
+                                {/* 視覺層 (Canvas): 負責呈現位移、發光與特效 */}
+                                <motion.div
+                                    animate={{
+                                        scale: isExpanded ? 1.02 : 1,
+                                        y: isExpanded ? -4 : 0,
+                                    }}
+                                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                                    className={cn(
+                                        "relative flex h-full flex-col overflow-hidden rounded-[2.25rem] border border-pencil-200/50 bg-white/40 backdrop-blur-2xl dark:border-white/10 dark:bg-white/5",
+                                        "transition-all duration-500",
+                                        isExpanded ? "shadow-2xl shadow-accent-500/15 ring-1 ring-accent-500/20" : "shadow-sm hover:shadow-md"
+                                    )}
+                                >
+                                    {/* 動態背景發光 (Adaptive Glow) */}
+                                    <div className={cn(
+                                        "absolute inset-0 bg-gradient-to-br from-accent-100/30 via-transparent to-transparent opacity-0 transition-opacity duration-700 pointer-events-none dark:from-accent-500/10",
+                                        isExpanded && "opacity-100"
+                                    )} />
 
-                                <div className="relative z-10 flex flex-1 flex-col">
-                                    <button
-                                        onClick={() => toggleAccordion(index)}
-                                        className="flex flex-1 flex-col p-8 pt-10 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-500"
-                                        aria-expanded={isExpanded}
-                                        aria-controls={`tech-details-${index}`}
-                                    >
+                                    <div className="relative z-10 flex flex-1 flex-col p-8 lg:p-10">
                                         <div className="flex w-full items-start justify-between">
-                                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-100/50 dark:bg-accent-500/10 ring-1 ring-accent-500/20 shrink-0">
-                                                <Icon className="h-6 w-6 text-accent-600 dark:text-accent-400" aria-hidden="true" />
-                                            </div>
-                                            <div className="flex h-12 w-12 items-center justify-center -mr-2 -mt-2">
-                                                <div className={`flex items-center justify-center rounded-full p-2 transition-colors ${isExpanded ? 'bg-accent-50 dark:bg-accent-500/10' : 'group-hover:bg-pencil-100 dark:group-hover:bg-white/5'}`}>
-                                                    <ChevronDownIcon
-                                                        className={`h-5 w-5 transform transition-all duration-300 ease-in-out ${isExpanded ? '-rotate-180 text-accent-600 dark:text-accent-400' : 'rotate-0 text-pencil-400 dark:text-pencil-500 group-hover:text-accent-600 dark:group-hover:text-accent-400'}`}
-                                                        aria-hidden="true"
-                                                    />
-                                                </div>
+                                            {/* 磁性圖示環 */}
+                                            <motion.div
+                                                animate={{
+                                                    rotate: isExpanded ? 5 : 0,
+                                                    scale: isExpanded ? 1.1 : 1
+                                                }}
+                                                className={cn(
+                                                    "mb-8 flex h-14 w-14 items-center justify-center rounded-2xl transition-colors duration-500",
+                                                    isExpanded ? "bg-accent-500 text-white shadow-lg shadow-accent-500/25" : "bg-accent-100/50 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400"
+                                                )}
+                                            >
+                                                <Icon className="h-7 w-7" aria-hidden="true" />
+                                            </motion.div>
+
+                                            <div className={cn(
+                                                "flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500",
+                                                isExpanded ? "bg-accent-50 dark:bg-white/10" : "bg-transparent"
+                                            )}>
+                                                <ChevronDownIcon
+                                                    className={cn(
+                                                        "h-5 w-5 transition-transform duration-500",
+                                                        isExpanded ? "-rotate-180 text-accent-600 dark:text-accent-400" : "rotate-0 text-pencil-300"
+                                                    )}
+                                                />
                                             </div>
                                         </div>
 
-                                        <div className="mt-auto pt-4">
+                                        <div className="mt-auto">
                                             <div className="flex items-center gap-3">
-                                                <span className="font-mono text-sm text-pencil-400 dark:text-pencil-500">{feature.number}</span>
-                                                <h3 className={`text-xl font-semibold tracking-tight transition-colors ${isExpanded ? 'text-accent-600 dark:text-accent-400' : 'text-pencil-950 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400'}`}>
+                                                <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-500/60 dark:text-accent-400/50">
+                                                    {feature.number}
+                                                </span>
+                                                <h3 className={cn(
+                                                    "text-2xl font-bold tracking-tight transition-colors duration-300",
+                                                    isExpanded ? "text-accent-600 dark:text-accent-300" : "text-pencil-950 dark:text-white"
+                                                )}>
                                                     {feature.title}
                                                 </h3>
                                             </div>
-                                            <p className="mt-2 text-base/6 text-pencil-600 dark:text-gray-400">
+                                            <p className="mt-4 text-base/7 text-pencil-600 dark:text-gray-400">
                                                 {feature.subtitle}
                                             </p>
                                         </div>
-                                    </button>
 
-                                    <AnimatePresence initial={false}>
-                                        {isExpanded && (
-                                            <motion.div
-                                                id={`tech-details-${index}`}
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: 'auto', opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                                                className="overflow-hidden px-8"
-                                            >
-                                                <div className="pb-8 pt-2">
-                                                    <div className="h-px w-full bg-pencil-200/50 dark:bg-white/10 mb-4" />
-                                                    <p className="text-base/7 text-pencil-600 dark:text-gray-300">
-                                                        {feature.description}
-                                                    </p>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
+                                        <AnimatePresence initial={false}>
+                                            {isExpanded && (
+                                                <motion.div
+                                                    id={`tech-details-${index}`}
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{
+                                                        height: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
+                                                        opacity: { duration: 0.3 }
+                                                    }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="pt-6">
+                                                        <div className="h-px w-12 bg-accent-500/30 mb-6" />
+                                                        <motion.p
+                                                            initial={{ y: 12, opacity: 0 }}
+                                                            animate={{ y: 0, opacity: 1 }}
+                                                            transition={{ delay: 0.1, duration: 0.4 }}
+                                                            className="text-base/7 leading-relaxed text-pencil-700 dark:text-gray-300"
+                                                        >
+                                                            {feature.description}
+                                                        </motion.p>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </motion.div>
                             </StaggerItem>
                         )
                     })}

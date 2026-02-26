@@ -1,13 +1,13 @@
 'use client'
 
 import { useLanguage } from '@/shared/providers/language-provider'
-import { DocumentCentered } from '@/features/marketing/sections/swiss/swiss-document'
+import { DocumentLayout } from '@/shared/ui/components/document-layout'
 
 export default function PrivacyPolicyPage() {
   const { t } = useLanguage()
 
   return (
-    <DocumentCentered
+    <DocumentLayout
       title={t('pages.privacy.title')}
       lastUpdated="2024-02-10"
       status={t('pages.privacy.statusActive')}
@@ -50,6 +50,6 @@ export default function PrivacyPolicyPage() {
           {t('pages.privacy.contact')} <a href="mailto:contact@pencil.com.tw">contact@pencil.com.tw</a>
         </p>
       </div>
-    </DocumentCentered>
+    </DocumentLayout>
   )
 }

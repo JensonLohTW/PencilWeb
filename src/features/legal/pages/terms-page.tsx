@@ -1,13 +1,13 @@
 'use client'
 
 import { useLanguage } from '@/shared/providers/language-provider'
-import { DocumentCentered } from '@/features/marketing/sections/swiss/swiss-document'
+import { DocumentLayout } from '@/shared/ui/components/document-layout'
 
 export default function TermsPage() {
     const { t } = useLanguage()
 
     return (
-        <DocumentCentered
+        <DocumentLayout
             title={t('pages.terms.title')}
             lastUpdated="2024-02-10"
             status={t('pages.privacy.statusActive')}
@@ -45,6 +45,6 @@ export default function TermsPage() {
                     {t('pages.terms.contact')} <a href="mailto:legal@pencil.com.tw">legal@pencil.com.tw</a>
                 </p>
             </div>
-        </DocumentCentered>
+        </DocumentLayout>
     )
 }
