@@ -32,7 +32,7 @@ export function Header({ utilities, actions }: HeaderProps) {
             )}
         >
             <nav aria-label="Global" className={clsx(
-                "mx-auto flex w-full items-center justify-between transition-all duration-500",
+                "relative z-10 mx-auto flex w-full items-center justify-between transition-all duration-500",
                 isScrolled ? "px-6 py-3 lg:px-8" : "p-6 lg:px-12 max-w-[90rem]"
             )}>
                 <div className="flex lg:flex-1 lg:justify-start">
