@@ -26,9 +26,11 @@ export function ParallaxLayer({
   const { reduced } = useMotionSettings()
   const motionY = useParallax(ref, { y })
 
+  const hasPosition = className?.includes('relative') || className?.includes('absolute') || className?.includes('fixed') || className?.includes('sticky')
+
   if (reduced) {
     return (
-      <div ref={ref} className={cn(className)} style={style} {...attributes}>
+      <div ref={ref} className={cn(!hasPosition && 'relative', className)} style={style} {...attributes}>
         {children}
       </div>
     )
@@ -37,7 +39,7 @@ export function ParallaxLayer({
   return (
     <motion.div
       ref={ref}
-      className={cn(className)}
+      className={cn(!hasPosition && 'relative', className)}
       style={{ ...style, y: motionY }}
       aria-hidden={attributes['aria-hidden']}
     >

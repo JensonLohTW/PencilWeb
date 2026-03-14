@@ -21,7 +21,7 @@ function buildContactMailtoHref(payload: ContactInquiryPayload): string {
   ]
 
   const body = lines.join('\n')
-  return `mailto:contact@pencil.space?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  return `mailto:hank.kao@pencillink.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
 export async function submitContactInquiry(

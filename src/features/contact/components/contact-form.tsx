@@ -8,6 +8,8 @@ import type {
   ContactSubmissionState,
 } from '@/features/contact/types/contact-inquiry'
 import { useLanguage } from '@/shared/providers/language-provider'
+import { ContactInteractiveItem } from '@/shared/ui/components/contact-interactive-item'
+import { Mail, Phone } from 'lucide-react'
 
 function getStringField(formData: FormData, field: string): string {
   const value = formData.get(field)
@@ -64,8 +66,15 @@ export function ContactForm() {
       setSubmissionState('success')
 
       if (result.mode === 'mailto') {
-        setFeedbackMessage('已開啟郵件草稿，請確認後送出。')
-        window.location.href = result.href
+        setFeedbackMessage('已開啟郵件軟體草稿，請確認後送出。')
+        // Use an invisible anchor tag click instead of window.location.href
+        // to bypass aggressive browser popup/external protocol blockers
+        const link = document.createElement('a')
+        link.href = result.href
+        link.target = '_blank'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
       } else {
         setFeedbackMessage('表單已成功送出，我們會盡快與您聯繫。')
       }
@@ -268,9 +277,13 @@ export function ContactForm() {
                 className="w-full justify-center rounded-lg bg-pencil-950 px-8 py-4 text-white transition-colors hover:bg-cta disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {submissionState === 'submitting'
-                  ? '提交中...'
-                  : t('pages.contact.form.submit')}
+                  ? '開啟中...'
+                  : '透過本機電子郵件軟體送出'}
               </button>
+
+              <p className="mt-2 text-center text-xs text-pencil-500">
+                點擊後將自動喚醒您裝置上的電子郵件軟體並帶入表單內容。
+              </p>
 
               {feedbackMessage ? (
                 <p
@@ -314,24 +327,35 @@ export function ContactForm() {
               <h3 className="text-xl font-bold text-pencil-900 dark:text-pencil-100">
                 {t('pages.contact.info.contact.title')}
               </h3>
-              <div className="mt-6 space-y-4 text-pencil-600 dark:text-pencil-300">
-                <p>
+              <div className="mt-6 space-y-4">
+                <div className="text-pencil-600 dark:text-pencil-300">
+                  <span className="text-pencil-500">
+                    聯絡人：
+                  </span>
+                  高宇弘 (Hank Kao) / 高經理
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <ContactInteractiveItem
+                    icon={Mail}
+                    label="Email"
+                    value="hank.kao@pencillink.com"
+                    href="mailto:hank.kao@pencillink.com"
+                  />
+                  <ContactInteractiveItem
+                    icon={Phone}
+                    label="電話"
+                    value="0952-291-195"
+                    href="tel:0952-291-195"
+                  />
+                </div>
+                
+                <div className="pt-2 text-pencil-600 dark:text-pencil-300">
                   <span className="text-pencil-500">
                     {t('pages.contact.info.contact.location')}
                   </span>
                   {t('pages.contact.info.contact.locationValue')}
-                </p>
-                <p>
-                  <span className="text-pencil-500">
-                    {t('pages.contact.info.contact.email')}
-                  </span>
-                  <a
-                    href="mailto:contact@pencil.space"
-                    className="text-cta hover:underline dark:text-cta"
-                  >
-                    contact@pencil.space
-                  </a>
-                </p>
+                </div>
               </div>
             </div>
           </div>
