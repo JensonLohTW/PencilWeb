@@ -9,11 +9,12 @@ import { InstagramIcon } from '@/shared/ui/icons/social/instagram-icon'
 import { LinkedInIcon } from '@/shared/ui/icons/social/linkedin-icon'
 import { XIcon } from '@/shared/ui/icons/social/x-icon'
 import { YouTubeIcon } from '@/shared/ui/icons/social/youtube-icon'
-import { JSX } from 'react'
+import { JSX, useState } from 'react'
 import { ContactInteractiveItem } from '@/shared/ui/components/contact-interactive-item'
 import { Mail, Phone } from 'lucide-react'
 import { LanguageToggle } from '@/shared/ui/elements/language-toggle'
 import { ThemeToggle } from '@/shared/ui/elements/theme-toggle'
+import { motion } from 'framer-motion'
 
 const IconMap: Record<string, (props: React.ComponentProps<'svg'>) => JSX.Element> = {
     facebook: FacebookIcon,
@@ -26,6 +27,7 @@ const IconMap: Record<string, (props: React.ComponentProps<'svg'>) => JSX.Elemen
 
 export function ModernFooter({ navigation }: { navigation: FooterNavigationConfig }) {
     const { t } = useLanguage()
+    const [isHovered, setHovered] = useState(false)
 
     return (
         <footer className="bg-gray-900 border-t border-white/10" aria-labelledby="footer-heading">
@@ -64,7 +66,7 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                             {navigation.social.map((item) => {
                                 const Icon = IconMap[item.iconName]
                                 return (
-                                    <a key={item.name} href={item.href} className="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                                    <a key={item.name} href={item.href} className="text-gray-400 hover:text-cta hover:-translate-y-1 transition-all duration-300" target="_blank" rel="noopener noreferrer">
                                         <span className="sr-only">{item.name}</span>
                                         {Icon ? <Icon className="size-6" aria-hidden="true" /> : <span className="text-xs">{item.name}</span>}
                                     </a>
@@ -80,11 +82,11 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
                                             {item.href.startsWith('/') ? (
-                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </Link>
                                             ) : (
-                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </a>
                                             )}
@@ -98,11 +100,11 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                                     {navigation.support.map((item) => (
                                         <li key={item.name}>
                                             {item.href.startsWith('/') ? (
-                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </Link>
                                             ) : (
-                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </a>
                                             )}
@@ -118,11 +120,11 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                                     {navigation.company.map((item) => (
                                         <li key={item.name}>
                                             {item.href.startsWith('/') ? (
-                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </Link>
                                             ) : (
-                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </a>
                                             )}
@@ -136,11 +138,11 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                                     {navigation.legal.map((item) => (
                                         <li key={item.name}>
                                             {item.href.startsWith('/') ? (
-                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <Link href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </Link>
                                             ) : (
-                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
+                                                <a href={item.href} className="text-sm/6 text-gray-400 hover:text-cta hover:translate-x-1 transition-all duration-300 inline-block">
                                                     {t(item.name)}
                                                 </a>
                                             )}
@@ -151,12 +153,28 @@ export function ModernFooter({ navigation }: { navigation: FooterNavigationConfi
                         </div>
                     </div>
                 </div>
-                <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:mt-20 lg:mt-24 px-8">
-                    <p className="text-sm/6 text-gray-400 text-center sm:text-left">&copy; {new Date().getFullYear()} Pencil Spatial Dynamics. All rights reserved.</p>
-                    <div className="flex items-center space-x-4">
-                        <LanguageToggle className="!text-gray-400 hover:!text-white hover:!bg-white/10" />
-                        <ThemeToggle className="!text-gray-400 hover:!text-white hover:!bg-white/10" />
+                <div 
+                    className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:mt-20 lg:mt-24 px-8 relative pb-8"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                >
+                    <p className="text-sm/6 text-gray-400 text-center sm:text-left z-10 relative">&copy; {new Date().getFullYear()} Pencil Spatial Dynamics. All rights reserved.</p>
+                    <div className="flex items-center space-x-4 z-10 relative">
+                        <LanguageToggle className="!text-gray-400 hover:!text-orange-500 hover:!bg-white/10" />
+                        <ThemeToggle className="!text-gray-400 hover:!text-orange-500 hover:!bg-white/10" />
                     </div>
+                    
+                    {/* Hidden Easter Egg */}
+                    <motion.div 
+                        className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none overflow-hidden h-12"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
+                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        <span className="font-display font-bold text-white/5 text-4xl tracking-widest uppercase pb-1">
+                            Pencil
+                        </span>
+                    </motion.div>
                 </div>
             </div>
         </footer>
