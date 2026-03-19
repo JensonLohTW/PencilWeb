@@ -17,15 +17,13 @@ export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
 
         {/* Header Block */}
         <motion.div {...technologyReveal(!!reduceMotion)} className="p-8 lg:p-12 xl:p-16">
-          <h2 className="text-6xl font-medium uppercase leading-[0.9] tracking-tighter text-pencil-950 dark:text-white sm:text-7xl lg:text-8xl xl:text-[8rem]">
+          <h2 className="text-4xl font-medium uppercase leading-[1.1] tracking-tighter text-pencil-950 dark:text-white sm:text-5xl lg:text-6xl">
             {/* Split "FORMA ENGINE" style based on flow.title */}
             <span className="block text-pencil-900/90 dark:text-white/90">{flow.title.split(' ')[0]}</span>
             <span className="block text-pencil-950 dark:text-white">{flow.title.split(' ').slice(1).join(' ')}</span>
           </h2>
 
-          <div className="mt-12 flex max-w-sm shrink-0 flex-col font-mono text-[11px] uppercase tracking-widest text-pencil-500 dark:text-[#888]">
-            <p className="leading-relaxed normal-case tracking-normal">{flow.description}</p>
-          </div>
+          <p className="mt-8 max-w-sm font-mono text-sm leading-relaxed text-pencil-500 dark:text-[#888]">{flow.description}</p>
         </motion.div>
 
         {/* Stats Strip */}
@@ -62,7 +60,7 @@ export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
                 {step.number}
               </span>
               <div>
-                <h3 className={`font-semibold tracking-wide transition-colors duration-200 ${activeIndex === index ? 'text-pencil-950 dark:text-white' : 'text-pencil-600 dark:text-white/80 group-hover:text-pencil-900 dark:group-hover:text-white'
+                <h3 className={`text-sm sm:text-base font-semibold tracking-wide transition-colors duration-200 ${activeIndex === index ? 'text-pencil-950 dark:text-white' : 'text-pencil-600 dark:text-white/80 group-hover:text-pencil-900 dark:group-hover:text-white'
                   }`}>
                   {step.title}
                 </h3>

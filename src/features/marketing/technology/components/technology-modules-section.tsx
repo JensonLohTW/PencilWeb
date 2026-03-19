@@ -51,7 +51,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
                 }`}>
                 {module.number}
               </span>
-              <span className={`mt-2 font-semibold tracking-wide uppercase transition-colors duration-200 ${activeId === module.id ? 'text-pencil-950 dark:text-white' : 'text-pencil-500 dark:text-white/60 group-hover:text-pencil-900 dark:group-hover:text-white'
+              <span className={`mt-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${activeId === module.id ? 'text-pencil-950 dark:text-white' : 'text-pencil-500 dark:text-white/60 group-hover:text-pencil-900 dark:group-hover:text-white'
                 }`}>
                 {module.title}
               </span>

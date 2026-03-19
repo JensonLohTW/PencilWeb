@@ -56,7 +56,7 @@ export function Header({ utilities, actions }: HeaderProps) {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center whitespace-nowrap">
                     {utilities}
                     {actions || (
-                        <a href="#" className="text-sm/6 font-semibold text-white">
+                        <a href="#" className="text-[15px]/6 font-semibold text-white">
                             Log in <span aria-hidden="true">&rarr;</span>
                         </a>
                     )}

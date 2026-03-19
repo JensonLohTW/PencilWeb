@@ -96,7 +96,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
               <h3 className="text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white uppercase">{layer.title}</h3>
               <p
                 className={cn(
-                  'mt-4 font-mono text-[11px] uppercase tracking-wide text-pencil-500 transition-opacity duration-300 dark:text-[#888]',
+                  'mt-4 font-mono text-xs uppercase tracking-wide text-pencil-500 transition-opacity duration-300 dark:text-[#888]',
                   index === activeLayerIndex ? 'opacity-40' : 'opacity-100'
                 )}
               >
@@ -117,7 +117,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
               )}
             >
               <div className="px-6 pb-7 pt-5 sm:px-7 lg:px-8">
-                <p className="max-w-3xl font-mono text-xs leading-relaxed text-pencil-600 dark:text-[#999]">{layer.description}</p>
+                <p className="max-w-3xl font-mono text-sm leading-relaxed text-pencil-600 dark:text-[#999]">{layer.description}</p>
               </div>
             </motion.div>
           </motion.article>

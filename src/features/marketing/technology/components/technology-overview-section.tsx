@@ -35,7 +35,7 @@ export function TechnologyOverviewSection({ overview }: TechnologyOverviewSectio
             <p className="mt-4 text-5xl font-medium tracking-tighter text-pencil-950 dark:text-white sm:text-6xl">
               {item.value}
             </p>
-            <p className="mt-6 font-mono text-[11px] leading-relaxed text-pencil-500 dark:text-[#888] uppercase tracking-wide">
+            <p className="mt-6 font-mono text-xs leading-relaxed text-pencil-500 dark:text-[#888] uppercase tracking-wide">
               {item.description}
             </p>
           </TiltArticle>

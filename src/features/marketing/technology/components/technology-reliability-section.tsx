@@ -33,7 +33,7 @@ export function TechnologyReliabilitySection({ reliability }: TechnologyReliabil
               {item.number}
             </p>
             <h3 className="mt-6 text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white uppercase">{item.title}</h3>
-            <p className="mt-4 font-mono text-[11px] leading-relaxed text-pencil-500 dark:text-[#888] uppercase tracking-wide">
+            <p className="mt-4 font-mono text-xs leading-relaxed text-pencil-500 dark:text-[#888] uppercase tracking-wide">
               {item.description}
             </p>
           </TiltArticle>

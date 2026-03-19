@@ -52,7 +52,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                     >
                         <Link
                             href={item.href || '#'}
-                            className="flex items-center gap-x-1 whitespace-nowrap text-[13px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+                            className="flex items-center gap-x-1 whitespace-nowrap text-[15px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                         >
                             {t(item.nameKey)}
                             <ChevronDownIcon aria-hidden="true" className="size-3 flex-none opacity-50" />
@@ -73,7 +73,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                                         {item.children?.map((child) => (
                                             <div
                                                 key={child.nameKey}
-                                                className="group relative flex items-start gap-x-4 rounded-2xl p-4 text-sm/6 transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-white/5 dark:hover:ring-1 dark:hover:ring-white/10"
+                                                className="group relative flex items-start gap-x-4 rounded-2xl p-4 text-[15px]/6 transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-white/5 dark:hover:ring-1 dark:hover:ring-white/10"
                                             >
                                                 <div className="flex size-12 flex-none items-center justify-center rounded-xl bg-gray-50 group-hover:bg-white ring-1 ring-inset ring-gray-900/5 dark:bg-white/5 dark:group-hover:bg-white/10 dark:ring-white/10 transition-colors duration-200">
                                                     {child.icon && (
@@ -92,7 +92,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                                                         <span className="absolute inset-0" />
                                                     </Link>
                                                     {child.descriptionKey && (
-                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{t(child.descriptionKey)}</p>
+                                                        <p className="mt-1 text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed">{t(child.descriptionKey)}</p>
                                                     )}
                                                 </div>
                                             </div>
@@ -106,7 +106,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                     <Link
                         key={item.nameKey}
                         href={item.href || '#'}
-                        className="whitespace-nowrap text-[13px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+                        className="whitespace-nowrap text-[15px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                     >
                         {t(item.nameKey)}
                     </Link>
