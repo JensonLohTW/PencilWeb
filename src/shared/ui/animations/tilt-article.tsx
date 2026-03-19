@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useMotionValue, useSpring, useTransform, HTMLMotionProps } from 'framer-motion'
-import { ReactNode, MouseEvent } from 'react'
+import { ReactNode, MouseEvent, useRef, useCallback } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
 interface TiltCardProps extends HTMLMotionProps<"article"> {
@@ -15,6 +15,7 @@ export function TiltArticle({ children, className, intensity = 5, active = true,
     const x = useMotionValue(0)
     const y = useMotionValue(0)
     const isReducedMotion = useReducedMotion()
+    const rafIdRef = useRef<number | null>(null)
 
     const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 })
     const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 })
@@ -22,23 +23,28 @@ export function TiltArticle({ children, className, intensity = 5, active = true,
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`${intensity}deg`, `-${intensity}deg`])
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`-${intensity}deg`, `${intensity}deg`])
 
-    const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const handleMouseMove = useCallback((e: MouseEvent<HTMLElement>) => {
         if (isReducedMotion || !active) return
-        const rect = e.currentTarget.getBoundingClientRect()
-        const width = rect.width
-        const height = rect.height
-        const mouseX = e.clientX - rect.left
-        const mouseY = e.clientY - rect.top
-        const xPct = (mouseX / width) - 0.5
-        const yPct = (mouseY / height) - 0.5
-        x.set(xPct)
-        y.set(yPct)
-    }
+        if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current)
+        const clientX = e.clientX
+        const clientY = e.clientY
+        const target = e.currentTarget
+        rafIdRef.current = requestAnimationFrame(() => {
+            const rect = target.getBoundingClientRect()
+            x.set((clientX - rect.left) / rect.width - 0.5)
+            y.set((clientY - rect.top) / rect.height - 0.5)
+            rafIdRef.current = null
+        })
+    }, [isReducedMotion, active, x, y])
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
+        if (rafIdRef.current !== null) {
+            cancelAnimationFrame(rafIdRef.current)
+            rafIdRef.current = null
+        }
         x.set(0)
         y.set(0)
-    }
+    }, [x, y])
 
     // Combine external styles with tilt styles
     const combinedStyle = active && !isReducedMotion

@@ -1,16 +1,19 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import { technologyReveal } from './technology-motion'
 
 export function TechnologyFlowGraphic() {
     const reduceMotion = useReducedMotion()
+    const containerRef = useRef<HTMLDivElement>(null)
+    const isInView = useInView(containerRef, { amount: 0.1 })
 
     // Generate some paths to represent a wireframe sphere/polyhedron
     const rings = Array.from({ length: 6 })
 
     return (
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-transparent">
+        <div ref={containerRef} className="absolute inset-0 flex items-center justify-center overflow-hidden bg-transparent">
             {/* Background subtle grid lines */}
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px))] bg-[size:32px_32px]" />
 
@@ -20,7 +23,7 @@ export function TechnologyFlowGraphic() {
                 style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
             >
                 <motion.div
-                    animate={reduceMotion ? {} : { rotateX: 360, rotateY: 360 }}
+                    animate={reduceMotion || !isInView ? {} : { rotateX: 360, rotateY: 360 }}
                     transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
                     className="absolute inset-x-0 inset-y-0"
                     style={{ transformStyle: 'preserve-3d' }}
