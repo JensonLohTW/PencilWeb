@@ -2,9 +2,7 @@
 
 import { Link } from '@/i18n/routing'
 import type { TechnologyCtaSectionProps } from '@/features/marketing/technology/types'
-import { motion, useReducedMotion } from 'framer-motion'
-import { technologyReveal } from './technology-motion'
-import { TechnologySectionShell } from './technology-section-shell'
+import { FadeIn } from '@/components/animations/fade-in'
 
 function renderAction(href: string, label: string, className: string) {
   if (href.startsWith('#')) {
@@ -23,37 +21,30 @@ function renderAction(href: string, label: string, className: string) {
 }
 
 export function TechnologyCtaSection({ cta }: TechnologyCtaSectionProps) {
-  const reduceMotion = useReducedMotion()
-
   return (
-    <TechnologySectionShell className="border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white pt-24 pb-32">
-      <motion.div
-        {...technologyReveal(!!reduceMotion)}
-        className="flex flex-col border-l border-cta pl-8 lg:flex-row lg:items-end lg:justify-between lg:gap-8 lg:pl-12"
-      >
-        <div className="max-w-3xl">
-          <h2 className="text-4xl font-semibold tracking-tighter text-pencil-950 dark:text-white sm:text-5xl lg:text-7xl uppercase">
+    <section className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <FadeIn className="mx-auto max-w-2xl text-center">
+          <h2 className="text-4xl font-semibold tracking-tight text-balance text-pencil-950 sm:text-5xl dark:text-white">
             {cta.title}
           </h2>
-          <p className="mt-6 font-mono text-sm leading-relaxed text-pencil-600 dark:text-[#888] lg:text-base">
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
             {cta.description}
           </p>
-        </div>
-
-        <div className="mt-12 flex shrink-0 flex-wrap gap-4 lg:mt-0">
-          {renderAction(
-            cta.primaryAction.href,
-            cta.primaryAction.label,
-            'inline-flex h-12 items-center justify-center border border-pencil-950 bg-pencil-950 dark:border-white dark:bg-white px-8 font-mono text-xs font-semibold uppercase tracking-widest text-white dark:text-black transition-all duration-300 hover:bg-transparent dark:hover:bg-transparent hover:text-pencil-950 dark:hover:text-white',
-          )}
-          {renderAction(
-            cta.secondaryAction.href,
-            cta.secondaryAction.label,
-            'inline-flex h-12 items-center justify-center border border-pencil-700/20 dark:border-white/20 bg-transparent px-8 font-mono text-xs font-semibold uppercase tracking-widest text-pencil-500 dark:text-[#bbb] transition-all duration-300 hover:border-cta hover:text-cta dark:hover:border-cta dark:hover:text-cta',
-          )}
-        </div>
-      </motion.div>
-    </TechnologySectionShell>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            {renderAction(
+              cta.primaryAction.href,
+              cta.primaryAction.label,
+              'rounded-md bg-cta px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-pencil-950 dark:hover:bg-white dark:hover:text-pencil-950',
+            )}
+            {renderAction(
+              cta.secondaryAction.href,
+              cta.secondaryAction.label,
+              'text-sm/6 font-semibold text-pencil-950 transition-colors hover:text-cta dark:text-white dark:hover:text-cta',
+            )}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
   )
 }
-

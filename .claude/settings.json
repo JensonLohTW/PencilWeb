@@ -1,0 +1,45 @@
+{
+    "permissions": {
+        "allow": [
+            "Edit",
+            "Read",
+            "Write",
+            "Bash(git:*)",
+            "Bash(npx:*)",
+            "Bash(uvx:*)",
+            "Bash(node:*)",
+            "Bash(pnpm:*)",
+            "Bash(yarn:*)",
+            "mcp__Context7",
+            "mcp__SequentialThinking",
+            "mcp__chrome-devtools",
+            "mcp__serena",
+            "mcp__shadcn-ui-mcp",
+            "mcp__auggie-mcp"
+        ],
+        "deny": [
+            "Bash(rm:*)",
+            "Bash(sudo:*)",
+            "Bash(curl:*)",
+            "Bash(wget:*)",
+            "WebFetch",
+            "Read(./.env)",
+            "Read(./.env.*)",
+            "Read(./secrets/**)"
+        ],
+        "defaultMode": "acceptEdits",
+        "additionalDirectories": [
+            ".",
+            "scripts"
+        ]
+    },
+    "enableAllProjectMcpServers": true,
+    "enabledMcpjsonServers": [
+        "Context7",
+        "SequentialThinking",
+        "chrome-devtools",
+        "serena",
+        "shadcn",
+        "auggie-mcp"
+    ]
+}

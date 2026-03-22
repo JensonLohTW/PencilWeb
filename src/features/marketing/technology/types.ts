@@ -7,13 +7,9 @@ export interface TechnologyHeroContent {
   eyebrow: string
   title: string
   description: string
-  panelTitle: string
-  panelDescription: string
   tags: string[]
-  quickLinks: ActionLink[]
   primaryAction: ActionLink
   secondaryAction: ActionLink
-  graphicStates: string[]
 }
 
 export interface TechnologyOverviewItem {

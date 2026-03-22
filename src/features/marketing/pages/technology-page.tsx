@@ -15,7 +15,7 @@ export default function TechnologyPage() {
   const content = buildTechnologyTemplateContent(t)
 
   return (
-    <div className="page-gradient transition-colors duration-300">
+    <div className="page-gradient overflow-hidden pb-24">
       <TechnologyHeroSection hero={content.hero} />
       <TechnologyOverviewSection overview={content.overview} />
       <TechnologyModulesSection modules={content.modules} />

@@ -1,81 +1,96 @@
 'use client'
 
 import type { TechnologyFlowSectionProps } from '@/features/marketing/technology/types'
-import { motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
-import { technologyReveal } from './technology-motion'
-import { TechnologyFlowGraphic } from './technology-flow-graphic'
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import { cn } from '@/shared/lib/cn'
 
 export function TechnologyFlowSection({ flow }: TechnologyFlowSectionProps) {
-  const reduceMotion = useReducedMotion()
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section id="tech-flow" className="relative grid grid-cols-1 border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white lg:grid-cols-[1fr_1fr]">
-      {/* Left Column: Content */}
-      <div className="flex flex-col border-r border-pencil-700/10 dark:border-white/10">
-
-        {/* Header Block */}
-        <motion.div {...technologyReveal(!!reduceMotion)} className="p-8 lg:p-12 xl:p-16">
-          <h2 className="text-4xl font-medium uppercase leading-[1.1] tracking-tighter text-pencil-950 dark:text-white sm:text-5xl lg:text-6xl">
-            {/* Split "FORMA ENGINE" style based on flow.title */}
-            <span className="block text-pencil-900/90 dark:text-white/90">{flow.title.split(' ')[0]}</span>
-            <span className="block text-pencil-950 dark:text-white">{flow.title.split(' ').slice(1).join(' ')}</span>
+    <section id="tech-flow" className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <FadeIn className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">
+            {flow.eyebrow}
           </h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-pencil-950 sm:text-5xl lg:text-balance dark:text-white">
+            {flow.title}
+          </p>
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
+            {flow.description}
+          </p>
+        </FadeIn>
 
-          <p className="mt-8 max-w-sm font-mono text-sm leading-relaxed text-pencil-500 dark:text-[#888]">{flow.description}</p>
-        </motion.div>
-
-        {/* Stats Strip */}
-        <motion.div
-          {...technologyReveal(!!reduceMotion, { delay: 0.1 })}
-          className="grid grid-cols-2 border-y border-pencil-700/10 dark:border-white/10 font-mono text-[10px] uppercase tracking-widest text-pencil-500 dark:text-[#888] sm:grid-cols-3"
+        {/* Stats */}
+        <StaggerContainer
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-3 lg:max-w-none"
         >
-          {flow.stats.map((stat, index) => (
-            <div
-              key={index}
-              className={`p-6 lg:px-12 ${index < 2 ? 'border-r border-pencil-700/10 dark:border-white/10' : 'hidden sm:block'
-                }`}
+          {flow.stats.map((stat) => (
+            <StaggerItem
+              key={stat.label}
+              className="flex flex-col items-center rounded-2xl border border-pencil-200/70 bg-white/70 p-6 text-center dark:border-white/10 dark:bg-white/5"
             >
-              <span className="mb-2 block text-pencil-400 dark:text-[#555]">{stat.label}</span>
-              <span className="text-sm font-semibold text-pencil-950 dark:text-white">{stat.value}</span>
-            </div>
+              <p className="text-sm font-semibold text-pencil-500 dark:text-pencil-400">
+                {stat.label}
+              </p>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-pencil-950 dark:text-white">
+                {stat.value}
+              </p>
+            </StaggerItem>
           ))}
-        </motion.div>
+        </StaggerContainer>
 
-        {/* Steps List */}
-        <div className="flex flex-col">
-          {flow.steps.map((step, index) => (
-            <motion.button
-              key={step.number}
-              type="button"
-              onMouseEnter={() => setActiveIndex(index)}
-              onFocus={() => setActiveIndex(index)}
-              {...technologyReveal(!!reduceMotion, { delay: 0.2 + index * 0.05 })}
-              className={`group flex items-start gap-8 border-b border-pencil-700/10 dark:border-white/10 p-6 text-left transition-colors duration-300 lg:px-12 ${activeIndex === index ? 'bg-pencil-100 dark:bg-white/[0.03]' : 'hover:bg-pencil-50 dark:hover:bg-white/[0.02]'
-                }`}
-            >
-              <span className={`font-mono text-[10px] uppercase tracking-widest ${activeIndex === index ? 'text-cta dark:text-cta' : 'text-pencil-400 dark:text-[#444] group-hover:text-pencil-600 dark:group-hover:text-white/50'
-                }`}>
-                {step.number}
-              </span>
-              <div>
-                <h3 className={`text-sm sm:text-base font-semibold tracking-wide transition-colors duration-200 ${activeIndex === index ? 'text-pencil-950 dark:text-white' : 'text-pencil-600 dark:text-white/80 group-hover:text-pencil-900 dark:group-hover:text-white'
-                  }`}>
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-pencil-500 dark:text-[#888]">
-                  {step.description}
-                </p>
-              </div>
-            </motion.button>
-          ))}
+        {/* Steps */}
+        <div className="mx-auto mt-16 max-w-3xl">
+          <StaggerContainer
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col gap-4"
+          >
+            {flow.steps.map((step, index) => (
+              <StaggerItem
+                key={step.number}
+                className={cn(
+                  'group flex items-start gap-6 rounded-2xl border p-6 transition-all duration-300 cursor-pointer',
+                  activeIndex === index
+                    ? 'border-accent-500/30 bg-white shadow-lg shadow-accent-500/5 dark:border-accent-500/20 dark:bg-white/10'
+                    : 'border-pencil-200/70 bg-white/70 hover:border-accent-500/20 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10',
+                )}
+                onMouseEnter={() => setActiveIndex(index)}
+                onFocus={() => setActiveIndex(index)}
+              >
+                <div
+                  className={cn(
+                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-semibold transition-colors duration-200',
+                    activeIndex === index
+                      ? 'bg-accent-600 text-white dark:bg-accent-500'
+                      : 'bg-accent-600/10 text-accent-600 group-hover:bg-accent-600 group-hover:text-white dark:bg-accent-500/20 dark:text-accent-400 dark:group-hover:bg-accent-500 dark:group-hover:text-white',
+                  )}
+                >
+                  {step.number}
+                </div>
+                <div>
+                  <h3
+                    className={cn(
+                      'text-base font-semibold transition-colors duration-200',
+                      activeIndex === index
+                        ? 'text-pencil-950 dark:text-white'
+                        : 'text-pencil-700 dark:text-pencil-300 group-hover:text-pencil-950 dark:group-hover:text-white',
+                    )}
+                  >
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm/6 text-pencil-600 dark:text-pencil-400">
+                    {step.description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
-      </div>
-
-      {/* Right Column: Graphic */}
-      <div className="relative hidden h-[400px] border-pencil-700/10 dark:border-white/10 lg:block lg:flex-1 lg:h-auto">
-        <TechnologyFlowGraphic />
       </div>
     </section>
   )

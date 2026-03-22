@@ -1,14 +1,13 @@
 'use client'
 
 import type { TechnologyModulesSectionProps } from '@/features/marketing/technology/types'
-import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useMemo, useState } from 'react'
-import { technologyReveal } from './technology-motion'
-import { TechnologySectionShell } from './technology-section-shell'
-import { ParallaxLayer } from '@/shared/ui/animations/parallax-layer'
+import { FadeIn } from '@/components/animations/fade-in'
+import { cn } from '@/shared/lib/cn'
+import { Check } from 'lucide-react'
 
 export function TechnologyModulesSection({ modules }: TechnologyModulesSectionProps) {
-  const reduceMotion = useReducedMotion()
   const defaultId = modules.items[0]?.id ?? ''
   const [activeId, setActiveId] = useState(defaultId)
 
@@ -18,95 +17,104 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
   )
 
   return (
-    <TechnologySectionShell id="tech-modules" className="relative border-b border-pencil-700/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] text-pencil-950 dark:text-white overflow-hidden">
-      {/* Background Parallax Typography */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-5 dark:opacity-[0.02]">
-        <ParallaxLayer y={[-100, 100]} className="absolute -right-40 top-40">
-          <span className="font-mono text-[20rem] font-bold leading-none tracking-tighter text-pencil-900 dark:text-white">MOD</span>
-        </ParallaxLayer>
-      </div>
+    <section id="tech-modules" className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <FadeIn className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">
+            {modules.eyebrow}
+          </h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-pencil-950 sm:text-5xl lg:text-balance dark:text-white">
+            {modules.title}
+          </p>
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
+            {modules.description}
+          </p>
+        </FadeIn>
 
-      <motion.div {...technologyReveal(!!reduceMotion)} className="relative z-10 max-w-3xl">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-pencil-500 dark:text-[#888]">{modules.eyebrow}</p>
-        <h2 className="mt-4 text-4xl font-medium tracking-tight text-pencil-950 dark:text-white sm:text-5xl lg:text-6xl uppercase">
-          {modules.title}
-        </h2>
-        <p className="mt-6 font-mono text-sm leading-relaxed text-pencil-600 dark:text-[#888] lg:text-base">
-          {modules.description}
-        </p>
-      </motion.div>
-
-      <div className="relative z-10 mt-16 grid grid-cols-1 border border-pencil-700/10 dark:border-white/10 lg:grid-cols-[300px_1fr]">
-        {/* Left Side: Module Selection Menu */}
-        <div className="flex flex-col border-b border-pencil-700/10 dark:border-white/10 lg:border-b-0 lg:border-r">
-          {modules.items.map((module) => (
-            <button
-              key={module.id}
-              type="button"
-              onClick={() => setActiveId(module.id)}
-              className={`group flex flex-col items-start border-b border-pencil-700/10 dark:border-white/10 px-6 py-6 text-left transition-colors duration-200 last:border-b-0 ${activeId === module.id ? 'bg-pencil-100 dark:bg-white/[0.04]' : 'hover:bg-pencil-50 dark:hover:bg-white/[0.02]'
-                }`}
-            >
-              <span className={`font-mono text-[10px] uppercase tracking-widest transition-colors duration-200 ${activeId === module.id ? 'text-cta dark:text-cta' : 'text-pencil-400 dark:text-[#555] group-hover:text-pencil-600 dark:group-hover:text-[#888]'
-                }`}>
-                {module.number}
-              </span>
-              <span className={`mt-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${activeId === module.id ? 'text-pencil-950 dark:text-white' : 'text-pencil-500 dark:text-white/60 group-hover:text-pencil-900 dark:group-hover:text-white'
-                }`}>
-                {module.title}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* Right Side: Active Module Details */}
-        <div className="relative min-h-[400px] overflow-hidden bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px))] bg-[size:32px_32px]">
-          <AnimatePresence mode="wait">
-            {activeModule && (
-              <motion.div
-                key={activeModule.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="flex h-full flex-col p-8 lg:p-12"
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
+          {/* Left Side: Module Selection */}
+          <FadeIn className="flex flex-col gap-2">
+            {modules.items.map((module) => (
+              <button
+                key={module.id}
+                type="button"
+                onClick={() => setActiveId(module.id)}
+                className={cn(
+                  'flex flex-col items-start rounded-xl px-5 py-4 text-left transition-all duration-200',
+                  activeId === module.id
+                    ? 'bg-accent-50 ring-1 ring-accent-500/20 dark:bg-accent-500/10 dark:ring-accent-500/20'
+                    : 'hover:bg-pencil-50 dark:hover:bg-white/5',
+                )}
               >
-                <div className="mb-8 flex items-center justify-between border-b border-pencil-700/10 dark:border-white/10 pb-6">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#cta] text-cta">
+                <span
+                  className={cn(
+                    'text-xs font-semibold transition-colors duration-200',
+                    activeId === module.id
+                      ? 'text-accent-600 dark:text-accent-400'
+                      : 'text-pencil-400 dark:text-pencil-500',
+                  )}
+                >
+                  {module.number}
+                </span>
+                <span
+                  className={cn(
+                    'mt-1 text-sm font-semibold transition-colors duration-200',
+                    activeId === module.id
+                      ? 'text-pencil-950 dark:text-white'
+                      : 'text-pencil-600 dark:text-pencil-400',
+                  )}
+                >
+                  {module.title}
+                </span>
+              </button>
+            ))}
+          </FadeIn>
+
+          {/* Right Side: Active Module Details */}
+          <div className="relative min-h-[400px] overflow-hidden rounded-2xl border border-pencil-200/70 bg-white/70 p-8 lg:p-10 dark:border-white/10 dark:bg-white/5">
+            <AnimatePresence mode="wait">
+              {activeModule && (
+                <motion.div
+                  key={activeModule.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex h-full flex-col"
+                >
+                  <p className="text-sm font-semibold text-accent-600 dark:text-accent-400">
                     {modules.activeItemLabel}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-pencil-400 dark:text-[#555]">
-                    {activeModule.number}
-                  </span>
-                </div>
+                  </p>
 
-                <h3 className="text-3xl font-semibold tracking-tight text-pencil-950 dark:text-white uppercase xl:text-4xl">
-                  {activeModule.title}
-                </h3>
-                <p className="mt-2 font-mono text-xs uppercase tracking-widest text-cta/80 dark:text-cta/80">
-                  {activeModule.subtitle}
-                </p>
-                <p className="mt-6 max-w-2xl font-mono text-sm leading-relaxed text-pencil-500 dark:text-[#888]">
-                  {activeModule.description}
-                </p>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white xl:text-3xl">
+                    {activeModule.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-accent-600/80 dark:text-accent-400/80">
+                    {activeModule.subtitle}
+                  </p>
+                  <p className="mt-4 max-w-2xl text-base/7 text-pencil-600 dark:text-pencil-400">
+                    {activeModule.description}
+                  </p>
 
-                <div className="mt-12 grid gap-4 sm:grid-cols-2">
-                  {activeModule.features.map((feature, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-4 border border-pencil-700/10 dark:border-white/10 bg-pencil-50 dark:bg-white/[0.01] p-4"
-                    >
-                      <div className="h-1 w-1 bg-cta/60" />
-                      <span className="font-mono text-xs uppercase tracking-wider text-pencil-600 dark:text-[#aaa]">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                  <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                    {activeModule.features.map((feature, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 rounded-lg bg-pencil-50 p-3 dark:bg-white/5"
+                      >
+                        <Check className="h-4 w-4 shrink-0 text-accent-600 dark:text-accent-400" />
+                        <span className="text-sm text-pencil-700 dark:text-pencil-300">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-    </TechnologySectionShell>
+    </section>
   )
 }
-

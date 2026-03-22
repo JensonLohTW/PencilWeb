@@ -16,6 +16,8 @@ import type {
   TechnologyTemplateContent,
 } from '../types'
 
+
+
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
 
@@ -52,28 +54,6 @@ function parseActionLink(value: unknown, fallback: ActionLink): ActionLink {
   }
 }
 
-function parseActionLinks(value: unknown, fallback: ActionLink[]): ActionLink[] {
-  if (!Array.isArray(value)) {
-    return fallback
-  }
-
-  const mapped = value
-    .map((item, index) => {
-      const itemFallback = fallback[index] ?? fallback[0]
-      const record = asRecord(item)
-      if (!record || !itemFallback) {
-        return null
-      }
-
-      return {
-        label: asString(record.label, itemFallback.label),
-        href: asString(record.href, itemFallback.href),
-      }
-    })
-    .filter((item): item is ActionLink => item !== null)
-
-  return mapped.length > 0 ? mapped : fallback
-}
 
 function parseOverviewItems(value: unknown, fallback: TechnologyOverviewItem[]): TechnologyOverviewItem[] {
   if (!Array.isArray(value)) {
@@ -226,25 +206,7 @@ const defaultHero: TechnologyHeroContent = {
   title: 'Build deployable systems with modular technology capability',
   description:
     'We combine XR, AI, IoT, and networking capabilities in layered modules so each rollout can be validated, scaled, and maintained with clear checkpoints.',
-  panelTitle: 'Capability navigation',
-  panelDescription: 'Jump to key sections and review the stack from architecture to delivery and maintenance.',
   tags: ['XR / Spatial Interfaces', 'AI Inference Pipelines', 'Cross-System API Contracts', 'Edge & Device Delivery'],
-  graphicStates: [
-    'Generating...',
-    'Morphing...',
-    'Refining...',
-    'Abstracting...',
-    'Projecting...',
-    'Rotating...',
-    'Expanding...',
-    'Pulsing...',
-  ],
-  quickLinks: [
-    { label: 'Core modules', href: '#tech-modules' },
-    { label: 'Architecture layers', href: '#tech-architecture' },
-    { label: 'Delivery flow', href: '#tech-flow' },
-    { label: 'Reliability model', href: '#tech-reliability' },
-  ],
   primaryAction: { label: 'Discuss technical collaboration', href: '/contact' },
   secondaryAction: { label: 'View core modules', href: '#tech-modules' },
 }
@@ -445,11 +407,7 @@ function parseHero(value: unknown, fallback: TechnologyHeroContent): TechnologyH
     eyebrow: asString(record.eyebrow, fallback.eyebrow),
     title: asString(record.title, fallback.title),
     description: asString(record.description, fallback.description),
-    panelTitle: asString(record.panelTitle, fallback.panelTitle),
-    panelDescription: asString(record.panelDescription, fallback.panelDescription),
     tags: asStringArray(record.tags, fallback.tags),
-    graphicStates: asStringArray(record.graphicStates, fallback.graphicStates),
-    quickLinks: parseActionLinks(record.quickLinks, fallback.quickLinks),
     primaryAction: parseActionLink(record.primaryAction, fallback.primaryAction),
     secondaryAction: parseActionLink(record.secondaryAction, fallback.secondaryAction),
   }
