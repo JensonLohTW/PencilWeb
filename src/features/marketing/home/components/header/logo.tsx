@@ -30,10 +30,10 @@ export function Logo({
                 <div className="absolute -right-1 -bottom-1 h-2 w-2 bg-cta" />
             </div>
             <div className="flex min-w-0 flex-col">
-                <span className={clsx('whitespace-nowrap font-bold tracking-tight text-cta dark:text-white', compact ? 'text-lg' : 'text-xl')}>
+                <span className={clsx('whitespace-nowrap font-bold tracking-tight text-cta dark:text-white', compact ? 'text-xl' : 'text-2xl')}>
                     Pencil
                 </span>
-                {!compact && <span className="swiss-mono whitespace-nowrap text-[9px] text-cta dark:text-pencil-500">{t('tagline')}</span>}
+                {!compact && <span className="swiss-mono whitespace-nowrap text-[10px] text-cta dark:text-pencil-500">{t('tagline')}</span>}
             </div>
         </Link>
     )

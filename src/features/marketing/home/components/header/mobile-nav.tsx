@@ -42,7 +42,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                             {headerNavigation.map((item) =>
                                 item.type === 'dropdown' ? (
                                     <Disclosure key={item.nameKey} as="div" className="-mx-3">
-                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-white hover:bg-white/5">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-lg/7 font-bold text-white hover:bg-white/5">
                                             {t(item.nameKey)}
                                             <ChevronDownIcon
                                                 aria-hidden="true"
@@ -55,7 +55,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                                                     key={child.nameKey}
                                                     as={Link}
                                                     href={child.href || '#'}
-                                                    className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-white hover:bg-white/5"
+                                                    className="block rounded-lg py-2 pl-6 pr-3 text-base/7 font-bold text-white hover:bg-white/5"
                                                     onClick={() => setMobileMenuOpen(false)}
                                                 >
                                                     {t(child.nameKey)}
@@ -67,7 +67,7 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                                     <Link
                                         key={item.nameKey}
                                         href={item.href || '#'}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-lg/7 font-bold text-white hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         {t(item.nameKey)}

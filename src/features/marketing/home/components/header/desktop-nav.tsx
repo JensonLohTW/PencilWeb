@@ -52,7 +52,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                     >
                         <Link
                             href={item.href || '#'}
-                            className="flex items-center gap-x-1 whitespace-nowrap text-[15px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+                            className="flex items-center gap-x-1 whitespace-nowrap text-lg tracking-wide font-semibold text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                         >
                             {t(item.nameKey)}
                             <ChevronDownIcon aria-hidden="true" className="size-3 flex-none opacity-50" />
@@ -106,7 +106,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
                     <Link
                         key={item.nameKey}
                         href={item.href || '#'}
-                        className="whitespace-nowrap text-[15px] tracking-wide font-normal text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+                        className="whitespace-nowrap text-lg tracking-wide font-semibold text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
                     >
                         {t(item.nameKey)}
                     </Link>
