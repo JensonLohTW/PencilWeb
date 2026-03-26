@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import type { FeatureIconKey, ProjectsFeatureHighlightSectionProps } from '@/features/marketing/projects/types'
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, ArrowPathIcon } from '@heroicons/react/20/solid'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import type { FeatureIconKey, ProjectsFeatureHighlightSectionProps } from '@/features/marketing/projects/types'
+import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
 const iconMap: Record<FeatureIconKey, typeof CloudArrowUpIcon> = {
   cloud: CloudArrowUpIcon,
@@ -14,7 +14,6 @@ const iconMap: Record<FeatureIconKey, typeof CloudArrowUpIcon> = {
 }
 
 export function ProjectsFeatureHighlightSection({ featureHighlight }: ProjectsFeatureHighlightSectionProps) {
-
   return (
     <section id="feature-highlight" className="px-6 py-24 lg:px-16">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-pencil-800/60 bg-pencil-950 px-6 py-16 sm:px-10 lg:px-14 dark:border-white/10">
@@ -27,12 +26,9 @@ export function ProjectsFeatureHighlightSection({ featureHighlight }: ProjectsFe
               {featureHighlight.items.map((item) => {
                 const Icon = iconMap[item.icon]
                 return (
-                  <StaggerItem
-                    key={item.name}
-                    className="relative pl-9"
-                  >
+                  <StaggerItem key={item.name} className="relative pl-9">
                     <dt className="font-semibold text-white">
-                      <Icon aria-hidden="true" className="absolute left-0 top-1 size-5 text-cta" />
+                      <Icon aria-hidden="true" className="absolute top-1 left-0 size-5 text-cta" />
                       {item.name}
                     </dt>
                     <dd className="mt-2 text-sm leading-relaxed text-pencil-300">{item.description}</dd>
@@ -42,11 +38,7 @@ export function ProjectsFeatureHighlightSection({ featureHighlight }: ProjectsFe
             </StaggerContainer>
           </FadeIn>
 
-          <FadeIn
-            variant="slideInRight"
-            delay={0.1}
-            className="relative"
-          >
+          <FadeIn variant="slideInRight" delay={0.1} className="relative">
             <Image
               alt={featureHighlight.image.alt}
               src={featureHighlight.image.src}

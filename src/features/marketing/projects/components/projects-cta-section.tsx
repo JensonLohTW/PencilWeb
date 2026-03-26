@@ -1,14 +1,14 @@
 'use client'
 
-import { Link } from '@/i18n/routing'
 import type { ProjectsCtaSectionProps } from '@/features/marketing/projects/types'
+import { Link } from '@/i18n/routing'
 import { motion, useReducedMotion } from 'framer-motion'
 
 export function ProjectsCtaSection({ cta }: ProjectsCtaSectionProps) {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="px-6 pb-24 pt-10 lg:px-16">
+    <section className="px-6 pt-10 pb-24 lg:px-16">
       <motion.div
         initial={reduceMotion ? undefined : { opacity: 0, y: 18 }}
         whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -17,7 +17,9 @@ export function ProjectsCtaSection({ cta }: ProjectsCtaSectionProps) {
         className="mx-auto flex max-w-7xl flex-col gap-8 rounded-3xl border border-pencil-200 bg-white px-6 py-12 sm:px-10 lg:flex-row lg:items-end lg:justify-between dark:border-white/10 dark:bg-pencil-900"
       >
         <div className="max-w-3xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-pencil-950 sm:text-4xl dark:text-white">{cta.title}</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-pencil-950 sm:text-4xl dark:text-white">
+            {cta.title}
+          </h2>
           <p className="mt-4 text-base leading-relaxed text-pencil-600 dark:text-pencil-300">{cta.description}</p>
         </div>
 

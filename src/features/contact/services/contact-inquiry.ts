@@ -1,9 +1,7 @@
 import { runtimeConfig } from '@/shared/config/runtime'
 import type { ContactInquiryPayload } from '../types/contact-inquiry'
 
-export type ContactSubmissionResult =
-  | { mode: 'api' }
-  | { mode: 'mailto'; href: string }
+export type ContactSubmissionResult = { mode: 'api' } | { mode: 'mailto'; href: string }
 
 function buildContactMailtoHref(payload: ContactInquiryPayload): string {
   const subject = `[Pencil Inquiry] ${payload.company} / ${payload.name}`
@@ -24,9 +22,7 @@ function buildContactMailtoHref(payload: ContactInquiryPayload): string {
   return `mailto:hank.kao@pencillink.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
-export async function submitContactInquiry(
-  payload: ContactInquiryPayload,
-): Promise<ContactSubmissionResult> {
+export async function submitContactInquiry(payload: ContactInquiryPayload): Promise<ContactSubmissionResult> {
   if (!runtimeConfig.contactApiUrl) {
     return { mode: 'mailto', href: buildContactMailtoHref(payload) }
   }

@@ -20,7 +20,10 @@ export function ProjectsNewsletterSection({ newsletter }: ProjectsNewsletterSect
           <p className="mt-5 text-base leading-relaxed text-pencil-300 sm:text-lg">{newsletter.description}</p>
         </div>
 
-        <form className="mx-auto mt-10 flex w-full max-w-md flex-col gap-3 sm:flex-row" onSubmit={(event) => event.preventDefault()}>
+        <form
+          className="mx-auto mt-10 flex w-full max-w-md flex-col gap-3 sm:flex-row"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <label htmlFor="projects-newsletter-email" className="sr-only">
             Email
           </label>

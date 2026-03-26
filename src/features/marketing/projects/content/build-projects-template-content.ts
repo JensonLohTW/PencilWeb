@@ -1,18 +1,18 @@
+import { getPath } from '@/shared/lib/paths'
 import type {
   ActionLink,
   FeatureGridItem,
   FeatureIconKey,
   FeatureItem,
+  HeroAnnouncement,
   LogoItem,
   ProjectListItem,
+  ProjectsSharedActions,
   ProjectsTemplateContent,
+  SectionImage,
   ShowcaseItem,
   TestimonialItem,
-  SectionImage,
-  ProjectsSharedActions,
-  HeroAnnouncement,
 } from '../types'
-import { getPath } from '@/shared/lib/paths'
 
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
@@ -111,7 +111,8 @@ const defaultContent: ProjectsTemplateContent = {
   },
   featureHighlight: {
     title: 'From PoC to Scale, Maintaining Predictable Delivery Rhythm',
-    description: 'We advance projects through phased milestones, allowing both technical and business teams to review risks, progress, and outcomes at each node.',
+    description:
+      'We advance projects through phased milestones, allowing both technical and business teams to review risks, progress, and outcomes at each node.',
     image: {
       src: getPath('/images/projects/delivery-rhythm.png'),
       alt: 'Project delivery management dashboard',
@@ -622,7 +623,10 @@ export function buildProjectsTemplateContent(t: TranslateFn): ProjectsTemplateCo
     newsletter: {
       title: asString(asRecord(root.newsletter)?.title, defaultContent.newsletter.title),
       description: asString(asRecord(root.newsletter)?.description, defaultContent.newsletter.description),
-      emailPlaceholder: asString(asRecord(root.newsletter)?.emailPlaceholder, defaultContent.newsletter.emailPlaceholder),
+      emailPlaceholder: asString(
+        asRecord(root.newsletter)?.emailPlaceholder,
+        defaultContent.newsletter.emailPlaceholder,
+      ),
       submitLabel: asString(asRecord(root.newsletter)?.submitLabel, defaultContent.newsletter.submitLabel),
     },
     cta: {

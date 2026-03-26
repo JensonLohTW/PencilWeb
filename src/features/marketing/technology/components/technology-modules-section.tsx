@@ -1,11 +1,11 @@
 'use client'
 
-import type { TechnologyModulesSectionProps } from '@/features/marketing/technology/types'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useMemo, useState } from 'react'
 import { FadeIn } from '@/components/animations/fade-in'
+import type { TechnologyModulesSectionProps } from '@/features/marketing/technology/types'
 import { cn } from '@/shared/lib/cn'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Check } from 'lucide-react'
+import { useMemo, useState } from 'react'
 
 export function TechnologyModulesSection({ modules }: TechnologyModulesSectionProps) {
   const defaultId = modules.items[0]?.id ?? ''
@@ -20,15 +20,11 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
     <section id="tech-modules" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <FadeIn className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">
-            {modules.eyebrow}
-          </h2>
+          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">{modules.eyebrow}</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-pencil-950 sm:text-5xl lg:text-balance dark:text-white">
             {modules.title}
           </p>
-          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
-            {modules.description}
-          </p>
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">{modules.description}</p>
         </FadeIn>
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
@@ -59,9 +55,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
                 <span
                   className={cn(
                     'mt-1 text-sm font-semibold transition-colors duration-200',
-                    activeId === module.id
-                      ? 'text-pencil-950 dark:text-white'
-                      : 'text-pencil-600 dark:text-pencil-400',
+                    activeId === module.id ? 'text-pencil-950 dark:text-white' : 'text-pencil-600 dark:text-pencil-400',
                   )}
                 >
                   {module.title}
@@ -86,7 +80,7 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
                     {modules.activeItemLabel}
                   </p>
 
-                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-pencil-950 dark:text-white xl:text-3xl">
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-pencil-950 xl:text-3xl dark:text-white">
                     {activeModule.title}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-accent-600/80 dark:text-accent-400/80">
@@ -98,14 +92,9 @@ export function TechnologyModulesSection({ modules }: TechnologyModulesSectionPr
 
                   <div className="mt-8 grid gap-3 sm:grid-cols-2">
                     {activeModule.features.map((feature, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 rounded-lg bg-pencil-50 p-3 dark:bg-white/5"
-                      >
+                      <div key={i} className="flex items-center gap-3 rounded-lg bg-pencil-50 p-3 dark:bg-white/5">
                         <Check className="h-4 w-4 shrink-0 text-accent-600 dark:text-accent-400" />
-                        <span className="text-sm text-pencil-700 dark:text-pencil-300">
-                          {feature}
-                        </span>
+                        <span className="text-sm text-pencil-700 dark:text-pencil-300">{feature}</span>
                       </div>
                     ))}
                   </div>

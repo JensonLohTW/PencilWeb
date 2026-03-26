@@ -1,6 +1,6 @@
+import { FadeIn } from '@/components/animations/fade-in'
 import Image from 'next/image'
 import type { SolutionsTestimonialSectionProps } from '../types'
-import { FadeIn } from '@/components/animations/fade-in'
 
 export function SolutionsTestimonialSection({ testimonial }: SolutionsTestimonialSectionProps) {
   return (

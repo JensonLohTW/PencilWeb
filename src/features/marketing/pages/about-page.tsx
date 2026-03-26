@@ -1,9 +1,9 @@
 import { AboutHero } from '../about/components/about-hero'
+import { AboutStats } from '../about/components/about-stats'
 import { CompanyTimeline } from '../about/components/company-timeline'
+import { JobOpenings } from '../about/components/job-openings'
 import { PartnerLogos } from '../about/components/partner-logos'
 import { TeamSection } from '../about/components/team-section'
-import { AboutStats } from '../about/components/about-stats'
-import { JobOpenings } from '../about/components/job-openings'
 
 export default function AboutPage() {
   return (

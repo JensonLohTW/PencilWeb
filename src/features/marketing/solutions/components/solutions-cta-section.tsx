@@ -1,5 +1,5 @@
-import type { SolutionsCtaSectionProps } from '../types'
 import { FadeIn } from '@/components/animations/fade-in'
+import type { SolutionsCtaSectionProps } from '../types'
 import { SolutionsLink } from './solutions-link'
 
 export function SolutionsCtaSection({ cta }: SolutionsCtaSectionProps) {
@@ -22,7 +22,9 @@ export function SolutionsCtaSection({ cta }: SolutionsCtaSectionProps) {
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-pencil-950 sm:text-5xl dark:text-white">
           {cta.title}
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-pencil-600 dark:text-pencil-300">{cta.description}</p>
+        <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-pencil-600 dark:text-pencil-300">
+          {cta.description}
+        </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <SolutionsLink
             href={cta.primaryAction.href}

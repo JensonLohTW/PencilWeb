@@ -1,15 +1,12 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
 import { contactOptionIndices } from '@/features/contact/constants/contact-form'
 import { submitContactInquiry } from '@/features/contact/services/contact-inquiry'
-import type {
-  ContactInquiryPayload,
-  ContactSubmissionState,
-} from '@/features/contact/types/contact-inquiry'
+import type { ContactInquiryPayload, ContactSubmissionState } from '@/features/contact/types/contact-inquiry'
 import { useLanguage } from '@/shared/providers/language-provider'
 import { ContactInteractiveItem } from '@/shared/ui/components/contact-interactive-item'
 import { Mail, Phone } from 'lucide-react'
+import { useState, type FormEvent } from 'react'
 
 function getStringField(formData: FormData, field: string): string {
   const value = formData.get(field)
@@ -25,8 +22,7 @@ function getStringArrayField(formData: FormData, field: string): string[] {
 
 export function ContactForm() {
   const { t } = useLanguage()
-  const [submissionState, setSubmissionState] =
-    useState<ContactSubmissionState>('idle')
+  const [submissionState, setSubmissionState] = useState<ContactSubmissionState>('idle')
   const [feedbackMessage, setFeedbackMessage] = useState('')
 
   const {
@@ -87,26 +83,19 @@ export function ContactForm() {
   }
 
   return (
-    <section className="bg-white py-16 dark:bg-pencil-950 sm:py-24">
+    <section className="bg-white py-16 sm:py-24 dark:bg-pencil-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Form */}
           <div>
-            <h2 className="text-2xl font-bold text-pencil-900 dark:text-pencil-100">
-              {t('pages.contact.form.title')}
-            </h2>
-            <p className="mt-2 text-pencil-600 dark:text-pencil-400">
-              {t('pages.contact.form.description')}
-            </p>
+            <h2 className="text-2xl font-bold text-pencil-900 dark:text-pencil-100">{t('pages.contact.form.title')}</h2>
+            <p className="mt-2 text-pencil-600 dark:text-pencil-400">{t('pages.contact.form.description')}</p>
 
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               {/* Contact Info */}
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                     {t('pages.contact.form.fields.name.label')} *
                   </label>
                   <input
@@ -114,15 +103,12 @@ export function ContactForm() {
                     id="name"
                     name="name"
                     required
-                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
+                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                     placeholder={t('pages.contact.form.fields.name.placeholder')}
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                  >
+                  <label htmlFor="company" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                     {t('pages.contact.form.fields.company.label')} *
                   </label>
                   <input
@@ -130,7 +116,7 @@ export function ContactForm() {
                     id="company"
                     name="company"
                     required
-                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
+                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                     placeholder={t('pages.contact.form.fields.company.placeholder')}
                   />
                 </div>
@@ -138,10 +124,7 @@ export function ContactForm() {
 
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                     {t('pages.contact.form.fields.email.label')} *
                   </label>
                   <input
@@ -149,22 +132,19 @@ export function ContactForm() {
                     id="email"
                     name="email"
                     required
-                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
+                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                     placeholder={t('pages.contact.form.fields.email.placeholder')}
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                  >
+                  <label htmlFor="phone" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                     {t('pages.contact.form.fields.phone.label')}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
+                    className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                     placeholder={t('pages.contact.form.fields.phone.placeholder')}
                   />
                 </div>
@@ -189,9 +169,7 @@ export function ContactForm() {
                           value={type}
                           className="size-4 rounded border-pencil-300 bg-pencil-50 text-cta focus:ring-cta dark:border-pencil-600 dark:bg-pencil-800 dark:text-cta"
                         />
-                        <span className="text-sm text-pencil-700 dark:text-pencil-200">
-                          {type}
-                        </span>
+                        <span className="text-sm text-pencil-700 dark:text-pencil-200">{type}</span>
                       </label>
                     )
                   })}
@@ -217,9 +195,7 @@ export function ContactForm() {
                           value={scene}
                           className="size-4 rounded border-pencil-300 bg-pencil-50 text-cta focus:ring-cta dark:border-pencil-600 dark:bg-pencil-800 dark:text-cta"
                         />
-                        <span className="text-sm text-pencil-700 dark:text-pencil-200">
-                          {scene}
-                        </span>
+                        <span className="text-sm text-pencil-700 dark:text-pencil-200">{scene}</span>
                       </label>
                     )
                   })}
@@ -228,16 +204,13 @@ export function ContactForm() {
 
               {/* Timeline */}
               <div>
-                <label
-                  htmlFor="timeline"
-                  className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                >
+                <label htmlFor="timeline" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                   {t('pages.contact.form.fields.timeline.label')}
                 </label>
                 <select
                   id="timeline"
                   name="timeline"
-                  className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100"
+                  className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100"
                 >
                   {timelineIndices.map((idx) => {
                     const option = {
@@ -256,17 +229,14 @@ export function ContactForm() {
 
               {/* Message */}
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-pencil-700 dark:text-pencil-200"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-pencil-700 dark:text-pencil-200">
                   {t('pages.contact.form.fields.message.label')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:outline-none focus:ring-1 focus:ring-cta dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
+                  className="mt-2 w-full rounded-lg border border-pencil-200 bg-white px-4 py-3 text-pencil-900 placeholder:text-pencil-400 focus:border-cta focus:ring-1 focus:ring-cta focus:outline-none dark:border-pencil-700 dark:bg-pencil-900 dark:text-pencil-100 dark:placeholder:text-pencil-500"
                   placeholder={t('pages.contact.form.fields.message.placeholder')}
                 />
               </div>
@@ -276,9 +246,7 @@ export function ContactForm() {
                 disabled={submissionState === 'submitting'}
                 className="w-full justify-center rounded-lg bg-pencil-950 px-8 py-4 text-white transition-colors hover:bg-cta disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {submissionState === 'submitting'
-                  ? '開啟中...'
-                  : '透過本機電子郵件軟體送出'}
+                {submissionState === 'submitting' ? '開啟中...' : '透過本機電子郵件軟體送出'}
               </button>
 
               <p className="mt-2 text-center text-xs text-pencil-500">
@@ -309,10 +277,7 @@ export function ContactForm() {
                 {benefitIndices.map((index) => {
                   const item = t(`pages.contact.info.benefits.items.${index}`)
                   return (
-                    <li
-                      key={index}
-                      className="flex items-start gap-3 text-pencil-600 dark:text-pencil-300"
-                    >
+                    <li key={index} className="flex items-start gap-3 text-pencil-600 dark:text-pencil-300">
                       <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-cta/10 text-xs font-bold text-cta dark:text-cta/80">
                         {index + 1}
                       </span>
@@ -329,12 +294,10 @@ export function ContactForm() {
               </h3>
               <div className="mt-6 space-y-4">
                 <div className="text-pencil-600 dark:text-pencil-300">
-                  <span className="text-pencil-500">
-                    聯絡人：
-                  </span>
+                  <span className="text-pencil-500">聯絡人：</span>
                   高宇弘 (Hank Kao) / 高經理
                 </div>
-                
+
                 <div className="flex flex-col gap-2">
                   <ContactInteractiveItem
                     icon={Mail}
@@ -342,18 +305,11 @@ export function ContactForm() {
                     value="hank.kao@pencillink.com"
                     href="mailto:hank.kao@pencillink.com"
                   />
-                  <ContactInteractiveItem
-                    icon={Phone}
-                    label="電話"
-                    value="0952-291-195"
-                    href="tel:0952-291-195"
-                  />
+                  <ContactInteractiveItem icon={Phone} label="電話" value="0952-291-195" href="tel:0952-291-195" />
                 </div>
-                
+
                 <div className="pt-2 text-pencil-600 dark:text-pencil-300">
-                  <span className="text-pencil-500">
-                    {t('pages.contact.info.contact.location')}
-                  </span>
+                  <span className="text-pencil-500">{t('pages.contact.info.contact.location')}</span>
                   {t('pages.contact.info.contact.locationValue')}
                 </div>
               </div>

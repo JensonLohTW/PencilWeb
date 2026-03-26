@@ -13,9 +13,7 @@ export default function PrivacyPolicyPage() {
       status={t('pages.privacy.statusActive')}
       category={t('footer.legal')}
     >
-      <p className="lead text-xl text-pencil-600 dark:text-pencil-300">
-        {t('pages.privacy.lead')}
-      </p>
+      <p className="lead text-xl text-pencil-600 dark:text-pencil-300">{t('pages.privacy.lead')}</p>
 
       <h2>01. {t('pages.privacy.sections.dataCollection.title')}</h2>
       <p>{t('pages.privacy.sections.dataCollection.content')}</p>

@@ -1,6 +1,6 @@
-import type { PropsWithChildren } from 'react'
-import type { Viewport } from 'next'
 import { siteMetadata, siteTypography } from '@/shared/config/site'
+import type { Viewport } from 'next'
+import type { PropsWithChildren } from 'react'
 import './globals.css'
 
 export const metadata = siteMetadata

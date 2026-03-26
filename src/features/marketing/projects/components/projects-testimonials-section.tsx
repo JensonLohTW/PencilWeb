@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import type { ProjectsTestimonialsSectionProps } from '@/features/marketing/projects/types'
 import { motion, useReducedMotion } from 'framer-motion'
+import Image from 'next/image'
 
 function chunk<T>(items: T[], size: number): T[][] {
   const result: T[][] = []
@@ -26,7 +26,9 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
           transition={{ duration: reduceMotion ? 0 : 0.45 }}
           className="max-w-3xl"
         >
-          <p className="swiss-mono text-xs font-semibold uppercase tracking-[0.18em] text-cta">{testimonials.eyebrow}</p>
+          <p className="swiss-mono text-xs font-semibold tracking-[0.18em] text-cta uppercase">
+            {testimonials.eyebrow}
+          </p>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight text-pencil-950 sm:text-5xl dark:text-white">
             {testimonials.title}
           </h2>
@@ -40,10 +42,10 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
             transition={{ duration: reduceMotion ? 0 : 0.5 }}
             className="glass-card-hover rounded-2xl border border-pencil-200 bg-white shadow-sm dark:border-white/10 dark:bg-pencil-900"
           >
-            <blockquote className="p-8 text-lg font-medium leading-relaxed text-pencil-900 sm:p-10 sm:text-xl dark:text-white">
+            <blockquote className="p-8 text-lg leading-relaxed font-medium text-pencil-900 sm:p-10 sm:text-xl dark:text-white">
               <p>{`“${testimonials.featured.quote}”`}</p>
             </blockquote>
-            <figcaption className="flex flex-wrap items-center gap-4 border-t border-pencil-200 px-8 py-5 dark:border-white/10 sm:px-10">
+            <figcaption className="flex flex-wrap items-center gap-4 border-t border-pencil-200 px-8 py-5 sm:px-10 dark:border-white/10">
               <Image
                 src={testimonials.featured.author.imageUrl}
                 alt={testimonials.featured.author.name}
@@ -52,8 +54,12 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
                 className="size-11 rounded-full border border-pencil-200 object-cover dark:border-white/10"
               />
               <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold text-pencil-900 dark:text-white">{testimonials.featured.author.name}</p>
-                <p className="truncate text-sm text-pencil-600 dark:text-pencil-300">@{testimonials.featured.author.handle}</p>
+                <p className="truncate font-semibold text-pencil-900 dark:text-white">
+                  {testimonials.featured.author.name}
+                </p>
+                <p className="truncate text-sm text-pencil-600 dark:text-pencil-300">
+                  @{testimonials.featured.author.handle}
+                </p>
               </div>
               {testimonials.featured.author.logoUrl ? (
                 <Image

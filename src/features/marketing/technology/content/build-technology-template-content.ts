@@ -16,8 +16,6 @@ import type {
   TechnologyTemplateContent,
 } from '../types'
 
-
-
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
 
@@ -53,7 +51,6 @@ function parseActionLink(value: unknown, fallback: ActionLink): ActionLink {
     href: asString(record.href, fallback.href),
   }
 }
-
 
 function parseOverviewItems(value: unknown, fallback: TechnologyOverviewItem[]): TechnologyOverviewItem[] {
   if (!Array.isArray(value)) {
@@ -106,7 +103,10 @@ function parseModuleItems(value: unknown, fallback: TechnologyModuleItem[]): Tec
   return mapped.length > 0 ? mapped : fallback
 }
 
-function parseArchitectureLayers(value: unknown, fallback: TechnologyArchitectureLayer[]): TechnologyArchitectureLayer[] {
+function parseArchitectureLayers(
+  value: unknown,
+  fallback: TechnologyArchitectureLayer[],
+): TechnologyArchitectureLayer[] {
   if (!Array.isArray(value)) {
     return fallback
   }
@@ -214,7 +214,8 @@ const defaultHero: TechnologyHeroContent = {
 const defaultOverview: TechnologyOverviewContent = {
   eyebrow: 'Capability Overview',
   title: 'Technology decisions mapped to delivery outcomes',
-  description: 'Each module is designed to be adopted independently and connected through stable integration contracts.',
+  description:
+    'Each module is designed to be adopted independently and connected through stable integration contracts.',
   items: [
     {
       label: 'Integration velocity',
@@ -250,15 +251,22 @@ const defaultModules: TechnologyModulesContent = {
       number: '01',
       title: 'XR (VR/MR/AR)',
       subtitle: 'Extended Reality',
-      description: 'Integrates immersive interfaces for simulation, operations guidance, and interactive training experiences.',
-      features: ['Headset and device integration', 'Spatial mapping and tracking', 'Cross-platform rendering', 'Session telemetry capture'],
+      description:
+        'Integrates immersive interfaces for simulation, operations guidance, and interactive training experiences.',
+      features: [
+        'Headset and device integration',
+        'Spatial mapping and tracking',
+        'Cross-platform rendering',
+        'Session telemetry capture',
+      ],
     },
     {
       id: 'treadmill',
       number: '02',
       title: 'Omnidirectional Treadmill',
       subtitle: 'Movement Platform',
-      description: 'Connects movement hardware with simulation logic to support natural navigation in virtual environments.',
+      description:
+        'Connects movement hardware with simulation logic to support natural navigation in virtual environments.',
       features: ['Movement synchronization', 'Gait profile handling', 'Safety constraints', 'Multi-user coordination'],
     },
     {
@@ -267,15 +275,26 @@ const defaultModules: TechnologyModulesContent = {
       title: 'Haptic Feedback',
       subtitle: 'Touch Sensation',
       description: 'Uses tactile channels to reinforce realism and improve procedural learning in immersive scenarios.',
-      features: ['Wearable feedback devices', 'Force and vibration cues', 'Event-driven response mapping', 'Device calibration workflows'],
+      features: [
+        'Wearable feedback devices',
+        'Force and vibration cues',
+        'Event-driven response mapping',
+        'Device calibration workflows',
+      ],
     },
     {
       id: 'ai-data',
       number: '04',
       title: 'AI & Big Data',
       subtitle: 'Intelligence Engine',
-      description: 'Combines model inference, rules, and analytics pipelines for adaptive decision and interaction support.',
-      features: ['Inference orchestration', 'Knowledge retrieval', 'Behavioral analytics', 'Recommendation feedback loops'],
+      description:
+        'Combines model inference, rules, and analytics pipelines for adaptive decision and interaction support.',
+      features: [
+        'Inference orchestration',
+        'Knowledge retrieval',
+        'Behavioral analytics',
+        'Recommendation feedback loops',
+      ],
     },
     {
       id: 'network',
@@ -283,7 +302,12 @@ const defaultModules: TechnologyModulesContent = {
       title: '5G/6G Network',
       subtitle: 'Low-Latency Delivery',
       description: 'Ensures stable and low-latency transport between cloud services, edge nodes, and field devices.',
-      features: ['Streaming optimization', 'Edge-aware routing', 'Bandwidth prioritization', 'Real-time synchronization'],
+      features: [
+        'Streaming optimization',
+        'Edge-aware routing',
+        'Bandwidth prioritization',
+        'Real-time synchronization',
+      ],
     },
     {
       id: 'multisensory',
@@ -291,7 +315,12 @@ const defaultModules: TechnologyModulesContent = {
       title: 'Multi-Sensory Interaction',
       subtitle: 'Extended Sensory Layer',
       description: 'Extends interaction channels beyond vision and audio to deepen immersion and context fidelity.',
-      features: ['Environmental triggers', 'Scent and ambience modules', 'Synchronized feedback timing', 'Experimental integration hooks'],
+      features: [
+        'Environmental triggers',
+        'Scent and ambience modules',
+        'Synchronized feedback timing',
+        'Experimental integration hooks',
+      ],
     },
   ],
 }
@@ -382,7 +411,8 @@ const defaultReliability: TechnologyReliabilityContent = {
 
 const defaultCta: TechnologyCtaContent = {
   title: 'Need deeper technical planning for your scenario?',
-  description: 'Share your constraints and timeline. We provide architecture guidance, phased milestones, and implementation recommendations.',
+  description:
+    'Share your constraints and timeline. We provide architecture guidance, phased milestones, and implementation recommendations.',
   primaryAction: { label: 'Talk to the technical team', href: '/contact' },
   secondaryAction: { label: 'Review solutions', href: '/solutions' },
 }

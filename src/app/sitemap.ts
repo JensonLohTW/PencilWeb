@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next'
 import { buildLocaleRoutePath, PAGE_KEYS, PAGE_PATH_BY_KEY, seoConfig, toAbsoluteUrl } from '@/shared/seo/config'
+import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
@@ -37,6 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: PAGE_CHANGE_FREQUENCY[pagePath] ?? 'monthly',
         priority: PAGE_PRIORITY[pagePath] ?? 0.7,
       }
-    })
+    }),
   )
 }

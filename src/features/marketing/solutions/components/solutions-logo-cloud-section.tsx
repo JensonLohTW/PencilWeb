@@ -1,6 +1,6 @@
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 import Image from 'next/image'
 import type { SolutionsLogoCloudSectionProps } from '../types'
-import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 export function SolutionsLogoCloudSection({ logoCloud }: SolutionsLogoCloudSectionProps) {
   return (

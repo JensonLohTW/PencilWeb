@@ -1,19 +1,19 @@
 'use client'
 
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ArrowPathIcon,
-  FingerPrintIcon,
-  ChevronDownIcon,
-} from '@heroicons/react/24/outline'
-import { Link } from '@/i18n/routing'
-import { useState, useCallback, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '@/shared/lib/cn'
-import type { ComponentProps, ComponentType } from 'react'
-import type { FeatureIconKey, FeatureItem, SolutionsFeatureSectionProps } from '../types'
 import { FadeIn } from '@/components/animations/fade-in'
+import { Link } from '@/i18n/routing'
+import { cn } from '@/shared/lib/cn'
+import {
+  ArrowPathIcon,
+  ChevronDownIcon,
+  CloudArrowUpIcon,
+  FingerPrintIcon,
+  LockClosedIcon,
+} from '@heroicons/react/24/outline'
+import { AnimatePresence, motion } from 'framer-motion'
+import type { ComponentProps, ComponentType } from 'react'
+import { useCallback, useRef, useState } from 'react'
+import type { FeatureIconKey, FeatureItem, SolutionsFeatureSectionProps } from '../types'
 
 const iconMap: Record<FeatureIconKey, ComponentType<ComponentProps<'svg'>>> = {
   cloud: CloudArrowUpIcon,
@@ -50,7 +50,15 @@ const expandVariants = {
   },
 } as const
 
-function SolutionRow({ feature, isExpanded, onToggle }: { feature: FeatureItem; isExpanded: boolean; onToggle: (name: string) => void }) {
+function SolutionRow({
+  feature,
+  isExpanded,
+  onToggle,
+}: {
+  feature: FeatureItem
+  isExpanded: boolean
+  onToggle: (name: string) => void
+}) {
   const Icon = iconMap[feature.icon]
   const rowRef = useRef<HTMLDivElement>(null)
 
@@ -67,10 +75,10 @@ function SolutionRow({ feature, isExpanded, onToggle }: { feature: FeatureItem; 
     <div
       ref={rowRef}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border transition-all duration-300",
+        'group relative overflow-hidden rounded-2xl border transition-all duration-300',
         isExpanded
-          ? "border-accent-500/30 bg-accent-50/30 dark:border-accent-500/20 dark:bg-accent-500/5 shadow-sm"
-          : "border-pencil-200/60 bg-white/50 hover:border-accent-500/20 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+          ? 'border-accent-500/30 bg-accent-50/30 shadow-sm dark:border-accent-500/20 dark:bg-accent-500/5'
+          : 'border-pencil-200/60 bg-white/50 hover:border-accent-500/20 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10',
       )}
     >
       <button
@@ -79,50 +87,45 @@ function SolutionRow({ feature, isExpanded, onToggle }: { feature: FeatureItem; 
         aria-expanded={isExpanded}
         className="flex w-full items-center gap-x-4 p-5 text-left focus:outline-none"
       >
-        <div className={cn(
-          "flex size-12 items-center justify-center rounded-xl transition-all duration-300",
-          isExpanded
-            ? "bg-accent-600 text-white"
-            : "bg-accent-600/10 text-accent-600 group-hover:bg-accent-600 group-hover:text-white dark:bg-accent-500/20 dark:text-accent-400 dark:group-hover:bg-accent-500"
-        )}>
+        <div
+          className={cn(
+            'flex size-12 items-center justify-center rounded-xl transition-all duration-300',
+            isExpanded
+              ? 'bg-accent-600 text-white'
+              : 'bg-accent-600/10 text-accent-600 group-hover:bg-accent-600 group-hover:text-white dark:bg-accent-500/20 dark:text-accent-400 dark:group-hover:bg-accent-500',
+          )}
+        >
           <Icon aria-hidden="true" className="size-6" />
         </div>
 
         <div className="flex flex-1 flex-col">
-          <span className={cn(
-            "text-lg font-bold transition-colors",
-            isExpanded ? "text-accent-700 dark:text-accent-300" : "text-pencil-950 dark:text-white"
-          )}>
+          <span
+            className={cn(
+              'text-lg font-bold transition-colors',
+              isExpanded ? 'text-accent-700 dark:text-accent-300' : 'text-pencil-950 dark:text-white',
+            )}
+          >
             {feature.name}
           </span>
           {!isExpanded && (
-            <span className="line-clamp-1 text-sm text-pencil-500 dark:text-pencil-400">
-              {feature.description}
-            </span>
+            <span className="line-clamp-1 text-sm text-pencil-500 dark:text-pencil-400">{feature.description}</span>
           )}
         </div>
 
         <ChevronDownIcon
           className={cn(
-            "size-5 transition-transform duration-300",
-            isExpanded ? "rotate-180 text-accent-600" : "text-pencil-400 group-hover:text-accent-500"
+            'size-5 transition-transform duration-300',
+            isExpanded ? 'rotate-180 text-accent-600' : 'text-pencil-400 group-hover:text-accent-500',
           )}
         />
       </button>
 
       <AnimatePresence initial={false}>
         {isExpanded && (
-          <motion.div
-            variants={expandVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <div className="px-5 pb-6 pt-2">
+          <motion.div variants={expandVariants} initial="hidden" animate="visible" exit="exit">
+            <div className="px-5 pt-2 pb-6">
               <div className="mb-4 h-px w-full bg-accent-500/10 dark:bg-accent-500/20" />
-              <p className="text-base leading-relaxed text-pencil-700 dark:text-pencil-300">
-                {feature.description}
-              </p>
+              <p className="text-base leading-relaxed text-pencil-700 dark:text-pencil-300">{feature.description}</p>
 
               <div className="mt-6 flex items-center gap-4">
                 <Link
@@ -134,8 +137,8 @@ function SolutionRow({ feature, isExpanded, onToggle }: { feature: FeatureItem; 
                 <button
                   type="button"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    onToggle(feature.name);
+                    e.stopPropagation()
+                    onToggle(feature.name)
                   }}
                   className="text-sm font-semibold text-pencil-600 hover:text-accent-600 dark:text-pencil-400 dark:hover:text-accent-400"
                 >
@@ -154,7 +157,7 @@ export function SolutionsFeatureSection({ features }: SolutionsFeatureSectionPro
   const [expandedName, setExpandedName] = useState<string | null>(null)
 
   const handleToggle = useCallback((name: string) => {
-    setExpandedName(prev => prev === name ? null : name)
+    setExpandedName((prev) => (prev === name ? null : name))
   }, [])
 
   return (

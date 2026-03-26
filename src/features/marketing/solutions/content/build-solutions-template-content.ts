@@ -1,8 +1,9 @@
+import { getPath } from '@/shared/lib/paths'
 import type {
   ActionLink,
+  FaqItem,
   FeatureIconKey,
   FeatureItem,
-  FaqItem,
   HeroContent,
   LogoItem,
   PricingTier,
@@ -10,7 +11,6 @@ import type {
   SolutionsTemplateContent,
   TestimonialContent,
 } from '../types'
-import { getPath } from '@/shared/lib/paths'
 
 type TranslateFn = <T = string>(key: string) => T
 type JsonRecord = Record<string, unknown>
@@ -68,11 +68,41 @@ const defaultContent: SolutionsTemplateContent = {
   },
   logoCloud: {
     logos: [
-      { name: 'Transistor', alt: 'Transistor', src: getPath('/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg'), width: 158, height: 48 },
-      { name: 'Reform', alt: 'Reform', src: getPath('/plus-assets/img/logos/158x48/reform-logo-gray-900.svg'), width: 158, height: 48 },
-      { name: 'Tuple', alt: 'Tuple', src: getPath('/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg'), width: 158, height: 48 },
-      { name: 'SavvyCal', alt: 'SavvyCal', src: getPath('/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg'), width: 158, height: 48 },
-      { name: 'Statamic', alt: 'Statamic', src: getPath('/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg'), width: 158, height: 48 },
+      {
+        name: 'Transistor',
+        alt: 'Transistor',
+        src: getPath('/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg'),
+        width: 158,
+        height: 48,
+      },
+      {
+        name: 'Reform',
+        alt: 'Reform',
+        src: getPath('/plus-assets/img/logos/158x48/reform-logo-gray-900.svg'),
+        width: 158,
+        height: 48,
+      },
+      {
+        name: 'Tuple',
+        alt: 'Tuple',
+        src: getPath('/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg'),
+        width: 158,
+        height: 48,
+      },
+      {
+        name: 'SavvyCal',
+        alt: 'SavvyCal',
+        src: getPath('/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg'),
+        width: 158,
+        height: 48,
+      },
+      {
+        name: 'Statamic',
+        alt: 'Statamic',
+        src: getPath('/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg'),
+        width: 158,
+        height: 48,
+      },
     ],
   },
   socialProof: {
@@ -83,26 +113,31 @@ const defaultContent: SolutionsTemplateContent = {
   features: {
     eyebrow: 'Four Core Solutions',
     title: 'Capabilities mapped to business outcomes',
-    description: 'Each solution module is designed to be independently adopted or combined into a phased implementation roadmap.',
+    description:
+      'Each solution module is designed to be independently adopted or combined into a phased implementation roadmap.',
     items: [
       {
         name: 'VR/MR Immersive Training',
-        description: 'High-fidelity simulation with repeatable operational drills, real-time feedback, and measurable learning outcomes.',
+        description:
+          'High-fidelity simulation with repeatable operational drills, real-time feedback, and measurable learning outcomes.',
         icon: 'cloud',
       },
       {
         name: 'AR Visualization & Guidance',
-        description: 'Overlay 3D and process data on real environments to improve maintenance speed, onboarding, and guidance accuracy.',
+        description:
+          'Overlay 3D and process data on real environments to improve maintenance speed, onboarding, and guidance accuracy.',
         icon: 'lock',
       },
       {
         name: 'Smart Space IoT Integration',
-        description: 'Connect sensors, gateways, and control systems to enable real-time monitoring and automated environmental responses.',
+        description:
+          'Connect sensors, gateways, and control systems to enable real-time monitoring and automated environmental responses.',
         icon: 'queue',
       },
       {
         name: 'AI Agent for Operations',
-        description: 'Deploy domain-specific AI assistants for customer service, knowledge retrieval, and workflow automation.',
+        description:
+          'Deploy domain-specific AI assistants for customer service, knowledge retrieval, and workflow automation.',
         icon: 'security',
       },
     ],
@@ -435,8 +470,14 @@ export function buildSolutionsTemplateContent(t: TranslateFn): SolutionsTemplate
     cta: {
       title: asString(asRecord(root.cta)?.title, defaultContent.cta.title),
       description: asString(asRecord(root.cta)?.description, defaultContent.cta.description),
-      primaryAction: parseActionLink(asRecord(root.cta)?.primaryAction, { ...defaultContent.cta.primaryAction, label: actions.getStarted }),
-      secondaryAction: parseActionLink(asRecord(root.cta)?.secondaryAction, { ...defaultContent.cta.secondaryAction, label: actions.learnMore }),
+      primaryAction: parseActionLink(asRecord(root.cta)?.primaryAction, {
+        ...defaultContent.cta.primaryAction,
+        label: actions.getStarted,
+      }),
+      secondaryAction: parseActionLink(asRecord(root.cta)?.secondaryAction, {
+        ...defaultContent.cta.secondaryAction,
+        label: actions.learnMore,
+      }),
     },
     actions,
   }

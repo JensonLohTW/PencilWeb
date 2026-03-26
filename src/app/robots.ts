@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next'
 import { getSiteOrigin, toAbsoluteUrl } from '@/shared/seo/config'
+import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 

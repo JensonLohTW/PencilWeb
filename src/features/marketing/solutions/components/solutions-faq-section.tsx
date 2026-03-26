@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import type { SolutionsFaqSectionProps } from '../types'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
+import type { SolutionsFaqSectionProps } from '../types'
 
 export function SolutionsFaqSection({ faq }: SolutionsFaqSectionProps) {
   const [openId, setOpenId] = useState<number | null>(faq.items[0]?.id ?? null)
@@ -13,7 +13,9 @@ export function SolutionsFaqSection({ faq }: SolutionsFaqSectionProps) {
   return (
     <section className="mx-auto max-w-2xl px-6 pb-8 sm:pt-12 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pb-32">
       <FadeIn>
-        <h2 className="text-4xl font-semibold tracking-tight text-pencil-950 sm:text-5xl dark:text-white">{faq.title}</h2>
+        <h2 className="text-4xl font-semibold tracking-tight text-pencil-950 sm:text-5xl dark:text-white">
+          {faq.title}
+        </h2>
       </FadeIn>
 
       <StaggerContainer as="dl" className="mt-20 divide-y divide-pencil-900/10 dark:divide-white/10">
@@ -28,7 +30,9 @@ export function SolutionsFaqSection({ faq }: SolutionsFaqSectionProps) {
                   className="flex w-full items-start justify-between gap-6 text-left"
                 >
                   <span className="text-base/7 font-semibold text-pencil-950 dark:text-white">{item.question}</span>
-                  <span className="text-2xl leading-none text-pencil-500 dark:text-pencil-400">{isOpen ? '−' : '+'}</span>
+                  <span className="text-2xl leading-none text-pencil-500 dark:text-pencil-400">
+                    {isOpen ? '−' : '+'}
+                  </span>
                 </button>
               </dt>
               <AnimatePresence initial={false}>

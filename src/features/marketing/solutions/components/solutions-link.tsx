@@ -18,7 +18,12 @@ export function SolutionsLink({ href, className, children }: SolutionsLinkProps)
 
   const isExternal = href.startsWith('http://') || href.startsWith('https://')
   return (
-    <a href={href} className={className} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
+    <a
+      href={href}
+      className={className}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+    >
       {children}
     </a>
   )

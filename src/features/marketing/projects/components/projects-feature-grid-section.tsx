@@ -1,10 +1,16 @@
 'use client'
 
-import { Link } from '@/i18n/routing'
-import type { FeatureIconKey, ProjectsFeatureGridSectionProps } from '@/features/marketing/projects/types'
-import { ArrowPathIcon, ChevronRightIcon, CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import { FadeIn } from '@/components/animations/fade-in'
 import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
+import type { FeatureIconKey, ProjectsFeatureGridSectionProps } from '@/features/marketing/projects/types'
+import { Link } from '@/i18n/routing'
+import {
+  ArrowPathIcon,
+  ChevronRightIcon,
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+} from '@heroicons/react/20/solid'
 
 const iconMap: Record<FeatureIconKey, typeof CloudArrowUpIcon> = {
   cloud: CloudArrowUpIcon,
@@ -14,12 +20,11 @@ const iconMap: Record<FeatureIconKey, typeof CloudArrowUpIcon> = {
 }
 
 export function ProjectsFeatureGridSection({ featureGrid }: ProjectsFeatureGridSectionProps) {
-
   return (
     <section id="features" className="px-6 py-24 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <FadeIn className="max-w-3xl">
-          <p className="swiss-mono text-xs font-semibold uppercase tracking-[0.18em] text-cta">{featureGrid.eyebrow}</p>
+          <p className="swiss-mono text-xs font-semibold tracking-[0.18em] text-cta uppercase">{featureGrid.eyebrow}</p>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight text-pencil-950 sm:text-5xl dark:text-white">
             {featureGrid.title}
           </h2>

@@ -1,12 +1,12 @@
 'use client'
 
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 import type { TechnologyArchitectureSectionProps } from '@/features/marketing/technology/types'
 import { cn } from '@/shared/lib/cn'
 import { motion, useReducedMotion } from 'framer-motion'
-import { useState } from 'react'
-import { FadeIn } from '@/components/animations/fade-in'
-import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 
 export function TechnologyArchitectureSection({ architecture }: TechnologyArchitectureSectionProps) {
   const reduceMotion = useReducedMotion()
@@ -16,20 +16,16 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
     <section id="tech-architecture" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <FadeIn className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">
-            {architecture.eyebrow}
-          </h2>
+          <h2 className="text-base/7 font-semibold text-accent-600 dark:text-accent-400">{architecture.eyebrow}</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-pencil-950 sm:text-5xl lg:text-balance dark:text-white">
             {architecture.title}
           </p>
-          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
-            {architecture.description}
-          </p>
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">{architecture.description}</p>
         </FadeIn>
 
         <StaggerContainer
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 lg:mt-24 md:grid-cols-3"
+          className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 md:grid-cols-3 lg:mt-24"
         >
           {architecture.layers.map((layer, index) => (
             <StaggerItem
@@ -48,7 +44,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
                 aria-expanded={index === activeLayerIndex}
                 aria-controls={`tech-architecture-panel-${index}`}
                 onClick={() => setActiveLayerIndex(index)}
-                className="w-full cursor-pointer p-6 text-left outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-accent-500/70 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-pencil-950 sm:p-8"
+                className="w-full cursor-pointer p-6 text-left transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-accent-500/70 focus-visible:ring-offset-2 sm:p-8 dark:focus-visible:ring-offset-pencil-950"
               >
                 <div className="mb-4 flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
@@ -68,9 +64,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold tracking-tight text-pencil-950 dark:text-white">
-                  {layer.title}
-                </h3>
+                <h3 className="text-xl font-semibold tracking-tight text-pencil-950 dark:text-white">{layer.title}</h3>
               </button>
 
               <motion.div
@@ -86,9 +80,7 @@ export function TechnologyArchitectureSection({ architecture }: TechnologyArchit
                 )}
               >
                 <div className="px-6 pb-6 sm:px-8 sm:pb-8">
-                  <p className="max-w-3xl text-base/7 text-pencil-600 dark:text-pencil-400">
-                    {layer.description}
-                  </p>
+                  <p className="max-w-3xl text-base/7 text-pencil-600 dark:text-pencil-400">{layer.description}</p>
                 </div>
               </motion.div>
             </StaggerItem>

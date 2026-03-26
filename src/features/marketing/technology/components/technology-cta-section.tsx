@@ -1,8 +1,8 @@
 'use client'
 
-import { Link } from '@/i18n/routing'
-import type { TechnologyCtaSectionProps } from '@/features/marketing/technology/types'
 import { FadeIn } from '@/components/animations/fade-in'
+import type { TechnologyCtaSectionProps } from '@/features/marketing/technology/types'
+import { Link } from '@/i18n/routing'
 
 function renderAction(href: string, label: string, className: string) {
   if (href.startsWith('#')) {
@@ -28,9 +28,7 @@ export function TechnologyCtaSection({ cta }: TechnologyCtaSectionProps) {
           <h2 className="text-4xl font-semibold tracking-tight text-balance text-pencil-950 sm:text-5xl dark:text-white">
             {cta.title}
           </h2>
-          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">
-            {cta.description}
-          </p>
+          <p className="mt-6 text-lg/8 text-pencil-600 dark:text-pencil-400">{cta.description}</p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             {renderAction(
               cta.primaryAction.href,

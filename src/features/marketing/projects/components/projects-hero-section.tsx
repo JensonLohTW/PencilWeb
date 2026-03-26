@@ -1,17 +1,13 @@
 'use client'
 
-import Image from 'next/image'
-import { Link } from '@/i18n/routing'
-import type { ProjectsHeroSectionProps } from '@/features/marketing/projects/types'
 import { FadeIn } from '@/components/animations/fade-in'
+import type { ProjectsHeroSectionProps } from '@/features/marketing/projects/types'
+import { Link } from '@/i18n/routing'
 import { KineticHeading } from '@/shared/ui/animations/kinetic-heading'
 import { ParticleField } from '@/shared/ui/animations/particle-field'
+import Image from 'next/image'
 
-function renderAction(
-  href: string,
-  label: string,
-  className: string,
-) {
+function renderAction(href: string, label: string, className: string) {
   if (href.startsWith('#')) {
     return (
       <a href={href} className={className}>
@@ -28,9 +24,8 @@ function renderAction(
 }
 
 export function ProjectsHeroSection({ hero }: ProjectsHeroSectionProps) {
-
   return (
-    <section className="relative isolate overflow-hidden border-b border-pencil-200 px-6 pb-24 pt-24 lg:px-16 lg:pt-32 dark:border-white/10">
+    <section className="relative isolate overflow-hidden border-b border-pencil-200 px-6 pt-24 pb-24 lg:px-16 lg:pt-32 dark:border-white/10">
       <ParticleField className="opacity-60" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(12,10,9,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(12,10,9,0.06)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:bg-[linear-gradient(rgba(248,250,252,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(248,250,252,0.06)_1px,transparent_1px)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-neon-100/40 to-transparent dark:from-neon-950/20" />
@@ -66,11 +61,7 @@ export function ProjectsHeroSection({ hero }: ProjectsHeroSectionProps) {
           </div>
         </FadeIn>
 
-        <FadeIn
-          variant="slideInRight"
-          delay={0.1}
-          className="mx-auto w-full max-w-[22rem]"
-        >
+        <FadeIn variant="slideInRight" delay={0.1} className="mx-auto w-full max-w-[22rem]">
           <div className="relative rounded-[2rem] border border-pencil-300 bg-pencil-900 p-4 shadow-2xl shadow-pencil-950/15 dark:border-white/15 dark:bg-black">
             <div className="overflow-hidden rounded-[1.5rem] border border-pencil-700 dark:border-white/10">
               <Image

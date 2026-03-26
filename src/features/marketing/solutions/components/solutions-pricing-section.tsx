@@ -1,8 +1,8 @@
+import { FadeIn } from '@/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import type { SolutionsPricingSectionProps } from '../types'
 import { SolutionsLink } from './solutions-link'
-import { FadeIn } from '@/components/animations/fade-in'
-import { StaggerContainer, StaggerItem } from '@/components/animations/stagger-container'
 
 function classNames(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(' ')
@@ -18,7 +18,10 @@ export function SolutionsPricingSection({ pricing, buyPlanLabel }: SolutionsPric
             {pricing.title}
           </p>
         </FadeIn>
-        <FadeIn delay={0.2} className="mx-auto mt-6 max-w-2xl text-center text-lg/8 text-pretty text-pencil-600 sm:text-xl/8 dark:text-pencil-300">
+        <FadeIn
+          delay={0.2}
+          className="mx-auto mt-6 max-w-2xl text-center text-lg/8 text-pretty text-pencil-600 sm:text-xl/8 dark:text-pencil-300"
+        >
           {pricing.description}
         </FadeIn>
 
@@ -34,7 +37,7 @@ export function SolutionsPricingSection({ pricing, buyPlanLabel }: SolutionsPric
                 tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                 tierIdx === 0 && '-mr-px lg:rounded-r-none',
                 tierIdx === pricing.tiers.length - 1 && '-ml-px lg:rounded-l-none',
-                'glass-card-hover flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-pencil-200 dark:bg-pencil-900 dark:inset-ring-white/10 xl:p-10',
+                'glass-card-hover flex flex-col justify-between rounded-3xl bg-white p-8 inset-ring inset-ring-pencil-200 xl:p-10 dark:bg-pencil-900 dark:inset-ring-white/10',
               )}
             >
               <div>
@@ -57,8 +60,12 @@ export function SolutionsPricingSection({ pricing, buyPlanLabel }: SolutionsPric
 
                 <p className="mt-4 text-sm/6 text-pencil-600 dark:text-pencil-300">{tier.description}</p>
                 <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-pencil-950 dark:text-white">{tier.priceMonthly}</span>
-                  <span className="text-sm/6 font-semibold text-pencil-600 dark:text-pencil-300">{pricing.perMonthLabel}</span>
+                  <span className="text-4xl font-semibold tracking-tight text-pencil-950 dark:text-white">
+                    {tier.priceMonthly}
+                  </span>
+                  <span className="text-sm/6 font-semibold text-pencil-600 dark:text-pencil-300">
+                    {pricing.perMonthLabel}
+                  </span>
                 </p>
 
                 <ul role="list" className="mt-8 space-y-3 text-sm/6 text-pencil-600 dark:text-pencil-300">
