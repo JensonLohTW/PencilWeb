@@ -15,7 +15,11 @@ interface LanguageOption {
 const languages: LanguageOption[] = [
   { code: 'zh-TW', label: '繁體中文', nativeLabel: '中文' },
   { code: 'en', label: 'English', nativeLabel: 'EN' },
+  { code: 'zh-CN', label: '简体中文', nativeLabel: '简中' },
   { code: 'ja', label: '日本語', nativeLabel: 'JP' },
+  { code: 'ko', label: '한국어', nativeLabel: 'KR' },
+  { code: 'fr', label: 'Francais', nativeLabel: 'FR' },
+  { code: 'th', label: 'ไทย', nativeLabel: 'TH' },
 ]
 
 const panelVariants = {

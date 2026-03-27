@@ -35,9 +35,25 @@ const FALLBACK_COPY_BY_LOCALE: Record<SeoLocale, SeoCopy> = {
     title: 'Pencil Spatial Dynamics | XR, AI, and Smart Space Solutions',
     description: 'Deployable XR, AI, and smart-space IoT solutions for immersive interaction and measurable business outcomes.',
   },
+  'zh-CN': {
+    title: '空间动态科技 Pencil｜XR（VR/AR/MR）× AI × 智慧空间解决方案',
+    description: '整合 XR、AI 与智慧空间 IoT，提供可落地的沉浸式互动与企业数字化转型解决方案。',
+  },
   ja: {
     title: 'Pencil Spatial Dynamics | XR・AI・スマートスペースソリューション',
     description: 'XR・AI・スマートスペース IoT を統合し、実装可能な没入型体験と事業成果を実現します。',
+  },
+  ko: {
+    title: 'Pencil Spatial Dynamics | XR, AI, 스마트 스페이스 솔루션',
+    description: 'XR, AI, 스마트 스페이스 IoT를 통합하여 몰입형 인터랙션과 측정 가능한 비즈니스 성과를 실현합니다.',
+  },
+  fr: {
+    title: 'Pencil Spatial Dynamics | Solutions XR, IA et Espaces Intelligents',
+    description: 'Solutions XR, IA et IoT pour espaces intelligents, offrant des interactions immersives et des resultats mesurables.',
+  },
+  th: {
+    title: 'Pencil Spatial Dynamics | โซลูชัน XR, AI และพื้นที่อัจฉริยะ',
+    description: 'รวม XR, AI และ IoT สำหรับพื้นที่อัจฉริยะ มอบการโต้ตอบแบบดื่มด่ำและผลลัพธ์ทางธุรกิจที่วัดผลได้',
   },
 }
 

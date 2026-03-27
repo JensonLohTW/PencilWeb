@@ -9,7 +9,11 @@ import type { Language } from '@/shared/i18n/types'
 const languageLabels: Record<Language, { short: string; full: string }> = {
     'zh-TW': { short: '中', full: '中文' },
     en: { short: 'EN', full: 'English' },
+    'zh-CN': { short: '简', full: '简体中文' },
     ja: { short: 'JP', full: '日本語' },
+    ko: { short: 'KR', full: '한국어' },
+    fr: { short: 'FR', full: 'Francais' },
+    th: { short: 'TH', full: 'ไทย' },
 }
 
 export function LanguageToggle({ className, ...props }: ComponentProps<'button'>) {
@@ -17,7 +21,9 @@ export function LanguageToggle({ className, ...props }: ComponentProps<'button'>
 
     // Toggle language
     const handleToggle = () => {
-        const nextLang = language === 'zh-TW' ? 'en' : language === 'en' ? 'ja' : 'zh-TW'
+    const order: Language[] = ['zh-TW', 'en', 'zh-CN', 'ja', 'ko', 'fr', 'th']
+        const idx = order.indexOf(language)
+        const nextLang = order[(idx + 1) % order.length]
         setLanguage(nextLang)
     }
 

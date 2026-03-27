@@ -8,7 +8,11 @@ import type { Language } from '@/shared/i18n/types'
 const languageLabels: Record<Language, string> = {
   'zh-TW': '中',
   en: 'EN',
+  'zh-CN': '简',
   ja: 'JP',
+  ko: 'KR',
+  fr: 'FR',
+  th: 'TH',
 }
 
 function GlobeIcon({ className }: { className?: string }) {

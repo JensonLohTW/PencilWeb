@@ -6,5 +6,5 @@ export interface JsonObject {
   [key: string]: JsonValue
 }
 
-export const supportedLanguages = ['zh-TW', 'en', 'ja'] as const
+export const supportedLanguages = ['zh-TW', 'en', 'zh-CN', 'ja', 'ko', 'fr', 'th'] as const
 export type Language = (typeof supportedLanguages)[number]

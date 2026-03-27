@@ -24,13 +24,21 @@ export const PAGE_KEYS: SeoPageKey[] = Object.keys(PAGE_PATH_BY_KEY) as SeoPageK
 export const OG_LOCALE_BY_LOCALE: LocaleCodeMap = {
   'zh-TW': 'zh_TW',
   en: 'en_US',
+  'zh-CN': 'zh_CN',
   ja: 'ja_JP',
+  ko: 'ko_KR',
+  fr: 'fr_FR',
+  th: 'th_TH',
 }
 
 export const SEO_KEYWORDS_BY_LOCALE: Record<SeoLocale, string[]> = {
   'zh-TW': ['XR', 'VR', 'AR', 'MR', 'AI Agent', '智慧空間 IoT', '沉浸式訓練', '空間動態科技'],
   en: ['XR', 'VR', 'AR', 'MR', 'AI Agent', 'Smart Space IoT', 'Immersive Training', 'Pencil Spatial Dynamics'],
+  'zh-CN': ['XR', 'VR', 'AR', 'MR', 'AI Agent', '智慧空间 IoT', '沉浸式训练', '空间动态科技'],
   ja: ['XR', 'VR', 'AR', 'MR', 'AIエージェント', 'スマートスペース IoT', '没入型トレーニング', 'Pencil Spatial Dynamics'],
+  ko: ['XR', 'VR', 'AR', 'MR', 'AI 에이전트', '스마트 스페이스 IoT', '몰입형 훈련', 'Pencil Spatial Dynamics'],
+  fr: ['XR', 'VR', 'AR', 'MR', 'Agent IA', 'Espace intelligent IoT', 'Formation immersive', 'Pencil Spatial Dynamics'],
+  th: ['XR', 'VR', 'AR', 'MR', 'AI Agent', 'พื้นที่อัจฉริยะ IoT', 'การฝึกอบรมแบบดื่มด่ำ', 'Pencil Spatial Dynamics'],
 }
 
 export const seoConfig = {
