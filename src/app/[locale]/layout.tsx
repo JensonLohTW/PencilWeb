@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import { SeoJsonLd } from '@/shared/seo/seo-json-ld'
 import { buildDefaultSeoGraph } from '@/shared/seo/structured-data'
 import { RouteTransition } from '@/shared/ui/animations/route-transition'
+import { FloatingLanguageSwitcher } from '@/shared/ui/elements/floating-language-switcher'
 import { Main } from '@/shared/ui/elements/main'
 
 import { Footer } from '@/widgets/layout/footer'
@@ -45,7 +46,9 @@ export default async function RootLayout({
           <RouteTransition>{children}</RouteTransition>
         </Main>
         <Footer />
+        <FloatingLanguageSwitcher />
       </AppProviders>
     </NextIntlClientProvider>
   )
 }
+
