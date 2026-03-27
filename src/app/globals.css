@@ -308,8 +308,8 @@
         /* 半透明背景：模擬玻璃磨砂感 */
         background: hsl(0 0% 100% / var(--glass-frost));
 
-        /* SVG displacement + 飽和度強化折射感 */
-        backdrop-filter: url(#glass-displacement-filter) saturate(var(--glass-saturation));
+        /* 簡化折射效果：改用標準 blur 及 saturate */
+        backdrop-filter: blur(16px) saturate(var(--glass-saturation));
 
         /* 深度陰影 + 內緣高光（使用 color-mix 自適應深淺色） */
         box-shadow: /* 細邊緣高亮 */ 0 0 0 0.5px color-mix(in oklch, canvasText, transparent 80%),
