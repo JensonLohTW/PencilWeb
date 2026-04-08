@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
 
   // GitHub Pages 部署配置
   basePath: process.env.NODE_ENV === 'production' ? '/Pencil-Link' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Pencil-Link/' : '',
 
   // 圖片優化配置
   // GitHub Pages 不支援 Next.js Image Optimization API，使用靜態圖片

@@ -3,7 +3,7 @@
  * 在生產環境 (GitHub Pages) 下會附加 /PencilWeb 前綴
  */
 export function getPath(path: string): string {
-    const basePath = process.env.NODE_ENV === 'production' ? '/PencilWeb' : ''
+    const basePath = process.env.NODE_ENV === 'production' ? '/Pencil-Link' : ''
 
     // 確保路徑以 / 開頭，且不會重複 basePath
     const normalizedPath = path.startsWith('/') ? path : `/${path}`
