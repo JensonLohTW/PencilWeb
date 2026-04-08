@@ -46,19 +46,12 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
               <p>{`“${testimonials.featured.quote}”`}</p>
             </blockquote>
             <figcaption className="flex flex-wrap items-center gap-4 border-t border-pencil-200 px-8 py-5 sm:px-10 dark:border-white/10">
-              <Image
-                src={testimonials.featured.author.imageUrl}
-                alt={testimonials.featured.author.name}
-                width={44}
-                height={44}
-                className="size-11 rounded-full border border-pencil-200 object-cover dark:border-white/10"
-              />
               <div className="min-w-0 flex-1">
                 <p className="truncate font-semibold text-pencil-900 dark:text-white">
                   {testimonials.featured.author.name}
                 </p>
                 <p className="truncate text-sm text-pencil-600 dark:text-pencil-300">
-                  @{testimonials.featured.author.handle}
+                  {testimonials.featured.author.handle}
                 </p>
               </div>
               {testimonials.featured.author.logoUrl ? (
@@ -92,16 +85,9 @@ export function ProjectsTestimonialsSection({ testimonials }: ProjectsTestimonia
                       <p>{`“${item.quote}”`}</p>
                     </blockquote>
                     <figcaption className="mt-5 flex items-center gap-3">
-                      <Image
-                        src={item.author.imageUrl}
-                        alt={item.author.name}
-                        width={36}
-                        height={36}
-                        className="size-9 rounded-full border border-pencil-200 object-cover dark:border-white/10"
-                      />
                       <div>
                         <p className="text-sm font-semibold text-pencil-900 dark:text-white">{item.author.name}</p>
-                        <p className="text-xs text-pencil-500 dark:text-pencil-300">@{item.author.handle}</p>
+                        <p className="text-xs text-pencil-500 dark:text-pencil-300">{item.author.handle}</p>
                       </div>
                     </figcaption>
                   </motion.figure>
