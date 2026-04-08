@@ -60,7 +60,7 @@ const defaultContent: SolutionsTemplateContent = {
     primaryAction: { label: 'Talk to an advisor', href: '/contact' },
     secondaryAction: { label: 'View details', href: '#features' },
     image: {
-      src: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
+      src: getPath('/images/solutions/vr_training_management_dashboard.png'),
       alt: 'Solutions architecture overview',
       width: 2432,
       height: 1442,

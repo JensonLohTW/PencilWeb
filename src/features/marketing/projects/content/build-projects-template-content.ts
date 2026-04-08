@@ -217,7 +217,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Established immersive simulation flow and operation checkpoints for pilot training.',
         outcome: 'Standardized training process',
         timeline: '10-14 weeks',
-        image: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
+        image: getPath('/images/projects/flight-simulator.png'),
       },
       {
         id: 'flight-training',
@@ -228,7 +228,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Combined interactive lessons with mission scripts to improve training completion quality.',
         outcome: 'Higher course completion rate',
         timeline: '8-12 weeks',
-        image: getPath('/plus-assets/img/component-images/mobile-app-screenshot.png'),
+        image: getPath('/images/projects/flight-training.png'),
       },
       {
         id: 'data-integration',
@@ -239,7 +239,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Integrated multi-source data pipelines and built stable contracts for downstream systems.',
         outcome: 'Improved integration efficiency',
         timeline: '6-10 weeks',
-        image: getPath('/plus-assets/img/component-images/project-app-screenshot.png'),
+        image: getPath('/images/projects/data-integration.png'),
       },
       {
         id: 'ai-agent',
@@ -250,7 +250,7 @@ const defaultContent: ProjectsTemplateContent = {
         summary: 'Built enterprise retrieval and action workflows for support and internal operations.',
         outcome: 'Reduced response and handling time',
         timeline: '6-12 weeks',
-        image: getPath('/plus-assets/img/component-images/mobile-app-screenshot.png'),
+        image: getPath('/images/projects/ai-agent.png'),
       },
     ],
   },
