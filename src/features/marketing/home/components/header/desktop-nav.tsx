@@ -1,5 +1,6 @@
-import { Link } from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/routing'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { isPathActive } from './nav-utils'
 import { clsx } from 'clsx/lite'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
@@ -14,6 +15,7 @@ interface DesktopNavProps {
 
 export function DesktopNav({ compact = false }: DesktopNavProps) {
   const t = useTranslations()
+  const pathname = usePathname()
   const [openItem, setOpenItem] = useState<string | null>(null)
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -52,7 +54,13 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
           >
             <Link
               href={item.href || '#'}
-              className="flex items-center gap-x-1 text-lg font-semibold tracking-wide whitespace-nowrap text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+              aria-current={isPathActive(pathname, item.href) ? 'page' : undefined}
+              className={clsx(
+                'flex items-center gap-x-1 rounded-full px-4 py-2 text-lg font-semibold tracking-wide whitespace-nowrap transition-all duration-300',
+                isPathActive(pathname, item.href)
+                  ? 'bg-pencil-900/5 text-pencil-950 dark:bg-white/10 dark:text-white'
+                  : 'text-pencil-950/60 hover:bg-pencil-900/5 hover:text-pencil-950 dark:text-white/60 dark:hover:bg-white/5 dark:hover:text-white',
+              )}
             >
               {t(item.nameKey)}
               <ChevronDownIcon aria-hidden="true" className="size-3 flex-none opacity-50" />
@@ -108,7 +116,13 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
           <Link
             key={item.nameKey}
             href={item.href || '#'}
-            className="text-lg font-semibold tracking-wide whitespace-nowrap text-pencil-950/40 transition-all duration-300 hover:text-pencil-950 dark:text-white/40 dark:hover:text-white"
+            aria-current={isPathActive(pathname, item.href) ? 'page' : undefined}
+            className={clsx(
+              'rounded-full px-4 py-2 text-lg font-semibold tracking-wide whitespace-nowrap transition-all duration-300',
+              isPathActive(pathname, item.href)
+                ? 'bg-pencil-900/5 text-pencil-950 dark:bg-white/10 dark:text-white'
+                : 'text-pencil-950/60 hover:bg-pencil-900/5 hover:text-pencil-950 dark:text-white/60 dark:hover:bg-white/5 dark:hover:text-white',
+            )}
           >
             {t(item.nameKey)}
           </Link>

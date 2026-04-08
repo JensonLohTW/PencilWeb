@@ -1,11 +1,13 @@
-import { Link } from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/routing'
 import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { clsx } from 'clsx/lite'
 import { useTranslations } from 'next-intl'
 import { ReactNode } from 'react'
 import { headerNavigation } from './header-data'
 import { Logo } from './logo'
+import { isPathActive } from './nav-utils'
 
 interface MobileNavProps {
   mobileMenuOpen: boolean
@@ -16,6 +18,7 @@ interface MobileNavProps {
 
 export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, actions }: MobileNavProps) {
   const t = useTranslations()
+  const pathname = usePathname()
 
   return (
     <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -38,7 +41,14 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
               {headerNavigation.map((item) =>
                 item.type === 'dropdown' ? (
                   <Disclosure key={item.nameKey} as="div" className="-mx-3">
-                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-lg/7 font-bold text-white hover:bg-white/5">
+                    <DisclosureButton
+                      className={clsx(
+                        'group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-lg/7 font-bold transition-colors',
+                        isPathActive(pathname, item.href)
+                          ? 'bg-white/10 text-white'
+                          : 'text-white/70 hover:bg-white/5 hover:text-white',
+                      )}
+                    >
                       {t(item.nameKey)}
                       <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-[open]:rotate-180" />
                     </DisclosureButton>
@@ -60,7 +70,13 @@ export function MobileNav({ mobileMenuOpen, setMobileMenuOpen, utilities, action
                   <Link
                     key={item.nameKey}
                     href={item.href || '#'}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-lg/7 font-bold text-white hover:bg-white/5"
+                    aria-current={isPathActive(pathname, item.href) ? 'page' : undefined}
+                    className={clsx(
+                      '-mx-3 block rounded-lg px-3 py-2 text-lg/7 font-bold transition-colors',
+                      isPathActive(pathname, item.href)
+                        ? 'bg-white/10 text-white'
+                        : 'text-white/70 hover:bg-white/5 hover:text-white',
+                    )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t(item.nameKey)}
