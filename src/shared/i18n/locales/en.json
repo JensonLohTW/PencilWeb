@@ -275,6 +275,18 @@
             "value": "98%"
           }
         ]
+      },
+      "logoCloud": {
+        "techInput": "Technical Input Layer",
+        "serviceOutcome": "Service Outcome",
+        "legend": "6 Domains → 4 Outcomes",
+        "figure": "— Fig. 1.1",
+        "outcomes": [
+          "Immersive Training",
+          "Smart Space",
+          "AI Collaboration",
+          "AR Visual Guide"
+        ]
       }
     },
     "solutions": {
@@ -438,6 +450,23 @@
         "headline": "Found the right solution? Contact us for more detailed solution descriptions and recommendations.",
         "ctaText": "Contact Sales",
         "secondaryText": "Fill Out Requirements Form"
+      },
+      "carousel": {
+        "items": [
+          "Taipei City",
+          "New Taipei City",
+          "Kaohsiung City"
+        ],
+        "aria": {
+          "prev": "Previous illustration",
+          "next": "Next illustration"
+        }
+      },
+      "feature": {
+        "actions": {
+          "consult": "Consult Now",
+          "hide": "Hide Details"
+        }
       },
       "process": {
         "eyebrow": "Process",
@@ -1034,12 +1063,6 @@
           }
         ]
       },
-      "newsletter": {
-        "title": "Subscribe for project updates and implementation insights",
-        "description": "Receive selected case studies, delivery methods, and integration updates from our team.",
-        "emailPlaceholder": "Enter email",
-        "submitLabel": "Subscribe"
-      },
       "cta": {
         "title": "Looking for a partner with proven delivery track record?",
         "description": "Share your target scenario and timeline. We will propose a practical architecture, milestones, and rollout roadmap.",
@@ -1456,6 +1479,17 @@
             "placeholder": "Please describe your requirements or questions..."
           }
         },
+        "messages": {
+          "requiredFields": "Please fill in all required fields before submitting.",
+          "mailtoDraft": "Mail client draft opened, please review and send.",
+          "success": "Form submitted successfully, we will contact you shortly.",
+          "error": "Submission failed, please try again later."
+        },
+        "actions": {
+          "submitting": "Opening...",
+          "submitMailto": "Submit via local email client"
+        },
+        "note": "Clicking will automatically wake up the email software on your device and bring in the form content.",
         "submit": "Submit Form"
       },
       "info": {
@@ -1469,10 +1503,13 @@
           ]
         },
         "contact": {
-          "title": "Contact Information",
+          "title": "Contact Details",
+          "personLabel": "Contact Person:",
+          "personName": "Hank Kao / Manager",
           "location": "Location:",
           "locationValue": "Kaohsiung City",
-          "email": "Email:"
+          "email": "Email:",
+          "phoneLabel": "Phone"
         }
       }
     },

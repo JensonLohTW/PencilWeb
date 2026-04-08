@@ -6,7 +6,6 @@ import { ProjectsFeatureHighlightSection } from '@/features/marketing/projects/c
 import { ProjectsHeroSection } from '@/features/marketing/projects/components/projects-hero-section'
 import { ProjectsListSection } from '@/features/marketing/projects/components/projects-list-section'
 import { ProjectsLogoCloudSection } from '@/features/marketing/projects/components/projects-logo-cloud-section'
-import { ProjectsNewsletterSection } from '@/features/marketing/projects/components/projects-newsletter-section'
 import { ProjectsShowcaseSection } from '@/features/marketing/projects/components/projects-showcase-section'
 import { ProjectsTestimonialsSection } from '@/features/marketing/projects/components/projects-testimonials-section'
 import { buildProjectsTemplateContent } from '@/features/marketing/projects/content/build-projects-template-content'
@@ -25,7 +24,6 @@ export default function ProjectsPage() {
       <ProjectsShowcaseSection showcase={content.showcase} />
       <ProjectsListSection projectList={content.projectList} />
       <ProjectsTestimonialsSection testimonials={content.testimonials} />
-      <ProjectsNewsletterSection newsletter={content.newsletter} />
       <ProjectsCtaSection cta={content.cta} />
     </div>
   )

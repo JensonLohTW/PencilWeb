@@ -325,12 +325,6 @@ const defaultContent: ProjectsTemplateContent = {
       },
     ],
   },
-  newsletter: {
-    title: 'Get project updates and implementation insights',
-    description: 'Receive selected case studies, delivery playbooks, and integration updates from our team.',
-    emailPlaceholder: 'Enter your email',
-    submitLabel: 'Subscribe',
-  },
   cta: {
     title: 'Looking for a delivery partner with proven outcomes?',
     description:
@@ -619,15 +613,6 @@ export function buildProjectsTemplateContent(t: TranslateFn): ProjectsTemplateCo
       title: asString(asRecord(root.testimonials)?.title, defaultContent.testimonials.title),
       featured: parseTestimonial(asRecord(root.testimonials)?.featured, defaultContent.testimonials.featured),
       items: parseTestimonialItems(asRecord(root.testimonials)?.items, defaultContent.testimonials.items),
-    },
-    newsletter: {
-      title: asString(asRecord(root.newsletter)?.title, defaultContent.newsletter.title),
-      description: asString(asRecord(root.newsletter)?.description, defaultContent.newsletter.description),
-      emailPlaceholder: asString(
-        asRecord(root.newsletter)?.emailPlaceholder,
-        defaultContent.newsletter.emailPlaceholder,
-      ),
-      submitLabel: asString(asRecord(root.newsletter)?.submitLabel, defaultContent.newsletter.submitLabel),
     },
     cta: {
       title: asString(asRecord(root.cta)?.title, defaultContent.cta.title),

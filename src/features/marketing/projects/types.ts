@@ -124,12 +124,6 @@ export interface ProjectsTestimonialsContent {
   items: TestimonialItem[]
 }
 
-export interface ProjectsNewsletterContent {
-  title: string
-  description: string
-  emailPlaceholder: string
-  submitLabel: string
-}
 
 export interface ProjectsCtaContent {
   title: string
@@ -152,7 +146,6 @@ export interface ProjectsTemplateContent {
   showcase: ProjectsShowcaseContent
   projectList: ProjectsListContent
   testimonials: ProjectsTestimonialsContent
-  newsletter: ProjectsNewsletterContent
   cta: ProjectsCtaContent
   actions: ProjectsSharedActions
 }
@@ -185,9 +178,6 @@ export interface ProjectsTestimonialsSectionProps {
   testimonials: ProjectsTestimonialsContent
 }
 
-export interface ProjectsNewsletterSectionProps {
-  newsletter: ProjectsNewsletterContent
-}
 
 export interface ProjectsCtaSectionProps {
   cta: ProjectsCtaContent

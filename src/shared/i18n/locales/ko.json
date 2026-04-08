@@ -1034,12 +1034,6 @@
           }
         ]
       },
-      "newsletter": {
-        "title": "Subscribe for project updates and implementation insights",
-        "description": "Receive selected case studies, delivery methods, and integration updates from our team.",
-        "emailPlaceholder": "Enter email",
-        "submitLabel": "Subscribe"
-      },
       "cta": {
         "title": "Looking for a partner with proven delivery track record?",
         "description": "Share your target scenario and timeline. We will propose a practical architecture, milestones, and rollout roadmap.",

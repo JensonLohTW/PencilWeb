@@ -274,6 +274,13 @@
             "value": "98%"
           }
         ]
+      },
+      "logoCloud": {
+        "techInput": "技術輸入層",
+        "serviceOutcome": "服務成果",
+        "legend": "6 應用領域 → 4 服務成果",
+        "figure": "— Fig. 1.1",
+        "outcomes": ["沉浸式訓練", "智慧空間", "AI 協作", "AR 視覺導覽"]
       }
     },
     "solutions": {
@@ -437,6 +444,19 @@
         "headline": "找到適合的方案了嗎？聯絡我們，讓我們為您提供更詳細的方案說明與建議。",
         "ctaText": "聯絡業務",
         "secondaryText": "填寫需求表單"
+      },
+      "carousel": {
+        "items": ["台北市", "新北市", "高雄市"],
+        "aria": {
+          "prev": "上一個插圖",
+          "next": "下一個插圖"
+        }
+      },
+      "feature": {
+        "actions": {
+          "consult": "預約諮詢",
+          "hide": "隱藏細節"
+        }
       },
       "process": {
         "eyebrow": "合作流程",
@@ -1033,12 +1053,6 @@
           }
         ]
       },
-      "newsletter": {
-        "title": "訂閱專案更新與導入洞察",
-        "description": "接收精選案例、交付方法與系統整合更新，掌握下一步落地策略。",
-        "emailPlaceholder": "輸入 Email",
-        "submitLabel": "訂閱"
-      },
       "cta": {
         "title": "正在尋找有交付實績的合作夥伴？",
         "description": "告訴我們你的場域目標與時程，我們會提供可執行的技術架構、里程碑與導入路線。",
@@ -1455,6 +1469,17 @@
             "placeholder": "請描述您的需求或問題..."
           }
         },
+        "messages": {
+          "requiredFields": "請完整填寫必填欄位後再送出。",
+          "mailtoDraft": "已開啟郵件軟體草稿，請確認後送出。",
+          "success": "表單已成功送出，我們會盡快與您聯繫。",
+          "error": "送出失敗，請稍後再試。"
+        },
+        "actions": {
+          "submitting": "開啟中...",
+          "submitMailto": "透過本機電子郵件軟體送出"
+        },
+        "note": "點擊後將自動喚醒您裝置上的電子郵件軟體並帶入表單內容。",
         "submit": "送出表單"
       },
       "info": {
@@ -1469,9 +1494,12 @@
         },
         "contact": {
           "title": "聯絡資訊",
+          "personLabel": "聯絡人：",
+          "personName": "高宇弘 (Hank Kao) / 高經理",
           "location": "地點：",
           "locationValue": "高雄市",
-          "email": "Email："
+          "email": "Email：",
+          "phoneLabel": "電話"
         }
       }
     },
